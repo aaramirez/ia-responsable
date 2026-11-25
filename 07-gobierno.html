@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gobierno de la IA · IA responsable · IA responsable</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sesgo, transparencia, derechos de autor, privacidad, regulación y gobierno de la IA: lo que toda organización que usa o construye IA necesita saber.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="gobierno">
+<header class="topbar"><a class="brand" href="index.html">IA <b>responsable</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 07 DE 8</span><h1>Gobierno de la IA en una organización</h1><p class="lede">El filtro de hojas de vida llegó a la empresa como una casilla que alguien activó en el ATS, sin ficha, sin evaluación y sin dueña. Este capítulo arma lo que faltaba: un inventario de usos y modelos, una forma de medir el riesgo de cada uno, los roles que deciden y revisan, las normas que ordenan todo (ISO/IEC 42001 y el marco del NIST) y las cláusulas que hay que pedirle al proveedor.</p></header>
+<section><div class="prose"><p>Cuando la directora de operaciones pausó el filtro, hizo una pregunta que nadie pudo contestar en la reunión: «¿Cuántos otros sistemas así tenemos?». Patricia sabía del filtro porque lo había activado ella. Rodrigo sabía de dos modelos que había construido sistemas. Atención usaba un asistente para redactar respuestas. Nadie tenía la lista completa, y sin lista no se puede saber qué otro sistema estaba rechazando personas a las tres de la mañana.</p><p>El capítulo anterior dijo qué piden las leyes. Este capítulo dice cómo una organización lo vuelve rutina: quién se entera de cada uso de IA, quién decide si sigue y quién revisa que lo prometido se cumpla.</p></div></section>
+<section><h2>Por qué una organización necesita gobierno de la IA</h2><div class="prose"><p>El <b>gobierno de la IA</b> (<i>AI governance</i>) es el conjunto de reglas, roles y procesos con que una organización sabe qué IA usa, decide qué riesgo acepta y responde por sus efectos. No es un comité que dice que no: es el sistema que permite decir que sí con conocimiento de causa.</p></div><div class="analogia"><b>Imagínalo así</b><p><b>Piensa en la cocina de un restaurante.</b> La comida puede ser excelente y aun así enfermar a alguien si nadie sabe qué hay en la nevera, desde cuándo, ni quién la revisó. Por eso las cocinas serias llevan un inventario con fechas, identifican los puntos donde algo puede salir mal (la temperatura del pollo, el cuchillo de los alérgenos), asignan un responsable a cada punto y dejan que un inspector externo pase cuando quiera. El gobierno de la IA es eso mismo para los modelos: saber qué hay, dónde puede fallar, quién lo cuida y quién lo verifica.</p></div><div class="prose"><p>Una organización lo necesita por tres razones que el curso ya mostró:</p><ul><li><b>La IA llega por muchas puertas.</b> No solo con los proyectos de sistemas: llega dentro del software que se compra (como el filtro, un módulo del ATS), en las herramientas que cada persona usa y en las funciones nuevas que un proveedor activa en una actualización.</li><li><b>La responsabilidad no se compra con el sistema.</b> El capítulo 1 lo dijo y el capítulo 6 lo puso en artículos: quien usa un sistema de alto riesgo tiene obligaciones propias.</li><li><b>El riesgo cambia con el tiempo.</b> Un modelo que hoy pasa la prueba de sesgo puede fallarla mañana si cambian los candidatos o si el proveedor lo reentrena. Sin alguien que vuelva a mirar, nadie se entera.</li></ul></div><figure class="fig fig-esquema" id="07-diagrama-1"><div class="lienzo"><svg viewBox="0 0 900 460" style="min-width:720px" role="img" aria-label="Ciclo de gobierno de un uso de IA en seis pasos alrededor del dueño del caso: registrar en el inventario, clasificar el riesgo, evaluar a fondo si el riesgo lo pide, decidir con controles, vigilar en producción y auditar de forma independiente, que vuelve a clasificar. Cada paso deja un documento: la ficha, el nivel, la evaluación, el acta, el tablero y el informe.">
+  <defs><marker id="i7d1-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-apl"/></marker></defs>
+  
+  <circle cx="300" cy="230" r="170" class="ln ln-d" style="stroke:var(--line)"/>
+  <circle cx="300" cy="230" r="58" class="c-apl" style="stroke-width:2"/>
+  <text x="300" y="224" text-anchor="middle" class="t t-b">Dueño</text>
+  <text x="300" y="242" text-anchor="middle" class="t t-s">del caso</text>
+  
+  <path d="M352 76 A170 170 0 0 1 438 128" class="ln s-apl" style="stroke-width:2" marker-end="url(#i7d1-m)"/>
+  <path d="M470 196 A170 170 0 0 1 470 264" class="ln s-apl" style="stroke-width:2" marker-end="url(#i7d1-m)"/>
+  <path d="M438 332 A170 170 0 0 1 352 384" class="ln s-apl" style="stroke-width:2" marker-end="url(#i7d1-m)"/>
+  <path d="M248 384 A170 170 0 0 1 162 332" class="ln s-apl" style="stroke-width:2" marker-end="url(#i7d1-m)"/>
+  <path d="M130 264 A170 170 0 0 1 130 196" class="ln s-apl" style="stroke-width:2" marker-end="url(#i7d1-m)"/>
+  <path d="M162 128 A170 170 0 0 1 248 76" class="ln s-apl" style="stroke-width:2" marker-end="url(#i7d1-m)"/>
+  
+  <g class="t t-s" text-anchor="middle">
+    <rect x="240" y="38" width="120" height="44" rx="10" class="caja" style="stroke-width:1.6"/><text x="300" y="57" class="t-b">① Registrar</text><text x="300" y="72" class="t-m">en el inventario</text>
+    <rect x="404" y="118" width="120" height="44" rx="10" class="caja" style="stroke-width:1.6"/><text x="464" y="137" class="t-b">② Clasificar</text><text x="464" y="152" class="t-m">nivel de riesgo</text>
+    <rect x="404" y="298" width="120" height="44" rx="10" class="caja" style="stroke-width:1.6"/><text x="464" y="317" class="t-b">③ Evaluar</text><text x="464" y="332" class="t-m">si el riesgo lo pide</text>
+    <rect x="240" y="378" width="120" height="44" rx="10" class="caja" style="stroke-width:1.6"/><text x="300" y="397" class="t-b">④ Decidir</text><text x="300" y="412" class="t-m">con controles</text>
+    <rect x="76" y="298" width="120" height="44" rx="10" class="caja" style="stroke-width:1.6"/><text x="136" y="317" class="t-b">⑤ Vigilar</text><text x="136" y="332" class="t-m">en producción</text>
+    <rect x="76" y="118" width="120" height="44" rx="10" class="caja" style="stroke-width:1.6"/><text x="136" y="137" class="t-b">⑥ Auditar</text><text x="136" y="152" class="t-m">independiente</text>
+  </g>
+  <line x1="196" y1="150" x2="404" y2="150" class="ln ln-d s-apl" marker-end="url(#i7d1-m)"/>
+  <text x="300" y="144" text-anchor="middle" class="t t-xs t-m">LO QUE SE ENCUENTRA RECLASIFICA</text>
+  
+  <text x="600" y="60" class="t t-xs t-b k-apl">LO QUE DEJA CADA PASO POR ESCRITO</text>
+  <g class="t t-s">
+    <rect x="600" y="76" width="280" height="46" rx="8" class="c-apl"/><text x="614" y="96" class="t-b">① La ficha</text><text x="614" y="112">uso, dueño, datos, proveedor, personas</text>
+    <rect x="600" y="130" width="280" height="46" rx="8" class="c-apl"/><text x="614" y="150" class="t-b">② El nivel</text><text x="614" y="166">bajo, medio, alto o prohibido, y por qué</text>
+    <rect x="600" y="184" width="280" height="46" rx="8" class="c-apl"/><text x="614" y="204" class="t-b">③ La evaluación</text><text x="614" y="220">riesgos, afectados y medidas (capítulo 8)</text>
+    <rect x="600" y="238" width="280" height="46" rx="8" class="c-apl"/><text x="614" y="258" class="t-b">④ El acta</text><text x="614" y="274">quién decidió, qué y con qué condiciones</text>
+    <rect x="600" y="292" width="280" height="46" rx="8" class="c-apl"/><text x="614" y="312" class="t-b">⑤ El tablero</text><text x="614" y="328">métricas por grupo, reclamos, alarmas</text>
+    <rect x="600" y="346" width="280" height="46" rx="8" class="c-apl"/><text x="614" y="366" class="t-b">⑥ El informe</text><text x="614" y="382">hallazgos de quien no construyó el sistema</text>
+  </g>
+</svg></div><figcaption><b>El ciclo de gobierno de un uso de IA.</b> Seis pasos en círculo: registrar el uso en el inventario, clasificar su riesgo, evaluarlo a fondo si el riesgo lo pide, decidir con controles (seguir, cambiar o no hacerlo), vigilar en producción y auditar de forma independiente. En el centro, el dueño del caso, que responde en todos los pasos. La flecha de la auditoría vuelve a la clasificación: lo que se encuentra puede subir o bajar el nivel. Al costado, en magenta, lo que deja cada paso por escrito: la ficha, el nivel, la evaluación, el acta, el tablero y el informe.</figcaption></figure><div class="prose"><p>Dos aclaraciones antes de seguir. Primero, este capítulo trata el gobierno como <b>gestión del riesgo</b>. La ruta para adoptar la IA en toda la empresa, la política de uso como herramienta de adopción y el modelo operativo con centro de excelencia y campeones por área están en <a href="https://aaramirez.github.io/adopcion-de-ia/temario.html" target="_blank" rel="noopener">IA en la empresa</a>, en sus capítulos <a href="https://aaramirez.github.io/adopcion-de-ia/07-modelo-operativo.html" target="_blank" rel="noopener">7</a> y <a href="https://aaramirez.github.io/adopcion-de-ia/09-politica-de-uso.html" target="_blank" rel="noopener">9</a>. La empresa ficticia es la misma: aquí se reutiliza su comité de IA. Segundo, nada de esto es asesoría legal; es la forma de organizar el trabajo para que la asesoría legal tenga sobre qué opinar.</p></div></section>
+<section><h2>La política de uso aceptable</h2><div class="prose"><p>La <b>política de uso aceptable de IA</b> (<i>AI acceptable use policy</i>) es el documento corto que dice qué se puede, qué se revisa y qué está prohibido. En IA en la empresa se escribe para que la gente use la IA con confianza. Aquí se mira su otra cara: es la regla que conecta cada uso con su nivel de riesgo y con los controles que le corresponden.</p><p>Desde el punto de vista del riesgo, una buena política agrega cuatro piezas:</p><ol class="steps"><li><span><b>Los niveles de riesgo y qué exige cada uno</b>, con los mismos nombres que usa el inventario: bajo, medio, alto y prohibido.</span></li><li><span><b>Las prohibiciones alineadas con la ley</b>: lo que la Ley de IA europea prohíbe (por ejemplo, reconocer emociones de los trabajadores) se prohíbe también en la empresa, aunque no opere en Europa.</span></li><li><span><b>La regla de entrada</b>: ningún uso que toque datos personales o decida sobre personas llega a producción sin su fila en el inventario y su nivel aprobado.</span></li><li><span><b>Las excepciones con nombre y fecha</b>: si algo se aprueba fuera de la regla, se anota quién lo aprobó, por qué y hasta cuándo.</span></li></ol><p>En la empresa ficticia, la política existía, pero el filtro la esquivó sin que nadie quisiera: no era un «proyecto de IA», era una casilla del ATS. Por eso Inés agregó una línea: «Las funciones de IA de un software ya contratado también entran al inventario antes de activarse».</p></div></section>
+<section><h2>El inventario de usos y de modelos</h2><div class="prose"><p>El <b>inventario de IA</b> (<i>AI inventory</i>) es la lista de todos los usos de IA de la organización, con una ficha por uso. Es la base de todo lo demás: lo que no está en el inventario no se clasifica, no se evalúa ni se vigila.</p></div><div class="analogia"><b>Imagínalo así</b><p><b>El inventario es la historia clínica de cada sistema.</b> Un médico no receta sin abrir la historia: quién es el paciente, qué toma, qué alergias tiene, qué le hicieron antes. Una ficha del inventario cumple la misma función: cuando algo falla, o cuando llega un reclamo como el de Camila, la primera pregunta se responde abriendo la ficha y no reuniendo a cinco personas.</p></div><div class="prose"><p>Para gobernar el riesgo, cada ficha responde, como mínimo, estas preguntas:</p><div class="tbl"><table><thead><tr><th>Campo</th><th>La ficha del filtro de hojas de vida</th></tr></thead><tbody><tr><td>Uso y propósito</td><td>Ordenar las hojas de vida de una convocatoria y rechazar las de puntaje menor a 60</td></tr><tr><td>Dueña del caso</td><td>Patricia, jefa de selección de Gestión Humana</td></tr><tr><td>Personas afectadas</td><td>Candidatos externos: 1.000 en la convocatoria piloto</td></tr><tr><td>¿Decide o influye sobre personas?</td><td>Sí: el rechazo era automático</td></tr><tr><td>Datos</td><td>Hojas de vida completas (datos personales); cinco variables extraídas</td></tr><tr><td>Proveedor y modelo</td><td>Módulo de IA del ATS, versión del modelo desconocida</td></tr><tr><td>Nivel según la ley</td><td>Alto riesgo (Ley de IA europea, Anexo III, punto 4; reglamento peruano, art. 24)</td></tr><tr><td>Nivel interno</td><td>Alto</td></tr><tr><td>Controles</td><td>Pendientes; en pausa</td></tr><tr><td>Última revisión</td><td>Al pausarlo, tras el reclamo de una candidata</td></tr></tbody></table></div><p>Fíjate en dos detalles. El primero: el inventario guarda <b>usos</b>, no solo modelos. El mismo modelo de lenguaje puede estar detrás de un asistente de redacción (bajo riesgo) y de un clasificador de reclamos que decide prioridades (más riesgo). El segundo: también guarda los <b>modelos</b> que la empresa construye, con su versión, sus datos de entrenamiento y sus resultados de prueba. A esa segunda lista los equipos técnicos la llaman <b>registro de modelos</b> (<i>model registry</i>), y suele vivir en la plataforma donde se entrenan y despliegan; cómo se opera está en <a href="https://aaramirez.github.io/mlops/temario.html" target="_blank" rel="noopener">IA en producción (MLOps)</a>.</p><p>La tecnología del inventario puede empezar siendo modesta: una hoja de cálculo compartida con un dueño. Cuando crece, se pasa a una herramienta de gestión de riesgos o de gobierno de IA del mercado, o a la sección de IA del inventario de aplicaciones que sistemas ya mantiene. Lo que no cambia es la regla: un solo inventario, un solo responsable de mantenerlo y una revisión periódica.</p></div><div class="lab" id="07-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Arma el inventario de la empresa ficticia</h3></div><p class="hint">Cinco usos de IA que aparecieron cuando la directora pidió la lista. Para cada uno, responde las preguntas de la ficha y elige un dueño. La columna de la derecha calcula el nivel y dice si el uso necesita revisión del comité. Pulsa «Comparar» para ver la ficha que armó Inés y por qué. Prueba dejar un uso sin dueño.</p><style>
+[id="07-lab-1"] .readout.texto>span>span{display:block;margin:2px 0}
+[id="07-lab-1"] .c7l1-lista{display:grid;gap:10px}
+[id="07-lab-1"] .c7l1-u{border:1.5px solid var(--line);border-left:6px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--card);display:grid;gap:8px}
+[id="07-lab-1"] .c7l1-u[data-n="alto"]{border-left-color:var(--c-apl)}
+[id="07-lab-1"] .c7l1-u[data-n="medio"]{border-left-color:var(--c-fis)}
+[id="07-lab-1"] .c7l1-u[data-n="bajo"]{border-left-color:var(--good)}
+[id="07-lab-1"] .c7l1-cab{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font:700 .92rem var(--f-display)}
+[id="07-lab-1"] .c7l1-cab small{font:500 .82rem var(--f-body);color:var(--muted);display:block}
+[id="07-lab-1"] .c7l1-niv{font:700 .78rem var(--f-mono);padding:3px 8px;border-radius:6px;background:var(--paper);white-space:nowrap;align-self:flex-start}
+[id="07-lab-1"] .c7l1-u[data-n="alto"] .c7l1-niv{background:var(--c-apl);color:var(--card)}
+[id="07-lab-1"] .c7l1-u[data-n="medio"] .c7l1-niv{background:var(--c-fis);color:var(--card)}
+[id="07-lab-1"] .c7l1-u[data-n="bajo"] .c7l1-niv{background:var(--good);color:var(--card)}
+[id="07-lab-1"] .c7l1-q{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:6px 14px}
+[id="07-lab-1"] .c7l1-p{display:flex;justify-content:space-between;align-items:center;gap:8px;font:500 .82rem/1.3 var(--f-display)}
+[id="07-lab-1"] .c7l1-p .btns button{font-size:.74rem;padding:3px 9px}
+[id="07-lab-1"] .c7l1-p select{font:500 .8rem var(--f-body);padding:4px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+[id="07-lab-1"] .c7l1-ref{font:500 .82rem/1.4 var(--f-body);color:var(--muted);border-top:1px dashed var(--line);padding-top:6px}
+[id="07-lab-1"] .c7l1-ref b.ok{color:var(--good)} [id="07-lab-1"] .c7l1-ref b.mal{color:var(--warm)}
+</style>
+<div class="btns">
+  <button type="button" class="primary" id="c7l1-cmp">Comparar con la ficha de Inés</button>
+  <button type="button" id="c7l1-reset">Borrar mis respuestas</button>
+</div>
+<div class="c7l1-lista" id="c7l1-lista" role="group" aria-label="Cinco usos de IA para registrar"></div>
+<div class="legend"><span><i style="background:var(--c-apl)"></i>alto: evaluación de impacto y comité</span><span><i style="background:var(--c-fis)"></i>medio: revisión de cumplimiento</span><span><i style="background:var(--good)"></i>bajo: registro y dueño</span></div>
+<div class="readout texto" id="c7l1-out" aria-live="polite"></div></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Encuentra en el inventario los usos que necesitan atención</h3></div><p>Vas a crear un inventario mínimo en un archivo CSV y a pedirle a la terminal los usos sin dueño o que deciden sobre personas sin revisión humana. Todo queda en tu computadora.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>[IO.File]::WriteAllText("$PWD\inventario.csv", "uso,dueno,datos_personales,decide_sobre_personas,revision_humana`nFiltro de hojas de vida,Patricia,si,si,ninguna`nBot de la web,,no,no,ninguna`nPrediccion de atrasos,Finanzas,si,si,ninguna`nBorradores de respuesta,Atencion,si,no,cada borrador`nTranscripcion de llamadas,Atencion,si,no,muestreo")</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Import-Csv inventario.csv | Where-Object { $_.dueno -eq "" -or ($_.decide_sobre_personas -eq "si" -and $_.revision_humana -eq "ninguna") } | Format-Table</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>printf 'uso,dueno,datos_personales,decide_sobre_personas,revision_humana\nFiltro de hojas de vida,Patricia,si,si,ninguna\nBot de la web,,no,no,ninguna\nPrediccion de atrasos,Finanzas,si,si,ninguna\nBorradores de respuesta,Atencion,si,no,cada borrador\nTranscripcion de llamadas,Atencion,si,no,muestreo\n' &gt; inventario.csv</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>awk -F, 'NR&gt;1 &amp;&amp; ($2=="" || ($4=="si" &amp;&amp; $5=="ninguna"))' inventario.csv</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Ejecuta las dos líneas de tu sistema. La primera crea el archivo y la segunda filtra.</span></li><li><span>Abre <code>inventario.csv</code> con una hoja de cálculo y cambia la revisión humana del filtro a <code>franja 50-59</code>. Guarda como CSV y vuelve a ejecutar solo la segunda línea.</span></li></ol><p><b>Qué observar:</b> salen tres usos: el bot, porque no tiene dueño, y el filtro y la predicción de atrasos, porque deciden sobre personas sin que nadie revise. Al agregar la revisión de la franja, el filtro deja de salir. Es la consulta que un comité debería poder hacer en un minuto. En una empresa real el filtro sería parte de una herramienta, pero la pregunta es la misma: ¿qué está decidiendo sobre personas sin dueño o sin control?</p></div></section>
+<section><h2>Evaluar el riesgo de cada uso</h2><div class="prose"><p>El inventario dice qué hay; la <b>evaluación de riesgo</b> (<i>risk assessment</i>) dice cuánto cuidado necesita cada cosa. La herramienta más usada es una <b>matriz de riesgo</b> (<i>risk matrix</i>): se estima la <b>probabilidad</b> (<i>likelihood</i>) de que el daño ocurra y su <b>impacto</b> (<i>impact</i>) si ocurre, cada uno de 1 a 5, y el producto da el nivel.</p></div><div class="analogia"><b>Imagínalo así</b><p><b>Es la misma cuenta que haces antes de salir de viaje.</b> Que se pinche una llanta es probable pero de impacto bajo: llevas repuesto y listo. Que falle el freno es poco probable pero gravísimo: por eso lo revisas antes de cada viaje largo. No tratas igual los dos riesgos, y no le pones el mismo control a cada uno.</p></div><div class="prose"><p>En IA hay tres diferencias con una matriz de riesgo común:</p><ul><li><b>El impacto se mide en las personas, no solo en la empresa.</b> Un rechazo injusto le cuesta poco a la empresa y mucho a Camila. La matriz debe preguntar las dos cosas, y manda la peor.</li><li><b>Hay agravantes propios</b>: decidir sin revisión humana, afectar a un grupo que ya sufre desventaja, que el daño sea difícil de revertir, que lo afecte a miles a la vez.</li><li><b>Se separa el riesgo inherente del residual.</b> El <b>riesgo inherente</b> (<i>inherent risk</i>) es el del uso sin controles; el <b>riesgo residual</b> (<i>residual risk</i>), el que queda después de aplicarlos. El nivel inherente dice qué controles son obligatorios; el residual, si la organización puede aceptar lo que queda.</li></ul><p>Para el filtro, Inés y Patricia estimaron la probabilidad en 4 (el capítulo 2 ya midió una razón de impacto de 0,63) y el impacto en 4 (perder la oportunidad de un empleo, para cientos de personas). Riesgo inherente: 16, alto. Con las dos decisiones del capítulo 2 (quitar los meses sin empleo y revisar a mano la franja de 50 a 59), la probabilidad bajaría a 2. Riesgo residual: 8, medio. Ese es el número que el comité tiene que aceptar o rechazar.</p></div><div class="lab" id="07-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Una matriz de riesgo: mueve probabilidad e impacto</h3></div><p class="hint">Ajusta la probabilidad y el impacto de un uso, marca los agravantes y mira en qué celda cae el riesgo inherente y qué controles exige ese nivel. Luego activa los controles y mira cómo baja el riesgo residual. Empieza con el filtro de hojas de vida y prueba si el residual queda dentro de lo que el comité acepta.</p><style>
+[id="07-lab-2"] .readout.texto>span>span{display:block;margin:2px 0}
+[id="07-lab-2"] .c7l2-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;align-items:start}
+@media (max-width:640px){[id="07-lab-2"] .c7l2-wrap{grid-template-columns:minmax(0,1fr)}}
+[id="07-lab-2"] .c7l2-mat{display:grid;grid-template-columns:22px repeat(5,minmax(0,1fr));gap:3px;font:600 .74rem var(--f-mono)}
+[id="07-lab-2"] .c7l2-c{aspect-ratio:1/1;border-radius:5px;display:grid;place-items:center;color:var(--ink);position:relative;opacity:.55}
+[id="07-lab-2"] .c7l2-c[data-z="b"]{background:var(--good-soft)}
+[id="07-lab-2"] .c7l2-c[data-z="m"]{background:var(--c-fis-s)}
+[id="07-lab-2"] .c7l2-c[data-z="a"]{background:var(--c-apl-s)}
+[id="07-lab-2"] .c7l2-c[data-z="c"]{background:var(--warm-soft)}
+[id="07-lab-2"] .c7l2-c.inh{opacity:1;outline:3px dashed var(--c-apl);outline-offset:-3px}
+[id="07-lab-2"] .c7l2-c.res{opacity:1;background:var(--c-apl);color:var(--card)}
+[id="07-lab-2"] .c7l2-ax{display:grid;place-items:center;color:var(--muted)}
+[id="07-lab-2"] .c7l2-ejes{display:flex;justify-content:space-between;font:500 .76rem var(--f-display);color:var(--muted);margin-top:4px}
+[id="07-lab-2"] .c7l2-chk{display:grid;gap:5px;font:500 .84rem var(--f-display)}
+[id="07-lab-2"] .c7l2-chk label{display:flex;gap:8px;align-items:flex-start}
+[id="07-lab-2"] .c7l2-chk b{font:700 .74rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+[id="07-lab-2"] .c7l2-out ul{margin:2px 0 0 1.1em;padding:0}
+</style>
+<div class="opciones">
+  <label>Uso
+    <select id="c7l2-ej">
+      <option value="filtro" selected>Filtro de hojas de vida</option>
+      <option value="atrasos">Predicción de atrasos en el pago</option>
+      <option value="bot">Bot de preguntas frecuentes en la web</option>
+      <option value="redac">Asistente de redacción interna</option>
+    </select></label>
+</div>
+<div class="ctls">
+  <label class="ctl">Probabilidad de que el daño ocurra <output id="c7l2-p-o"></output>
+    <input id="c7l2-p" type="range" min="1" max="5" step="1" value="4"></label>
+  <label class="ctl">Impacto en las personas <output id="c7l2-i-o"></output>
+    <input id="c7l2-i" type="range" min="1" max="5" step="1" value="3"></label>
+</div>
+<div class="c7l2-wrap">
+  <div>
+    <div class="c7l2-mat" id="c7l2-mat" role="img" aria-label="Matriz de riesgo de cinco por cinco; el borde punteado es el riesgo inherente y la celda llena, el residual"></div>
+    <div class="c7l2-ejes"><span>↑ probabilidad</span><span>impacto →</span></div>
+  </div>
+  <div class="c7l2-chk">
+    <b>Agravantes (suben el impacto)</b>
+    <label><input type="checkbox" id="c7l2-a1" checked> Afecta a cientos de personas a la vez</label>
+    <label><input type="checkbox" id="c7l2-a2"> Afecta a un grupo que ya sufre desventaja</label>
+    <label><input type="checkbox" id="c7l2-a3"> El daño es difícil de revertir</label>
+    <b>Controles (bajan el riesgo residual)</b>
+    <label><input type="checkbox" id="c7l2-k1"> Quitar la variable sustituta (meses sin empleo) · probabilidad −1</label>
+    <label><input type="checkbox" id="c7l2-k2"> Revisión humana de los casos dudosos · probabilidad −1</label>
+    <label><input type="checkbox" id="c7l2-k3"> Monitoreo mensual por grupo con alarma · probabilidad −1</label>
+    <label><input type="checkbox" id="c7l2-k4"> Aviso, explicación y revisión a pedido · impacto −1</label>
+  </div>
+</div>
+<div class="legend"><span><i style="background:var(--good)"></i>bajo 1–4</span><span><i style="background:var(--c-fis)"></i>medio 5–9</span><span><i style="background:var(--c-apl)"></i>alto 10–16</span><span><i style="background:var(--warm)"></i>crítico 20–25</span></div>
+<div class="readout texto c7l2-out" id="c7l2-out" aria-live="polite"></div>
+<p class="hint">Escala de ejemplo: cada organización fija sus propios criterios y su apetito de riesgo. Aquí el comité acepta un riesgo residual de hasta 9 (medio).</p></div><figure class="fig fig-comparacion" id="07-diagrama-2"><div class="lienzo"><svg viewBox="0 0 900 400" style="min-width:740px" role="img" aria-label="Qué exige cada nivel de riesgo, de bajo a prohibido. Bajo: aprueba el dueño, ficha en el inventario, la persona revisa lo que usa, revisión anual, se vigila el uso. Medio: aprueba cumplimiento, revisión de riesgos, revisión humana por muestreo, semestral, quejas y errores. Alto: aprueba el comité, evaluación de impacto completa, revisión humana de casos dudosos, mensual, métricas por grupo y auditoría independiente; aquí está el filtro de hojas de vida. Prohibido: nadie lo aprueba, no se usa.">
+  <g class="t t-xs t-b t-m"><text x="20" y="34">REQUISITO</text></g>
+  <rect x="186" y="14" width="164" height="370" rx="10" class="caja"/>
+  <rect x="362" y="14" width="164" height="370" rx="10" class="c-fis"/>
+  <rect x="538" y="14" width="164" height="370" rx="10" class="c-apl" style="stroke-width:2.5"/>
+  <rect x="714" y="14" width="164" height="370" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <g class="t t-b" text-anchor="middle" style="font-size:14px">
+    <text x="268" y="38" class="k-enl">Bajo</text><text x="444" y="38" class="k-fis">Medio</text><text x="620" y="38" class="k-apl">Alto</text><text x="796" y="38">Prohibido</text>
+  </g>
+  <g class="t t-xs t-b t-m">
+    <text x="20" y="82">QUIÉN APRUEBA</text>
+    <text x="20" y="142">QUÉ EVALUACIÓN</text>
+    <text x="20" y="202">REVISIÓN HUMANA</text>
+    <text x="20" y="262">CADA CUÁNTO</text>
+    <text x="20" y="322">QUÉ SE VIGILA</text>
+  </g>
+  <g class="ln" style="stroke:var(--line)">
+    <line x1="16" y1="110" x2="884" y2="110"/><line x1="16" y1="170" x2="884" y2="170"/><line x1="16" y1="230" x2="884" y2="230"/><line x1="16" y1="290" x2="884" y2="290"/>
+  </g>
+  <g class="t t-s" text-anchor="middle">
+    <text x="268" y="82">El dueño del caso</text>
+    <text x="268" y="134">Ficha en el</text><text x="268" y="149">inventario</text>
+    <text x="268" y="194">La persona revisa</text><text x="268" y="209">lo que usa</text>
+    <text x="268" y="262">Anual</text>
+    <text x="268" y="314">Que se use para</text><text x="268" y="329">lo aprobado</text>
+
+    <text x="444" y="74">Cumplimiento</text><text x="444" y="89">(segunda línea)</text>
+    <text x="444" y="134">+ Revisión de datos,</text><text x="444" y="149">proveedor y aviso</text>
+    <text x="444" y="194">+ Muestreo de</text><text x="444" y="209">resultados</text>
+    <text x="444" y="262">Semestral</text>
+    <text x="444" y="314">+ Quejas y</text><text x="444" y="329">errores</text>
+
+    <text x="620" y="74">El comité de IA</text><text x="620" y="89">con el acta</text>
+    <text x="620" y="134">+ Evaluación de</text><text x="620" y="149">impacto completa</text>
+    <text x="620" y="194">+ Casos dudosos y</text><text x="620" y="209">revisión a pedido</text>
+    <text x="620" y="262">Mensual + auditoría anual</text>
+    <text x="620" y="314">+ Métricas por grupo</text><text x="620" y="329">con alarma</text>
+
+    <text x="796" y="82">Nadie</text>
+    <text x="796" y="134">La regla ya</text><text x="796" y="149">decidió</text>
+    <text x="796" y="202">No aplica</text>
+    <text x="796" y="262">No aplica</text>
+    <text x="796" y="314">Que no aparezca en</text><text x="796" y="329">el inventario</text>
+  </g>
+  <rect x="550" y="346" width="140" height="24" rx="6" class="caja s-apl" style="stroke-width:2"/>
+  <text x="620" y="362" text-anchor="middle" class="t t-s t-b k-apl">El filtro de hojas de vida</text>
+  <text x="268" y="368" text-anchor="middle" class="t t-xs t-m">LOS REQUISITOS SE ACUMULAN →</text>
+</svg></div><figcaption><b>Qué exige cada nivel de riesgo.</b> Cuatro columnas, de bajo a prohibido. Las filas dicen, para cada nivel, quién aprueba, qué evaluación se hace, qué revisión humana se exige, cada cuánto se revisa y qué se vigila. Los requisitos se acumulan de izquierda a derecha: lo del nivel medio incluye lo del bajo. La columna de alto riesgo, en magenta, es la del filtro de hojas de vida.</figcaption></figure></section>
+<section><h2>Roles: comité, dueños de cada caso y revisión independiente</h2><div class="prose"><p>Un control sin responsable no se ejecuta. Para repartir los roles, muchas organizaciones usan el <b>modelo de las tres líneas</b> (<i>three lines model</i>), que publicó el Instituto de Auditores Internos (<i>Institute of Internal Auditors</i>, IIA) y que bancos y aseguradoras usan desde hace años para todo tipo de riesgos.</p></div><figure class="fig fig-arquitectura" id="07-diagrama-3"><div class="lienzo"><svg viewBox="0 0 900 420" style="min-width:740px" role="img" aria-label="Las tres líneas del gobierno de la IA en la empresa ficticia. Arriba el comité de IA, presidido por la directora de operaciones, fija el apetito de riesgo y aprueba los casos de alto riesgo. Primera línea, operan el riesgo: Patricia, dueña del filtro, y Rodrigo, que lo integra y lo mide. Segunda línea, reglas y vigilancia: Inés, cumplimiento y protección de datos, y seguridad de la información. Tercera línea, revisión independiente: auditoría interna o auditor externo. Fuera de la empresa, el proveedor y la autoridad.">
+  <defs><marker id="i7d3-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker></defs>
+  <rect x="16" y="16" width="676" height="388" rx="14" class="d-sis" style="opacity:.55"/>
+  <text x="30" y="40" class="t t-xs t-b k-sis">LA EMPRESA FICTICIA</text>
+  <rect x="190" y="52" width="330" height="62" rx="10" class="c-apl" style="stroke-width:2"/>
+  <text x="355" y="76" text-anchor="middle" class="t t-b">Comité de IA</text>
+  <text x="355" y="93" text-anchor="middle" class="t t-s">preside la directora de operaciones</text>
+  <text x="355" y="107" text-anchor="middle" class="t t-s t-m">fija el apetito de riesgo · aprueba lo alto</text>
+  <g class="t t-s">
+    <rect x="34" y="160" width="200" height="176" rx="10" class="caja" style="stroke-width:1.6"/>
+    <text x="134" y="184" text-anchor="middle" class="t-xs t-b t-m">PRIMERA LÍNEA</text>
+    <text x="134" y="202" text-anchor="middle" class="t-b">Operan el riesgo</text>
+    <rect x="48" y="216" width="172" height="46" rx="8" class="c-apl"/><text x="58" y="236" class="t-b">Patricia</text><text x="58" y="252">dueña del filtro</text>
+    <rect x="48" y="270" width="172" height="46" rx="8" class="caja"/><text x="58" y="290" class="t-b">Rodrigo</text><text x="58" y="306">integra y mide</text>
+
+    <rect x="254" y="160" width="200" height="176" rx="10" class="caja" style="stroke-width:1.6"/>
+    <text x="354" y="184" text-anchor="middle" class="t-xs t-b t-m">SEGUNDA LÍNEA</text>
+    <text x="354" y="202" text-anchor="middle" class="t-b">Ponen reglas y vigilan</text>
+    <rect x="268" y="216" width="172" height="46" rx="8" class="caja"/><text x="278" y="236" class="t-b">Inés</text><text x="278" y="252">cumplimiento y datos</text>
+    <rect x="268" y="270" width="172" height="46" rx="8" class="caja"/><text x="278" y="290" class="t-b">Seguridad</text><text x="278" y="306">de la información</text>
+
+    <rect x="474" y="160" width="200" height="176" rx="10" class="caja" style="stroke-width:1.6"/>
+    <text x="574" y="184" text-anchor="middle" class="t-xs t-b t-m">TERCERA LÍNEA</text>
+    <text x="574" y="202" text-anchor="middle" class="t-b">Revisa de forma independiente</text>
+    <rect x="488" y="216" width="172" height="46" rx="8" class="caja"/><text x="498" y="236" class="t-b">Auditoría interna</text><text x="498" y="252">verifica los controles</text>
+    <rect x="488" y="270" width="172" height="46" rx="8" class="caja" style="stroke-dasharray:4 3"/><text x="498" y="290" class="t-b">Auditor externo</text><text x="498" y="306">repite la prueba de sesgo</text>
+  </g>
+  
+  <line x1="134" y1="160" x2="230" y2="116" class="ln" marker-end="url(#i7d3-m)"/>
+  <line x1="354" y1="160" x2="354" y2="116" class="ln" marker-end="url(#i7d3-m)"/>
+  <line x1="574" y1="160" x2="480" y2="116" class="ln" marker-end="url(#i7d3-m)"/>
+  <text x="150" y="140" class="t t-xs t-m">INFORMA</text>
+  <text x="362" y="142" class="t t-xs t-m">RETA Y REPORTA</text>
+  <text x="530" y="140" class="t t-xs t-m">ASEGURA</text>
+  <line x1="254" y1="248" x2="236" y2="248" class="ln ln-d" marker-end="url(#i7d3-m)"/>
+  <text x="134" y="362" text-anchor="middle" class="t t-s t-m">responde por el uso</text>
+  <text x="354" y="362" text-anchor="middle" class="t t-s t-m">política, inventario, clasificación</text>
+  <text x="574" y="362" text-anchor="middle" class="t t-s t-m">no construyó ni aprobó</text>
+  
+  <text x="716" y="40" class="t t-xs t-b t-m">FUERA DE LA EMPRESA</text>
+  <g class="t t-s">
+    <rect x="716" y="160" width="168" height="62" rx="10" class="d-inet"/><text x="730" y="184" class="t-b">Proveedor</text><text x="730" y="200">documentación, pruebas,</text><text x="730" y="214">aviso de cambios</text>
+    <rect x="716" y="252" width="168" height="62" rx="10" class="caja"/><text x="730" y="276" class="t-b">Autoridad</text><text x="730" y="292">datos, trabajo, consumo;</text><text x="730" y="306">IA donde haya ley</text>
+  </g>
+</svg></div><figcaption><b>Las tres líneas del gobierno de la IA en la empresa ficticia.</b> Arriba, el comité de IA, presidido por la directora de operaciones, que fija el apetito de riesgo y aprueba los casos de alto riesgo. Abajo, tres columnas. Primera línea, quienes operan el riesgo: Patricia como dueña del filtro y Rodrigo, que lo integró y lo mide. Segunda línea, quienes ponen las reglas y vigilan: Inés, de cumplimiento y protección de datos, y seguridad de la información. Tercera línea, quien revisa de forma independiente: auditoría interna o un auditor externo. A la derecha, fuera de la empresa, el proveedor y la autoridad. Las flechas dicen quién le informa a quién.</figcaption></figure><div class="prose"><ul><li><b>Primera línea: los dueños.</b> El <b>dueño del caso</b> (<i>use case owner</i>) es la persona de negocio que responde por un uso de IA: decide para qué se usa, acepta su riesgo residual y responde ante el comité. En el filtro es Patricia. A su lado, el equipo técnico que lo integra y lo mide, como Rodrigo.</li><li><b>Segunda línea: quienes ponen las reglas y vigilan.</b> Escriben la política, mantienen el inventario, revisan las clasificaciones y retan a los dueños cuando algo no cuadra. En la empresa ficticia es Inés, junto con seguridad de la información.</li><li><b>Tercera línea: la revisión independiente.</b> Alguien que no construyó ni aprobó el sistema verifica que los controles existan y funcionen: auditoría interna o un auditor externo. La auditoría de sesgo que exige la Ley Local 144 de Nueva York es un ejemplo de esta línea.</li><li><b>El comité de IA</b>, por encima, fija el <b>apetito de riesgo</b> (<i>risk appetite</i>), es decir, cuánto riesgo residual está dispuesta a aceptar la empresa, y aprueba o rechaza los casos de alto riesgo. Es el mismo comité que en IA en la empresa decide sobre el portafolio; aquí se le agrega una puerta de riesgo.</li></ul><p>La separación importa: si quien construyó el filtro también lo audita, nadie ve lo que el equipo no quiso ver. Por eso la prueba de sesgo del capítulo 2 la calculó Rodrigo (primera línea), la revisó Inés (segunda) y la repetirá un auditor externo antes de la convocatoria de enero (tercera).</p></div><figure class="fig fig-flujo" id="07-diagrama-4"><div class="lienzo"><svg viewBox="0 0 900 470" style="min-width:740px" role="img" aria-label="Diagrama de secuencia de cómo entra un uso nuevo al inventario. Participantes: dueño del caso, cumplimiento, comité y proveedor. 1 el dueño registra el uso con su ficha. 2 cumplimiento lo clasifica. 3 si es alto pide documentación al proveedor. 4 el proveedor la entrega. 5 cumplimiento evalúa y propone controles al comité. 6 el comité decide. 7 el dueño aplica los controles. 8 cumplimiento los verifica antes de activar. Los usos de nivel bajo saltan del paso 2 al 7.">
+  <defs>
+    <marker id="i7d4-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-apl"/></marker>
+    <marker id="i7d4-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker>
+  </defs>
+  <g class="t t-s" text-anchor="middle">
+    <rect x="30" y="14" width="140" height="46" rx="8" class="c-apl"/><text x="100" y="34" class="t-b">Dueño del caso</text><text x="100" y="50">Patricia</text>
+    <rect x="220" y="14" width="140" height="46" rx="8" class="caja"/><text x="290" y="34" class="t-b">Cumplimiento</text><text x="290" y="50" class="t-m">Inés</text>
+    <rect x="410" y="14" width="140" height="46" rx="8" class="caja"/><text x="480" y="34" class="t-b">Comité de IA</text><text x="480" y="50" class="t-m">una vez al mes</text>
+    <rect x="600" y="14" width="140" height="46" rx="8" class="d-inet"/><text x="670" y="34" class="t-b">Proveedor</text><text x="670" y="50" class="t-m">del módulo</text>
+  </g>
+  <line x1="100" y1="60" x2="100" y2="450" class="vida"/><line x1="290" y1="60" x2="290" y2="450" class="vida"/>
+  <line x1="480" y1="60" x2="480" y2="450" class="vida"/><line x1="670" y1="60" x2="670" y2="450" class="vida"/>
+  <g class="t t-s">
+    <line x1="104" y1="96" x2="284" y2="96" class="ln s-apl" marker-end="url(#i7d4-m)"/><text x="194" y="88" text-anchor="middle">① ficha del uso</text>
+    <path d="M290 120 h50 v24 h-46" class="ln s-apl" marker-end="url(#i7d4-m)"/><text x="346" y="136">② clasifica: alto</text>
+    <line x1="294" y1="176" x2="664" y2="176" class="ln s-apl" marker-end="url(#i7d4-m)"/><text x="560" y="168" text-anchor="middle">③ pide documentación y pruebas de sesgo</text>
+    <line x1="666" y1="212" x2="296" y2="212" class="ln s-apl" marker-end="url(#i7d4-m)"/><text x="560" y="204" text-anchor="middle">④ instrucciones, pruebas, registros</text>
+    <line x1="294" y1="252" x2="474" y2="252" class="ln s-apl" marker-end="url(#i7d4-m)"/><text x="384" y="244" text-anchor="middle">⑤ evaluación y controles</text>
+    <line x1="476" y1="292" x2="104" y2="292" class="ln s-apl" marker-end="url(#i7d4-m)"/><text x="290" y="284" text-anchor="middle">⑥ acta: sí, con condiciones</text>
+    <path d="M100 318 h50 v24 h-46" class="ln s-apl" marker-end="url(#i7d4-m)"/><text x="156" y="334">⑦ aplica los controles</text>
+    <line x1="286" y1="380" x2="104" y2="380" class="ln s-apl" marker-end="url(#i7d4-m)"/><text x="194" y="372" text-anchor="middle">⑧ verificado: se activa</text>
+    <path d="M300 146 C 360 220, 220 300, 106 330" class="ln ln-d" marker-end="url(#i7d4-g)"/>
+    <text x="360" y="320" class="t-m">nivel bajo: de ② a ⑦</text>
+  </g>
+  <g class="t t-xs t-b" text-anchor="middle">
+    <rect x="770" y="74" width="114" height="40" rx="8" class="c-apl"/><text x="827" y="98">REGISTRAR</text>
+    <rect x="770" y="118" width="114" height="40" rx="8" class="c-apl"/><text x="827" y="142">CLASIFICAR</text>
+    <rect x="770" y="162" width="114" height="104" rx="8" class="c-apl"/><text x="827" y="218">EVALUAR</text>
+    <rect x="770" y="270" width="114" height="40" rx="8" class="c-apl"/><text x="827" y="294">DECIDIR</text>
+    <rect x="770" y="314" width="114" height="80" rx="8" class="c-apl"/><text x="827" y="358">ACTIVAR</text>
+  </g>
+</svg></div><figcaption><b>Cómo entra un uso nuevo al inventario.</b> Los participantes están arriba: el dueño del caso, cumplimiento, el comité y el proveedor. El tiempo corre hacia abajo. ① El dueño registra el uso con su ficha; ② cumplimiento lo clasifica; ③ si el nivel es alto, pide la documentación al proveedor; ④ el proveedor la entrega; ⑤ cumplimiento evalúa y propone controles; ⑥ el comité decide; ⑦ el dueño aplica los controles y ⑧ cumplimiento los verifica antes de activar. A la derecha, las fases: registrar, clasificar, evaluar, decidir y activar. Los usos de nivel bajo saltan del paso ② al ⑦.</figcaption></figure></section>
+<section><h2>Normas y marcos: ISO/IEC 42001 y el marco de gestión de riesgos del NIST</h2><div class="prose"><p>Nadie necesita inventar desde cero cómo gobernar la IA. Hay dos referencias que casi todas las organizaciones combinan.</p><p>La <b>norma ISO/IEC 42001</b>, publicada en diciembre de 2023 por la Organización Internacional de Normalización (<i>International Organization for Standardization</i>, ISO) y la Comisión Electrotécnica Internacional (IEC), define los requisitos de un <b>sistema de gestión de la IA</b> (<i>AI management system</i>, AIMS). Tiene la misma estructura que otras normas de gestión conocidas, como la ISO/IEC 27001 de seguridad de la información: contexto, liderazgo, planificación, apoyo, operación, evaluación del desempeño y mejora, en el ciclo de <b>planificar, hacer, verificar y actuar</b> (<i>plan-do-check-act</i>, PDCA). Pide, entre otras cosas, una política de IA, evaluaciones de riesgo y de impacto de los sistemas, y trae en su Anexo A una lista de controles de referencia. Se puede <b>certificar</b>: un organismo externo audita y emite un certificado. En la región ya tiene efecto legal: el reglamento peruano de IA pide a las entidades públicas desarrollar sus sistemas de alto riesgo según la versión peruana de la norma, la NTP-ISO/IEC 42001:2025.</p><p>El <b>marco de gestión de riesgos de la IA del NIST</b> (<i>AI Risk Management Framework</i>, AI RMF 1.0), publicado en enero de 2023 por el Instituto Nacional de Estándares y Tecnología de Estados Unidos, es voluntario y gratuito. Ordena el trabajo en cuatro funciones: <b>gobernar</b> (<i>govern</i>), que atraviesa todo; <b>mapear</b> (<i>map</i>), entender el contexto y los riesgos de cada uso; <b>medir</b> (<i>measure</i>), analizar y vigilar esos riesgos con métricas; y <b>gestionar</b> (<i>manage</i>), decidir y actuar sobre ellos. Lo acompaña un <i>Playbook</i> con acciones sugeridas para cada parte, y en julio de 2024 el NIST publicó un perfil para la IA generativa.</p></div><figure class="fig fig-comparacion" id="07-diagrama-5"><div class="lienzo"><svg viewBox="0 0 900 420" style="min-width:740px" role="img" aria-label="Dos referencias para un mismo trabajo. A la izquierda, las cuatro funciones del marco del NIST: gobernar en el centro, rodeado por mapear, medir y gestionar. A la derecha, el ciclo planificar, hacer, verificar y actuar de la ISO/IEC 42001. En el medio, cada función se une con la parte de la norma y con los capítulos del curso: mapear con planificar y los capítulos 1, 5 y 6; medir con verificar y los capítulos 2 y 3; gestionar con hacer y actuar y el capítulo 8; gobernar con liderazgo y el capítulo 7.">
+  
+  <text x="40" y="34" class="t t-xs t-b t-m">NIST AI RMF 1.0 · VOLUNTARIO</text>
+  <circle cx="160" cy="210" r="62" class="c-apl" style="stroke-width:2"/>
+  <text x="160" y="206" text-anchor="middle" class="t t-b">Gobernar</text>
+  <text x="160" y="222" text-anchor="middle" class="t t-s">govern</text>
+  <g class="t t-s" text-anchor="middle">
+    <rect x="100" y="56" width="120" height="44" rx="10" class="caja" style="stroke-width:1.6"/><text x="160" y="75" class="t-b">Mapear</text><text x="160" y="90" class="t-m">map</text>
+    <rect x="24" y="300" width="120" height="44" rx="10" class="caja" style="stroke-width:1.6"/><text x="84" y="319" class="t-b">Medir</text><text x="84" y="334" class="t-m">measure</text>
+    <rect x="176" y="300" width="120" height="44" rx="10" class="caja" style="stroke-width:1.6"/><text x="236" y="319" class="t-b">Gestionar</text><text x="236" y="334" class="t-m">manage</text>
+  </g>
+  <line x1="160" y1="100" x2="160" y2="148" class="ln"/><line x1="112" y1="250" x2="90" y2="300" class="ln"/><line x1="208" y1="250" x2="230" y2="300" class="ln"/>
+  
+  <text x="680" y="34" class="t t-xs t-b t-m">ISO/IEC 42001 · CERTIFICABLE</text>
+  <circle cx="770" cy="210" r="98" class="ln ln-d" style="stroke:var(--line)"/>
+  <g class="t t-s" text-anchor="middle">
+    <rect x="710" y="92" width="120" height="40" rx="10" class="caja" style="stroke-width:1.6"/><text x="770" y="110" class="t-b">Planificar</text><text x="770" y="124" class="t-m">riesgos e impacto</text>
+    <rect x="812" y="190" width="84" height="40" rx="10" class="caja" style="stroke-width:1.6"/><text x="854" y="208" class="t-b">Hacer</text><text x="854" y="222" class="t-m">operación</text>
+    <rect x="710" y="288" width="120" height="40" rx="10" class="caja" style="stroke-width:1.6"/><text x="770" y="306" class="t-b">Verificar</text><text x="770" y="320" class="t-m">desempeño, auditoría</text>
+    <rect x="644" y="190" width="84" height="40" rx="10" class="caja" style="stroke-width:1.6"/><text x="686" y="208" class="t-b">Actuar</text><text x="686" y="222" class="t-m">mejora</text>
+    <text x="770" y="214" class="t-xs t-b k-apl">LIDERAZGO</text>
+  </g>
+  
+  <g class="t t-s">
+    <path d="M220 78 C 420 78, 520 112, 710 112" class="ln s-apl"/>
+    <rect x="370" y="68" width="200" height="36" rx="8" class="caja"/><text x="470" y="84" text-anchor="middle" class="t-b">Mapear ↔ Planificar</text><text x="470" y="98" text-anchor="middle" class="t-m">capítulos 1, 5 y 6</text>
+    <path d="M144 344 C 300 390, 560 390, 710 316" class="ln s-apl"/>
+    <rect x="370" y="356" width="200" height="36" rx="8" class="caja"/><text x="470" y="372" text-anchor="middle" class="t-b">Medir ↔ Verificar</text><text x="470" y="386" text-anchor="middle" class="t-m">capítulos 2 y 3</text>
+    <path d="M296 322 C 450 300, 560 250, 644 214" class="ln s-apl"/>
+    <rect x="370" y="270" width="200" height="36" rx="8" class="caja"/><text x="470" y="286" text-anchor="middle" class="t-b">Gestionar ↔ Hacer y actuar</text><text x="470" y="300" text-anchor="middle" class="t-m">capítulo 8</text>
+    <path d="M222 200 C 420 170, 640 150, 768 202" class="ln s-apl" style="stroke-width:2.5"/>
+    <rect x="370" y="168" width="200" height="36" rx="8" class="c-apl"/><text x="470" y="184" text-anchor="middle" class="t-b">Gobernar ↔ Liderazgo</text><text x="470" y="198" text-anchor="middle">capítulo 7 (este)</text>
+  </g>
+</svg></div><figcaption><b>Dos referencias, un mismo trabajo.</b> A la izquierda, las cuatro funciones del marco del NIST: gobernar en el centro y mapear, medir y gestionar alrededor. A la derecha, el ciclo planificar, hacer, verificar y actuar de la ISO/IEC 42001. En el medio, las líneas unen cada función con la parte de la norma que le corresponde y con el capítulo del curso donde el filtro de hojas de vida la recorrió: mapear con los capítulos 1, 5 y 6; medir con el 2 y el 3; gestionar con el 8; gobernar con este capítulo.</figcaption></figure><div class="prose"><p>La diferencia práctica es simple. La ISO/IEC 42001 dice <b>qué debe tener</b> un sistema de gestión y permite demostrarlo con un certificado; el marco del NIST dice <b>cómo pensar</b> los riesgos de cada uso y trae ejemplos concretos. Muchas organizaciones usan el NIST para hacer el trabajo y la ISO para ordenarlo y certificarlo. Una tercera pieza, la norma ISO/IEC 23894, da guías de gestión de riesgos de IA para quien ya usa la ISO 31000 de riesgos en general.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Encuentra el inventario dentro del marco del NIST</h3></div><p>El <i>Playbook</i> del marco del NIST es público, gratuito y sin registro. Está en inglés.</p><ol class="steps"><li><span>Abre el <a href="https://airc.nist.gov/airmf-resources/playbook/" target="_blank" rel="noopener">Playbook del AI RMF</a> y entra en la función <i>Govern</i>.</span></li><li><span>Busca la subcategoría <i>GOVERN 1.6</i>, que habla del inventario de sistemas de IA. Lee su descripción y las acciones sugeridas.</span></li><li><span>Compara las acciones sugeridas con los campos de la ficha del filtro de este capítulo. Anota dos campos que el NIST sugiere y la ficha no tiene.</span></li><li><span>Busca después en <i>Govern</i> la subcategoría que trata los roles y responsabilidades, y compárala con las tres líneas.</span></li></ol><p><b>Qué observar:</b> el NIST pide que el inventario exista y que tenga recursos según el riesgo, y sugiere campos como la documentación, los datos, el dueño y la fecha de la última revisión. No dice cómo construirlo: eso lo decide cada organización. Fíjate también en que el marco usa verbos como «se sugiere» y no «se exige»: es voluntario. La numeración y el texto pueden cambiar entre versiones.</p></div></section>
+<section><h2>Riesgos en los contratos con proveedores de IA</h2><div class="prose"><p>Casi toda la IA de una empresa la hace otro. El filtro es de un proveedor de software de recursos humanos, el asistente de atención es de otro y el modelo de lenguaje detrás de ambos, quizás de un tercero. Cada uno es un eslabón de la <b>cadena de suministro de IA</b> (<i>AI supply chain</i>), y el contrato es el único lugar donde la empresa puede exigir lo que necesita para cumplir. Cómo comparar y elegir proveedores está en <a href="https://aaramirez.github.io/adopcion-de-ia/temario.html" target="_blank" rel="noopener">IA en la empresa</a>; aquí, qué cláusulas protegen del riesgo.</p><p>Inés armó una lista de cláusulas para renegociar el contrato del filtro antes de enero:</p><ol class="steps"><li><span><b>Documentación y explicación.</b> Instrucciones de uso, descripción de las variables y de cómo pesan, y resultados de las pruebas de sesgo por grupo, con la suficiente información para explicar una decisión a un candidato (capítulo 3).</span></li><li><span><b>Datos.</b> Qué datos recibe, que no entrene con los de la empresa, cuánto tiempo guarda los registros y dónde los procesa, con un acuerdo de tratamiento de datos (capítulo 5).</span></li><li><span><b>Cambios del modelo.</b> Aviso previo antes de reentrenar o cambiar el modelo, con los resultados de las pruebas de la versión nueva.</span></li><li><span><b>Registros para la empresa.</b> Acceso a los registros de cada decisión durante el tiempo que la ley pida, para auditar y para responder reclamos.</span></li><li><span><b>Derecho de auditoría.</b> Que la empresa o un auditor independiente pueda verificar las pruebas de sesgo.</span></li><li><span><b>Incidentes.</b> Aviso en un plazo corto si el proveedor detecta un error, un sesgo o una filtración.</span></li><li><span><b>Cumplimiento legal y responsabilidad.</b> Que el proveedor se comprometa con las obligaciones que le tocan según la ley aplicable y diga qué cubre si un tercero demanda, como la indemnización por derechos de autor del capítulo 4.</span></li><li><span><b>Salida.</b> Cómo se devuelven y se borran los datos al terminar el contrato.</span></li></ol></div><div class="caso"><b>Un caso real</b><p><b>El proveedor también puede responder.</b> En 2023, un candidato demandó en California a un proveedor de software de recursos humanos, Workday, por discriminación: dijo que sus herramientas de filtrado lo habían rechazado en decenas de postulaciones por su edad, su raza y su discapacidad. En julio de 2024, una jueza federal dejó seguir el caso con el argumento de que el proveedor podía responder como <b>agente</b> de las empresas que usaban su herramienta, y en mayo de 2025 lo admitió de forma preliminar como acción colectiva por edad. El caso sigue abierto y no hay una decisión final sobre el fondo. La lección para quien compra: el riesgo se comparte, pero solo si el contrato dice quién mide, quién avisa y quién responde.</p></div><div class="ml"><b>En la práctica</b><p><b>La pregunta que destapa la IA escondida.</b> En la renovación de cualquier software, Inés agregó una línea al cuestionario de compras: «¿El producto usa IA para decidir, puntuar, clasificar o generar contenido? ¿Puede activarse con una actualización sin que nosotros lo pidamos?». La respuesta de dos proveedores fue sí, y sus funciones entraron al inventario antes de activarse.</p></div></section>
+<section><h2>La ruta de adopción y el modelo operativo</h2><div class="prose"><p>Cómo se organiza el trabajo de IA en toda la empresa (el centro de excelencia, los campeones por área y la ruta para pasar de pilotos a producción) está en <a href="https://aaramirez.github.io/adopcion-de-ia/temario.html" target="_blank" rel="noopener">IA en la empresa</a>. Este capítulo le agrega a ese modelo la capa de riesgo: inventario, clasificación, roles de control y contratos.</p><p>Para el filtro, el gobierno quedó así: Patricia es la dueña, Inés lo clasificó como alto riesgo, el comité aprobará o no su vuelta en enero con base en la evaluación de impacto, y un auditor externo repetirá la prueba de sesgo antes. Esa evaluación es el capítulo 8.</p></div></section>
+<section><h2>La idea clave</h2><div class="prose"><p>El gobierno de la IA no es un comité que dice que no: es saber qué IA hay, cuánto riesgo trae cada uso y quién responde. El inventario lo hace visible, la matriz de riesgo dice cuánto cuidado necesita, las tres líneas reparten quién opera, quién vigila y quién verifica, y los contratos llevan las exigencias hasta el proveedor. La ISO/IEC 42001 y el marco del NIST ordenan ese trabajo para no inventarlo. <b>Inventario, riesgo y dueño para cada uso.</b></p></div></section>
+<section><h2>Pruébate</h2><div class="quiz"><h3>Pruébate</h3><details><summary>¿Por qué el filtro de hojas de vida esquivó la política de IA de la empresa?</summary><p>Porque no llegó como un proyecto de IA sino como una función de un software ya contratado (el ATS) que alguien activó. La política no decía que esas funciones también entraban al inventario antes de activarse.</p></details><details><summary>¿Qué diferencia hay entre el riesgo inherente y el residual, y cuál usa el comité para aceptar un uso?</summary><p>El inherente es el del uso sin controles y dice qué controles son obligatorios; el residual es el que queda después de aplicarlos, y es el que el comité compara con su apetito de riesgo para aceptar o no.</p></details><details><summary>En el modelo de las tres líneas, ¿en qué línea están Patricia, Inés y un auditor externo?</summary><p>Patricia, como dueña del caso, en la primera; Inés, que pone las reglas y vigila, en la segunda; el auditor externo, que revisa de forma independiente, en la tercera.</p></details><details><summary>¿Qué diferencia práctica hay entre la ISO/IEC 42001 y el marco del NIST?</summary><p>La ISO/IEC 42001 define los requisitos de un sistema de gestión de la IA y se puede certificar; el marco del NIST es voluntario y explica cómo mapear, medir y gestionar los riesgos de cada uso, con acciones sugeridas en su Playbook.</p></details><details><summary>Nombra tres cláusulas que conviene pedirle al proveedor de un sistema que decide sobre personas.</summary><p>Entre otras: documentación y resultados de pruebas de sesgo por grupo, aviso previo de cambios del modelo, acceso a los registros de cada decisión, derecho de auditoría, aviso de incidentes y no entrenar con los datos de la empresa.</p></details></div></section>
+<section><h2>Para investigar</h2><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué es un organismo de certificación acreditado y quién acredita a quien certifica la ISO/IEC 42001?<small>Pista: busca «acreditación ISO/IEC 17021» y «IAF».</small></li><li>¿Qué dice la norma ISO 31000 sobre el apetito de riesgo y la tolerancia al riesgo, y en qué se diferencian?</li><li>¿Qué es una lista de materiales de IA (<i>AI bill of materials</i>, AIBOM) y qué relación tiene con la lista de materiales de software (SBOM)?<small>Pista: busca «AIBOM SPDX 3.0».</small></li><li>¿Qué es un equipo rojo de IA (<i>AI red teaming</i>) y en qué se diferencia de una auditoría de sesgo?</li><li>¿Cómo se usa la escala de colores de una matriz de riesgo en otras áreas, como la seguridad industrial, y por qué algunos expertos critican las matrices de riesgo?<small>Pista: busca «risk matrix criticism Cox».</small></li></ol></div></section>
+<section><h2>Para saber más</h2><div class="vids"><span>Para saber más</span><a class="vid" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">Marco de gestión de riesgos de la IA del NIST <small>página oficial, en inglés</small></a><a class="vid" href="https://airc.nist.gov/airmf-resources/playbook/" target="_blank" rel="noopener">Playbook del AI RMF <small>acciones sugeridas por función, en inglés</small></a><a class="vid" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" target="_blank" rel="noopener">Perfil de IA generativa del NIST (NIST AI 600-1) <small>riesgos propios de la IA generativa, en inglés</small></a><a class="vid" href="https://aaramirez.github.io/adopcion-de-ia/temario.html" target="_blank" rel="noopener">IA en la empresa <small>política de uso y modelo operativo, curso del sitio</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-responsable" target="_blank" rel="noopener">github.com/aaramirez/ia-responsable</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const Q=[['dec','¿Decide o influye en una decisión sobre personas?'],['dat','¿Usa datos personales?'],['pro','¿Los datos van a un proveedor externo?'],['pub','¿Conversa con clientes o publica contenido?'],['rev','¿Una persona revisa antes de que tenga efecto?']];
+  const DUE=['','Gestión Humana','Atención al cliente','Finanzas','Sistemas'];
+  const U=[
+    {t:'Filtro de hojas de vida',d:'Módulo de IA del ATS: puntúa candidatos y rechaza a los de menos de 60.',sens:'empleo',ref:{dec:1,dat:1,pro:1,pub:0,rev:0},due:'Gestión Humana',x:'Decide sobre candidatos en el ámbito del empleo, que las leyes ponen en alto riesgo. Sin revisión humana y con datos que van al proveedor. Dueña: Patricia.'},
+    {t:'Borradores de respuesta a reclamos',d:'El asistente propone una respuesta; el agente la edita y la envía.',sens:'',ref:{dec:0,dat:1,pro:1,pub:0,rev:1},due:'Atención al cliente',x:'No decide: el agente revisa cada borrador. Pero los reclamos traen datos personales que salen al proveedor, así que lo revisa cumplimiento.'},
+    {t:'Bot de preguntas frecuentes en la web',d:'Responde dudas generales de clientes las 24 horas, sin datos de la cuenta.',sens:'',ref:{dec:0,dat:0,pro:1,pub:1,rev:0},due:'Atención al cliente',x:'No usa datos personales, pero habla con clientes en nombre de la empresa sin que nadie revise: debe avisar que es una IA y tener dueño. Estaba sin dueño.'},
+    {t:'Predicción de atrasos en el pago',d:'Modelo propio que marca a qué clientes se les suspende antes el servicio.',sens:'servicios',ref:{dec:1,dat:1,pro:0,pub:0,rev:0},due:'Finanzas',x:'Decide sobre el acceso de personas a un servicio, con su historial de pagos y sin revisión. Aunque no salga de la empresa, es alto: evaluación de impacto y comité.'},
+    {t:'Transcripción y resumen de llamadas',d:'Transcribe las llamadas de atención y deja un resumen en el ticket.',sens:'',ref:{dec:0,dat:1,pro:1,pub:0,rev:1},due:'Atención al cliente',x:'No decide sobre nadie y el agente revisa el resumen, pero las grabaciones son datos personales que procesa un proveedor: revisión de cumplimiento.'}
+  ];
+  let R=U.map(()=>({dec:null,dat:null,pro:null,pub:null,rev:null,due:''})),cmp=false;
+  const nivel=(u,r)=>{if(Q.some(([k])=>r[k]===null))return null;
+    if(r.dec&&u.sens)return 'alto';
+    if((r.dat&&r.pro)||(r.pub&&!r.rev)||r.dec)return 'medio';return 'bajo';};
+  const L=$('#c7l1-lista');
+  U.forEach((u,i)=>{const d=document.createElement('div');d.className='c7l1-u';d.id='c7l1-u'+i;
+    d.innerHTML='<div class="c7l1-cab"><div>'+(i+1)+'. '+u.t+'<small>'+u.d+'</small></div><span class="c7l1-niv" id="c7l1-n'+i+'"></span></div><div class="c7l1-q">'+
+      Q.map(([k,q])=>'<div class="c7l1-p"><span>'+q+'</span><span class="btns" role="group" aria-label="'+q+'"><button type="button" data-i="'+i+'" data-k="'+k+'" data-v="1">Sí</button><button type="button" data-i="'+i+'" data-k="'+k+'" data-v="0">No</button></span></div>').join('')+
+      '<div class="c7l1-p"><span>Dueño del caso</span><select data-i="'+i+'" aria-label="Dueño del caso '+(i+1)+'">'+DUE.map(x=>'<option value="'+x+'">'+(x||'Sin dueño')+'</option>').join('')+'</select></div></div><div class="c7l1-ref" hidden></div>';
+    L.appendChild(d);});
+  function leer(){
+    let n={alto:0,medio:0,bajo:0},sin=0,falta=0,ok=0;
+    U.forEach((u,i)=>{const r=R[i],d=$('#c7l1-u'+i);
+      d.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(r[b.dataset.k])===b.dataset.v?'true':'false'));
+      d.querySelector('select').value=r.due;
+      const nv=nivel(u,r);
+      if(nv){d.dataset.n=nv;n[nv]++;$('#c7l1-n'+i).textContent=nv==='alto'?'ALTO · comité':nv==='medio'?'MEDIO · cumplimiento':'BAJO · registro';}
+      else{delete d.dataset.n;falta++;$('#c7l1-n'+i).textContent='faltan respuestas';}
+      if(!r.due)sin++;
+      const rf=d.querySelector('.c7l1-ref');
+      if(cmp){const nr=nivel(u,u.ref);const bien=nv===nr&&r.due===u.due;if(bien)ok++;rf.hidden=false;
+        rf.innerHTML=(bien?'<b class="ok">Coincide con la ficha.</b> ':'<b class="mal">La ficha dice: nivel '+nr+', dueño '+u.due+'.</b> ')+u.x;}
+      else rf.hidden=true;
+    });
+    let h='<span class="big">'+(n.alto+n.medio)+' de 5 usos necesitan revisión: '+n.alto+' van al comité y '+n.medio+' a cumplimiento.</span>';
+    if(falta)h+='<span>Te faltan respuestas en '+falta+(falta===1?' uso.':' usos.')+'</span>';
+    if(sin)h+='<span class="warn">'+sin+(sin===1?' uso no tiene':' usos no tienen')+' dueño: según la política, no puede'+(sin===1?'':'n')+' estar en producción hasta tenerlo.</span>';
+    else h+='<span class="ok">Todos los usos tienen dueño.</span>';
+    if(cmp)h+='<span>Coinciden con la ficha de Inés: '+ok+' de 5 (nivel y dueño). En la ficha, dos usos son altos (filtro y predicción de atrasos), tres son medios y ninguno es bajo: en esta empresa casi todo toca datos personales.</span>';
+    $('#c7l1-out').innerHTML='<span>'+h+'</span>';
+  }
+  L.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;R[+b.dataset.i][b.dataset.k]=+b.dataset.v;leer();});
+  L.addEventListener('change',e=>{const s=e.target.closest('select');if(!s)return;R[+s.dataset.i].due=s.value;leer();});
+  $('#c7l1-cmp').addEventListener('click',()=>{cmp=true;leer();});
+  $('#c7l1-reset').addEventListener('click',()=>{cmp=false;R=U.map(()=>({dec:null,dat:null,pro:null,pub:null,rev:null,due:''}));leer();});
+  leer();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const EJ={filtro:{p:4,i:3,a:[1,0,0]},atrasos:{p:3,i:3,a:[1,1,0]},bot:{p:3,i:2,a:[0,0,0]},redac:{p:2,i:1,a:[0,0,0]}};
+  const zona=s=>s<=4?'b':s<=9?'m':s<=16?'a':'c';
+  const NOM={b:'bajo',m:'medio',a:'alto',c:'crítico'};
+  const CTRL={
+    b:['Ficha en el inventario con dueño','Revisión anual de la ficha'],
+    m:['Revisión de cumplimiento antes de activar','Revisión humana por muestreo','Revisión semestral'],
+    a:['Evaluación de impacto completa','Aprobación del comité de IA','Revisión humana de los casos dudosos','Monitoreo mensual por grupo','Auditoría independiente anual','Cláusulas de riesgo con el proveedor'],
+    c:['No se lanza así: hay que rediseñar el uso o descartarlo; decide la dirección']
+  };
+  const ORD=['b','m','a','c'];
+  const mat=$('#c7l2-mat');
+  for(let p=5;p>=1;p--){const ax=document.createElement('div');ax.className='c7l2-ax';ax.textContent=p;mat.appendChild(ax);
+    for(let i=1;i<=5;i++){const c=document.createElement('div');c.className='c7l2-c';c.id='c7l2-'+p+'-'+i;c.dataset.z=zona(p*i);c.textContent=p*i;mat.appendChild(c);}}
+  mat.appendChild(document.createElement('div'));
+  for(let i=1;i<=5;i++){const ax=document.createElement('div');ax.className='c7l2-ax';ax.textContent=i;mat.appendChild(ax);}
+  const ck=id=>$('#c7l2-'+id).checked?1:0;
+  function poner(e){const x=EJ[e];$('#c7l2-p').value=x.p;$('#c7l2-i').value=x.i;['a1','a2','a3'].forEach((k,j)=>$('#c7l2-'+k).checked=!!x.a[j]);['k1','k2','k3','k4'].forEach(k=>$('#c7l2-'+k).checked=false);}
+  function leer(){
+    const p=+$('#c7l2-p').value,ib=+$('#c7l2-i').value;
+    const i=Math.min(5,ib+ck('a1')+ck('a2')+ck('a3'));
+    const pr=Math.max(1,p-ck('k1')-ck('k2')-ck('k3')),ir=Math.max(1,i-ck('k4'));
+    $('#c7l2-p-o').textContent=p;$('#c7l2-i-o').textContent=ib+(i>ib?' → '+i+' con agravantes':'');
+    mat.querySelectorAll('.c7l2-c').forEach(c=>{c.classList.remove('inh','res');});
+    $('#c7l2-'+p+'-'+i).classList.add('inh');$('#c7l2-'+pr+'-'+ir).classList.add('res');
+    const si=p*i,sr=pr*ir,zi=zona(si),zr=zona(sr);
+    let req=[];ORD.slice(0,ORD.indexOf(zi)+1).forEach(z=>{if(zi==='c')req=CTRL.c;else if(z!=='c')req=req.concat(CTRL[z]);});
+    let h='<span class="big">Inherente: '+p+' × '+i+' = '+si+' ('+NOM[zi]+'). Residual: '+pr+' × '+ir+' = '+sr+' ('+NOM[zr]+').</span>';
+    h+='<span><b>Controles obligatorios por el nivel inherente:</b></span><ul>'+req.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+    if(zi==='c')h+='<span class="warn">Con un riesgo inherente crítico, ningún control basta para aprobarlo tal como está.</span>';
+    else if(sr<=9)h+='<span class="ok">El residual queda dentro del apetito del comité (hasta 9): se puede aprobar'+(zi==='a'?', con la evaluación de impacto y los controles de la lista.':'.')+'</span>';
+    else h+='<span class="warn">El residual supera el apetito del comité (9): así no se aprueba. Agrega controles o cambia el uso.</span>';
+    if($('#c7l2-ej').value==='filtro'&&ck('k1')&&ck('k2')&&!ck('k3')&&!ck('k4'))h+='<span>Este es el cálculo de Inés y Patricia: de 16 a 8 con las dos decisiones del capítulo 2.</span>';
+    $('#c7l2-out').innerHTML='<span>'+h+'</span>';
+  }
+  $('#c7l2-ej').addEventListener('change',()=>{poner($('#c7l2-ej').value);leer();});
+  ['p','i'].forEach(k=>$('#c7l2-'+k).addEventListener('input',leer));
+  ['a1','a2','a3','k1','k2','k3','k4'].forEach(k=>$('#c7l2-'+k).addEventListener('change',leer));
+  poner('filtro');leer();
+})();
+</script>
+</body>
+</html>

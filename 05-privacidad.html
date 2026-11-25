@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacidad · IA responsable · IA responsable</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sesgo, transparencia, derechos de autor, privacidad, regulación y gobierno de la IA: lo que toda organización que usa o construye IA necesita saber.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="privacidad">
+<header class="topbar"><a class="brand" href="index.html">IA <b>responsable</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 05 DE 8</span><h1>Privacidad en los sistemas de IA</h1><p class="lede">Una hoja de vida trae nombre, documento, teléfono, dirección y, a veces, la historia de una licencia de maternidad. Este capítulo sigue esos datos por el filtro de hojas de vida: dónde entran, dónde se quedan, cómo un modelo puede devolverlos y qué se hace para enviar menos.</p></header>
+<section><div class="prose"><p>El capítulo 4 terminó con una pregunta de Inés al proveedor del filtro: ¿de dónde salieron las «decisiones de contratación de otras empresas» con que entrenó su modelo? Esas decisiones son hojas de vida de personas reales. Y la de Camila, con sus 19 meses sin empleo y la razón escrita en un párrafo («me dediqué al cuidado de mi hijo recién nacido»), ya viajó al proveedor cuando se postuló.</p><p>Este capítulo sigue los <b>datos personales</b> (<i>personal data</i>), la información que identifica a una persona o permite identificarla, por un sistema de IA. No repite lo que es un dato personal ni las leyes en detalle: eso está en <a href="https://aaramirez.github.io/proteccion-de-datos/temario.html" target="_blank" rel="noopener">Protección de datos</a>. Aquí va lo que la IA tiene de distinto. Y como en todo el curso, <b>no es asesoría legal</b>: cada país tiene su ley y su autoridad, y una decisión concreta se consulta con quien la conoce.</p></div></section>
+<section><h2>Dónde aparecen datos personales: entrenamiento, instrucciones, contexto y registros</h2><div class="analogia"><b>Imagínalo así</b><p>Piensa en un consultor muy capaz que contratas por horas. Para prepararse leyó miles de expedientes de otras empresas, y algunos los recuerda casi de memoria. En la reunión le entregas una carpeta con el caso. Mientras hablan, tú le cuentas detalles que no estaban en la carpeta. Y su asistente toma notas de todo y las archiva. Los datos de una persona pueden quedar en cualquiera de esos cuatro lugares: lo que el consultor estudió, lo que le dijiste, la carpeta y las notas.</p></div><div class="prose"><p>En un sistema de IA, esos cuatro lugares tienen nombre:</p><ul><li><b>Entrenamiento</b> (<i>training data</i>): los datos con que se construyó el modelo. En un modelo de lenguaje general, millones de páginas web con nombres, correos y opiniones de personas. En el filtro, las hojas de vida y decisiones de otras empresas que usó el proveedor.</li><li><b>Instrucciones</b> (<i>prompts</i>): lo que una persona escribe o pega al pedirle algo a un modelo. Si Patricia pega la hoja de vida de Camila en un asistente para preguntarle «¿por qué la habrán rechazado?», los datos de Camila salieron de la empresa en ese momento.</li><li><b>Contexto</b> (<i>context</i>): los documentos y datos que un sistema le agrega automáticamente al modelo para que responda o decida: el PDF que el ATS envía al analizador, los campos de la base de candidatos, los archivos adjuntos. En las aplicaciones con <b>generación aumentada por recuperación</b> (<i>retrieval-augmented generation</i>, RAG), son los fragmentos de documentos que se buscan y se pegan antes de cada respuesta.</li><li><b>Registros</b> (<i>logs</i>): las copias que quedan de cada entrada y cada salida, en el ATS, en la plataforma del proveedor, en los correos automáticos y en las copias de seguridad. Son la parte más olvidada, y la que más dura.</li></ul></div><figure class="fig fig-arquitectura" id="05-diagrama-1"><div class="lienzo"><svg viewBox="0 0 900 400" style="min-width:720px" role="img" aria-label="Arquitectura del filtro con los cuatro lugares donde hay datos personales. A la izquierda, la empresa: Camila envía su hoja de vida al ATS; Gestión Humana y un asistente de IA que usa Patricia. A la derecha, el proveedor: analizador, modelo y su plataforma. Uno, entrenamiento del modelo con hojas de vida de otras empresas, se queda en el modelo sin plazo. Dos, instrucciones: Patricia pega datos en un asistente, salen de la empresa en ese momento. Tres, contexto: el ATS envía el PDF completo al analizador. Cuatro, registros en los dos lados, que duran meses o años">
+  <defs>
+    <marker id="i5d1-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker>
+  </defs>
+  <rect x="150" y="14" width="330" height="372" rx="12" class="d-sis" style="fill-opacity:.55"/>
+  <rect x="500" y="14" width="390" height="372" rx="12" class="d-inet" style="fill-opacity:.55"/>
+  <text x="164" y="36" class="t t-xs t-b k-sis">EMPRESA</text>
+  <text x="514" y="36" class="t t-xs t-b k-inet">PROVEEDOR DEL FILTRO</text>
+  
+  <rect x="12" y="96" width="120" height="64" rx="10" class="caja s-warm" style="stroke-width:2"/>
+  <text x="72" y="122" class="t t-b k-warm" text-anchor="middle">Camila</text>
+  <text x="72" y="140" class="t t-s t-m" text-anchor="middle">hoja de vida PDF</text>
+  <path d="M132 128H176" class="ln" marker-end="url(#i5d1-m)"/>
+  
+  <rect x="180" y="96" width="130" height="64" rx="10" class="caja"/>
+  <text x="245" y="122" class="t t-b" text-anchor="middle">ATS</text>
+  <text x="245" y="140" class="t t-s t-m" text-anchor="middle">postulaciones</text>
+  <rect x="180" y="214" width="130" height="64" rx="10" class="d-casa"/>
+  <text x="245" y="240" class="t t-b" text-anchor="middle">Gestión Humana</text>
+  <text x="245" y="258" class="t t-s t-m" text-anchor="middle">Patricia</text>
+  <rect x="336" y="214" width="130" height="64" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="401" y="240" class="t t-b" text-anchor="middle">Asistente de IA</text>
+  <text x="401" y="258" class="t t-s t-m" text-anchor="middle">de uso general</text>
+  <path d="M310 246H332" class="ln" marker-end="url(#i5d1-m)"/>
+  <path d="M245 160V210" class="ln ln-d"/>
+  
+  <rect x="540" y="96" width="140" height="64" rx="10" class="caja"/>
+  <text x="610" y="122" class="t t-b" text-anchor="middle">Analizador</text>
+  <text x="610" y="140" class="t t-s t-m" text-anchor="middle">lee el PDF</text>
+  <rect x="720" y="96" width="150" height="64" rx="10" class="caja"/>
+  <text x="795" y="122" class="t t-b" text-anchor="middle">Modelo</text>
+  <text x="795" y="140" class="t t-s t-m" text-anchor="middle">puntaje 0 a 100</text>
+  <path d="M310 128H536" class="ln" marker-end="url(#i5d1-m)"/>
+  <path d="M680 128H716" class="ln" marker-end="url(#i5d1-m)"/>
+  <rect x="720" y="214" width="150" height="64" rx="10" class="caja"/>
+  <text x="795" y="240" class="t t-b" text-anchor="middle">Entrenamiento</text>
+  <text x="795" y="258" class="t t-s t-m" text-anchor="middle">otras empresas</text>
+  <path d="M795 214V164" class="ln" marker-end="url(#i5d1-m)"/>
+  <rect x="540" y="214" width="140" height="64" rx="10" class="caja"/>
+  <text x="610" y="240" class="t t-b" text-anchor="middle">Plataforma</text>
+  <text x="610" y="258" class="t t-s t-m" text-anchor="middle">registros y copias</text>
+  <path d="M610 160V210" class="ln ln-d"/>
+  
+  <g class="t t-b" text-anchor="middle">
+    <circle cx="870" cy="214" r="14" class="c-enl" style="stroke-width:2"/><text x="870" y="219" class="k-enl">1</text>
+    <circle cx="466" cy="214" r="14" class="c-enl" style="stroke-width:2"/><text x="466" y="219" class="k-enl">2</text>
+    <circle cx="423" cy="128" r="14" class="c-enl" style="stroke-width:2"/><text x="423" y="133" class="k-enl">3</text>
+    <circle cx="680" cy="214" r="14" class="c-enl" style="stroke-width:2"/><text x="680" y="219" class="k-enl">4</text>
+    <circle cx="310" cy="96" r="14" class="c-enl" style="stroke-width:2"/><text x="310" y="101" class="k-enl">4</text>
+  </g>
+  <text x="423" y="110" class="t t-s t-m" text-anchor="middle">PDF completo</text>
+  
+  <g class="t t-s">
+    <rect x="164" y="300" width="300" height="74" rx="10" class="caja"/>
+    <text x="176" y="320"><tspan class="t-b k-enl">2 Instrucciones:</tspan> lo que se pega</text>
+    <text x="176" y="336">sale de la empresa en ese momento</text>
+    <text x="176" y="358"><tspan class="t-b k-enl">4 Registros del ATS:</tspan> meses o años</text>
+    <rect x="514" y="300" width="362" height="74" rx="10" class="caja"/>
+    <text x="526" y="320"><tspan class="t-b k-enl">1 Entrenamiento:</tspan> queda en el modelo, sin plazo</text>
+    <text x="526" y="340"><tspan class="t-b k-enl">3 Contexto:</tspan> el PDF entero, aunque se usen 5 variables</text>
+    <text x="526" y="360"><tspan class="t-b k-enl">4 Registros del proveedor:</tspan> lo que diga el contrato</text>
+  </g>
+</svg></div><figcaption><b>Los cuatro lugares donde viven los datos de Camila.</b> La franja de la izquierda es la empresa (el ATS, Gestión Humana y el asistente que usa Patricia); la de la derecha, el proveedor del filtro (su analizador, su modelo y su plataforma). Los círculos verdes numerados marcan dónde aparecen datos personales: ① en el entrenamiento del modelo, con hojas de vida de otras empresas; ② en las instrucciones, cuando alguien pega datos en un asistente; ③ en el contexto, cuando el ATS envía el PDF completo al analizador; ④ en los registros de los dos lados. Los recuadros de abajo dicen cuánto tiempo suele quedarse el dato en cada lugar.</figcaption></figure><div class="prose"><p>Cuando Inés hizo este mapa para el filtro, la sorpresa no fue el modelo sino el contexto y los registros. El modelo solo usa cinco variables, pero el ATS le envía al proveedor el PDF completo: nombre, documento, fecha de nacimiento, dirección, teléfono, foto y el párrafo sobre el cuidado del hijo. Y el contrato no decía cuánto tiempo guarda el proveedor esos archivos.</p></div></section>
+<section><h2>Memorización y extracción de datos de entrenamiento</h2><div class="prose"><p>Durante años se pensó que un modelo entrenado era una especie de resumen estadístico: aprende patrones, no guarda registros. Es verdad en promedio, pero no para cada dato. Un modelo grande puede <b>memorizar</b> (<i>memorize</i>) fragmentos de su entrenamiento y repetirlos palabra por palabra, sobre todo los que vio muchas veces o los que son raros y llamativos, como una dirección de correo con un nombre poco común.</p></div><div class="analogia"><b>Imagínalo así</b><p>Un estudiante que prepara un examen leyendo mucho no recuerda cada página, pero sí recuerda tal cual el poema que leyó veinte veces y el número de teléfono que estaba escrito en la portada de su cuaderno. No eligió guardarlos: se le quedaron por repetición o por lo raros que eran. Y si le preguntas con las primeras palabras, completa el resto.</p></div><div class="prose"><p>Dos estudios públicos lo mostraron con modelos reales:</p><ul><li>En 2021, un grupo de investigadores de Google, OpenAI, universidades y otras organizaciones logró <b>extraer</b> (<i>extract</i>) de GPT-2 cientos de fragmentos memorizados de su entrenamiento, entre ellos nombres, números de teléfono, correos y direcciones de personas reales. El método era sencillo: generar mucho texto y buscar las frases que el modelo producía con una seguridad sospechosa.</li><li>En 2023, otro grupo mostró que, pidiéndole a ChatGPT que repitiera una palabra «para siempre», el modelo terminaba por desviarse y soltar texto de su entrenamiento. Con unos 200 dólares de consultas obtuvieron más de 10.000 fragmentos memorizados, algunos con datos personales. La empresa corrigió ese camino, pero la lección quedó: las protecciones de la salida no borran lo que está dentro.</li></ul></div><figure class="fig fig-flujo" id="05-diagrama-2"><div class="lienzo"><svg viewBox="0 0 900 400" style="min-width:720px" role="img" aria-label="Diagrama de secuencia de un ataque de extracción. Participantes: quien ataca, el modelo y una copia pública de la web. Uno, quien ataca envía miles de instrucciones raras o con el comienzo de un texto. Dos, el modelo responde y a veces se desvía hacia texto memorizado. Tres, quien ataca busca los fragmentos en la copia de la web. Cuatro, una coincidencia exacta y larga confirma la memorización. Cinco, se filtran los fragmentos con correos, teléfonos o nombres. Fases: provocar, recolectar, confirmar y explotar">
+  <defs>
+    <marker id="i5d2-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker>
+    <marker id="i5d2-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-enl"/></marker>
+  </defs>
+  <rect x="40" y="14" width="170" height="52" rx="10" class="caja s-warm" style="stroke-width:2"/>
+  <text x="125" y="36" class="t t-b" text-anchor="middle">Quien ataca</text><text x="125" y="54" class="t t-s t-m" text-anchor="middle">solo tiene acceso de usuario</text>
+  <rect x="300" y="14" width="170" height="52" rx="10" class="d-inet"/>
+  <text x="385" y="36" class="t t-b" text-anchor="middle">Modelo</text><text x="385" y="54" class="t t-s t-m" text-anchor="middle">asistente público</text>
+  <rect x="560" y="14" width="170" height="52" rx="10" class="caja"/>
+  <text x="645" y="36" class="t t-b" text-anchor="middle">Copia de la web</text><text x="645" y="54" class="t t-s t-m" text-anchor="middle">índice para comparar</text>
+  <g class="vida"><path d="M125 66V380"/><path d="M385 66V380"/><path d="M645 66V380"/></g>
+  <g class="t t-s">
+    <path d="M125 104H381" class="ln" marker-end="url(#i5d2-m)"/>
+    <text x="137" y="90"><tspan class="t-b">1</tspan> «repite la palabra poema para siempre»</text>
+    <text x="137" y="118" class="t-m">y miles de instrucciones parecidas</text>
+    <path d="M385 156H129" class="ln s-enl" style="stroke-width:2" marker-end="url(#i5d2-e)"/>
+    <text x="150" y="142"><tspan class="t-b">2</tspan> poema poema … y luego texto memorizado</text>
+    <text x="150" y="170" class="t-mono t-m">… escríbeme a ana.g@correo.ejemplo …</text>
+    <path d="M125 220H641" class="ln" marker-end="url(#i5d2-m)"/>
+    <text x="137" y="210"><tspan class="t-b">3</tspan> busca cada fragmento largo en la copia de la web</text>
+    <path d="M645 262H129" class="ln" marker-end="url(#i5d2-m)"/>
+    <text x="300" y="252"><tspan class="t-b">4</tspan> coincidencia exacta y larga: memorizado</text>
+    <path d="M125 300h40v28h-36" class="ln s-warm" marker-end="url(#i5d2-m)"/>
+    <text x="175" y="312"><tspan class="t-b">5</tspan> separa los fragmentos con correos,</text>
+    <text x="175" y="326">teléfonos o nombres de personas reales</text>
+  </g>
+  <g class="t t-xs t-b">
+    <rect x="770" y="80" width="116" height="48" rx="8" class="caja"/><text x="828" y="108" text-anchor="middle">PROVOCAR</text>
+    <rect x="770" y="136" width="116" height="48" rx="8" class="c-enl"/><text x="828" y="164" text-anchor="middle">RECOLECTAR</text>
+    <rect x="770" y="196" width="116" height="80" rx="8" class="caja"/><text x="828" y="240" text-anchor="middle">CONFIRMAR</text>
+    <rect x="770" y="288" width="116" height="52" rx="8" class="caja s-warm"/><text x="828" y="318" text-anchor="middle">EXPLOTAR</text>
+  </g>
+  <text x="125" y="372" class="t t-s t-m">En 2023, unos 200 dólares de consultas bastaron para más de 10.000 fragmentos.</text>
+</svg></div><figcaption><b>Un ataque de extracción, paso a paso.</b> Participantes arriba: quien ataca, el modelo y una copia pública de la web que sirve para comprobar. ① Quien ataca envía miles de instrucciones raras o con el comienzo de un texto; ② el modelo responde, y a veces se desvía hacia texto memorizado; ③ quien ataca busca los fragmentos en la copia de la web; ④ una coincidencia exacta y larga confirma que el modelo los memorizó; ⑤ se filtran los que tienen correos, teléfonos o nombres. A la derecha, las fases: provocar, recolectar, confirmar y explotar.</figcaption></figure><div class="prose"><p>Hay un ataque más sutil que no necesita que el modelo repita nada: la <b>inferencia de pertenencia</b> (<i>membership inference</i>), que busca saber si el registro de una persona estuvo en los datos de entrenamiento. Para un modelo entrenado con historias clínicas, saber que alguien estuvo dentro ya revela algo. En el filtro sería saber si la hoja de vida de una persona estaba entre las «decisiones de otras empresas».</p><p>Las defensas se aplican antes, durante y después del entrenamiento: <b>quitar duplicados</b> (lo que se repite se memoriza más), <b>filtrar datos personales</b> del corpus, entrenar con <b>privacidad diferencial</b> (<i>differential privacy</i>), una técnica matemática que limita cuánto puede influir un solo registro en el modelo, y poner <b>filtros en la salida</b> que detectan y bloquean datos personales. Ninguna es completa. Por eso el Comité Europeo de Protección de Datos dijo en su opinión 28/2024, de diciembre de 2024, que un modelo entrenado con datos personales no es anónimo por defecto: quien lo use tiene que poder demostrar que los datos no se pueden extraer con medios razonables.</p></div><div class="caso"><b>Un caso real</b><p><b>Un modelo que inventa datos sobre una persona.</b> La privacidad no solo se rompe cuando el modelo repite un dato verdadero. En 2024 y 2025, la organización europea noyb presentó quejas ante autoridades de protección de datos porque ChatGPT inventaba información falsa sobre personas reales: una fecha de nacimiento equivocada que la empresa decía no poder corregir y, en el caso de un ciudadano noruego, la historia falsa de que había asesinado a sus hijos, mezclada con datos verdaderos de su familia. El argumento de las quejas es que la ley exige que los datos personales sean exactos y que la persona pueda pedir corregirlos, también cuando los produce un modelo. Es la misma alucinación del capítulo 1, vista desde los derechos de la persona.</p></div></section>
+<section><h2>Minimizar, anonimizar y redactar</h2><div class="prose"><p>La mejor protección de un dato es no tenerlo. Ese es el principio de <b>minimización de datos</b> (<i>data minimization</i>): usar solo los datos necesarios para el fin declarado, y nada más. Está en el reglamento europeo de protección de datos y en las leyes de la región, y en un sistema de IA se aplica en cada uno de los cuatro lugares.</p><p>Minimizar no es borrar todo. El capítulo 2 necesitó el sexo de los candidatos para medir el sesgo, un dato que el filtro no usa. La salida correcta no es dejar de medir, sino guardar ese dato aparte, autodeclarado, con acceso restringido y solo para la auditoría. El Reglamento europeo de IA permite, con garantías estrictas, tratar datos de categorías especiales cuando es necesario para detectar y corregir sesgos en sistemas de alto riesgo.</p><p>Cuando un dato hace falta, hay tres técnicas para que exponga menos, y no son lo mismo:</p><ul><li><b>Redactar o enmascarar</b> (<i>redaction</i> o <i>masking</i>): quitar o reemplazar los identificadores de un texto antes de enviarlo, por ejemplo <code>[NOMBRE]</code> o <code>[CORREO]</code>. Se hace con patrones (los correos y los documentos tienen forma fija), con listas de nombres y con modelos que reconocen entidades como personas, lugares y fechas. Una herramienta abierta conocida es Microsoft Presidio.</li><li><b>Seudonimizar</b> (<i>pseudonymize</i>): reemplazar el identificador por un código, como C-0735 en lugar de «Camila Ríos», y guardar aparte la tabla que permite volver atrás. Para la ley <b>sigue siendo un dato personal</b>, porque alguien puede revertirlo.</li><li><b>Anonimizar</b> (<i>anonymize</i>): transformar los datos de modo que nadie pueda volver a identificar a la persona con medios razonables, por ejemplo con datos agregados o generalizados. Si se logra de verdad, ya no es un dato personal. Pero lograrlo es difícil: la fecha de nacimiento, el barrio y la profesión juntos bastan muchas veces para encontrar a alguien.</li></ul></div><figure class="fig fig-comparacion" id="05-diagrama-3"><div class="lienzo"><svg viewBox="0 0 900 400" style="min-width:740px" role="img" aria-label="Cuatro técnicas de más a menos protección. Minimizar: no se recoge ni se envía el dato; no hay nada que revertir; el dato no existe; ejemplo, el proveedor recibe solo cinco variables; riesgo, pedir de más por si acaso. Anonimizar: agregar o generalizar hasta que nadie pueda identificar; no se puede revertir con medios razonables; deja de ser dato personal si se logra; ejemplo, tasa de selección por grupo; riesgo, combinar datos que reidentifican. Seudonimizar: reemplazar el identificador por un código; se revierte con la tabla o la clave; sigue siendo dato personal; ejemplo, C-0735 en lugar del nombre; riesgo, tabla filtrada o huella sin clave. Redactar: tapar los identificadores en un texto; lo que se escapa queda visible; sigue siendo dato personal; ejemplo, NOMBRE en lugar de Camila Ríos; riesgo, lo que no tiene forma fija se escapa">
+  <defs><linearGradient id="i5d3-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--c-enl)"/><stop offset="1" style="stop-color:var(--c-fis)"/></linearGradient></defs>
+  <rect x="12" y="44" width="14" height="340" rx="7" style="fill:url(#i5d3-g)"/>
+  <text x="34" y="24" class="t t-xs t-b t-m">TÉCNICA</text>
+  <text x="194" y="24" class="t t-xs t-b t-m">QUÉ HACE</text>
+  <text x="376" y="24" class="t t-xs t-b t-m">¿SE REVIERTE?</text>
+  <text x="510" y="24" class="t t-xs t-b t-m">¿DATO PERSONAL?</text>
+  <text x="640" y="24" class="t t-xs t-b t-m">CON CAMILA · RIESGO</text>
+  <g class="t t-s">
+    <rect x="34" y="44" width="856" height="78" rx="10" class="c-enl"/>
+    <text x="46" y="72" class="t t-b">Minimizar</text><text x="46" y="90" class="t-m">el dato no existe</text>
+    <text x="194" y="68">No se recoge ni se envía</text><text x="194" y="84">lo que el fin no necesita</text>
+    <text x="376" y="68">No hay nada</text><text x="376" y="84">que revertir</text>
+    <text x="510" y="68">No: no está</text>
+    <text x="640" y="68">El proveedor recibe solo 5 variables</text><text x="640" y="88" class="t-m">Riesgo: pedir de más «por si acaso»</text>
+    <rect x="34" y="130" width="856" height="78" rx="10" class="caja"/>
+    <text x="46" y="158" class="t t-b">Anonimizar</text><text x="46" y="176" class="t-m">agregado o generalizado</text>
+    <text x="194" y="154">Agrega o generaliza hasta</text><text x="194" y="170">que nadie pueda identificar</text>
+    <text x="376" y="154">No, con medios</text><text x="376" y="170">razonables</text>
+    <text x="510" y="154">Deja de serlo,</text><text x="510" y="170">si se logra</text>
+    <text x="640" y="154">Tasa de selección de mujeres: 29,3 %</text><text x="640" y="174" class="t-m">Riesgo: combinar datos que reidentifican</text>
+    <rect x="34" y="216" width="856" height="78" rx="10" class="caja"/>
+    <text x="46" y="244" class="t t-b">Seudonimizar</text><text x="46" y="262" class="t-m">código, no nombre</text>
+    <text x="194" y="240">Reemplaza el identificador</text><text x="194" y="256">y guarda la tabla aparte</text>
+    <text x="376" y="240">Sí, con la tabla</text><text x="376" y="256">o la clave</text>
+    <text x="510" y="240" class="t-b k-warm" style="fill:var(--warm)">Sí, sigue siéndolo</text>
+    <text x="640" y="240">C-0735 en lugar de «Camila Ríos»</text><text x="640" y="260" class="t-m">Riesgo: tabla filtrada o huella sin clave</text>
+    <rect x="34" y="302" width="856" height="78" rx="10" class="c-fis"/>
+    <text x="46" y="330" class="t t-b">Redactar</text><text x="46" y="348" class="t-m">el dato existe, tapado</text>
+    <text x="194" y="326">Tapa los identificadores</text><text x="194" y="342">de un texto antes de enviarlo</text>
+    <text x="376" y="326">Lo que se escapa</text><text x="376" y="342">queda a la vista</text>
+    <text x="510" y="326" class="t-b" style="fill:var(--warm)">Sí, sigue siéndolo</text>
+    <text x="640" y="326">[NOMBRE] en lugar de «Camila Ríos»</text><text x="640" y="346" class="t-m">Riesgo: lo que no tiene forma fija</text>
+  </g>
+</svg></div><figcaption><b>Cuatro técnicas, de más a menos protección.</b> Cada fila es una técnica: minimizar, anonimizar, seudonimizar y redactar. Las columnas dicen qué hace, si se puede revertir, si para la ley sigue siendo un dato personal y un ejemplo con la hoja de vida de Camila. La barra de la izquierda va de «el dato no existe» a «el dato existe, pero tapado». La última columna recuerda el riesgo típico de cada una: en la redacción, lo que se escapa; en la seudonimización, la tabla o el código que se puede revertir.</figcaption></figure><div class="lab" id="05-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Redacta antes de enviar</h3></div><p class="hint">Tres textos del caso con datos de Camila: el mensaje que Patricia quiere pegar en un asistente, el reclamo de Camila y una línea del registro del ATS. Activa una o varias técnicas de redacción y mira el texto que saldría hacia el modelo: en verde lo que se tapó y en rojo lo que se escapó. Los contadores separan los identificadores directos (nombre, documento, correo) de los indirectos (fechas, barrio, la razón de los meses sin empleo). Prueba al final «Enviar solo lo necesario».</p><style>
+[id="05-lab-1"] .c5l1-txt{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--paper);font:500 .9rem/1.7 var(--f-body)}
+[id="05-lab-1"] .c5l1-txt.mono{font:500 .8rem/1.7 var(--f-mono);word-break:break-word}
+[id="05-lab-1"] .c5l1-txt mark{background:none;padding:1px 4px;border-radius:4px;font:600 .8rem var(--f-mono)}
+[id="05-lab-1"] .c5l1-txt mark.tap{color:var(--good);background:var(--good-soft)}
+[id="05-lab-1"] .c5l1-txt mark.gen{color:var(--accent);background:var(--accent-soft);font-family:var(--f-body);font-size:.88rem}
+[id="05-lab-1"] .c5l1-txt mark.sale{color:var(--warm);background:var(--warm-soft);font-family:var(--f-body);font-size:.88rem;outline:1px solid var(--warm)}
+[id="05-lab-1"] .c5l1-tec{display:flex;flex-wrap:wrap;gap:6px 14px;font:500 .86rem var(--f-display)}
+[id="05-lab-1"] .c5l1-tec label{display:flex;gap:6px;align-items:center;cursor:pointer}
+[id="05-lab-1"] .c5l1-cnt{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:8px}
+[id="05-lab-1"] .c5l1-cnt div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--card);display:grid;gap:2px}
+[id="05-lab-1"] .c5l1-cnt b{font:700 1.3rem var(--f-mono)}
+[id="05-lab-1"] .c5l1-cnt small{font:500 .74rem var(--f-display);color:var(--muted)}
+[id="05-lab-1"] .c5l1-cnt div.mal{border-color:var(--warm)} [id="05-lab-1"] .c5l1-cnt div.mal b{color:var(--warm)}
+[id="05-lab-1"] .c5l1-cnt div.bien b{color:var(--good)}
+</style>
+<div class="btns" role="group" aria-label="Texto">
+  <button type="button" data-t="0" aria-pressed="true">Mensaje de Patricia</button>
+  <button type="button" data-t="1" aria-pressed="false">Reclamo de Camila</button>
+  <button type="button" data-t="2" aria-pressed="false">Registro del ATS</button>
+</div>
+<div class="c5l1-tec" role="group" aria-label="Técnicas de redacción">
+  <label><input type="checkbox" id="c5l1-pat"> Patrones (correo, teléfono, documento, IP, fechas)</label>
+  <label><input type="checkbox" id="c5l1-nom"> Lista de nombres</label>
+  <label><input type="checkbox" id="c5l1-ner"> Modelo de entidades</label>
+  <label><input type="checkbox" id="c5l1-gen"> Generalizar fechas y lugares</label>
+  <label><input type="checkbox" id="c5l1-min"> <b>Enviar solo lo necesario</b></label>
+</div>
+<div class="c5l1-txt" id="c5l1-txt" aria-label="Texto que saldría hacia el modelo"></div>
+<div class="c5l1-cnt" id="c5l1-cnt"></div>
+<div class="legend"><span><i style="background:var(--good)"></i>tapado</span><span><i style="background:var(--accent)"></i>generalizado</span><span><i style="background:var(--warm)"></i>se escapa</span></div>
+<div class="readout texto" id="c5l1-out" aria-live="polite"></div></div><div class="prose"><p>La seudonimización tiene una trampa técnica que conviene ver con los propios ojos. Muchos equipos reemplazan el número de documento por su <b>hash</b> (<i>hash</i>), una huella que se calcula con una función de un solo sentido, y creen que así es anónimo. Pero si los documentos posibles son pocos, basta calcular la huella de todos y compararlas.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Revertir un seudónimo en segundos</h3></div><p>Vas a seudonimizar un número de documento de siete cifras con su huella SHA-256 y después a recuperarlo probando todos los números posibles. Necesitas Python 3; los datos son inventados y nada sale de tu computadora. Guarda este código en un archivo <code>seudonimo.py</code> con cualquier editor de texto:</p><div class="code-copia"><pre><code>import hashlib, hmac, time
+
+documento = "4827316"          # el dato que queremos proteger (inventado)
+seudonimo = hashlib.sha256(documento.encode()).hexdigest()
+print("Seudónimo publicado:", seudonimo[:20], "...")
+
+inicio = time.time()
+for n in range(10_000_000):    # todos los documentos de 7 cifras
+    candidato = f"{n:07d}"
+    if hashlib.sha256(candidato.encode()).hexdigest() == seudonimo:
+        print("Documento recuperado:", candidato, f"en {time.time() - inicio:.1f} s")
+        break
+
+clave = b"una-clave-secreta-que-guarda-solo-la-empresa"
+con_clave = hmac.new(clave, documento.encode(), hashlib.sha256).hexdigest()
+print("Seudónimo con clave (HMAC):", con_clave[:20], "...")</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>Después ejecútalo:</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><div class="cmd-l"><code>python seudonimo.py</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>python3 seudonimo.py</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Anota cuántos segundos tardó en recuperar el documento.</span></li><li><span>Cambia el documento por otro número de siete cifras y vuelve a correrlo.</span></li><li><span>Piensa: ¿qué haría falta para revertir el seudónimo con clave (HMAC) de la última línea?</span></li></ol><p><b>Qué observar:</b> la huella parece un código ilegible, pero la computadora recupera el documento en segundos, porque solo hay diez millones de posibilidades y probar cada una es barato. La versión con clave (un <b>HMAC</b>, una huella calculada con una clave secreta) no se puede revertir así sin conocer la clave. Por eso la seudonimización protege tanto como se proteja la clave o la tabla, y por eso para la ley sigue siendo un dato personal. El tiempo exacto depende de tu computadora.</p></div></section>
+<section><h2>Lo que se envía a un proveedor externo</h2><div class="prose"><p>Casi ninguna organización entrena sus propios modelos: los usa a través de un proveedor. Cada vez que el ATS llama al analizador o que alguien usa un asistente, los datos cruzan la frontera de la empresa, y desde ese momento su destino depende del contrato.</p><p>Las preguntas que importan son cinco:</p><ol class="steps"><li><span><b>¿Entrena con mis datos?</b> Muchos asistentes para personas, en sus versiones gratuitas o individuales, pueden usar las conversaciones para entrenar sus modelos salvo que el usuario lo desactive. Las versiones empresariales y las APIs, en general, no entrenan con los datos de sus clientes por defecto. La diferencia está en el contrato, no en la tecnología.</span></li><li><span><b>¿Cuánto tiempo guarda los registros?</b> Hay proveedores que guardan las entradas y salidas 30 días para detectar abusos, otros más, y algunos ofrecen <b>retención cero</b> (<i>zero data retention</i>) para clientes que lo negocian.</span></li><li><span><b>¿Dónde se procesan?</b> La <b>residencia de datos</b> (<i>data residency</i>) dice en qué país o región quedan. Las leyes de la región suelen poner condiciones a la <b>transferencia internacional</b> de datos personales.</span></li><li><span><b>¿Quién más los ve?</b> Los <b>subencargados</b> (<i>subprocessors</i>): la nube donde corre el modelo, el servicio de soporte, el de monitoreo. Deben estar listados.</span></li><li><span><b>¿Qué pasa si hay un problema?</b> Un <b>acuerdo de tratamiento de datos</b> (<i>data processing agreement</i>, DPA), el anexo del contrato que dice qué puede hacer el proveedor con los datos, cómo avisa de una filtración y cómo los devuelve o borra al terminar.</span></li></ol><p>Los registros merecen una advertencia propia. En 2025, en el juicio del New York Times contra OpenAI (capítulo 4), un juez ordenó a la empresa conservar registros de conversaciones que normalmente habría borrado, incluidos los que los usuarios habían eliminado; la orden se levantó meses después para los registros nuevos. Ese mismo año, conversaciones que algunos usuarios habían compartido con un enlace público aparecieron en los resultados de un buscador, y la empresa retiró la opción que lo permitía. Lo que queda registrado puede terminar donde nadie pensaba.</p></div><div class="lab" id="05-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Qué viaja del ATS al proveedor</h3></div><p class="hint">Elige qué envía el ATS al proveedor del filtro (el PDF completo, todos los campos extraídos o solo las cinco variables con un código), cuántos días guarda el proveedor sus registros y si puede entrenar con ellos. Mira qué campos de Camila salen, cuántos datos personales de los 1.000 candidatos quedan guardados afuera y qué le pasa a su puntaje. Fíjate en cuál de las tres opciones el puntaje cambia.</p><style>
+[id="05-lab-2"] .c5l2-chips{display:flex;flex-wrap:wrap;gap:6px}
+[id="05-lab-2"] .c5l2-chips span{font:600 .76rem/1 var(--f-display);padding:6px 8px;border-radius:7px;border:1px solid var(--line);background:var(--card)}
+[id="05-lab-2"] .c5l2-chips span.d{border-color:var(--warm);color:var(--warm);background:var(--warm-soft)}
+[id="05-lab-2"] .c5l2-chips span.s{border-color:var(--warm);color:var(--card);background:var(--warm)}
+[id="05-lab-2"] .c5l2-chips span.v{border-color:var(--c-red);color:var(--c-red);background:var(--c-red-s)}
+[id="05-lab-2"] .c5l2-chips span.n{border-style:dashed;color:var(--muted);text-decoration:line-through}
+[id="05-lab-2"] .c5l2-cnt{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:8px}
+[id="05-lab-2"] .c5l2-cnt div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--card);display:grid;gap:2px}
+[id="05-lab-2"] .c5l2-cnt b{font:700 1.25rem var(--f-mono)}
+[id="05-lab-2"] .c5l2-cnt small{font:500 .74rem var(--f-display);color:var(--muted)}
+[id="05-lab-2"] .c5l2-cnt div.alto{border-color:var(--warm)} [id="05-lab-2"] .c5l2-cnt div.alto b{color:var(--warm)}
+[id="05-lab-2"] .c5l2-cnt div.ok b{color:var(--good)}
+[id="05-lab-2"] .c5l2-rot{font:700 .72rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+</style>
+<div class="btns" role="group" aria-label="Qué envía el ATS al proveedor">
+  <button type="button" data-e="pdf" aria-pressed="true">PDF completo (como hoy)</button>
+  <button type="button" data-e="campos" aria-pressed="false">Campos extraídos</button>
+  <button type="button" data-e="min" aria-pressed="false">Solo 5 variables y el código</button>
+</div>
+<div class="ctls">
+  <label class="ctl">Días que el proveedor guarda los registros <output id="c5l2-r-o"></output>
+    <input id="c5l2-r" type="range" min="0" max="4" step="1" value="4"></label>
+</div>
+<div class="btns" role="group" aria-label="¿Puede entrenar con los datos?">
+  <button type="button" data-n="si" aria-pressed="true">Puede entrenar con ellos</button>
+  <button type="button" data-n="no" aria-pressed="false">No puede entrenar</button>
+</div>
+<div class="c5l2-rot">Datos de Camila que salen de la empresa</div>
+<div class="c5l2-chips" id="c5l2-chips" aria-live="polite"></div>
+<div class="c5l2-cnt" id="c5l2-cnt"></div>
+<div class="legend"><span><i style="background:var(--warm)"></i>identificador o dato sensible</span><span><i style="background:var(--c-red)"></i>variable que usa el modelo</span><span><i style="background:var(--muted)"></i>no sale</span></div>
+<div class="readout texto" id="c5l2-out" aria-live="polite"></div></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Lee qué hace un asistente con tus conversaciones</h3></div><p>Vas a comparar lo que dicen dos proveedores sobre el uso de las conversaciones para entrenar. Solo necesitas el navegador; las páginas son públicas y pueden estar en inglés.</p><ol class="steps"><li><span>Abre la página de ayuda de OpenAI <a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance" target="_blank" rel="noopener">sobre cómo se usan tus datos para mejorar los modelos</a>. Anota qué planes entrenan por defecto, cuáles no y cómo se desactiva.</span></li><li><span>Busca la excepción: ¿qué pasa con una conversación cuando le das «me gusta» o «no me gusta» a una respuesta?</span></li><li><span>Abre el <a href="https://support.google.com/gemini/answer/13594961" target="_blank" rel="noopener">centro de privacidad de las aplicaciones de Gemini</a> y busca las mismas tres cosas.</span></li><li><span>Si usas otro asistente en el trabajo o en casa, busca su página equivalente y agrégalo a tu comparación.</span></li></ol><p><b>Qué observar:</b> en los dos casos, los planes para personas y los planes para empresas tienen reglas distintas, y la opción de no entrenar suele estar activada o desactivada por defecto según el plan. Aparecen también excepciones que pocos leen, como la retroalimentación que comparte la conversación completa, o revisores humanos que leen una muestra. Las páginas y los nombres de los ajustes cambian con frecuencia: lo que veas puede no coincidir con esta descripción.</p></div></section>
+<section><h2>Los derechos de las personas frente a un modelo: acceso, corrección y olvido</h2><div class="prose"><p>Las leyes de protección de datos dan a cada persona derechos sobre sus datos. En América Latina se conocen como <b>derechos ARCO</b>: <b>acceso</b> (saber qué datos tienen de ti), <b>rectificación</b> (corregirlos), <b>cancelación</b> (que se borren) y <b>oposición</b> (que dejen de usarlos para un fin). El reglamento europeo los llama acceso, rectificación, supresión (el «derecho al olvido») y oposición, y agrega uno muy importante aquí: no ser objeto de una decisión basada <b>únicamente</b> en un tratamiento automatizado que te afecte de forma significativa. La ley brasileña (LGPD) y la nueva ley chilena (Ley 21.719) tienen derechos parecidos frente a decisiones automatizadas.</p><p>Con un sistema de IA, cada derecho tiene una dificultad nueva:</p><ul><li><b>Acceso</b>: es fácil entregar la hoja de vida y el puntaje; es más difícil decir cómo se calculó, y por eso el capítulo 3 insiste en la explicación.</li><li><b>Rectificación</b>: si el analizador leyó mal la hoja de vida (contó 2 años donde había 4,5), se corrige el campo y se recalcula. Si un modelo de lenguaje inventa algo sobre una persona, corregirlo dentro del modelo no es posible hoy de forma directa; se recurre a filtros de salida.</li><li><b>Supresión</b>: borrar la hoja de vida del ATS y de los registros es un trámite. Borrar su influencia de un modelo ya entrenado es un problema abierto de investigación, el <b>desaprendizaje automático</b> (<i>machine unlearning</i>); en la práctica, se saca el dato de los conjuntos y se espera a la siguiente versión del modelo.</li><li><b>Oposición</b>: algunas plataformas ofrecen formularios para oponerse a que sus publicaciones se usen para entrenar. Solo sirven hacia adelante.</li></ul></div><figure class="fig fig-flujo" id="05-diagrama-4"><div class="lienzo"><svg viewBox="0 0 900 450" style="min-width:740px" role="img" aria-label="Diagrama de secuencia del derecho de acceso de Camila. Participantes: Camila, Inés de la empresa, el ATS y el proveedor. Uno, Camila pide acceso a sus datos y la razón del rechazo. Dos, Inés registra la solicitud y el plazo legal. Tres, consulta el ATS: hoja de vida, campos, puntaje 55 y correo enviado. Cuatro, pide al proveedor lo que guarda y por cuánto tiempo. Cinco, el proveedor responde con registros y retención. Seis, Inés responde a Camila con sus datos, la explicación y la revisión humana. Siete, Camila pide corregir o borrar al cerrar la convocatoria. Fases: pedir, buscar, responder y corregir">
+  <defs>
+    <marker id="i5d4-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker>
+    <marker id="i5d4-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-warm"/></marker>
+  </defs>
+  <rect x="24" y="14" width="150" height="52" rx="10" class="caja s-warm" style="stroke-width:2"/>
+  <text x="99" y="36" class="t t-b k-warm" text-anchor="middle">Camila</text><text x="99" y="54" class="t t-s t-m" text-anchor="middle">persona afectada</text>
+  <rect x="214" y="14" width="150" height="52" rx="10" class="c-tra"/>
+  <text x="289" y="36" class="t t-b" text-anchor="middle">Inés</text><text x="289" y="54" class="t t-s t-m" text-anchor="middle">protección de datos</text>
+  <rect x="404" y="14" width="150" height="52" rx="10" class="d-sis"/>
+  <text x="479" y="36" class="t t-b" text-anchor="middle">ATS</text><text x="479" y="54" class="t t-s t-m" text-anchor="middle">de la empresa</text>
+  <rect x="594" y="14" width="150" height="52" rx="10" class="d-inet"/>
+  <text x="669" y="36" class="t t-b" text-anchor="middle">Proveedor</text><text x="669" y="54" class="t t-s t-m" text-anchor="middle">del filtro</text>
+  <g class="vida"><path d="M99 66V430"/><path d="M289 66V430"/><path d="M479 66V430"/><path d="M669 66V430"/></g>
+  <g class="t t-s">
+    <path d="M99 104H285" class="ln s-warm" marker-end="url(#i5d4-w)"/>
+    <text x="108" y="90"><tspan class="t-b">1</tspan> ¿qué datos tienen?, ¿por qué?</text>
+    <path d="M289 134h40v26h-36" class="ln" marker-end="url(#i5d4-m)"/>
+    <text x="338" y="150"><tspan class="t-b">2</tspan> registra la solicitud y el plazo legal</text>
+    <path d="M289 194H475" class="ln" marker-end="url(#i5d4-m)"/>
+    <text x="298" y="186"><tspan class="t-b">3</tspan> consulta: hoja de vida,</text>
+    <text x="298" y="212" class="t-m">campos, puntaje 55, correo</text>
+    <path d="M289 240H665" class="ln" marker-end="url(#i5d4-m)"/>
+    <text x="490" y="232"><tspan class="t-b">4</tspan> ¿qué guardan y por cuánto?</text>
+    <path d="M669 280H293" class="ln" marker-end="url(#i5d4-m)"/>
+    <text x="490" y="272"><tspan class="t-b">5</tspan> PDF, registros, retención</text>
+    <path d="M289 330H103" class="ln" marker-end="url(#i5d4-m)"/>
+    <text x="108" y="316"><tspan class="t-b">6</tspan> sus datos, la explicación</text>
+    <text x="108" y="344" class="t-m">y cómo pedir revisión humana</text>
+    <path d="M99 390H285" class="ln s-warm" marker-end="url(#i5d4-w)"/>
+    <text x="108" y="380"><tspan class="t-b">7</tspan> corregir o borrar al cierre</text>
+  </g>
+  <g class="t t-xs t-b">
+    <rect x="770" y="84" width="116" height="84" rx="8" class="caja s-warm"/><text x="828" y="130" text-anchor="middle">PEDIR</text>
+    <rect x="770" y="176" width="116" height="116" rx="8" class="caja"/><text x="828" y="238" text-anchor="middle">BUSCAR</text>
+    <rect x="770" y="300" width="116" height="56" rx="8" class="c-tra"/><text x="828" y="332" text-anchor="middle">RESPONDER</text>
+    <rect x="770" y="364" width="116" height="44" rx="8" class="caja s-warm"/><text x="828" y="390" text-anchor="middle">CORREGIR</text>
+  </g>
+</svg></div><figcaption><b>Camila pide sus datos.</b> Participantes arriba: Camila, la empresa (Inés, como oficial de protección de datos), el ATS y el proveedor. ① Camila pide acceso a sus datos y a la razón del rechazo; ② Inés registra la solicitud y el plazo legal; ③ consulta el ATS: hoja de vida, campos extraídos, puntaje 55 y correo enviado; ④ pide al proveedor lo que guarda de ella y cuánto tiempo; ⑤ el proveedor responde con los registros y su retención; ⑥ Inés responde a Camila con sus datos, la explicación del puntaje y la posibilidad de pedir revisión humana; ⑦ Camila pide corregir un dato o borrar su hoja de vida al cerrar la convocatoria. A la derecha, las fases: pedir, buscar, responder y corregir.</figcaption></figure><div class="prose"><p>En el reclamo de Camila se ve por qué estos derechos importan: ella preguntó «¿alguien leyó mi hoja de vida?». La respuesta honesta era que no, y que su hoja de vida completa, con la razón de sus meses sin empleo, estaba en los servidores de un proveedor sin plazo de borrado. La ley de cada país dice cuánto tiempo tiene la empresa para responder. Lo que la ley no puede hacer es devolver un dato que ya salió.</p></div><div class="ml"><b>En la práctica</b><p><b>Las autoridades ya miran la IA, y los tribunales revisan a las autoridades.</b> En diciembre de 2024, la autoridad italiana de protección de datos multó a OpenAI con 15 millones de euros por cómo había tratado datos personales para entrenar ChatGPT y por no verificar la edad de los usuarios. En marzo de 2026, un tribunal de Roma anuló la multa, pero no porque las prácticas fueran correctas: decidió que le correspondía a la autoridad de Irlanda, donde la empresa tiene su sede europea. Para una organización de la región, la lección es doble: las autoridades de datos personales ya actúan sobre sistemas de IA, y la pregunta de qué ley y qué autoridad aplican a un proveedor extranjero se resuelve en el contrato y en el inventario, antes del problema.</p></div></section>
+<section><h2>La protección de datos a fondo está en Protección de datos</h2><div class="prose"><p>Este capítulo tomó de la protección de datos solo lo que la IA cambia: el modelo que memoriza, el contexto que viaja completo, los registros que duran y los derechos difíciles de cumplir dentro de un modelo. Qué es un dato personal y un dato sensible, el cifrado, las bases legales para tratar datos, la anonimización con k-anonimato y la evaluación de impacto de protección de datos están en <a href="https://aaramirez.github.io/proteccion-de-datos/temario.html" target="_blank" rel="noopener">Protección de datos</a>. La evaluación de impacto algorítmico del capítulo 8 usa esa evaluación como una de sus piezas.</p><p>Para el filtro, la pieza de este capítulo para la evaluación de impacto es el <b>mapa de datos personales</b>: la figura 1 completada con cada dato, el lugar donde vive, quién lo ve y cuánto tiempo se queda. Con el mapa en la mano, Inés dejó tres decisiones escritas: el ATS enviará al proveedor solo las cinco variables con el código del candidato; el contrato tendrá un acuerdo de tratamiento de datos con retención máxima y sin entrenamiento con los datos de la empresa; y Gestión Humana no pegará datos de candidatos en asistentes fuera de un caso del inventario.</p></div></section>
+<section><h2>La idea clave</h2><div class="prose"><p>Los datos personales entran a un sistema de IA por cuatro puertas: el entrenamiento, las instrucciones, el contexto y los registros. Un modelo puede memorizarlos y devolverlos, un proveedor puede guardarlos y un registro puede durar años. Redactar y seudonimizar ayudan, pero se les escapan cosas. La protección más fuerte es la más simple: minimizar, porque el dato que no se envía no se puede filtrar.</p></div></section>
+<section><h2>Pruébate</h2><div class="quiz"><h3>Pruébate</h3><details><summary>¿Cuáles son los cuatro lugares donde aparecen datos personales en un sistema de IA?</summary><p>El entrenamiento, las instrucciones que escribe una persona, el contexto que el sistema agrega automáticamente y los registros de entradas y salidas.</p></details><details><summary>¿Por qué quitar duplicados del corpus de entrenamiento reduce la memorización?</summary><p>Porque un modelo memoriza sobre todo lo que vio muchas veces; un dato repetido en muchas páginas tiene más probabilidad de quedar guardado tal cual.</p></details><details><summary>¿En qué se diferencian la seudonimización y la anonimización ante la ley?</summary><p>La seudonimización reemplaza el identificador por un código que se puede revertir con una tabla o una clave, y sigue siendo dato personal; la anonimización impide identificar a la persona con medios razonables, y si se logra, deja de serlo.</p></details><details><summary>¿Por qué el hash de un número de documento no es una buena forma de anonimizarlo?</summary><p>Porque los documentos posibles son pocos y basta calcular la huella de todos para encontrar el original; sin una clave secreta, el seudónimo se revierte en segundos.</p></details><details><summary>Nombra tres preguntas que hay que hacerle a un proveedor de IA sobre los datos que se le envían.</summary><p>Si entrena con ellos, cuánto tiempo guarda los registros y dónde se procesan; también quién más los ve (subencargados) y qué dice el acuerdo de tratamiento de datos sobre filtraciones y borrado.</p></details><details><summary>¿Por qué es difícil cumplir el derecho de supresión dentro de un modelo ya entrenado?</summary><p>Porque el dato no está guardado como un registro que se pueda borrar, sino repartido en la influencia sobre los parámetros; quitar esa influencia es un problema abierto (desaprendizaje automático), y en la práctica se saca el dato para la siguiente versión.</p></details></div></section>
+<section><h2>Para investigar</h2><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Cómo funciona la privacidad diferencial y qué significa el parámetro épsilon (ε)?<small>Pista: busca «differential privacy epsilon explained».</small></li><li>¿Qué es el «interés legítimo» como base legal para tratar datos personales y por qué las empresas de IA lo invocan para entrenar con datos publicados en la web?<small>Pista: busca «interés legítimo entrenamiento IA EDPB».</small></li><li>¿Qué es el aprendizaje federado (<i>federated learning</i>) y cómo permite entrenar un modelo sin juntar los datos en un servidor?</li><li>¿Qué son las cláusulas contractuales tipo para transferencias internacionales de datos y qué países de la región tienen las suyas?<small>Pista: busca «cláusulas contractuales modelo transferencia internacional» junto con el nombre de tu país.</small></li><li>¿Qué es el reconocimiento de entidades nombradas (<i>named entity recognition</i>, NER) y por qué se equivoca con nombres poco comunes o escritos en minúscula?</li></ol></div></section>
+<section><h2>Para saber más</h2><div class="vids"><span>Para saber más</span><a class="vid" href="https://www.edpb.europa.eu/our-work-tools/our-documents/opinion-board-art-64/opinion-282024-certain-data-protection-aspects_en" target="_blank" rel="noopener">Opinión 28/2024 del Comité Europeo de Protección de Datos sobre modelos de IA <small>cuándo un modelo es anónimo, en inglés</small></a><a class="vid" href="https://arxiv.org/abs/2012.07805" target="_blank" rel="noopener">Extracting Training Data from Large Language Models <small>el estudio de 2021 sobre GPT-2, en inglés</small></a><a class="vid" href="https://arxiv.org/abs/2311.17035" target="_blank" rel="noopener">Scalable Extraction of Training Data from (Production) Language Models <small>el estudio de 2023, en inglés</small></a><a class="vid" href="https://microsoft.github.io/presidio/" target="_blank" rel="noopener">Microsoft Presidio <small>herramienta abierta para detectar y redactar datos personales, en inglés</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-responsable" target="_blank" rel="noopener">github.com/aaramirez/ia-responsable</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  // Cada fragmento: [texto, etiqueta, tipo (d directo, i indirecto, s sensible), técnicas que lo atrapan, texto generalizado]
+  const T=[
+    {mono:false,partes:['Hola. El filtro rechazó a ',['Camila Ríos','NOMBRE','d',['nom','ner']],' (candidata ',['C-0735','CÓDIGO','i',['pat']],'), documento ',['12.345.678','DOCUMENTO','d',[]],', correo ',['camila.rios84@correo.ejemplo','CORREO','d',['pat']],', teléfono ',['(555) 010-2847','TELÉFONO','d',['pat']],'. Nació el ',['14 de marzo de 1984','FECHA','i',['ner'],'1984'],' y vive en el barrio ',['San Isidro','LUGAR','i',['ner'],'la ciudad'],'. Tiene 4,5 años de experiencia y sacó 85 en la prueba, pero estuvo 19 meses sin empleo porque ',['cuidó a su hijo recién nacido','MOTIVO','s',[]],'. Su jefa anterior, ',['Marta Quintero','NOMBRE','d',['nom','ner']],', de ',['Distribuidora El Faro','EMPRESA','i',['ner']],', la recomienda. ¿Por qué crees que la rechazaron?'],
+     min:'Candidata C-0735 · experiencia 4,5 años · prueba 85 · estudios: técnico · coincidencia 44 · meses sin empleo 19 · puntaje 55 · umbral 60. ¿Qué variables explican que el puntaje quede debajo del umbral?'},
+    {mono:false,partes:['Buenas noches. Soy ',['camila ríos','NOMBRE','d',['nom']],', documento ',['12345678','DOCUMENTO','d',['pat']],'. Recibí su correo de rechazo el domingo a las tres de la mañana. Trabajé 4,5 años en el centro de atención de ',['Rosario','LUGAR','i',['nom','ner'],'otra ciudad'],' y dejé de trabajar en ',['2023','FECHA','i',['ner'],'2023'],' por ',['mi licencia de maternidad','MOTIVO','s',[]],'. Pueden llamarme al ',['555 010 2847','TELÉFONO','d',['pat']],' o escribirme a ',['cami.rios@correo.ejemplo','CORREO','d',['pat']],'. ¿Alguien leyó mi hoja de vida?'],
+     min:'Reclamo de la candidata C-0735 por rechazo automático (puntaje 55, umbral 60). Pide saber por qué fue rechazada y si una persona revisó su hoja de vida.'},
+    {mono:true,partes:['2026-09-27T03:02:11-05:00 evento=rechazo candidato=',['C-0735','CÓDIGO','i',['pat']],' ip=',['203.0.113.45','IP','d',['pat']],' correo=',['camila.rios84@correo.ejemplo','CORREO','d',['pat']],' nombre="',['RIOS CAMILA','NOMBRE','d',['nom']],'" nacimiento=',['1984-03-14','FECHA','i',['pat'],'1984'],' puntaje=55 umbral=60 nota_brecha="',['licencia de maternidad','MOTIVO','s',[]],'" pdf=',['cv_camila_rios.pdf','ARCHIVO','d',['ner']]],
+     min:'2026-09-27T03:02:11-05:00 evento=rechazo candidato=C-0735 puntaje=55 umbral=60'}
+  ];
+  const NOMT={d:'directo',i:'indirecto',s:'sensible'};
+  let cual=0;
+  const on=id=>$('#c5l1-'+id).checked;
+  function leer(){
+    document.querySelectorAll('[id="05-lab-1"] [data-t]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.t===cual?'true':'false'));
+    const t=T[cual],caja=$('#c5l1-txt');caja.classList.toggle('mono',t.mono);
+    const c={d:[0,0],i:[0,0],s:[0,0]};let html='',fuga=[];
+    if(on('min')){
+      html=t.min.replace('C-0735','<mark class="tap">C-0735</mark>');
+      t.partes.forEach(p=>{if(Array.isArray(p)){c[p[2]][1]++;if(p[0]==='C-0735')fuga.push('el código C-0735, que es un seudónimo');}});
+    }else{
+      const act=['pat','nom','ner'].filter(on),gen=on('gen');
+      t.partes.forEach(p=>{
+        if(!Array.isArray(p)){html+=p;return;}
+        const [s,et,ti,by,g]=p;c[ti][1]++;
+        if(by.some(x=>act.includes(x)))html+='<mark class="tap">['+et+']</mark>';
+        else if(gen&&g)html+='<mark class="gen" title="generalizado">'+g+'</mark>';
+        else{html+='<mark class="sale">'+s+'</mark>';c[ti][0]++;fuga.push(s);}
+      });
+    }
+    caja.innerHTML=html;
+    const tarj=(k,et)=>'<div class="'+(c[k][0]?'mal':'bien')+'"><small>'+et+' que se escapan</small><b>'+c[k][0]+' de '+c[k][1]+'</b></div>';
+    $('#c5l1-cnt').innerHTML=tarj('d','Identificadores directos')+tarj('i','Identificadores indirectos')+tarj('s','Datos sensibles');
+    let h='';
+    if(on('min')){h='<span class="ok">Con «solo lo necesario» no viaja ningún identificador directo ni el motivo de los meses sin empleo, y la pregunta se puede responder igual.</span><span>Queda '+(fuga.length?fuga[0]:'solo lo indispensable')+': para la ley sigue siendo un dato personal, porque la empresa puede volver a la persona con su tabla.</span>';}
+    else{
+      const tot=c.d[0]+c.i[0]+c.s[0];
+      if(!['pat','nom','ner','gen'].some(on))h='<span>Sin ninguna técnica, todo sale tal cual: '+tot+' datos de Camila llegan al modelo.</span>';
+      else h='<span class="big">Se escapan '+tot+' datos.</span>';
+      if(c.s[0])h+='<span class="warn">El motivo de los meses sin empleo se escapa siempre: no tiene forma fija ni es un nombre, y ninguna técnica de redacción lo reconoce como dato sensible.</span>';
+      if(cual===0&&c.d[0]&&fuga.includes('12.345.678'))h+='<span>El documento escrito con puntos no coincide con el patrón de siete a nueve dígitos seguidos.</span>';
+      if(cual===1&&on('ner')&&!on('nom')&&fuga.includes('camila ríos'))h+='<span>El modelo de entidades no reconoció el nombre escrito en minúscula.</span>';
+      if(cual===2&&on('ner')&&!on('pat'))h+='<span>En un registro con formato de máquina, el modelo de entidades rinde poco: los patrones sirven más.</span>';
+      if(c.d[0]===0&&c.s[0]===0&&c.i[0]===0)h+='<span class="ok">Nada se escapa en este texto con esta combinación. Prueba los otros dos: la misma combinación no siempre alcanza.</span>';
+      else h+='<span>Prueba «Enviar solo lo necesario»: en lugar de tapar lo que sobra, no se envía.</span>';
+    }
+    $('#c5l1-out').innerHTML='<span>'+h.replace(/<\/span><span/g,'</span> <span')+'</span>';
+  }
+  document.querySelectorAll('[id="05-lab-1"] [data-t]').forEach(b=>b.addEventListener('click',()=>{cual=+b.dataset.t;leer();}));
+  ['pat','nom','ner','gen','min'].forEach(id=>$('#c5l1-'+id).addEventListener('change',leer));
+  leer();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  // t: d identificador directo, i indirecto, s sensible, v variable del modelo. en: en qué envíos sale.
+  const F=[
+    ['Nombre','d',['pdf','campos']],['Documento','d',['pdf','campos']],['Correo','d',['pdf','campos']],['Teléfono','d',['pdf','campos']],
+    ['Dirección','i',['pdf','campos']],['Fecha de nacimiento','i',['pdf','campos']],['Foto','d',['pdf']],['Jefes y empresas anteriores','i',['pdf']],
+    ['Motivo de los meses sin empleo','s',['pdf']],['Código C-0735','i',['min']],
+    ['Experiencia: 4,5 años','v',['pdf','campos','min']],['Prueba: 85','v',['pdf','campos','min']],['Estudios: técnico','v',['pdf','campos','min']],
+    ['Coincidencia: 44','v',['pdf','campos','min']],['Meses sin empleo: 19','v',['pdf','campos','min']]
+  ];
+  const DIAS=[0,30,90,365,null],ETQ=['0 (retención cero)','30','90','365','sin plazo en el contrato'];
+  let env='pdf',ent='si';
+  const fmt=n=>Math.round(n).toLocaleString('es').replace(/ |\s/g,'.');
+  // El modelo del curso: el puntaje solo depende de las cinco variables.
+  const puntaje=(p,e,s,a,b)=>Math.round(Math.min(100,Math.max(0,-2+0.55*p+2.6*Math.min(e,8)+2*s+0.3*a-0.9*b)));
+  function leer(){
+    document.querySelectorAll('[id="05-lab-2"] [data-e]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.e===env?'true':'false'));
+    document.querySelectorAll('[id="05-lab-2"] [data-n]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.n===ent?'true':'false'));
+    const ri=+$('#c5l2-r').value,dias=DIAS[ri];$('#c5l2-r-o').textContent=ETQ[ri];
+    const sale=F.filter(f=>f[2].includes(env));
+    $('#c5l2-chips').innerHTML=F.map(f=>{const s=f[2].includes(env);return '<span class="'+(s?(f[1]==='v'?'v':(f[1]==='s'?'s':'d')):'n')+'">'+f[0]+'</span>';}).join('');
+    const pers=sale.filter(f=>f[1]!=='v').length,dir=sale.filter(f=>f[1]==='d').length,sens=sale.filter(f=>f[1]==='s').length;
+    const guardados=(dias===0&&ent==='no')?0:sale.length*1000;
+    const p=puntaje(85,4.5,1,44,19);
+    $('#c5l2-cnt').innerHTML=
+      '<div class="'+(dir?'alto':'ok')+'"><small>Identificadores directos de Camila que salen</small><b>'+dir+'</b></div>'+
+      '<div class="'+(guardados&&pers?'alto':'ok')+'"><small>Datos de los 1.000 candidatos guardados afuera</small><b>'+fmt(guardados)+'</b></div>'+
+      '<div><small>Durante</small><b style="font-size:.95rem;font-family:var(--f-display)">'+(guardados?(ent==='si'?'el próximo modelo, sin plazo':(dias===null?'sin plazo':dias+' días')):'nada se guarda')+'</b></div>'+
+      '<div class="ok"><small>Puntaje de Camila</small><b>'+p+'</b></div>';
+    let h='';
+    h+='<span>El puntaje es <b>'+p+'</b> con las tres opciones: el modelo solo usa las cinco variables. Todo lo demás viaja sin cambiar la decisión.</span>';
+    if(env==='pdf')h+='<span class="warn">Con el PDF completo sale también el motivo de sus meses sin empleo, un dato de su vida familiar que el modelo no necesita y que nadie le pidió.</span>';
+    if(env==='campos')h+='<span>Sin el PDF ya no salen la foto ni el motivo, pero siguen saliendo '+dir+' identificadores directos que el modelo no usa.</span>';
+    if(env==='min')h+='<span class="ok">Solo salen las cinco variables y un código. Si el proveedor sufre una filtración, nadie fuera de la empresa puede saber quién es C-0735.</span>';
+    if(ent==='si'&&pers)h+='<span class="warn">Si el proveedor puede entrenar con ellos, los datos pasan a sus próximos modelos, donde borrarlos ya no es un trámite (y el capítulo muestra que un modelo puede memorizarlos).</span>';
+    if(dias===null&&ent==='no')h+='<span>«Sin plazo en el contrato» suele significar que los registros se quedan hasta que alguien decida borrarlos.</span>';
+    if(env==='min'&&ent==='no'&&dias!==null&&dias<=30)h+='<span class="ok">Es la configuración que Inés dejó escrita: lo mínimo, sin entrenamiento y con plazo. El dato que no se envía no se puede filtrar.</span>';
+    $('#c5l2-out').innerHTML='<span>'+h.replace(/<\/span><span/g,'</span> <span')+'</span>';
+  }
+  document.querySelectorAll('[id="05-lab-2"] [data-e]').forEach(b=>b.addEventListener('click',()=>{env=b.dataset.e;leer();}));
+  document.querySelectorAll('[id="05-lab-2"] [data-n]').forEach(b=>b.addEventListener('click',()=>{ent=b.dataset.n;leer();}));
+  $('#c5l2-r').addEventListener('input',leer);
+  leer();
+})();
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@ Sesgo, transparencia, derechos de autor, privacidad, regulación y gobierno de l
 
 **Ver en línea:** https://aaramirez.github.io/ia-responsable/
 
-Este repositorio solo tiene el sitio generado. El curso está en preparación: la tabla de contenido ya está publicada para revisión.
+Este repositorio solo tiene el sitio generado. Curso completo: 8 capítulos con laboratorios interactivos, diagramas y prácticas.
 
 | # | Capítulo |
 |---|---|

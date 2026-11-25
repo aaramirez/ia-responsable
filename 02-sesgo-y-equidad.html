@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sesgo y equidad · IA responsable · IA responsable</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sesgo, transparencia, derechos de autor, privacidad, regulación y gobierno de la IA: lo que toda organización que usa o construye IA necesita saber.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="sesgo-y-equidad">
+<header class="topbar"><a class="brand" href="index.html">IA <b>responsable</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 02 DE 8</span><h1>Sesgo y equidad: de dónde viene y cómo se mide</h1><p class="lede">El filtro de hojas de vida no recibe el sexo de nadie y aun así deja pasar al 29,3 % de las mujeres y al 46,3 % de los hombres. Este capítulo muestra por dónde entra el sesgo, cómo se mide con tres métricas que no se pueden cumplir todas a la vez y qué se puede hacer antes, durante y después de entrenar un modelo.</p></header>
+<section><h2>De dónde viene el sesgo: datos históricos, muestras, etiquetas y variables sustitutas</h2><div class="prose"><p>Lo primero que hizo Rodrigo después del reclamo de Camila fue algo que nadie había hecho: sacar del ATS los puntajes de las 1.000 hojas de vida de la convocatoria piloto y separarlos por sexo. El ATS no le pasa el sexo al filtro, pero sí lo guarda, porque la mayoría de los candidatos lo declaró en el formulario. El resultado cabía en una línea: pasó a entrevista el 29,3 % de las mujeres (143 de 488) y el 46,3 % de los hombres (237 de 512).</p><p>En IA, <b>sesgo</b> (<i>bias</i>) es un error sistemático que favorece o perjudica a un grupo. No es un error al azar, que a veces cae de un lado y a veces del otro: es un error que cae siempre del mismo lado. Y casi nunca viene de una línea de código malintencionada. Viene de los datos con que se entrenó el modelo, de cómo se definió lo que es «bueno» y de cómo se usa el resultado.</p></div><div class="analogia"><b>Imagínalo así</b><p><b>Un modelo es como una receta aprendida probando platos viejos.</b> Si todos los platos que te dieron a probar venían de la misma cocina, aprendes el gusto de esa cocina y no otro. Si alguien marcó como «buenos» los platos que le gustaban al dueño, aprendes el gusto del dueño. Y si nunca te dijeron qué ingrediente era el importante, puedes concluir que el secreto estaba en el color del plato. Cada una de esas trampas tiene nombre en IA.</p></div><div class="prose"><p>Las cuatro fuentes más comunes son estas:</p><ul><li><b>Sesgo histórico</b> (<i>historical bias</i>): los datos reflejan fielmente un mundo injusto. Si en el pasado se contrató a menos mujeres, un modelo que aprende del pasado aprende a contratar menos mujeres, aunque los datos estén perfectamente medidos.</li><li><b>Sesgo de representación o de muestra</b> (<i>representation bias</i>): un grupo aparece poco en los datos de entrenamiento y el modelo se equivoca más con él. Es lo que encontró el estudio <i>Gender Shades</i> (2018) en sistemas comerciales de reconocimiento facial: fallaban mucho más con mujeres de piel oscura que con hombres de piel clara.</li><li><b>Sesgo de la etiqueta</b> (<i>label bias</i>): lo que el modelo aprende a predecir no es lo que de verdad importa, sino un reemplazo fácil de medir. El algoritmo de salud del capítulo 1 predecía el gasto médico en vez de la necesidad de atención.</li><li><b>Variable sustituta</b> (<i>proxy variable</i>): una variable permitida que lleva escondida la información de una variable prohibida. El código postal puede llevar el origen étnico; los años de experiencia, la edad; y los meses sin empleo, el sexo, porque en casi todos los países las mujeres interrumpen más su carrera para cuidar a hijos o familiares.</li></ul></div><figure class="fig fig-esquema" id="02-diagrama-1"><div class="lienzo"><svg viewBox="0 0 898 196" style="min-width:720px" role="img" aria-label="Camino de un sistema en seis pasos: mundo e historia, datos, etiqueta, variables, modelo y decisión. Puertas del sesgo en el filtro: sesgo histórico (los reclutadores daban más puntos a hombres), representación, etiqueta (puntaje del reclutador en vez de desempeño real), variable sustituta (meses sin empleo llevan el sexo) y despliegue (un umbral para todos sin revisión). Una flecha vuelve de la decisión a los datos.">
+<defs><marker id="i2d1-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker><marker id="i2d1-f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-fis"/></marker></defs>
+<rect x="20" y="20" width="128" height="54" rx="9" class="caja" style="stroke-width:1.6"/>
+<text x="84.0" y="45" class="t t-b" text-anchor="middle" style="font-size:13px">Mundo</text>
+<text x="84.0" y="62" class="t t-s t-m" text-anchor="middle">e historia</text>
+<line x1="149" y1="47" x2="165" y2="47" class="ln" marker-end="url(#i2d1-m)"/>
+<line x1="84.0" y1="74" x2="84.0" y2="90" class="ln s-fis"/>
+<rect x="24" y="90" width="120" height="24" rx="12" class="c-fis"/>
+<text x="84.0" y="106" class="t t-s t-b k-fis" text-anchor="middle">Sesgo histórico</text>
+<text x="84.0" y="132" class="t t-s" text-anchor="middle">Los reclutadores daban</text>
+<text x="84.0" y="147" class="t t-s" text-anchor="middle">más puntos a hombres</text>
+<rect x="166" y="20" width="128" height="54" rx="9" class="caja" style="stroke-width:1.6"/>
+<text x="230.0" y="45" class="t t-b" text-anchor="middle" style="font-size:13px">Datos</text>
+<text x="230.0" y="62" class="t t-s t-m" text-anchor="middle">que se recogen</text>
+<line x1="295" y1="47" x2="311" y2="47" class="ln" marker-end="url(#i2d1-m)"/>
+<line x1="230.0" y1="74" x2="230.0" y2="90" class="ln s-fis"/>
+<rect x="170" y="90" width="120" height="24" rx="12" class="c-fis"/>
+<text x="230.0" y="106" class="t t-s t-b k-fis" text-anchor="middle">Representación</text>
+<text x="230.0" y="132" class="t t-s" text-anchor="middle">¿Hay pocos casos</text>
+<text x="230.0" y="147" class="t t-s" text-anchor="middle">de algún grupo?</text>
+<rect x="312" y="20" width="128" height="54" rx="9" class="caja" style="stroke-width:1.6"/>
+<text x="376.0" y="45" class="t t-b" text-anchor="middle" style="font-size:13px">Etiqueta</text>
+<text x="376.0" y="62" class="t t-s t-m" text-anchor="middle">qué es «bueno»</text>
+<line x1="441" y1="47" x2="457" y2="47" class="ln" marker-end="url(#i2d1-m)"/>
+<line x1="376.0" y1="74" x2="376.0" y2="90" class="ln s-fis"/>
+<rect x="316" y="90" width="120" height="24" rx="12" class="c-fis"/>
+<text x="376.0" y="106" class="t t-s t-b k-fis" text-anchor="middle">Etiqueta</text>
+<text x="376.0" y="132" class="t t-s" text-anchor="middle">Puntaje del reclutador,</text>
+<text x="376.0" y="147" class="t t-s" text-anchor="middle">no desempeño real</text>
+<rect x="458" y="20" width="128" height="54" rx="9" class="caja" style="stroke-width:1.6"/>
+<text x="522.0" y="45" class="t t-b" text-anchor="middle" style="font-size:13px">Variables</text>
+<text x="522.0" y="62" class="t t-s t-m" text-anchor="middle">lo que se mide</text>
+<line x1="587" y1="47" x2="603" y2="47" class="ln" marker-end="url(#i2d1-m)"/>
+<line x1="522.0" y1="74" x2="522.0" y2="90" class="ln s-fis"/>
+<rect x="462" y="90" width="120" height="24" rx="12" class="c-fis"/>
+<text x="522.0" y="106" class="t t-s t-b k-fis" text-anchor="middle">Sustituta</text>
+<text x="522.0" y="132" class="t t-s" text-anchor="middle">Meses sin empleo</text>
+<text x="522.0" y="147" class="t t-s" text-anchor="middle">llevan el sexo</text>
+<rect x="604" y="20" width="128" height="54" rx="9" class="caja" style="stroke-width:1.6"/>
+<text x="668.0" y="45" class="t t-b" text-anchor="middle" style="font-size:13px">Modelo</text>
+<text x="668.0" y="62" class="t t-s t-m" text-anchor="middle">aprende pesos</text>
+<line x1="733" y1="47" x2="749" y2="47" class="ln" marker-end="url(#i2d1-m)"/>
+<rect x="750" y="20" width="128" height="54" rx="9" class="caja" style="stroke-width:1.6"/>
+<text x="814.0" y="45" class="t t-b" text-anchor="middle" style="font-size:13px">Decisión</text>
+<text x="814.0" y="62" class="t t-s t-m" text-anchor="middle">pasa o no pasa</text>
+<line x1="814.0" y1="74" x2="814.0" y2="90" class="ln s-fis"/>
+<rect x="754" y="90" width="120" height="24" rx="12" class="c-fis"/>
+<text x="814.0" y="106" class="t t-s t-b k-fis" text-anchor="middle">Despliegue</text>
+<text x="814.0" y="132" class="t t-s" text-anchor="middle">Un umbral para todos,</text>
+<text x="814.0" y="147" class="t t-s" text-anchor="middle">sin revisión humana</text>
+<path d="M814.0 162 V180 H230.0 V162" class="ln s-fis ln-d" style="stroke-width:1.8" marker-end="url(#i2d1-f)"/>
+<text x="522.0" y="174" class="t t-s k-fis" text-anchor="middle">Las contrataciones de hoy son los datos de entrenamiento de mañana</text>
+</svg></div><figcaption><b>Por dónde entra el sesgo en el filtro de hojas de vida.</b> De izquierda a derecha, el camino de un sistema: el mundo y su historia, los datos que se recogen, la etiqueta que se elige como «buena», las variables, el modelo y la decisión. Cada etiqueta ámbar marca una puerta por donde entra el sesgo, con el ejemplo concreto del filtro debajo. La flecha de abajo cierra el círculo: las decisiones de hoy son los datos de entrenamiento de mañana, así que un sesgo que no se corrige se refuerza.</figcaption></figure><div class="prose"><p>El filtro tiene tres de las cuatro puertas abiertas. El proveedor lo entrenó con 2.000 evaluaciones que reclutadores de otras empresas hicieron en el pasado: esa es su <b>etiqueta</b> (<i>label</i>), lo que el modelo aprende a imitar. Esos reclutadores daban, en promedio, unos puntos más a los hombres que a mujeres con el mismo perfil, y castigaban cada mes sin empleo. El proveedor quitó la columna del sexo para que el modelo «no discriminara». Pero dejó los meses sin empleo, que en los datos están muy ligados al sexo: las mujeres de la convocatoria tienen en promedio 6,7 meses sin empleo en los últimos cinco años y los hombres, 1,3.</p><p>El laboratorio reproduce ese entrenamiento. Con las mismas 2.000 decisiones históricas, el modelo se vuelve a entrenar cada vez que quitas o pones una variable, y se aplica a los 1.000 candidatos de la convocatoria.</p></div><div class="lab" id="02-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Quita la variable sensible y mira cómo el sesgo vuelve por una sustituta</h3></div><p class="hint">Empieza con «Copiar el pasado»: el modelo aprende con el sexo y castiga a las mujeres de forma directa. Quita el sexo y mira cómo crece el peso de los meses sin empleo mientras la razón de impacto casi no cambia. Luego quita también los meses sin empleo. Siempre pasan los 380 mejores puntajes, como en la convocatoria piloto.</p><style>
+[id="02-lab-2"] .c2l2-vars{display:flex;flex-wrap:wrap;gap:6px}
+[id="02-lab-2"] .c2l2-vars button{font-size:.8rem}
+[id="02-lab-2"] .c2l2-panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
+[id="02-lab-2"] .c2l2-caja{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--paper);display:grid;gap:6px;min-width:0}
+[id="02-lab-2"] .c2l2-tit{font:700 .76rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+[id="02-lab-2"] .c2l2-fila{display:grid;grid-template-columns:118px minmax(0,1fr) 54px;gap:6px;align-items:center;font:600 .8rem var(--f-display)}
+[id="02-lab-2"] .c2l2-eje{position:relative;height:14px;background:var(--card);border-radius:3px}
+[id="02-lab-2"] .c2l2-eje::before{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;border-left:1px solid var(--muted)}
+[id="02-lab-2"] .c2l2-eje i{position:absolute;top:2px;height:10px;border-radius:2px;transition:all .25s}
+[id="02-lab-2"] .c2l2-barra{height:14px;background:var(--card);border-radius:3px;position:relative;overflow:hidden}
+[id="02-lab-2"] .c2l2-barra i{display:block;height:100%;transition:width .25s}
+[id="02-lab-2"] .c2l2-barra::after{content:"";position:absolute;top:0;bottom:0;left:var(--l,0);border-left:2px dashed var(--ink);opacity:.5}
+[id="02-lab-2"] .c2l2-n{font:600 .8rem var(--f-mono);text-align:right}
+[id="02-lab-2"] .c2l2-apagada{opacity:.35}
+[id="02-lab-2"] .c2l2-grande{font:700 1.3rem var(--f-mono)}
+[id="02-lab-2"] .c2l2-grande.no{color:var(--warm)} [id="02-lab-2"] .c2l2-grande.si{color:var(--good)}
+@media (prefers-reduced-motion: reduce){[id="02-lab-2"] .c2l2-eje i,[id="02-lab-2"] .c2l2-barra i{transition:none}}
+</style>
+<div class="c2l2-tit">Variables con las que se entrena el modelo (pulsa para quitar o poner)</div>
+<div class="btns c2l2-vars" id="c2l2-vars" role="group" aria-label="Variables del modelo"></div>
+<div class="btns" role="group" aria-label="Modelos de ejemplo">
+  <button type="button" data-m="pasado">Copiar el pasado (con sexo)</button>
+  <button type="button" data-m="filtro">El filtro del proveedor (sin sexo)</button>
+  <button type="button" data-m="limpio">Sin sexo ni meses sin empleo</button>
+</div>
+<div class="c2l2-panel">
+  <div class="c2l2-caja">
+    <div class="c2l2-tit">Peso que aprende cada variable</div>
+    <div id="c2l2-pesos"></div>
+    <small class="hint">Puntos de puntaje por unidad: por año de experiencia, por punto de la prueba, por mes sin empleo, por ser hombre. Barra a la derecha: suma; a la izquierda: resta.</small>
+  </div>
+  <div class="c2l2-caja">
+    <div class="c2l2-tit">Los 380 mejores puntajes pasan a entrevista</div>
+    <div id="c2l2-tasas"></div>
+    <div>Razón de impacto: <span class="c2l2-grande" id="c2l2-razon"></span></div>
+    <div id="c2l2-aptos" class="hint"></div>
+  </div>
+</div>
+<div class="readout texto" id="c2l2-out" aria-live="polite"></div></div><div class="prose"><p>La lección del laboratorio es incómoda: <b>quitar la variable sensible no quita el sesgo</b> si queda una variable que la sustituye. Esa idea tiene nombre, «equidad por desconocimiento» (<i>fairness through unawareness</i>), y es la promesa del folleto del proveedor. Para saber si un sistema discrimina por sexo hay que medir por sexo. Paradójicamente, eso exige guardar el dato que no se quiere usar, con cuidado y con permiso, como verás en el capítulo de privacidad.</p></div></section>
+<section><h2>Métricas de equidad: paridad demográfica, igualdad de oportunidades y calibración por grupo</h2><div class="prose"><p>«Medir la equidad» suena a una sola cosa, pero hay varias preguntas distintas que se pueden hacer a los mismos números. Para hacerlas hace falta una herramienta común a todas: la <b>matriz de confusión</b> (<i>confusion matrix</i>), una tabla de dos por dos que cruza lo que decidió el sistema con lo que de verdad pasó. Como los datos del curso son simulados, sabemos quién habría sido buen agente de atención: el curso lo llama «apto». En la vida real ese dato se conoce tarde y a medias, porque solo se observa el desempeño de quienes fueron contratados.</p></div><figure class="fig fig-comparacion" id="02-diagrama-2"><div class="lienzo"><svg viewBox="0 0 840 296" style="min-width:720px" role="img" aria-label="Matrices de confusión del filtro con umbral 60. Mujeres: 70 aptas pasan, 58 aptas rechazadas, 73 no aptas pasan, 287 no aptas rechazadas; tasa de selección 29,3 %, aptas que pasan 54,7 %, precisión 49,0 %. Hombres: 126, 33, 111 y 242; tasa 46,3 %, aptos que pasan 79,2 %, precisión 53,2 %. Razón de impacto 0,63.">
+<text x="20" y="26" class="t t-b k-casa" style="font-size:14px">Mujeres · 488 candidatas</text>
+<text x="176.0" y="50" class="t t-s t-b" text-anchor="middle">Pasa</text>
+<text x="302.0" y="50" class="t t-s t-b" text-anchor="middle">No pasa</text>
+<text x="20" y="91.0" class="t t-s t-b">Apto</text>
+<text x="20" y="155.0" class="t t-s t-b">No apto</text>
+<rect x="116" y="58" width="120" height="58" rx="8" class="c-enl" />
+<text x="176.0" y="86" class="t t-b k-enl" text-anchor="middle" style="font-size:20px">70</text>
+<text x="176.0" y="104" class="t t-s t-m" text-anchor="middle">aptos que pasan</text>
+<rect x="242" y="58" width="120" height="58" rx="8" class="caja s-warm" style="stroke-width:2"/>
+<text x="302.0" y="86" class="t t-b k-warm" text-anchor="middle" style="font-size:20px">58</text>
+<text x="302.0" y="104" class="t t-s t-m" text-anchor="middle">aptos rechazados</text>
+<rect x="116" y="122" width="120" height="58" rx="8" class="caja" />
+<text x="176.0" y="150" class="t t-b " text-anchor="middle" style="font-size:20px">73</text>
+<text x="176.0" y="168" class="t t-s t-m" text-anchor="middle">no aptos que pasan</text>
+<rect x="242" y="122" width="120" height="58" rx="8" class="caja" />
+<text x="302.0" y="150" class="t t-b " text-anchor="middle" style="font-size:20px">287</text>
+<text x="302.0" y="168" class="t t-s t-m" text-anchor="middle">no aptos rechazados</text>
+<text x="20" y="204" class="t t-s">Tasa de selección: 143 de 488</text>
+<text x="362" y="204" class="t t-b t-mono" text-anchor="end" style="font-size:12px">29,3 %</text>
+<text x="20" y="226" class="t t-s">Aptas que pasan: 70 de 128</text>
+<text x="362" y="226" class="t t-b t-mono" text-anchor="end" style="font-size:12px">54,7 %</text>
+<text x="20" y="248" class="t t-s">Aptas entre las que pasan: 70 de 143</text>
+<text x="362" y="248" class="t t-b t-mono" text-anchor="end" style="font-size:12px">49,0 %</text>
+<text x="470" y="26" class="t t-b k-sis" style="font-size:14px">Hombres · 512 candidatos</text>
+<text x="626.0" y="50" class="t t-s t-b" text-anchor="middle">Pasa</text>
+<text x="752.0" y="50" class="t t-s t-b" text-anchor="middle">No pasa</text>
+<text x="470" y="91.0" class="t t-s t-b">Apto</text>
+<text x="470" y="155.0" class="t t-s t-b">No apto</text>
+<rect x="566" y="58" width="120" height="58" rx="8" class="c-enl" />
+<text x="626.0" y="86" class="t t-b k-enl" text-anchor="middle" style="font-size:20px">126</text>
+<text x="626.0" y="104" class="t t-s t-m" text-anchor="middle">aptos que pasan</text>
+<rect x="692" y="58" width="120" height="58" rx="8" class="caja s-warm" style="stroke-width:2"/>
+<text x="752.0" y="86" class="t t-b k-warm" text-anchor="middle" style="font-size:20px">33</text>
+<text x="752.0" y="104" class="t t-s t-m" text-anchor="middle">aptos rechazados</text>
+<rect x="566" y="122" width="120" height="58" rx="8" class="caja" />
+<text x="626.0" y="150" class="t t-b " text-anchor="middle" style="font-size:20px">111</text>
+<text x="626.0" y="168" class="t t-s t-m" text-anchor="middle">no aptos que pasan</text>
+<rect x="692" y="122" width="120" height="58" rx="8" class="caja" />
+<text x="752.0" y="150" class="t t-b " text-anchor="middle" style="font-size:20px">242</text>
+<text x="752.0" y="168" class="t t-s t-m" text-anchor="middle">no aptos rechazados</text>
+<text x="470" y="204" class="t t-s">Tasa de selección: 237 de 512</text>
+<text x="812" y="204" class="t t-b t-mono" text-anchor="end" style="font-size:12px">46,3 %</text>
+<text x="470" y="226" class="t t-s">Aptos que pasan: 126 de 159</text>
+<text x="812" y="226" class="t t-b t-mono" text-anchor="end" style="font-size:12px">79,2 %</text>
+<text x="470" y="248" class="t t-s">Aptos entre los que pasan: 126 de 237</text>
+<text x="812" y="248" class="t t-b t-mono" text-anchor="end" style="font-size:12px">53,2 %</text>
+<line x1="440" y1="12" x2="440" y2="250" class="vida"/>
+<text x="20" y="282" class="t t-s t-b">Razón de impacto 29,3 / 46,3 = 0,63 (menos de 0,80) · Diferencia de oportunidades: 24,6 puntos · Diferencia de precisión: 4,2 puntos</text>
+</svg></div><figcaption><b>Las cuentas del filtro con el umbral de 60.</b> Una matriz de confusión por grupo: las filas dicen si la persona era apta y las columnas, si el filtro la dejó pasar. En verde, los aptos que pasan; en rojo, los aptos que el filtro rechazó, el error que sufrió Camila. Debajo de cada matriz, las tres métricas del capítulo calculadas con esos números. Compara las dos columnas: la proporción de aptos entre los que pasan es casi igual (49,0 % y 53,2 %), pero la tasa de selección y la de aptos que pasan son muy distintas.</figcaption></figure><div class="prose"><p>La primera pregunta es la más simple: <b>¿pasan en la misma proporción?</b> Eso es la <b>paridad demográfica</b> (<i>demographic parity</i>): la <b>tasa de selección</b> (<i>selection rate</i>) de cada grupo, es decir, cuántos pasan de cada cien que se postulan. En Estados Unidos, las Pautas Uniformes sobre Procedimientos de Selección de Empleados de 1978 usan una regla práctica para detectar un problema: la <b>regla de los cuatro quintos</b> (<i>four-fifths rule</i>). Se divide la tasa del grupo menos favorecido entre la del más favorecido; ese cociente se llama <b>razón de impacto</b> (<i>impact ratio</i>). Si da menos de 0,80, hay una señal de alarma que pide explicación. En el filtro: 29,3 % entre 46,3 % da 0,63.</p></div><div class="analogia"><b>Imagínalo así</b><p><b>La igualdad de oportunidades es como la puerta de una escuela de música.</b> No preguntas si entran tantos niños como niñas; preguntas si, entre los que de verdad saben tocar, entran tantos niños como niñas. Si de cada 100 niñas que tocan bien entran 55 y de cada 100 niños entran 79, la puerta trata distinto al talento según quién lo trae.</p></div><div class="prose"><p>La segunda pregunta es esa: <b>entre las personas aptas, ¿pasan en la misma proporción?</b> Es la <b>igualdad de oportunidades</b> (<i>equal opportunity</i>), que compara la <b>tasa de verdaderos positivos</b> (<i>true positive rate</i>, también llamada sensibilidad o <i>recall</i>) de cada grupo. En el filtro, de 128 mujeres aptas pasan 70 (54,7 %) y de 159 hombres aptos pasan 126 (79,2 %). Camila es una de las 58 mujeres aptas que se quedaron fuera. Si además se exige que también sea igual la tasa de no aptos que pasan por error, la métrica se llama <b>probabilidades igualadas</b> (<i>equalized odds</i>).</p><p>La tercera pregunta mira desde el otro lado: <b>cuando el filtro dice «pasa», ¿acierta igual en los dos grupos?</b> Es la <b>paridad predictiva</b> (<i>predictive parity</i>), que compara la <b>precisión</b> (<i>precision</i>, la proporción de aptos entre los que pasan). Su versión más exigente es la <b>calibración por grupo</b> (<i>calibration within groups</i>): que un mismo puntaje, por ejemplo 65, signifique la misma probabilidad de ser apto sin importar el grupo. En el filtro la precisión es parecida: 49,0 % en mujeres y 53,2 % en hombres. El proveedor podría decir, con números en la mano, que su filtro «acierta igual con todos». Y no estaría mintiendo.</p><div class="tbl"><table><thead><tr><th>Métrica</th><th>Pregunta</th><th>Mujeres</th><th>Hombres</th><th>¿Se cumple?</th></tr></thead><tbody><tr><td>Paridad demográfica</td><td>¿Pasan en la misma proporción?</td><td>29,3 %</td><td>46,3 %</td><td>No: razón 0,63</td></tr><tr><td>Igualdad de oportunidades</td><td>¿Pasan igual los aptos?</td><td>54,7 %</td><td>79,2 %</td><td>No: 24,6 puntos</td></tr><tr><td>Paridad predictiva</td><td>¿Acierta igual cuando dice «pasa»?</td><td>49,0 %</td><td>53,2 %</td><td>Casi: 4,2 puntos</td></tr></tbody></table></div><p>Las métricas de clasificación por sí mismas (precisión, sensibilidad, curvas ROC) se explican a fondo en <a href="https://aaramirez.github.io/aprendizaje-estadistico/temario.html" target="_blank" rel="noopener">Aprendizaje automático</a>. Aquí importa la comparación entre grupos.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Mide el filtro por grupo con Python</h3></div><p>Genera tú mismo los 1.000 candidatos ficticios del curso (son los mismos de los laboratorios, con la semilla 2026) y calcula la tasa de selección y la razón de impacto. Solo necesitas Python 3, sin instalar nada. Guarda este script como <code>filtro.py</code>:</p><div class="code-copia"><pre><code># Genera los 1.000 candidatos ficticios del curso (semilla 2026) y mide el filtro por grupo.
+import math, csv
+
+def mulberry32(a):
+    def r():
+        nonlocal a
+        a = (a + 0x6D2B79F5) &amp; 0xFFFFFFFF
+        t = a
+        t = ((t ^ (t &gt;&gt; 15)) * (t | 1)) &amp; 0xFFFFFFFF
+        t = (t ^ ((t + (((t ^ (t &gt;&gt; 7)) * (t | 61)) &amp; 0xFFFFFFFF)) &amp; 0xFFFFFFFF)) &amp; 0xFFFFFFFF
+        return ((t ^ (t &gt;&gt; 14)) &amp; 0xFFFFFFFF) / 4294967296
+    return r
+
+def redondear(x):  # igual que Math.round de JavaScript
+    return math.floor(x + 0.5)
+
+def candidatos(semilla=2026):
+    r = mulberry32(semilla)
+    def normal():
+        u = 0
+        while u == 0:
+            u = r()
+        v = r()
+        return math.sqrt(-2 * math.log(u)) * math.cos(2 * math.pi * v)
+    lista = []
+    for i in range(1000):
+        mujer = r() &lt; 0.52
+        exp = redondear(min(10, max(0, 3 + 2.2 * normal())) * 2) / 2
+        prueba = redondear(min(100, max(20, 66 + 12 * normal())))
+        estudios = 0 if r() &lt; 0.35 else (1 if r() &lt; 0.6 else 2)
+        brecha = 0
+        if mujer:
+            if r() &lt; 0.45:
+                brecha = redondear(6 + r() * 18)
+        elif r() &lt; 0.15:
+            brecha = redondear(3 + r() * 9)
+        afinidad = redondear(min(100, max(0, 50 + 15 * normal())))
+        real = 0.6 * prueba + 3 * min(exp, 8) + 2 * estudios + 8 * normal()
+        puntaje = redondear(min(100, max(0, -2 + 0.55 * prueba + 2.6 * min(exp, 8)
+                                     + 2 * estudios + 0.3 * afinidad - 0.9 * brecha)))
+        lista.append({"id": f"C-{i+1:04d}", "grupo": "mujer" if mujer else "hombre",
+                      "experiencia": exp, "prueba": prueba, "estudios": estudios,
+                      "meses_sin_empleo": brecha, "coincidencia": afinidad,
+                      "apto": int(real &gt;= 58), "puntaje": puntaje})
+    return lista
+
+UMBRAL = 60
+datos = candidatos()
+tasas = {}
+for g in ("mujer", "hombre"):
+    grupo = [c for c in datos if c["grupo"] == g]
+    pasan = [c for c in grupo if c["puntaje"] &gt;= UMBRAL]
+    aptos = [c for c in grupo if c["apto"]]
+    aptos_que_pasan = [c for c in aptos if c["puntaje"] &gt;= UMBRAL]
+    tasas[g] = len(pasan) / len(grupo)
+    print(f"{g:7s} candidatos {len(grupo):4d}  pasan {len(pasan):4d}  tasa {tasas[g]:.1%}  "
+          f"aptos que pasan {len(aptos_que_pasan)} de {len(aptos)} ({len(aptos_que_pasan)/len(aptos):.1%})")
+razon = min(tasas.values()) / max(tasas.values())
+print(f"Razon de impacto: {razon:.2f} -&gt; {'cumple' if razon &gt;= 0.8 else 'NO cumple'} la regla de los cuatro quintos")
+
+with open("candidatos.csv", "w", newline="", encoding="utf-8") as f:
+    w = csv.DictWriter(f, fieldnames=list(datos[0].keys()))
+    w.writeheader()
+    w.writerows(datos)
+print("Guarde candidatos.csv")</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>Córrelo desde la carpeta donde lo guardaste:</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><div class="cmd-l"><code>python filtro.py</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>python3 filtro.py</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Mira las dos primeras líneas de la salida y compáralas con la tabla de esta sección.</span></li><li><span>Cambia <code>UMBRAL = 60</code> por <code>55</code> y por <code>65</code>, y vuelve a correrlo. Anota la razón de impacto de cada umbral.</span></li><li><span>Abre <code>candidatos.csv</code> en una hoja de cálculo y busca la fila <code>C-0735</code>: es Camila.</span></li></ol><p><b>Qué observar:</b> con 60 debes ver 143 de 488 mujeres (29,3 %), 237 de 512 hombres (46,3 %) y una razón de 0,63. Subir o bajar el mismo umbral para todos mueve las dos tasas, pero la razón sigue por debajo de 0,80: el problema no está en el umbral sino en el puntaje. El archivo <code>candidatos.csv</code> te sirve para la práctica opcional del final del capítulo.</p></div></section>
+<section><h2>Por qué no se pueden cumplir todas a la vez</h2><div class="prose"><p>En 2016, ProPublica acusó a COMPAS de ser injusto con las personas negras porque se equivocaba más con ellas: las marcaba de alto riesgo sin que reincidieran. La empresa que lo vendía respondió que su sistema era justo, porque un mismo puntaje significaba el mismo riesgo para personas negras y blancas. Las dos partes tenían razón con sus números. Estaban midiendo métricas distintas.</p><p>Ese mismo año, dos grupos de investigadores (Kleinberg, Mullainathan y Raghavan por un lado, y Chouldechova por otro) demostraron que no era un problema de COMPAS sino de las matemáticas: <b>cuando dos grupos tienen proporciones distintas de casos positivos y el modelo no es perfecto, no se puede tener a la vez calibración por grupo e igualdad en las tasas de error</b>. Hay que elegir. En el filtro pasa algo parecido: los aptos son el 26,2 % de las mujeres y el 31,1 % de los hombres (una diferencia que en estos datos simulados es puro azar), y el puntaje está sesgado. Si igualas una métrica, otra se abre.</p></div><div class="analogia"><b>Imagínalo así</b><p><b>Es como repartir una torta con tres reglas.</b> «Todos reciben el mismo pedazo», «cada uno recibe según el hambre que tiene» y «nadie recibe más de lo que se va a comer». Cada regla es razonable por separado. Si todos tienen el mismo hambre, se cumplen las tres. Si no, cumplir una rompe otra, y alguien tiene que decidir cuál manda en esta mesa.</p></div><div class="prose"><p>El laboratorio te deja poner un umbral distinto para cada grupo, que es la forma más directa de corregir un sistema ya entrenado. Tiene una restricción práctica: Gestión Humana puede hacer entre 330 y 430 entrevistas.</p></div><div class="lab" id="02-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Un clasificador con métricas de equidad por grupo</h3></div><p class="hint">Mueve el umbral de las mujeres y el de los hombres, o usa los ajustes rápidos. Las barras de color son las personas aptas y las grises, las no aptas; a la derecha de cada línea están los que pasan. Las tarjetas dicen qué métrica se cumple. Busca una combinación que cumpla las tres sin pasarte de las entrevistas posibles.</p><style>
+[id="02-lab-1"] .c2l1-tarjetas{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:8px}
+[id="02-lab-1"] .c2l1-t{border:1.5px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--card);display:grid;gap:3px}
+[id="02-lab-1"] .c2l1-t b{font:700 .78rem var(--f-display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+[id="02-lab-1"] .c2l1-t .v{font:700 1.05rem var(--f-mono)}
+[id="02-lab-1"] .c2l1-t small{font:500 .78rem/1.35 var(--f-display);color:var(--muted)}
+[id="02-lab-1"] .c2l1-t.si{border-color:var(--good);background:var(--good-soft)}
+[id="02-lab-1"] .c2l1-t.si .v{color:var(--good)}
+[id="02-lab-1"] .c2l1-t.no{border-color:var(--warm);background:var(--warm-soft)}
+[id="02-lab-1"] .c2l1-t.no .v{color:var(--warm)}
+[id="02-lab-1"] .c2l1-tabla{width:100%;border-collapse:collapse;font:500 .82rem var(--f-display)}
+[id="02-lab-1"] .c2l1-tabla th,[id="02-lab-1"] .c2l1-tabla td{padding:5px 6px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+[id="02-lab-1"] .c2l1-tabla th:first-child,[id="02-lab-1"] .c2l1-tabla td:first-child{text-align:left}
+[id="02-lab-1"] .c2l1-envuelve{overflow-x:auto}
+[id="02-lab-1"] .c2l1-m{color:var(--d-casa);font-weight:700}
+[id="02-lab-1"] .c2l1-h{color:var(--d-sis);font-weight:700}
+[id="02-lab-1"] canvas{width:100%;display:block}
+</style>
+<div class="btns" role="group" aria-label="Ajustes rápidos">
+  <button type="button" aria-pressed="true" data-p="uno">Un solo umbral: 60</button>
+  <button type="button" aria-pressed="false" data-p="par">Igualar tasas de selección</button>
+  <button type="button" aria-pressed="false" data-p="opo">Igualar oportunidades</button>
+  <button type="button" aria-pressed="false" data-p="pre">Igualar precisión</button>
+</div>
+<div class="ctls">
+  <label class="ctl">Umbral para <span class="c2l1-m">mujeres</span> <output id="c2l1-um-o"></output>
+    <input id="c2l1-um" type="range" min="40" max="80" step="1" value="60"></label>
+  <label class="ctl">Umbral para <span class="c2l1-h">hombres</span> <output id="c2l1-uh-o"></output>
+    <input id="c2l1-uh" type="range" min="40" max="80" step="1" value="60"></label>
+</div>
+<canvas id="c2l1-c" role="img" aria-label="Distribución del puntaje del filtro para 488 mujeres y 512 hombres, con los aptos en color lleno y una línea por umbral"></canvas>
+<div class="legend"><span><i style="background:var(--d-casa)"></i>mujeres aptas</span><span><i style="background:var(--d-sis)"></i>hombres aptos</span><span><i style="background:var(--grid)"></i>no aptos</span><span>línea: umbral; a su derecha, pasan a entrevista</span></div>
+<div class="c2l1-envuelve"><table class="c2l1-tabla" id="c2l1-tabla"></table></div>
+<div class="c2l1-tarjetas" id="c2l1-tarjetas"></div>
+<div class="readout texto" id="c2l1-out" aria-live="polite"></div></div><div class="prose"><p>Lo que el laboratorio muestra es la decisión que ninguna herramienta puede tomar sola. Si la empresa elige paridad demográfica, entrevista a más mujeres y acepta que entre ellas habrá una proporción algo menor de aptas, porque el puntaje las subestima. Si elige igualdad de oportunidades, protege a las mujeres aptas como Camila. Si elige paridad predictiva, que es lo que el filtro ya cumple, deja las cosas como están. <b>No hay una respuesta técnica correcta: hay una decisión que alguien con autoridad debe tomar, justificar y escribir.</b> Para un filtro de contratación, Patricia e Inés propusieron igualdad de oportunidades como métrica principal y la razón de impacto como alarma, y la directora lo aprobó.</p></div></section>
+<section><h2>Mitigar antes, durante y después del entrenamiento</h2><div class="prose"><p>Mitigar el sesgo es reducirlo, no eliminarlo. Las técnicas se agrupan según el momento en que actúan, y cada momento tiene herramientas de código abierto. Las dos más usadas son <b>Fairlearn</b>, una biblioteca de Python que empezó en Microsoft y hoy mantiene una comunidad abierta, y <b>AI Fairness 360</b> (AIF360), que empezó en IBM y hoy está en la Linux Foundation.</p></div><figure class="fig fig-esquema" id="02-diagrama-3"><div class="lienzo"><svg viewBox="0 0 928 330" style="min-width:720px" role="img" aria-label="Tres momentos para mitigar el sesgo. Antes: corregir los datos (quitar sustitutas, más ejemplos, cambiar la etiqueta, reponderar; AIF360 Reweighing); con el filtro, quitar meses sin empleo y usar el desempeño a seis meses. Durante: una restricción de equidad al aprender (Fairlearn ExponentiatedGradient). Después: umbrales por grupo o revisión humana (Fairlearn ThresholdOptimizer); con el filtro, leer a mano los puntajes de 50 a 59. Recuadro de cuidado legal sobre ajustar por grupo en contratación.">
+<defs><marker id="i2d3-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker><marker id="i2d3-f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-fis"/></marker></defs>
+<rect x="20" y="16" width="232" height="300" rx="10" class="caja" style="stroke-width:1.4"/>
+<rect x="20" y="16" width="232" height="48" rx="10" class="c-fis"/>
+<text x="34" y="36" class="t t-xs t-b k-fis">ANTES</text>
+<text x="34" y="54" class="t t-b" style="font-size:13px">Corregir los datos</text>
+<text x="34" y="88" class="t t-s">Quitar variables sustitutas</text>
+<text x="34" y="106" class="t t-s">Recoger más ejemplos</text>
+<text x="34" y="124" class="t t-s">Cambiar la etiqueta</text>
+<text x="34" y="142" class="t t-s">Reponderar ejemplos</text>
+<rect x="30" y="172" width="212" height="26" rx="6" class="caja"/>
+<text x="136.0" y="189" class="t t-mono" text-anchor="middle" style="font-size:10px">AIF360: Reweighing</text>
+<text x="34" y="224" class="t t-xs t-b t-m">CON EL FILTRO</text>
+<text x="34" y="244" class="t t-s">Quitar meses sin empleo;</text>
+<text x="34" y="261" class="t t-s">etiqueta: desempeño a 6 meses</text>
+<line x1="254" y1="40" x2="264" y2="40" class="ln" marker-end="url(#i2d3-m)"/>
+<rect x="266" y="16" width="232" height="300" rx="10" class="caja" style="stroke-width:1.4"/>
+<rect x="266" y="16" width="232" height="48" rx="10" class="c-fis"/>
+<text x="280" y="36" class="t t-xs t-b k-fis">DURANTE</text>
+<text x="280" y="54" class="t t-b" style="font-size:13px">Una regla al aprender</text>
+<text x="280" y="88" class="t t-s">Restricción de equidad</text>
+<text x="280" y="106" class="t t-s">al optimizar el modelo</text>
+<text x="280" y="124" class="t t-s">Elegir qué métrica</text>
+<text x="280" y="142" class="t t-s">respetar</text>
+<rect x="276" y="172" width="212" height="26" rx="6" class="caja"/>
+<text x="382.0" y="189" class="t t-mono" text-anchor="middle" style="font-size:10px">Fairlearn: ExponentiatedGradient</text>
+<text x="280" y="224" class="t t-xs t-b t-m">CON EL FILTRO</text>
+<text x="280" y="244" class="t t-s">Reentrenar con igualdad</text>
+<text x="280" y="261" class="t t-s">de oportunidades como regla</text>
+<line x1="500" y1="40" x2="510" y2="40" class="ln" marker-end="url(#i2d3-m)"/>
+<rect x="512" y="16" width="232" height="300" rx="10" class="caja" style="stroke-width:1.4"/>
+<rect x="512" y="16" width="232" height="48" rx="10" class="c-fis"/>
+<text x="526" y="36" class="t t-xs t-b k-fis">DESPUÉS</text>
+<text x="526" y="54" class="t t-b" style="font-size:13px">Ajustar la decisión</text>
+<text x="526" y="88" class="t t-s">Umbral distinto por grupo</text>
+<text x="526" y="106" class="t t-s">Revisión humana de la</text>
+<text x="526" y="124" class="t t-s">franja cercana al umbral</text>
+<rect x="522" y="172" width="212" height="26" rx="6" class="caja"/>
+<text x="628.0" y="189" class="t t-mono" text-anchor="middle" style="font-size:10px">Fairlearn: ThresholdOptimizer</text>
+<text x="526" y="224" class="t t-xs t-b t-m">CON EL FILTRO</text>
+<text x="526" y="244" class="t t-s">Leer a mano los puntajes</text>
+<text x="526" y="261" class="t t-s">de 50 a 59</text>
+<rect x="758" y="16" width="150" height="300" rx="10" class="caja s-warm" style="stroke-width:2;stroke-dasharray:5 4"/>
+<text x="770" y="38" class="t t-xs t-b k-warm">CUIDADO LEGAL</text>
+<text x="770" y="62" class="t t-s">En contratación,</text>
+<text x="770" y="80" class="t t-s">ajustar puntajes o</text>
+<text x="770" y="98" class="t t-s">umbrales por grupo</text>
+<text x="770" y="116" class="t t-s">puede estar prohibido</text>
+<text x="770" y="134" class="t t-s">(en EE. UU., Ley de</text>
+<text x="770" y="152" class="t t-s">Derechos Civiles</text>
+<text x="770" y="170" class="t t-s">de 1991).</text>
+<text x="770" y="206" class="t t-s">Consulta la ley</text>
+<text x="770" y="224" class="t t-s">de tu país.</text>
+</svg></div><figcaption><b>Tres momentos para mitigar el sesgo.</b> Antes del entrenamiento se corrigen los datos; durante, se le pone una regla al aprendizaje; después, se ajusta la decisión sobre el puntaje ya calculado. Cada columna nombra técnicas y su herramienta de ejemplo, y abajo dice qué haría con el filtro de hojas de vida. La franja roja de la derecha recuerda que tocar la decisión por grupo puede estar prohibido en contratación.</figcaption></figure><div class="prose"><p><b>Antes del entrenamiento</b> (<i>pre-processing</i>) se trabaja con los datos. Se buscan y quitan las variables sustitutas midiendo cuánto se relaciona cada variable con el grupo; se recogen más ejemplos del grupo poco representado; se cambia la etiqueta por una más justa, por ejemplo el desempeño real a los seis meses en vez del puntaje de un reclutador; o se usa la <b>reponderación</b> (<i>reweighing</i>), que da más peso a los ejemplos subrepresentados para que el modelo los tome en serio. AIF360 trae esa técnica lista.</p><p><b>Durante el entrenamiento</b> (<i>in-processing</i>) se le pone una <b>restricción</b> (<i>constraint</i>) al aprendizaje: el modelo busca el mejor acierto posible sin pasarse de cierta diferencia entre grupos. Fairlearn lo hace con su método de gradiente exponenciado (<code>ExponentiatedGradient</code>), al que se le dice qué métrica respetar, por ejemplo igualdad de oportunidades.</p><p><b>Después del entrenamiento</b> (<i>post-processing</i>) se ajusta la decisión sin tocar el modelo, por ejemplo con umbrales distintos por grupo, como en el laboratorio. Fairlearn lo automatiza con <code>ThresholdOptimizer</code>. Es lo más fácil y lo más delicado: en Estados Unidos, la Ley de Derechos Civiles de 1991 prohíbe ajustar los puntajes de una prueba de empleo según la raza, el sexo o el origen, y en otros países las reglas sobre acción afirmativa cambian mucho. Antes de usarlo en contratación hay que consultar a quien conozca la ley del país. Nada de esto es asesoría legal.</p><p>Para el filtro, el equipo eligió empezar por los datos: quitar los meses sin empleo, pedirle al proveedor que cambie la etiqueta y, mientras tanto, que una persona de Gestión Humana lea a mano todas las hojas de vida con puntaje entre 50 y 59.</p></div></section>
+<section><h2>Sesgo en los modelos de lenguaje y de imagen</h2><div class="prose"><p>Cuando Patricia supo que el filtro estaba en pausa, preguntó si no sería más simple pegar cada hoja de vida en un asistente de IA generativa y pedirle un puntaje. Los <b>modelos de lenguaje grandes</b> (<i>large language models</i>, LLM) y los de imagen aprenden de miles de millones de textos e imágenes de internet, con todos sus estereotipos. Y como aprenden más cosas, tienen más puertas por donde entra el sesgo: el nombre, la redacción, la universidad, una foto.</p><p>Los estudios públicos lo muestran. En 2023, un análisis de Bloomberg con más de 5.000 imágenes generadas por Stable Diffusion encontró que, al pedir personas de empleos bien pagados, el modelo dibujaba sobre todo hombres de piel clara, y al pedir empleos mal pagados, más personas de piel oscura, en una proporción más extrema que la realidad. En 2024, investigadores de la Universidad de Washington pusieron a tres modelos de lenguaje a ordenar hojas de vida idénticas a las que solo les cambiaban el nombre: preferían los nombres asociados a personas blancas en el 85 % de las comparaciones y los nombres asociados a mujeres solo en el 11 %.</p></div><div class="analogia"><b>Imagínalo así</b><p><b>La prueba de pares es como mandar dos veces la misma carta con distinta firma.</b> Si la carta firmada por Camila recibe un no y la idéntica firmada por Daniel recibe un sí, el problema no está en la carta. Los investigadores sociales la usan desde hace décadas para medir discriminación en contrataciones y alquileres, y funciona igual con un modelo.</p></div><div class="prose"><p>Esa técnica, la <b>prueba de pares</b> (<i>paired testing</i> o <i>correspondence test</i>), es la forma más directa de auditar un modelo de lenguaje: se arman pares de entradas idénticas que solo cambian en una señal del grupo (el nombre, el pronombre, el nombre de un colegio) y se compara la salida. Es lo que Rodrigo hizo con la idea de Patricia: 200 pares de hojas de vida ficticias con nombres de mujer y de hombre. En su prueba, los puntajes cambiaban según el nombre, y la idea quedó descartada hasta tener una evaluación propia.</p></div></section>
+<section><h2>Auditar un sistema</h2><div class="prose"><p>Una <b>auditoría de sesgo</b> (<i>bias audit</i>) es una revisión ordenada que responde tres preguntas: ¿el sistema trata distinto a algún grupo?, ¿por qué?, ¿qué se hace al respecto? Se repite cada vez que cambian los datos, el modelo o el uso, porque un sistema que hoy está bien puede dejar de estarlo.</p></div><figure class="fig fig-flujo" id="02-diagrama-4"><div class="lienzo"><svg viewBox="0 0 820 406" style="min-width:640px" role="img" aria-label="Seis pasos de una auditoría de sesgo con su responsable: 1 Gestión Humana define el alcance; 2 Cumplimiento autoriza el dato del grupo; 3 Sistemas calcula por grupo; 4 Sistemas prueba con pares; 5 todo el equipo busca la causa; 6 la Dirección decide y documenta. Una flecha vuelve al inicio: se repite cada mes.">
+<defs><marker id="i2d4-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker><marker id="i2d4-f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-fis"/></marker></defs>
+<rect x="20" y="27" width="150" height="28" rx="14" class="d-casa"/>
+<text x="95" y="46" class="t t-s t-b k-casa" text-anchor="middle">Gestión Humana</text>
+<line x1="170" y1="41" x2="196" y2="41" class="ln ln-d"/>
+<rect x="200" y="16" width="470" height="50" rx="9" class="caja" style="stroke-width:1.6"/>
+<circle cx="224" cy="41" r="13" class="c-fis"/>
+<text x="224" y="46" class="t t-b k-fis" text-anchor="middle">1</text>
+<text x="248" y="37" class="t t-b" style="font-size:13px">Definir el alcance</text>
+<text x="248" y="54" class="t t-s t-m">qué decisión, qué grupos y qué métrica manda</text>
+<line x1="435" y1="67" x2="435" y2="79" class="ln" marker-end="url(#i2d4-m)"/>
+<rect x="20" y="91" width="150" height="28" rx="14" class="c-tra"/>
+<text x="95" y="110" class="t t-s t-b k-tra" text-anchor="middle">Cumplimiento</text>
+<line x1="170" y1="105" x2="196" y2="105" class="ln ln-d"/>
+<rect x="200" y="80" width="470" height="50" rx="9" class="caja" style="stroke-width:1.6"/>
+<circle cx="224" cy="105" r="13" class="c-fis"/>
+<text x="224" y="110" class="t t-b k-fis" text-anchor="middle">2</text>
+<text x="248" y="101" class="t t-b" style="font-size:13px">Conseguir el dato del grupo</text>
+<text x="248" y="118" class="t t-s t-m">autodeclarado, con permiso y guardado aparte</text>
+<line x1="435" y1="131" x2="435" y2="143" class="ln" marker-end="url(#i2d4-m)"/>
+<rect x="20" y="155" width="150" height="28" rx="14" class="c-red"/>
+<text x="95" y="174" class="t t-s t-b k-red" text-anchor="middle">Sistemas</text>
+<line x1="170" y1="169" x2="196" y2="169" class="ln ln-d"/>
+<rect x="200" y="144" width="470" height="50" rx="9" class="caja" style="stroke-width:1.6"/>
+<circle cx="224" cy="169" r="13" class="c-fis"/>
+<text x="224" y="174" class="t t-b k-fis" text-anchor="middle">3</text>
+<text x="248" y="165" class="t t-b" style="font-size:13px">Calcular por grupo</text>
+<text x="248" y="182" class="t t-s t-m">tasas, razón de impacto, errores y grupos cruzados</text>
+<line x1="435" y1="195" x2="435" y2="207" class="ln" marker-end="url(#i2d4-m)"/>
+<rect x="20" y="219" width="150" height="28" rx="14" class="c-red"/>
+<text x="95" y="238" class="t t-s t-b k-red" text-anchor="middle">Sistemas</text>
+<line x1="170" y1="233" x2="196" y2="233" class="ln ln-d"/>
+<rect x="200" y="208" width="470" height="50" rx="9" class="caja" style="stroke-width:1.6"/>
+<circle cx="224" cy="233" r="13" class="c-fis"/>
+<text x="224" y="238" class="t t-b k-fis" text-anchor="middle">4</text>
+<text x="248" y="229" class="t t-b" style="font-size:13px">Probar con pares</text>
+<text x="248" y="246" class="t t-s t-m">misma entrada, solo cambia el nombre</text>
+<line x1="435" y1="259" x2="435" y2="271" class="ln" marker-end="url(#i2d4-m)"/>
+<rect x="20" y="283" width="150" height="28" rx="14" class="caja"/>
+<text x="95" y="302" class="t t-s t-b" text-anchor="middle">Todo el equipo</text>
+<line x1="170" y1="297" x2="196" y2="297" class="ln ln-d"/>
+<rect x="200" y="272" width="470" height="50" rx="9" class="caja" style="stroke-width:1.6"/>
+<circle cx="224" cy="297" r="13" class="c-fis"/>
+<text x="224" y="302" class="t t-b k-fis" text-anchor="middle">5</text>
+<text x="248" y="293" class="t t-b" style="font-size:13px">Buscar la causa</text>
+<text x="248" y="310" class="t t-s t-m">qué variable o etiqueta produce la diferencia</text>
+<line x1="435" y1="323" x2="435" y2="335" class="ln" marker-end="url(#i2d4-m)"/>
+<rect x="20" y="347" width="150" height="28" rx="14" class="c-apl"/>
+<text x="95" y="366" class="t t-s t-b k-apl" text-anchor="middle">Dirección</text>
+<line x1="170" y1="361" x2="196" y2="361" class="ln ln-d"/>
+<rect x="200" y="336" width="470" height="50" rx="9" class="caja" style="stroke-width:1.6"/>
+<circle cx="224" cy="361" r="13" class="c-fis"/>
+<text x="224" y="366" class="t t-b k-fis" text-anchor="middle">6</text>
+<text x="248" y="357" class="t t-b" style="font-size:13px">Decidir y documentar</text>
+<text x="248" y="374" class="t t-s t-m">corregir, revisar a mano o no usar; con responsable</text>
+<path d="M670 361 H730 V41 H674" class="ln s-fis" style="stroke-width:1.8" marker-end="url(#i2d4-f)"/>
+<text x="742" y="180.5" class="t t-s k-fis t-b">Se repite</text>
+<text x="742" y="196.5" class="t t-s k-fis">cada mes</text>
+<text x="742" y="212.5" class="t t-s k-fis">con datos</text>
+<text x="742" y="228.5" class="t t-s k-fis">nuevos</text>
+</svg></div><figcaption><b>Los pasos de una auditoría de sesgo.</b> Se leen de arriba hacia abajo y cada paso tiene a su responsable a la izquierda: Gestión Humana define el alcance y la métrica, Cumplimiento autoriza los datos del grupo, Sistemas calcula y hace la prueba de pares, el equipo busca la causa y la dirección decide. La flecha de la derecha vuelve al inicio: la auditoría se repite cada mes con los registros nuevos.</figcaption></figure><div class="prose"><p>Los pasos son siempre parecidos:</p><ol class="steps"><li><span><b>Definir el alcance</b>: qué decisión se audita, qué grupos se comparan (sexo, edad, origen, discapacidad, según la ley y el caso) y qué métrica manda.</span></li><li><span><b>Conseguir el dato del grupo</b> de forma legal: casi siempre autodeclarado, con permiso, guardado aparte y usado solo para medir.</span></li><li><span><b>Calcular</b> las tasas de selección, la razón de impacto y las métricas de error por grupo, también en grupos cruzados (mujeres mayores de 40, por ejemplo), y revisar si las diferencias pueden ser azar con pocos casos.</span></li><li><span><b>Probar con pares</b> que la salida no cambie solo por la señal del grupo.</span></li><li><span><b>Buscar la causa</b>: qué variable o qué etiqueta produce la diferencia.</span></li><li><span><b>Decidir y documentar</b>: corregir, compensar con revisión humana o no usar el sistema, y dejarlo escrito con su responsable.</span></li></ol><p>En la ciudad de Nueva York, la Ley Local 144 convirtió estos pasos en obligación para las herramientas de contratación: una auditoría independiente al año y la publicación de las razones de impacto por sexo y por raza. Las herramientas de código abierto como Fairlearn, AIF360 y Aequitas hacen los cálculos; ninguna decide qué métrica importa.</p></div><div class="ml"><b>En la práctica</b><p><b>La pieza de este capítulo para la evaluación de impacto.</b> Rodrigo y Patricia dejaron escrita una hoja con lo esencial: métrica principal, igualdad de oportunidades (54,7 % frente a 79,2 %, falla); alarma, razón de impacto (0,63, falla); causa probable, los meses sin empleo como sustituta del sexo, heredados de una etiqueta histórica; prueba de pares, pendiente con el proveedor; decisión provisional, filtro en pausa, revisión humana de la franja de 50 a 59 y pedido formal al proveedor. El capítulo 8 recibirá esta hoja tal cual.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Opcional: las mismas métricas con Fairlearn</h3></div><p>Si quieres ver cómo lo hace una herramienta real, instala Fairlearn y calcula las métricas por grupo sobre el <code>candidatos.csv</code> que generaste en la práctica anterior. Necesitas conexión a internet para instalar los paquetes.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><div class="cmd-l"><code>python -m pip install fairlearn pandas</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>python3 -m pip install fairlearn pandas</code><button type="button" class="copiar">Copiar</button></div></div></div><p>Guarda este script como <code>fairlearn_filtro.py</code> en la misma carpeta que <code>candidatos.csv</code>:</p><div class="code-copia"><pre><code>import pandas as pd
+from fairlearn.metrics import (MetricFrame, selection_rate, true_positive_rate,
+                               demographic_parity_ratio)
+from sklearn.metrics import precision_score
+
+df = pd.read_csv("candidatos.csv")
+pasa = (df["puntaje"] &gt;= 60).astype(int)
+mf = MetricFrame(
+    metrics={"tasa de selección": selection_rate,
+             "aptos que pasan": true_positive_rate,
+             "precisión": precision_score},
+    y_true=df["apto"], y_pred=pasa, sensitive_features=df["grupo"])
+print(mf.by_group.round(3))
+print("Diferencia máxima entre grupos:")
+print(mf.difference().round(3))
+razon = demographic_parity_ratio(df["apto"], pasa, sensitive_features=df["grupo"])
+print("Razón de impacto:", round(razon, 2))</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><div class="cmd-l"><code>python fairlearn_filtro.py</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>python3 fairlearn_filtro.py</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Compara la tabla <code>by_group</code> con la tabla de métricas del capítulo.</span></li><li><span>Cambia <code>&gt;= 60</code> por <code>&gt;= 55</code> y mira qué fila de <code>difference()</code> mejora y cuál no.</span></li></ol><p><b>Qué observar:</b> deben salir los mismos números que calculaste a mano (0,293 y 0,463 de tasa de selección; razón 0,63). Fairlearn no inventa otra equidad: organiza las mismas cuentas por grupo y te deja elegir la métrica. La decisión de cuál importa sigue siendo tuya.</p></div></section>
+<section><h2>La idea clave</h2><div class="prose"><p>El sesgo entra por los datos históricos, por muestras incompletas, por etiquetas que miden otra cosa y por variables sustitutas; por eso quitar la variable sensible no basta. Se mide comparando grupos con métricas distintas (paridad demográfica, igualdad de oportunidades, paridad predictiva) que, cuando los grupos difieren y el modelo no es perfecto, no se pueden cumplir todas a la vez. La técnica ayuda a mitigar, pero la elección es humana. <b>Elegir y declarar qué equidad se busca.</b></p></div></section>
+<section><h2>Pruébate</h2><div class="quiz"><h3>Pruébate</h3><details><summary>El proveedor dice que su filtro no discrimina porque no recibe el sexo. ¿Por qué no basta?</summary><p>Porque los meses sin empleo funcionan como variable sustituta del sexo: están muy ligados a él en los datos, y el modelo los usa para reproducir el mismo sesgo de las decisiones históricas.</p></details><details><summary>Calcula la razón de impacto si pasan 90 de 300 mujeres y 150 de 300 hombres. ¿Cumple la regla de los cuatro quintos?</summary><p>Las tasas son 30 % y 50 %; la razón es 0,30 / 0,50 = 0,60. No cumple, porque es menor que 0,80.</p></details><details><summary>¿Qué mide la igualdad de oportunidades y qué valor tiene en el filtro?</summary><p>Compara, entre las personas aptas, qué proporción pasa en cada grupo. En el filtro pasa el 54,7 % de las mujeres aptas y el 79,2 % de los hombres aptos.</p></details><details><summary>¿Por qué ProPublica y la empresa de COMPAS podían tener razón al mismo tiempo?</summary><p>Porque medían métricas distintas: ProPublica, las tasas de error por grupo; la empresa, la calibración. Con proporciones distintas de reincidencia entre grupos y un modelo imperfecto, no se pueden cumplir las dos.</p></details><details><summary>¿Qué es la prueba de pares y para qué sirve con un modelo de lenguaje?</summary><p>Es comparar la salida para entradas idénticas que solo cambian en una señal del grupo, como el nombre. Si la salida cambia, el modelo trata distinto a las personas por esa señal.</p></details><details><summary>¿Por qué ajustar umbrales por grupo es delicado en contratación?</summary><p>Porque en algunos países, como Estados Unidos, la ley prohíbe ajustar los puntajes de pruebas de empleo según el grupo. Hay que revisarlo con quien conozca la ley local antes de usarlo.</p></details></div></section>
+<section><h2>Para investigar</h2><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué dijo la Corte Suprema de Estados Unidos en el caso Griggs contra Duke Power (1971) y qué es la doctrina del «impacto dispar»?<small>Pista: busca «Griggs v. Duke Power disparate impact».</small></li><li>¿Qué es la «inferencia de rechazados» (<i>reject inference</i>) y cómo intenta estimar el desempeño de quienes nunca fueron contratados o aprobados?<small>Pista: el término viene de los modelos de crédito.</small></li><li>¿Cómo se usa una prueba de chi cuadrado o la prueba exacta de Fisher para saber si una diferencia entre tasas de selección puede ser azar?<small>Pista: busca «adverse impact statistical significance test».</small></li><li>¿Qué es el sesgo de agregación (<i>aggregation bias</i>) en el marco de Suresh y Guttag, y en qué se diferencia de las cuatro fuentes de este capítulo?<small>Pista: busca «A Framework for Understanding Sources of Harm throughout the Machine Learning Life Cycle».</small></li><li>¿Qué son los datos sintéticos y cuándo sirven, o no, para equilibrar una muestra con pocos casos de un grupo?</li></ol></div></section>
+<section><h2>Para saber más</h2><div class="vids"><span>Para saber más</span><a class="vid" href="https://fairlearn.org/main/user_guide/assessment/index.html" target="_blank" rel="noopener">Guía de usuario de Fairlearn: evaluar la equidad <small>documentación, en inglés</small></a><a class="vid" href="https://github.com/Trusted-AI/AIF360" target="_blank" rel="noopener">AI Fairness 360 <small>repositorio y ejemplos, en inglés</small></a><a class="vid" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing" target="_blank" rel="noopener">Machine Bias, ProPublica (2016) <small>el reportaje sobre COMPAS, en inglés</small></a><a class="vid" href="https://aaramirez.github.io/aprendizaje-estadistico/temario.html" target="_blank" rel="noopener">Aprendizaje automático: métricas de clasificación <small>curso del sitio</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-responsable" target="_blank" rel="noopener">github.com/aaramirez/ia-responsable</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+  // Los 1.000 candidatos ficticios del curso (semilla 2026), igual que en el laboratorio anterior.
+  function datos(semilla){
+    const r=mulberry32(semilla);
+    const normal=()=>{let u=0,v=0;while(u===0)u=r();v=r();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);};
+    const C=[];
+    for(let i=0;i<1000;i++){
+      const mujer=r()<0.52;
+      const exp=Math.round(Math.min(10,Math.max(0,3+2.2*normal()))*2)/2;
+      const prueba=Math.round(Math.min(100,Math.max(20,66+12*normal())));
+      const estudios=r()<0.35?0:(r()<0.6?1:2);
+      let brecha=0;
+      if(mujer){if(r()<0.45)brecha=Math.round(6+r()*18);}
+      else{if(r()<0.15)brecha=Math.round(3+r()*9);}
+      const afinidad=Math.round(Math.min(100,Math.max(0,50+15*normal())));
+      const real=0.6*prueba+3*Math.min(exp,8)+2*estudios+8*normal();
+      const p=Math.round(Math.min(100,Math.max(0,-2+0.55*prueba+2.6*Math.min(exp,8)+2*estudios+0.3*afinidad-0.9*brecha)));
+      C.push({id:'C-'+String(i+1).padStart(4,'0'),g:mujer?'M':'H',exp,prueba,estudios,brecha,afinidad,apto:real>=58,p});
+    }
+    return C;
+  }
+  // 2.000 decisiones históricas de reclutadores (semilla 2019): daban 5 puntos más a los hombres
+  // y restaban 0,75 puntos por cada mes sin empleo. Con eso entrenó el proveedor.
+  function historicos(semilla){
+    const r=mulberry32(semilla);
+    const normal=()=>{let u=0;while(u===0)u=r();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*r());};
+    const H=[];
+    for(let i=0;i<2000;i++){
+      const mujer=r()<0.5;
+      const exp=Math.round(Math.min(10,Math.max(0,3+2.2*normal()))*2)/2;
+      const prueba=Math.round(Math.min(100,Math.max(20,66+12*normal())));
+      const estudios=r()<0.35?0:(r()<0.6?1:2);
+      let brecha=0;if(mujer){if(r()<0.45)brecha=Math.round(6+r()*18);}else if(r()<0.15)brecha=Math.round(3+r()*9);
+      const afinidad=Math.round(Math.min(100,Math.max(0,50+15*normal())));
+      const y=-2+0.55*prueba+2.6*Math.min(exp,8)+2*estudios+0.3*afinidad-0.75*brecha+5*(mujer?0:1)-2.5+4*normal();
+      H.push({g:mujer?'M':'H',exp,prueba,estudios,brecha,afinidad,y});
+    }
+    return H;
+  }
+  const V=[
+    {k:'sexo',n:'Sexo',f:c=>c.g==='H'?1:0,u:'por ser hombre',esc:12},
+    {k:'brecha',n:'Meses sin empleo',f:c=>c.brecha,u:'por mes',esc:1.2},
+    {k:'exp',n:'Experiencia',f:c=>Math.min(c.exp,8),u:'por año',esc:4},
+    {k:'prueba',n:'Prueba escrita',f:c=>c.prueba,u:'por punto',esc:1},
+    {k:'estudios',n:'Estudios',f:c=>c.estudios,u:'por nivel',esc:4},
+    {k:'afinidad',n:'Coincidencia',f:c=>c.afinidad,u:'por punto',esc:1}];
+  const C=datos(2026),H=historicos(2019);
+  const on={sexo:false,brecha:true,exp:true,prueba:true,estudios:true,afinidad:true};
+  function ajustar(vars){ // mínimos cuadrados con eliminación de Gauss
+    const k=vars.length+1,A=Array.from({length:k},()=>new Array(k+1).fill(0));
+    for(const h of H){const x=[1,...vars.map(v=>v.f(h))];for(let i=0;i<k;i++){for(let j=0;j<k;j++)A[i][j]+=x[i]*x[j];A[i][k]+=x[i]*h.y;}}
+    for(let i=0;i<k;i++){let p=i;for(let r=i+1;r<k;r++)if(Math.abs(A[r][i])>Math.abs(A[p][i]))p=r;[A[i],A[p]]=[A[p],A[i]];
+      for(let r=0;r<k;r++)if(r!==i){const f=A[r][i]/A[i][i];for(let j=i;j<=k;j++)A[r][j]-=f*A[i][j];}}
+    return A.map((row,i)=>row[k]/row[i]);
+  }
+  const caja=$('#c2l2-vars');
+  caja.innerHTML=V.map(v=>'<button type="button" data-v="'+v.k+'" aria-pressed="false">'+v.n+'</button>').join('');
+  caja.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;on[b.dataset.v]=!on[b.dataset.v];leer();});
+  const MOD={pasado:{sexo:true,brecha:true},filtro:{sexo:false,brecha:true},limpio:{sexo:false,brecha:false}};
+  document.querySelectorAll('[id="02-lab-2"] [data-m]').forEach(b=>b.addEventListener('click',()=>{
+    Object.keys(on).forEach(k=>on[k]=true);Object.assign(on,MOD[b.dataset.m]);leer();}));
+  const pct=x=>(x*100).toFixed(1).replace('.',',')+' %',num=x=>(x>=0?'+':'−')+Math.abs(x).toFixed(2).replace('.',',');
+  function leer(){
+    const vars=V.filter(v=>on[v.k]);
+    caja.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(on[b.dataset.v])));
+    document.querySelectorAll('[id="02-lab-2"] [data-m]').forEach(b=>{const m=MOD[b.dataset.m];
+      b.setAttribute('aria-pressed',String(Object.keys(on).every(k=>on[k]===(k in m?m[k]:true))));});
+    if(!vars.length){$('#c2l2-out').innerHTML='Elige al menos una variable.';return;}
+    const w=ajustar(vars);
+    const peso={};vars.forEach((v,i)=>peso[v.k]=w[i+1]);
+    $('#c2l2-pesos').innerHTML=V.map(v=>{
+      if(!on[v.k])return '<div class="c2l2-fila c2l2-apagada"><span>'+v.n+'</span><span class="c2l2-eje"></span><span class="c2l2-n">fuera</span></div>';
+      const x=peso[v.k],ancho=Math.min(50,Math.abs(x)/v.esc*50),col=x<0?'--warm':'--accent';
+      return '<div class="c2l2-fila"><span>'+v.n+'</span><span class="c2l2-eje" title="'+v.u+'"><i style="background:var('+col+');width:'+ancho+'%;left:'+(x<0?50-ancho:50)+'%"></i></span><span class="c2l2-n">'+num(x)+'</span></div>';
+    }).join('');
+    const s=C.map(c=>w[0]+vars.reduce((t,v,i)=>t+w[i+1]*v.f(c),0));
+    const corte=[...s].sort((a,b)=>b-a)[379];
+    const pasa=s.map(x=>x>=corte);
+    const nM=C.filter((c,i)=>c.g==='M'&&pasa[i]).length,nH=C.filter((c,i)=>c.g==='H'&&pasa[i]).length;
+    const rM=nM/488,rH=nH/512,razon=Math.min(rM,rH)/Math.max(rM,rH);
+    const aptos=C.filter((c,i)=>pasa[i]&&c.apto).length;
+    $('#c2l2-tasas').innerHTML=
+      '<div class="c2l2-fila"><span style="color:var(--d-casa)">Mujeres</span><span class="c2l2-barra" style="--l:38%"><i style="width:'+(rM*100)+'%;background:var(--d-casa)"></i></span><span class="c2l2-n">'+pct(rM)+'</span></div>'+
+      '<div class="c2l2-fila"><span style="color:var(--d-sis)">Hombres</span><span class="c2l2-barra" style="--l:38%"><i style="width:'+(rH*100)+'%;background:var(--d-sis)"></i></span><span class="c2l2-n">'+pct(rH)+'</span></div>';
+    const rz=$('#c2l2-razon');rz.textContent=razon.toFixed(2).replace('.',',')+(razon>=0.8?' ✓':' ✗');rz.className='c2l2-grande '+(razon>=0.8?'si':'no');
+    $('#c2l2-aptos').innerHTML='Línea punteada: 38 %, la tasa si todos tuvieran la misma. Entre los 380 elegidos hay <b>'+aptos+'</b> personas aptas (según el desempeño simulado).';
+    let txt;
+    if(on.sexo&&on.brecha)txt='El modelo copia el pasado: aprende que ser hombre suma <b>'+num(peso.sexo)+'</b> puntos y que cada mes sin empleo resta <b>'+num(peso.brecha).replace('−','')+'</b>. Pasa el '+pct(rM)+' de las mujeres. Quita el sexo y mira qué pasa con el peso de los meses sin empleo.';
+    else if(!on.sexo&&on.brecha)txt='Sin la variable sexo, el peso de los meses sin empleo pasa a <b>'+num(peso.brecha)+'</b> por mes: el modelo usa esa variable como <b>sustituta</b> del sexo, porque en los datos las mujeres tienen en promedio unos 6,7 meses sin empleo y los hombres 1,3. La razón de impacto sigue en '+razon.toFixed(2).replace('.',',')+'. Este es el filtro del proveedor: «no usa el sexo», y aun así discrimina.';
+    else if(on.sexo&&!on.brecha)txt='Quitaste la sustituta pero dejaste el sexo: ahora el modelo carga todo el sesgo en la variable sexo ('+num(peso.sexo)+' puntos por ser hombre). Es discriminación directa, y además ilegal en muchos países.';
+    else txt='Sin sexo y sin meses sin empleo, la razón de impacto sube a <b>'+razon.toFixed(2).replace('.',',')+'</b> y entre los elegidos hay '+aptos+' aptos: quitar la sustituta no empeoró la calidad, porque los meses sin empleo no predicen el desempeño real; solo reflejaban el prejuicio de los reclutadores del pasado.';
+    if(!on.prueba&&!on.exp)txt+=' Ojo: sin la prueba ni la experiencia, el modelo ya no mide lo que importa para el puesto.';
+    $('#c2l2-out').innerHTML='<span>'+txt+'</span>';
+  }
+  leer();
+})();
+</script>
+<script>
+(function(){
+  const {$,tok,canvasWidget}=window.Lab;
+  // Los 1.000 candidatos ficticios del curso: misma función y semilla (2026) en todos los capítulos.
+  function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+  function datos(semilla){
+    const r=mulberry32(semilla);
+    const normal=()=>{let u=0,v=0;while(u===0)u=r();v=r();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);};
+    const C=[];
+    for(let i=0;i<1000;i++){
+      const mujer=r()<0.52;
+      const exp=Math.round(Math.min(10,Math.max(0,3+2.2*normal()))*2)/2;
+      const prueba=Math.round(Math.min(100,Math.max(20,66+12*normal())));
+      const estudios=r()<0.35?0:(r()<0.6?1:2);
+      let brecha=0;
+      if(mujer){if(r()<0.45)brecha=Math.round(6+r()*18);}
+      else{if(r()<0.15)brecha=Math.round(3+r()*9);}
+      const afinidad=Math.round(Math.min(100,Math.max(0,50+15*normal())));
+      const real=0.6*prueba+3*Math.min(exp,8)+2*estudios+8*normal();
+      const p=Math.round(Math.min(100,Math.max(0,-2+0.55*prueba+2.6*Math.min(exp,8)+2*estudios+0.3*afinidad-0.9*brecha)));
+      C.push({id:'C-'+String(i+1).padStart(4,'0'),g:mujer?'M':'H',exp,prueba,estudios,brecha,afinidad,apto:real>=58,p});
+    }
+    return C;
+  }
+  const C=datos(2026);
+  const G={M:C.filter(c=>c.g==='M'),H:C.filter(c=>c.g==='H')};
+  const pct=x=>(x*100).toFixed(1).replace('.',',')+' %';
+  function met(g,u){
+    const L=G[g],tp=L.filter(c=>c.apto&&c.p>=u).length,fp=L.filter(c=>!c.apto&&c.p>=u).length,
+      fn=L.filter(c=>c.apto&&c.p<u).length,tn=L.length-tp-fp-fn;
+    return {n:L.length,tp,fp,fn,tn,sel:(tp+fp)/L.length,tpr:tp/(tp+fn),prec:tp+fp?tp/(tp+fp):0,pasan:tp+fp};
+  }
+  const um=$('#c2l1-um'),uh=$('#c2l1-uh');
+  function buscar(f){let mejor=60,d=1e9;for(let u=40;u<=80;u++){const x=f(met('M',u),met('H',+uh.value));if(x<d){d=x;mejor=u;}}return mejor;}
+  const PRE={
+    uno:()=>{um.value=60;uh.value=60;},
+    par:()=>{uh.value=60;um.value=buscar((m,h)=>Math.abs(m.sel-h.sel));},
+    opo:()=>{uh.value=60;um.value=buscar((m,h)=>Math.abs(m.tpr-h.tpr));},
+    pre:()=>{uh.value=60;um.value=buscar((m,h)=>Math.abs(m.prec-h.prec));}
+  };
+  const botones=[...document.querySelectorAll('[id="02-lab-1"] [data-p]')];
+  botones.forEach(b=>b.addEventListener('click',()=>{PRE[b.dataset.p]();botones.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));leer();}));
+  [um,uh].forEach(s=>s.addEventListener('input',()=>{botones.forEach(x=>x.setAttribute('aria-pressed','false'));leer();}));
+  const dibujar=canvasWidget($('#c2l1-c'),w=>w<520?0.78:0.46,(ctx,w,h)=>{
+    ctx.clearRect(0,0,w,h);
+    const L=34,R=8,X=v=>L+(v-20)/80*(w-L-R),bw=(w-L-R)/40;
+    const filas=[['M',um,'--d-casa','Mujeres'],['H',uh,'--d-sis','Hombres']];
+    const alto=(h-30)/2;
+    let max=0;
+    for(const [g] of filas){for(let b=20;b<100;b+=2){max=Math.max(max,G[g].filter(c=>c.p>=b&&c.p<b+2).length);}}
+    filas.forEach(([g,sl,col,nom],k)=>{
+      const y0=8+k*alto+alto-14;
+      const u=+sl.value;
+      ctx.fillStyle=tok('--paper');ctx.fillRect(X(u),y0-alto+20,w-R-X(u),alto-20);
+      for(let b=20;b<100;b+=2){
+        const en=G[g].filter(c=>c.p>=b&&c.p<b+2),a=en.filter(c=>c.apto).length,n=en.length;
+        const hA=a/max*(alto-26),hN=(n-a)/max*(alto-26);
+        const x=X(b)+1,ww=Math.max(1,bw-2);
+        ctx.fillStyle=tok(col);ctx.globalAlpha=b>=u?1:.45;ctx.fillRect(x,y0-hA,ww,hA);
+        ctx.fillStyle=tok('--grid');ctx.globalAlpha=1;ctx.fillRect(x,y0-hA-hN,ww,hN);
+      }
+      ctx.globalAlpha=1;
+      ctx.strokeStyle=tok('--line');ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(L,y0+.5);ctx.lineTo(w-R,y0+.5);ctx.stroke();
+      ctx.strokeStyle=tok(col);ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(X(u),y0-alto+18);ctx.lineTo(X(u),y0+4);ctx.stroke();
+      ctx.font='600 12px '+tok('--f-display');ctx.fillStyle=tok(col);ctx.textAlign='left';ctx.textBaseline='top';
+      const et=nom+' · umbral '+u,ew=ctx.measureText(et).width;ctx.fillStyle=tok('--card');ctx.fillRect(L,y0-alto+18,ew+8,17);ctx.fillStyle=tok(col);ctx.fillText(et,L+4,y0-alto+20);
+    });
+    ctx.fillStyle=tok('--muted');ctx.font='11px '+tok('--f-mono');ctx.textAlign='center';ctx.textBaseline='top';
+    for(let v=20;v<=100;v+=10)ctx.fillText(v,X(v),h-16);
+  });
+  function leer(){
+    const a=+um.value,b=+uh.value;
+    $('#c2l1-um-o').textContent=a;$('#c2l1-uh-o').textContent=b;
+    const m=met('M',a),h=met('H',b);
+    $('#c2l1-tabla').innerHTML='<tr><th>Grupo</th><th>Pasan</th><th>Tasa de selección</th><th>Aptos que pasan</th><th>Aptos entre los que pasan</th></tr>'+
+      '<tr><td class="c2l1-m">Mujeres</td><td>'+m.pasan+' de '+m.n+'</td><td>'+pct(m.sel)+'</td><td>'+m.tp+' de '+(m.tp+m.fn)+' ('+pct(m.tpr)+')</td><td>'+m.tp+' de '+m.pasan+' ('+pct(m.prec)+')</td></tr>'+
+      '<tr><td class="c2l1-h">Hombres</td><td>'+h.pasan+' de '+h.n+'</td><td>'+pct(h.sel)+'</td><td>'+h.tp+' de '+(h.tp+h.fn)+' ('+pct(h.tpr)+')</td><td>'+h.tp+' de '+h.pasan+' ('+pct(h.prec)+')</td></tr>';
+    const razon=Math.min(m.sel,h.sel)/Math.max(m.sel,h.sel),dO=Math.abs(m.tpr-h.tpr),dP=Math.abs(m.prec-h.prec);
+    const okP=razon>=0.8,okO=dO<=0.05,okC=dP<=0.05,total=m.pasan+h.pasan,cabe=total>=330&&total<=430;
+    const t=(ok,tit,v,txt)=>'<div class="c2l1-t '+(ok?'si':'no')+'"><b>'+tit+'</b><span class="v">'+v+(ok?' ✓':' ✗')+'</span><small>'+txt+'</small></div>';
+    $('#c2l1-tarjetas').innerHTML=
+      t(okP,'Paridad demográfica','razón '+razon.toFixed(2).replace('.',','),'Tasa menor entre tasa mayor. La regla de los cuatro quintos pide 0,80 o más.')+
+      t(okO,'Igualdad de oportunidades',(dO*100).toFixed(1).replace('.',',')+' puntos','Diferencia en la tasa de aptos que pasan. Tolerancia: 5 puntos.')+
+      t(okC,'Paridad predictiva',(dP*100).toFixed(1).replace('.',',')+' puntos','Diferencia en la proporción de aptos entre quienes pasan. Tolerancia: 5 puntos.')+
+      t(cabe,'Entrevistas',total+'','Gestión Humana puede hacer entre 330 y 430 entrevistas en la convocatoria.');
+    const n=okP+okO+okC;
+    let txt='';
+    if(a===60&&b===60)txt='Con el mismo umbral de 60 para todos, pasa el <b>'+pct(m.sel)+'</b> de las mujeres y el <b>'+pct(h.sel)+'</b> de los hombres: razón '+razon.toFixed(2).replace('.',',')+', por debajo de 0,80. Y de cada 100 mujeres aptas pasan '+Math.round(m.tpr*100)+'; de cada 100 hombres aptos, '+Math.round(h.tpr*100)+'. Un umbral igual no da un trato igual cuando el puntaje ya viene sesgado. ';
+    else if(a<b)txt='Bajaste el umbral de las mujeres a '+a+'. ';
+    else if(a>b)txt='El umbral de las mujeres quedó por encima del de los hombres: la brecha crece. ';
+    if(n===3&&cabe)txt+='<span class="ok">Se cumplen las tres a la vez.</span>';
+    else if(n===3)txt+='Las tres se cumplen solo porque casi todos pasan: '+total+' entrevistas no caben en la convocatoria. Seleccionar a todos no es seleccionar.';
+    else if(okP&&okO)txt+='<span class="ok">Lograste paridad e igualdad de oportunidades,</span> pero <span class="warn">la precisión quedó '+(dP*100).toFixed(0)+' puntos distinta</span>: entre las mujeres que pasan hay menos aptas que entre los hombres. Mueve el umbral para cerrar esa diferencia y mira cómo se abre otra.';
+    else if(okC&&!okP)txt+='La precisión es parecida en los dos grupos, <span class="warn">pero la tasa de selección y la de oportunidades siguen lejos</span>. Es lo que pasa con un solo umbral: el puntaje «acierta igual» con quienes pasan y deja fuera a más mujeres aptas.';
+    else if(okP||okO)txt+='Una métrica mejora; mira cómo queda la tarjeta de precisión.';
+    if(n<3&&cabe&&!(a===60&&b===60))txt+=' Con un número de entrevistas que la empresa puede hacer, ninguna combinación de umbrales cumple las tres métricas: hay que elegir cuál importa y decirlo.';
+    $('#c2l1-out').innerHTML='<span>'+txt+'</span>';
+    dibujar();
+  }
+  leer();
+})();
+</script>
+</body>
+</html>

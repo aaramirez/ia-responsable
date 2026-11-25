@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Derechos de autor · IA responsable · IA responsable</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sesgo, transparencia, derechos de autor, privacidad, regulación y gobierno de la IA: lo que toda organización que usa o construye IA necesita saber.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="derechos-de-autor">
+<header class="topbar"><a class="brand" href="index.html">IA <b>responsable</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 04 DE 8</span><h1>Derechos de autor y datos de entrenamiento</h1><p class="lede">Un modelo aprende de millones de textos, imágenes y programas que alguien escribió, dibujó o fotografió. Este capítulo explica de dónde salen esos datos, qué dicen las leyes y los tribunales a noviembre de 2026, de quién es lo que la IA genera y qué cuidados toma una organización que la usa.</p></header>
+<section><div class="prose"><p>En los capítulos anteriores, el filtro de hojas de vida se miró por dentro: a quién trata peor y cómo explicarle a Camila su puntaje de 55. Este capítulo y el siguiente miran <b>lo que entra</b>. Aquí, las obras. Cuando Inés, la oficial de cumplimiento, revisó el expediente del filtro, encontró tres preguntas de derechos que nadie se había hecho. ¿Con qué datos entrenó el proveedor su modelo y su analizador? ¿De quién es el aviso de empleo que el equipo de Patricia escribió con un asistente de IA, si el filtro compara cada hoja de vida con ese aviso para calcular la «coincidencia»? ¿Y la imagen de la campaña de contratación, generada con IA y publicada en redes? En el capítulo 5 vienen los datos personales.</p><p>Antes de empezar, una advertencia que vale para todo el capítulo: <b>esto no es asesoría legal</b>. Explica cómo funcionan las reglas y en qué están los casos más conocidos a noviembre de 2026. Las leyes cambian de un país a otro y los tribunales siguen decidiendo; una decisión concreta se consulta con un abogado de propiedad intelectual de tu país.</p></div></section>
+<section><h2>Con qué se entrenan los modelos: rastreo de la web, licencias y conjuntos públicos</h2><div class="analogia"><b>Imagínalo así</b><p>Imagina a un estudiante que, para aprender a escribir, lee todos los libros de una biblioteca enorme, y también todos los periódicos, foros y recetarios que encuentra en la calle. No copia los libros en su cuaderno: aprende de ellos patrones de cómo se escribe. Pero para leerlos tuvo que fotocopiarlos todos, y a veces recuerda de memoria párrafos enteros. La pregunta legal no es si leer está bien, sino si esas fotocopias y esos recuerdos exactos necesitaban permiso de los autores.</p></div><div class="prose"><p>Un <b>modelo de lenguaje grande</b> (<i>large language model</i>, LLM), el tipo de modelo detrás de los asistentes de IA, aprende a predecir la siguiente palabra a partir de un <b>corpus</b> (<i>corpus</i>, colección de textos) de billones de palabras. Los modelos de imagen aprenden de miles de millones de pares de imagen y descripción. Esos datos salen de cinco fuentes:</p><ul><li><b>El rastreo de la web</b> (<i>web crawling</i>). Un programa llamado <b>rastreador</b> (<i>crawler</i>) visita páginas, las descarga y sigue sus enlaces. El ejemplo más conocido es <b>Common Crawl</b>, una organización sin fines de lucro que publica desde 2008 copias mensuales de miles de millones de páginas; su rastreador se llama CCBot. Muchas empresas de IA tienen además el suyo propio, como GPTBot o ClaudeBot.</li><li><b>Conjuntos públicos</b> (<i>public datasets</i>) que alguien ya armó y limpió: C4 y FineWeb (texto filtrado de Common Crawl), LAION-5B (enlaces a imágenes con su descripción) o colecciones de libros, artículos científicos y código. Algunos incluían obras copiadas sin permiso; el caso más citado es Books3, un conjunto de cerca de 190.000 libros tomados de sitios piratas.</li><li><b>Contenido con licencia</b> (<i>licensed content</i>): acuerdos pagados con agencias de noticias, bancos de imágenes, editoriales y foros. Desde 2023 se firmaron decenas de estos acuerdos.</li><li><b>Datos de los usuarios</b>: las conversaciones con un asistente, cuando sus condiciones lo permiten. El capítulo 5 vuelve sobre esto.</li><li><b>Datos sintéticos</b> (<i>synthetic data</i>): textos o imágenes generados por otro modelo para entrenar al nuevo.</li></ul></div><figure class="fig fig-esquema" id="04-diagrama-1"><div class="lienzo"><svg viewBox="0 0 900 430" style="min-width:720px" role="img" aria-label="Línea de producción de un modelo. Cinco fuentes de datos a la izquierda: rastreo de la web, conjuntos públicos, contenido con licencia, datos de usuarios y datos sintéticos. Todas llegan a descargar y copiar, luego limpiar y quitar duplicados, luego entrenar y obtener el modelo, y al final las salidas que genera. Tres puntos marcados donde se discute el derecho de autor: uno, la copia para entrenar; dos, lo que el modelo guarda de memoria; tres, la salida parecida a una obra protegida">
+  <defs>
+    <marker id="i4d1-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker>
+  </defs>
+  <text x="16" y="22" class="t t-xs t-b t-m">FUENTES DE DATOS</text>
+  <rect x="16" y="34" width="196" height="50" rx="9" class="c-red"/>
+  <text x="28" y="55" class="t t-b">Rastreo de la web</text><text x="28" y="72" class="t t-s t-m">Common Crawl, rastreadores</text>
+  <rect x="16" y="98" width="196" height="50" rx="9" class="c-enl"/>
+  <text x="28" y="119" class="t t-b">Conjuntos públicos</text><text x="28" y="136" class="t t-s t-m">C4, LAION, libros, código</text>
+  <rect x="16" y="162" width="196" height="50" rx="9" class="c-fis"/>
+  <text x="28" y="183" class="t t-b">Con licencia</text><text x="28" y="200" class="t t-s t-m">medios, bancos de imágenes</text>
+  <rect x="16" y="226" width="196" height="50" rx="9" class="c-tra"/>
+  <text x="28" y="247" class="t t-b">Datos de usuarios</text><text x="28" y="264" class="t t-s t-m">si las condiciones lo permiten</text>
+  <rect x="16" y="290" width="196" height="50" rx="9" class="c-apl"/>
+  <text x="28" y="311" class="t t-b">Sintéticos</text><text x="28" y="328" class="t t-s t-m">generados por otro modelo</text>
+  <g class="ln">
+    <path d="M212 59 C 236 59, 236 170, 256 176"/>
+    <path d="M212 123 C 236 123, 236 180, 256 182"/>
+    <path d="M212 187 L256 187"/>
+    <path d="M212 251 C 236 251, 236 194, 256 192"/>
+    <path d="M212 315 C 236 315, 236 204, 256 198" marker-end="url(#i4d1-m)"/>
+  </g>
+  <text x="260" y="112" class="t t-xs t-b t-m">LÍNEA DE PRODUCCIÓN</text>
+  <rect x="260" y="140" width="138" height="94" rx="10" class="caja"/>
+  <text x="329" y="176" class="t t-b" text-anchor="middle">Descargar</text><text x="329" y="194" class="t t-b" text-anchor="middle">y copiar</text><text x="329" y="214" class="t t-s t-m" text-anchor="middle">a los discos</text>
+  <rect x="424" y="140" width="138" height="94" rx="10" class="caja"/>
+  <text x="493" y="176" class="t t-b" text-anchor="middle">Limpiar</text><text x="493" y="194" class="t t-s t-m" text-anchor="middle">filtrar, quitar</text><text x="493" y="210" class="t t-s t-m" text-anchor="middle">duplicados</text>
+  <rect x="588" y="140" width="138" height="94" rx="10" class="d-inet"/>
+  <text x="657" y="176" class="t t-b" text-anchor="middle">Entrenar</text><text x="657" y="194" class="t t-b" text-anchor="middle">el modelo</text><text x="657" y="214" class="t t-s t-m" text-anchor="middle">miles de millones</text><text x="657" y="228" class="t t-s t-m" text-anchor="middle">de parámetros</text>
+  <rect x="752" y="140" width="132" height="94" rx="10" class="caja"/>
+  <text x="818" y="176" class="t t-b" text-anchor="middle">Salidas</text><text x="818" y="194" class="t t-s t-m" text-anchor="middle">texto, imagen,</text><text x="818" y="210" class="t t-s t-m" text-anchor="middle">código</text>
+  <g class="ln" marker-end="url(#i4d1-m)">
+    <path d="M398 187 L420 187"/><path d="M562 187 L584 187"/><path d="M726 187 L748 187"/>
+  </g>
+  
+  <g>
+    <circle cx="329" cy="140" r="15" style="fill:var(--warm)"/><text x="329" y="145" class="t t-b" text-anchor="middle" style="fill:var(--card)">1</text>
+    <circle cx="657" cy="140" r="15" style="fill:var(--warm)"/><text x="657" y="145" class="t t-b" text-anchor="middle" style="fill:var(--card)">2</text>
+    <circle cx="818" cy="140" r="15" style="fill:var(--warm)"/><text x="818" y="145" class="t t-b" text-anchor="middle" style="fill:var(--card)">3</text>
+  </g>
+  <text x="260" y="276" class="t t-xs t-b k-warm" style="fill:var(--warm)">DONDE SE DISCUTE EL DERECHO DE AUTOR</text>
+  <rect x="260" y="290" width="204" height="104" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="274" y="314" class="t t-b">1 · La entrada</text>
+  <text x="274" y="334" class="t t-s">¿Copiar la obra para</text>
+  <text x="274" y="350" class="t t-s">entrenar necesita permiso?</text>
+  <text x="274" y="374" class="t t-s t-m">uso justo, minería de textos</text>
+  <rect x="476" y="290" width="204" height="104" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="490" y="314" class="t t-b">2 · El modelo</text>
+  <text x="490" y="334" class="t t-s">¿Guarda de memoria</text>
+  <text x="490" y="350" class="t t-s">partes de la obra?</text>
+  <text x="490" y="374" class="t t-s t-m">memorización</text>
+  <rect x="692" y="290" width="192" height="104" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="706" y="314" class="t t-b">3 · La salida</text>
+  <text x="706" y="334" class="t t-s">¿Lo generado se parece</text>
+  <text x="706" y="350" class="t t-s">demasiado a una obra?</text>
+  <text x="706" y="374" class="t t-s t-m">copia sustancial, marcas</text>
+  <text x="16" y="372" class="t t-s t-m">Todas las fuentes</text>
+  <text x="16" y="388" class="t t-s t-m">pasan por una copia:</text>
+  <text x="16" y="404" class="t t-s t-m">sin copia no hay</text>
+  <text x="16" y="420" class="t t-s t-m">entrenamiento.</text>
+</svg></div><figcaption><b>Del rastreo al modelo, y los tres puntos donde aparece el derecho de autor.</b> Se lee de izquierda a derecha. A la izquierda, las cinco fuentes de datos, cada una con su color. En el centro, la línea de producción: descargar y copiar, limpiar y quitar duplicados, entrenar y obtener el modelo, y al final, lo que el modelo genera. Los tres círculos numerados marcan dónde se discute el derecho de autor: ① la copia que se hace para entrenar, ② lo que el modelo guarda de memoria dentro de sus parámetros y ③ la salida que se parece a una obra protegida. Los litigios de este capítulo atacan uno o varios de esos tres puntos.</figcaption></figure><div class="prose"><p>Lo importante de esa línea de producción es que <b>copiar es inevitable</b>. Para entrenar, el texto o la imagen tiene que estar en los discos de quien entrena. Y el <b>derecho de autor</b> (<i>copyright</i>) es, justamente, el derecho exclusivo del autor a decidir quién copia, distribuye o transforma su obra. Protege la expresión concreta (las palabras, los trazos, el código), no las ideas ni los datos sueltos. Dura toda la vida del autor y varias décadas más, y nace sola, sin registro, en cuanto la obra existe.</p><p>Casi todo lo que hay en la web tiene autor, aunque se pueda ver gratis: «público» no quiere decir «sin dueño».</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Quién le cierra la puerta a los rastreadores de IA</h3></div><p>Vas a leer el archivo <code>robots.txt</code> de un medio de comunicación, el lugar donde un sitio dice qué rastreadores pueden entrar. Solo lees un archivo público; no visitas nada más.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>curl.exe -s https://www.bbc.co.uk/robots.txt | Select-String -Pattern "GPTBot|ClaudeBot|CCBot|Google-Extended" -Context 0,1</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>curl.exe -s https://es.wikipedia.org/robots.txt | Select-String -Pattern "GPTBot|ClaudeBot|CCBot|Google-Extended" -Context 0,1</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>curl -s https://www.bbc.co.uk/robots.txt | grep -iE -A1 "gptbot|claudebot|ccbot|google-extended"</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>curl -s https://es.wikipedia.org/robots.txt | grep -iE -A1 "gptbot|claudebot|ccbot|google-extended"</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Ejecuta la primera línea. Cada bloque dice <code>User-agent:</code> (el nombre del rastreador) y <code>Disallow: /</code> (no puede entrar a ninguna página).</span></li><li><span>Ejecuta la segunda, con la Wikipedia en español, y compara.</span></li><li><span>Cambia el dominio por el de un periódico de tu país y repite.</span></li></ol><p><b>Qué observar:</b> el medio británico les cierra la puerta a los rastreadores de varias empresas de IA, uno por uno, mientras la Wikipedia no menciona a ninguno (su contenido tiene una licencia libre que permite reutilizarlo citando la fuente). Fíjate en Google-Extended: no es un rastreador aparte, sino una señal para que Google no use el contenido en sus modelos sin dejar de mostrarlo en el buscador. El archivo cambia con el tiempo, y lo que veas puede variar.</p></div></section>
+<section><h2>Uso justo, excepciones de minería de textos y exclusión voluntaria</h2><div class="prose"><p>Si copiar para entrenar necesita permiso, nadie podría entrenar un modelo general; si no lo necesita, los autores no reciben nada por el trabajo que hace valioso al modelo. Cada país resolvió este choque a su manera, casi siempre con reglas anteriores a la IA generativa.</p><p><b>Estados Unidos: el uso justo.</b> La ley de ese país permite usar obras protegidas sin permiso cuando el uso es <b>uso justo</b> (<i>fair use</i>). No hay una lista cerrada: un juez decide caso por caso mirando cuatro factores: el propósito del uso (sobre todo si es <b>transformador</b>, es decir, si hace algo nuevo con la obra en lugar de reemplazarla), la naturaleza de la obra, cuánto se toma y, el más importante, el efecto sobre el mercado de la obra original. Las empresas de IA dicen que entrenar es transformador; los autores, que el modelo compite con ellos en su propio mercado.</p><p><b>La Unión Europea: minería de textos con exclusión.</b> La Directiva 2019/790 creó dos <b>excepciones de minería de textos y datos</b> (<i>text and data mining</i>, TDM), el análisis automático de grandes cantidades de contenido. La del artículo 3 permite a universidades y centros de investigación minar todo lo que tengan acceso legal. La del artículo 4 permite a cualquiera, también con fines comerciales, minar contenido accesible legalmente, <b>salvo que el titular se haya reservado ese derecho</b> de forma adecuada; para contenido en línea, «por medios de lectura mecánica». Esa reserva es la <b>exclusión voluntaria</b> (<i>opt-out</i>): el autor no tiene que pedir permiso para estar fuera; tiene que avisar que no quiere estar dentro.</p><p>El Reglamento europeo de IA agregó una pieza en 2024: quien ofrece un <b>modelo de propósito general</b> (<i>general-purpose AI model</i>) debe tener una política para respetar esas reservas y publicar un <b>resumen suficientemente detallado del contenido de entrenamiento</b>, con una plantilla de la Comisión. A noviembre de 2026, según la <a href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers" target="_blank" rel="noopener">página de la Comisión</a>, esas obligaciones se aplican desde el 2 de agosto de 2025, la Comisión puede hacerlas cumplir con multas desde el 2 de agosto de 2026 y los modelos lanzados antes de agosto de 2025 tienen hasta el 2 de agosto de 2027. El capítulo 6 explica el Reglamento completo.</p><p><b>Otros países.</b> Japón tiene desde 2018 una de las excepciones más amplias (su artículo 30-4) para usos que no buscan disfrutar la obra, como el análisis por máquinas. El Reino Unido solo admite la minería sin fines comerciales y a fines de 2024 abrió una consulta pública para cambiarla. En América Latina, las leyes de derecho de autor tienen listas cerradas de excepciones pensadas antes de la IA, y la discusión está en los proyectos de ley: el de Brasil (<a href="https://www.camara.leg.br/propostas-legislativas/2487262" target="_blank" rel="noopener">PL 2338/2023</a>), aprobado por el Senado en diciembre de 2024 y que a noviembre de 2026 espera el informe de su relator en una comisión especial de la Cámara de Diputados, da a los titulares derecho a una remuneración cuando sus obras se usan para entrenar sistemas comerciales.</p></div><figure class="fig fig-comparacion" id="04-diagrama-2"><div class="lienzo"><svg viewBox="0 0 910 400" style="min-width:720px" role="img" aria-label="Tabla de cuatro regiones sobre si se puede copiar para entrenar. Estados Unidos: uso justo caso por caso, decide un juez con cuatro factores, el autor puede demandar. Unión Europea: minería permitida salvo exclusión, decide el autor al reservarse el derecho, y los modelos de propósito general deben publicar un resumen de sus datos. Japón: excepción amplia para análisis por máquinas, con límites si se perjudica al autor. América Latina: listas cerradas de excepciones sin regla específica, proyectos de ley como el de Brasil con remuneración. A la derecha, una escala de más permiso para entrenar a más control del autor">
+  <text x="16" y="24" class="t t-xs t-b t-m">REGIÓN</text>
+  <text x="170" y="24" class="t t-xs t-b t-m">LA REGLA</text>
+  <text x="404" y="24" class="t t-xs t-b t-m">QUIÉN DECIDE</text>
+  <text x="604" y="24" class="t t-xs t-b t-m">QUÉ PUEDE HACER EL AUTOR</text>
+  
+  <rect x="12" y="36" width="790" height="78" rx="10" class="c-red"/>
+  <text x="26" y="66" class="t t-b">Estados Unidos</text><text x="26" y="84" class="t t-s t-m">uso justo (fair use)</text>
+  <text x="170" y="62" class="t t-s">Se permite si el uso es justo:</text><text x="170" y="78" class="t t-s">propósito, naturaleza, cuánto se</text><text x="170" y="94" class="t t-s">toma y efecto sobre el mercado</text>
+  <text x="404" y="62" class="t t-s">Un juez, caso por caso,</text><text x="404" y="78" class="t t-s">después de la demanda</text>
+  <text x="604" y="62" class="t t-s">Demandar y probar el daño</text><text x="604" y="78" class="t t-s">al mercado de su obra</text>
+  <rect x="12" y="124" width="790" height="78" rx="10" class="c-enl"/>
+  <text x="26" y="154" class="t t-b">Unión Europea</text><text x="26" y="172" class="t t-s t-m">Directiva 2019/790</text>
+  <text x="170" y="150" class="t t-s">Se permite minar lo que es de</text><text x="170" y="166" class="t t-s">acceso legal, salvo exclusión;</text><text x="170" y="182" class="t t-s">los modelos publican un resumen</text>
+  <text x="404" y="150" class="t t-s">El autor, al reservarse</text><text x="404" y="166" class="t t-s">el derecho por medios</text><text x="404" y="182" class="t t-s">de lectura mecánica</text>
+  <text x="604" y="150" class="t t-s">Excluirse (opt-out) y</text><text x="604" y="166" class="t t-s">revisar el resumen de datos</text><text x="604" y="182" class="t t-s">del modelo</text>
+  <rect x="12" y="212" width="790" height="78" rx="10" class="c-fis"/>
+  <text x="26" y="242" class="t t-b">Japón</text><text x="26" y="260" class="t t-s t-m">artículo 30-4</text>
+  <text x="170" y="238" class="t t-s">Excepción amplia para usos</text><text x="170" y="254" class="t t-s">que no buscan disfrutar la obra,</text><text x="170" y="270" class="t t-s">como el análisis por máquinas</text>
+  <text x="404" y="238" class="t t-s">La ley, con un límite:</text><text x="404" y="254" class="t t-s">no perjudicar sin razón</text><text x="404" y="270" class="t t-s">los intereses del autor</text>
+  <text x="604" y="238" class="t t-s">Poco, salvo que el uso</text><text x="604" y="254" class="t t-s">reproduzca su obra o</text><text x="604" y="270" class="t t-s">compita con ella</text>
+  <rect x="12" y="300" width="790" height="78" rx="10" class="c-tra"/>
+  <text x="26" y="330" class="t t-b">América Latina</text><text x="26" y="348" class="t t-s t-m">leyes nacionales</text>
+  <text x="170" y="326" class="t t-s">Listas cerradas de excepciones,</text><text x="170" y="342" class="t t-s">escritas antes de la IA; sin</text><text x="170" y="358" class="t t-s">regla específica para entrenar</text>
+  <text x="404" y="326" class="t t-s">El legislador, en proyectos</text><text x="404" y="342" class="t t-s">como el de Brasil</text><text x="404" y="358" class="t t-s">(PL 2338/2023)</text>
+  <text x="604" y="326" class="t t-s">Reclamar con la ley</text><text x="604" y="342" class="t t-s">general; el proyecto de Brasil</text><text x="604" y="358" class="t t-s">propone una remuneración</text>
+  
+  <defs><linearGradient id="i4d2-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--c-fis)"/><stop offset="1" style="stop-color:var(--c-apl)"/></linearGradient></defs>
+  <rect x="826" y="36" width="16" height="342" rx="8" style="fill:url(#i4d2-g)"/>
+  <text x="852" y="52" class="t t-xs t-b t-m">MÁS</text><text x="852" y="65" class="t t-xs t-b t-m">PERMISO</text>
+  <text x="852" y="356" class="t t-xs t-b t-m">MÁS</text><text x="852" y="369" class="t t-xs t-b t-m">CONTROL</text>
+  <g class="t t-s t-b">
+    <circle cx="834" cy="96" r="5" style="fill:var(--card);stroke:var(--ink)"/><text x="852" y="100">JP</text>
+    <circle cx="834" cy="156" r="5" style="fill:var(--card);stroke:var(--ink)"/><text x="852" y="160">EE. UU.</text>
+    <circle cx="834" cy="216" r="5" style="fill:var(--card);stroke:var(--ink)"/><text x="852" y="220">UE</text>
+    <circle cx="834" cy="316" r="5" style="fill:var(--card);stroke:var(--ink)"/><text x="852" y="320">AL</text>
+  </g>
+</svg></div><figcaption><b>Cuatro respuestas a la misma pregunta: ¿se puede copiar para entrenar?</b> Cada fila es una región; las columnas dicen cuál es la regla, quién decide y qué puede hacer el autor. Estados Unidos decide caso por caso en los tribunales con los cuatro factores del uso justo. La Unión Europea permite minar salvo exclusión del autor y pide transparencia a los modelos de propósito general. Japón tiene una excepción amplia con límites. América Latina, en general, no tiene excepción específica y discute proyectos de ley. La barra de la derecha va de «más permiso para entrenar» a «más control del autor».</figcaption></figure><div class="prose"><h3>Cómo se excluye un autor, en la práctica</h3><p>La exclusión voluntaria necesita tecnología, y la que hay es imperfecta:</p><ul><li><b><code>robots.txt</code></b>: el archivo de la práctica anterior, un convenio de 1994 pensado para buscadores. Funciona por nombre de rastreador, así que hay que conocer y listar a cada uno, y respetarlo es voluntario.</li><li><b>Etiquetas y protocolos nuevos</b>: el protocolo TDMRep, de un grupo comunitario del W3C, permite declarar la reserva en la cabecera de la página o en un archivo del sitio. Desde 2025, el grupo de trabajo <b>AIPREF</b> del IETF (<i>Internet Engineering Task Force</i>, el organismo que escribe los estándares de Internet) prepara un vocabulario común para decir «sí a buscar, no a entrenar».</li><li><b>Bloqueo en la red</b>: algunos proveedores de infraestructura ofrecen bloquear los rastreadores de IA por defecto o cobrarles por cada visita.</li></ul><p>Las tres tienen el mismo límite: <b>solo miran hacia adelante</b>. Lo que ya se copió en un conjunto público o se usó para entrenar un modelo no se borra por cambiar <code>robots.txt</code> hoy.</p></div><div class="lab" id="04-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Escribe el robots.txt de un periódico</h3></div><p class="hint">Eres responsable del sitio de un periódico ficticio. Marca qué rastreadores dejas entrar y mira el archivo que resulta, qué deja de llegar a cada destino (buscador, entrenamiento de modelos, respuestas en vivo de un asistente) y qué no cambia aunque cierres todo.</p><style>
+[id="04-lab-2"] .c4l2-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;align-items:start}
+[id="04-lab-2"] .c4l2-bots{display:grid;gap:6px}
+[id="04-lab-2"] .c4l2-bot{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:center;border:1px solid var(--line);border-left:5px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--card);font:500 .84rem/1.3 var(--f-display);cursor:pointer}
+[id="04-lab-2"] .c4l2-bot[data-d="bus"]{border-left-color:var(--c-red)}
+[id="04-lab-2"] .c4l2-bot[data-d="ent"]{border-left-color:var(--c-apl)}
+[id="04-lab-2"] .c4l2-bot[data-d="viv"]{border-left-color:var(--c-enl)}
+[id="04-lab-2"] .c4l2-bot small{grid-column:2;color:var(--muted);font-size:.74rem}
+[id="04-lab-2"] .c4l2-bot code{font:600 .8rem var(--f-mono)}
+[id="04-lab-2"] .c4l2-bot input{width:18px;height:18px;margin:0}
+[id="04-lab-2"] pre.c4l2-txt{margin:0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font:500 .78rem/1.45 var(--f-mono);white-space:pre-wrap;word-break:break-word;max-height:260px;overflow:auto}
+[id="04-lab-2"] .c4l2-met{display:grid;gap:8px;margin-top:10px}
+[id="04-lab-2"] .c4l2-met div{display:grid;gap:3px;font:600 .8rem var(--f-display)}
+[id="04-lab-2"] .c4l2-m{height:14px;border-radius:7px;background:var(--grid);overflow:hidden}
+[id="04-lab-2"] .c4l2-m i{display:block;height:100%;transition:width .3s ease}
+@media (prefers-reduced-motion: reduce){[id="04-lab-2"] .c4l2-m i{transition:none}}
+</style>
+<div class="btns" role="group" aria-label="Configuraciones rápidas">
+  <button type="button" data-p="abrir" aria-pressed="false">Abrir todo</button>
+  <button type="button" data-p="ent" aria-pressed="false">Cerrar solo el entrenamiento</button>
+  <button type="button" data-p="cerrar" aria-pressed="false">Cerrar todo</button>
+</div>
+<div class="c4l2-wrap">
+  <div class="c4l2-bots" id="c4l2-bots" role="group" aria-label="Rastreadores: marca los que pueden entrar"></div>
+  <div>
+    <pre class="c4l2-txt" id="c4l2-txt" aria-label="El robots.txt que resulta"></pre>
+    <div class="c4l2-met" id="c4l2-met"></div>
+  </div>
+</div>
+<div class="legend"><span><i style="background:var(--c-red)"></i>buscador</span><span><i style="background:var(--c-apl)"></i>entrenamiento de modelos</span><span><i style="background:var(--c-enl)"></i>respuestas en vivo de un asistente</span></div>
+<div class="readout texto" id="c4l2-out" aria-live="polite"></div></div></section>
+<section><h2>Los litigios abiertos entre autores, medios y empresas de IA</h2><div class="prose"><p>Desde 2023, autores, artistas, medios, discográficas y estudios de cine demandaron a las empresas de IA en varios países; los seguimientos públicos cuentan más de un centenar de casos solo por derecho de autor. Sus argumentos se ordenan con los tres puntos de la figura 1: la <b>entrada</b> (copiar para entrenar), el <b>modelo</b> (lo que guarda de memoria) y la <b>salida</b> (lo que genera).</p></div><figure class="fig fig-esquema" id="04-diagrama-3"><div class="lienzo"><svg viewBox="0 0 900 424" style="min-width:720px" role="img" aria-label="Siete casos ordenados según lo que atacan. Entrada, copiar para entrenar: Thomson Reuters contra Ross, Estados Unidos, a favor del titular; Bartz contra Anthropic, Estados Unidos, acuerdo; Kadrey contra Meta, Estados Unidos, a favor de la empresa de IA en lo decidido. Modelo, lo que guarda de memoria: GEMA contra OpenAI, Alemania, a favor del titular, apelado; Getty contra Stability AI, Reino Unido, a favor de la empresa de IA en lo principal, con apelación. Salida, lo que genera: New York Times contra OpenAI y Microsoft, sin decisión; Disney y Universal contra Midjourney, sin decisión. Estado a noviembre de 2026">
+  
+  <g>
+    <rect x="12" y="10" width="284" height="56" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+    <circle cx="38" cy="38" r="13" style="fill:var(--warm)"/><text x="38" y="43" class="t t-b" text-anchor="middle" style="fill:var(--card)">1</text>
+    <text x="60" y="34" class="t t-b">La entrada</text><text x="60" y="52" class="t t-s t-m">copiar las obras para entrenar</text>
+    <rect x="308" y="10" width="284" height="56" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+    <circle cx="334" cy="38" r="13" style="fill:var(--warm)"/><text x="334" y="43" class="t t-b" text-anchor="middle" style="fill:var(--card)">2</text>
+    <text x="356" y="34" class="t t-b">El modelo</text><text x="356" y="52" class="t t-s t-m">lo que guarda de memoria</text>
+    <rect x="604" y="10" width="284" height="56" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+    <circle cx="630" cy="38" r="13" style="fill:var(--warm)"/><text x="630" y="43" class="t t-b" text-anchor="middle" style="fill:var(--card)">3</text>
+    <text x="652" y="34" class="t t-b">La salida</text><text x="652" y="52" class="t t-s t-m">lo que genera para el usuario</text>
+  </g>
+  
+  <rect x="12" y="80" width="284" height="80" rx="10" class="c-apl"/>
+  <text x="24" y="102" class="t t-b">Thomson Reuters c. Ross</text>
+  <text x="24" y="120" class="t t-s">EE. UU. · resúmenes jurídicos para</text><text x="24" y="135" class="t t-s">un buscador rival</text>
+  <text x="24" y="152" class="t t-s t-b k-apl">no es uso justo (apelación, 2026)</text>
+  <rect x="12" y="170" width="284" height="80" rx="10" class="c-fis"/>
+  <text x="24" y="192" class="t t-b">Bartz c. Anthropic</text>
+  <text x="24" y="210" class="t t-s">EE. UU. · libros comprados y libros</text><text x="24" y="225" class="t t-s">de sitios piratas</text>
+  <text x="24" y="242" class="t t-s t-b k-fis">acuerdo de US$ 1.500 millones</text>
+  <rect x="12" y="260" width="284" height="80" rx="10" class="c-red"/>
+  <text x="24" y="282" class="t t-b">Kadrey c. Meta</text>
+  <text x="24" y="300" class="t t-s">EE. UU. · libros de sitios piratas</text><text x="24" y="315" class="t t-s">en el entrenamiento</text>
+  <text x="24" y="332" class="t t-s t-b k-red">a favor de Meta en lo decidido</text>
+  
+  <rect x="308" y="80" width="284" height="80" rx="10" class="c-apl"/>
+  <text x="320" y="102" class="t t-b">GEMA c. OpenAI</text>
+  <text x="320" y="120" class="t t-s">Alemania · letras de canciones que</text><text x="320" y="135" class="t t-s">el modelo repite de memoria</text>
+  <text x="320" y="152" class="t t-s t-b k-apl">es reproducción (apelado)</text>
+  <rect x="308" y="170" width="284" height="80" rx="10" class="c-red"/>
+  <text x="320" y="192" class="t t-b">Getty Images c. Stability AI</text>
+  <text x="320" y="210" class="t t-s">Reino Unido · ¿el modelo es una</text><text x="320" y="225" class="t t-s">copia de las fotos?</text>
+  <text x="320" y="242" class="t t-s t-b k-red">no lo es; Getty puede apelar</text>
+  
+  <rect x="604" y="80" width="284" height="80" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="616" y="102" class="t t-b">The New York Times c. OpenAI</text>
+  <text x="616" y="120" class="t t-s">EE. UU. · respuestas que reproducen</text><text x="616" y="135" class="t t-s">artículos (y el entrenamiento)</text>
+  <text x="616" y="152" class="t t-s t-b t-m">sin sentencia</text>
+  <rect x="604" y="170" width="284" height="80" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="616" y="192" class="t t-b">Disney y Universal c. Midjourney</text>
+  <text x="616" y="210" class="t t-s">EE. UU. · imágenes con personajes</text><text x="616" y="225" class="t t-s">de sus películas</text>
+  <text x="616" y="242" class="t t-s t-b t-m">en curso</text>
+  
+  <text x="12" y="366" class="t t-xs t-b t-m">CÓMO VA, A NOVIEMBRE DE 2026</text>
+  <g class="t t-s">
+    <rect x="12" y="376" width="18" height="14" rx="3" class="c-apl"/><text x="38" y="388">a favor del titular</text>
+    <rect x="192" y="376" width="18" height="14" rx="3" class="c-red"/><text x="218" y="388">a favor de la empresa de IA</text>
+    <rect x="420" y="376" width="18" height="14" rx="3" class="c-fis"/><text x="446" y="388">acuerdo</text>
+    <rect x="530" y="376" width="18" height="14" rx="3" class="caja" style="stroke-dasharray:3 2"/><text x="556" y="388">sin decisión de fondo</text>
+  </g>
+  <text x="12" y="414" class="t t-s t-m">«c.» = contra. Todos siguen moviéndose: revisa una fuente actual antes de citarlos.</text>
+</svg></div><figcaption><b>Qué ataca cada demanda.</b> Tres columnas, una por punto: entrada, modelo y salida. Cada tarjeta es un caso conocido, puesta en la columna de su argumento principal, con el país y el estado a noviembre de 2026. El color de la tarjeta dice cómo va: a favor del titular de los derechos, a favor de la empresa de IA, con acuerdo o todavía sin decisión. Una misma demanda puede tener argumentos en más de una columna; aquí está en la de su argumento central.</figcaption></figure><div class="prose"><p>El estado de los casos más citados, a noviembre de 2026 (todos siguen moviéndose; revisa una fuente actual antes de citarlos):</p><div class="tbl"><table><thead><tr><th>Caso</th><th>Dónde</th><th>Qué se discute</th><th>Estado a noviembre de 2026</th></tr></thead><tbody><tr><td>Thomson Reuters contra Ross Intelligence</td><td>Estados Unidos</td><td>Usar resúmenes jurídicos de una base de datos para entrenar un buscador legal rival</td><td>En febrero de 2025, un juez dijo que no era uso justo; en 2026, el tribunal de apelaciones del Tercer Circuito lo confirmó. Ross pidió una nueva audiencia y anunció que irá a la Corte Suprema</td></tr><tr><td>Bartz contra Anthropic</td><td>Estados Unidos</td><td>Libros usados para entrenar, algunos bajados de sitios piratas</td><td>En junio de 2025, el juez dijo que entrenar con libros comprados era uso justo, pero no guardar copias piratas. Acuerdo de US$ 1.500 millones, unos US$ 3.000 por obra, con aprobación final en julio de 2026</td></tr><tr><td>Kadrey contra Meta</td><td>Estados Unidos</td><td>Libros de sitios piratas en el entrenamiento</td><td>En junio de 2025, el juez falló a favor de Meta porque los autores no probaron el daño al mercado, y advirtió que otros demandantes podrían ganar. Quedan reclamos en curso</td></tr><tr><td>The New York Times contra OpenAI y Microsoft</td><td>Estados Unidos</td><td>Millones de artículos en el entrenamiento y respuestas que los reproducen</td><td>Sin sentencia: en noviembre de 2026 se discuten las peticiones de las dos partes para que el juez decida sin juicio</td></tr><tr><td>GEMA contra OpenAI</td><td>Alemania</td><td>Letras de canciones que el modelo repite de memoria</td><td>En noviembre de 2025, un tribunal de Múnich dijo que guardarlas en el modelo y repetirlas es reproducción. OpenAI apeló</td></tr><tr><td>Getty Images contra Stability AI</td><td>Reino Unido</td><td>Fotos usadas para entrenar un generador de imágenes y su marca de agua en las salidas</td><td>En noviembre de 2025, el tribunal dijo que el modelo no es una «copia infractora» porque no guarda las fotos, y halló un uso indebido limitado de la marca. Getty obtuvo permiso para apelar</td></tr><tr><td>Disney y Universal contra Midjourney</td><td>Estados Unidos</td><td>Imágenes generadas con personajes de sus películas</td><td>Presentada en junio de 2025; sigue en curso</td></tr></tbody></table></div></div><div class="caso"><b>Un caso real</b><p><b>Cómo se consiguen los datos importa tanto como para qué se usan.</b> En el caso Bartz, el juez separó dos cosas que parecen una sola. Entrenar un modelo con libros comprados y escaneados le pareció un uso «enormemente transformador», protegido por el uso justo. Pero descargar cientos de miles de libros de bibliotecas piratas y guardarlos en una biblioteca interna no lo era, aunque después se usaran para entrenar. Esa segunda parte iba a juicio, con una indemnización mínima por cada obra, y la empresa prefirió el acuerdo más grande de la historia del derecho de autor en Estados Unidos. Como es un acuerdo y no una sentencia, no obliga a otros jueces. La lección para cualquier organización: el origen de cada dato tiene que poder demostrarse.</p></div><div class="prose"><p>Tres ideas se repiten en las decisiones de 2025 y 2026. La primera: en Estados Unidos, entrenar puede ser uso justo, pero depende de cómo se obtuvieron las obras y de si el modelo compite con ellas; el caso Ross perdió porque su producto reemplazaba al original en el mismo mercado. La segunda: la <b>memorización</b> (<i>memorization</i>), que el modelo repita una obra casi palabra por palabra, debilita la defensa de las empresas; fue la clave en Múnich y el capítulo 5 la mira desde la privacidad. La tercera: los jueces de distintos países no coinciden.</p></div></section>
+<section><h2>¿De quién es lo que genera la IA?</h2><div class="prose"><p>La otra mitad del problema mira hacia afuera: si el equipo de Patricia le pide a un asistente el texto del aviso de empleo o la imagen de la campaña de contratación, ¿de quién es el resultado?</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en una cámara de fotos. La cámara hace casi todo el trabajo técnico, pero la foto es del fotógrafo porque él eligió qué encuadrar, cuándo disparar y con qué luz. Ahora imagina que solo le dices a alguien «tráeme una foto de un atardecer en la playa» y te la trae. Tú pediste la foto, pero no la hiciste. Con la IA pasa algo parecido: lo que importa es cuánto de la forma final decidiste tú.</p></div><div class="prose"><p>En casi todos los países, el derecho de autor exige un <b>autor humano</b>. En Estados Unidos, la Oficina de Derechos de Autor (<i>U.S. Copyright Office</i>) lo dejó escrito en la segunda parte de su informe sobre IA, de enero de 2025: escribir una instrucción (<i>prompt</i>) no basta para ser autor de lo que el modelo genera, porque el modelo decide la forma; sí se protegen los aportes humanos perceptibles en la obra final, como un texto propio, la selección y el orden de varios resultados o las modificaciones hechas a mano. El caso del cómic <i>Zarya of the Dawn</i> (2023) lo mostró en pequeño: se registró el texto y el orden de las páginas, no las imágenes generadas.</p><p>Los tribunales de ese país confirmaron la regla en <i>Thaler contra Perlmutter</i>: una persona pidió registrar una imagen hecha por su sistema de IA, poniendo al sistema como único autor. El tribunal de apelaciones dijo que no en 2025, y el 2 de marzo de 2026 la Corte Suprema se negó a revisar el caso. La pregunta que sigue abierta es la del medio: cuánto aporte humano basta.</p><p>Otros países van por caminos parecidos con matices. En noviembre de 2023, un tribunal de internet de Pekín reconoció derechos sobre una imagen generada porque el usuario la había ajustado con muchas instrucciones y parámetros.</p><p>Dos consecuencias prácticas para una organización:</p><ul><li><b>Lo generado sin aporte humano puede no tener dueño.</b> Un competidor podría copiar el aviso o la imagen sin infringir nada. Para un aviso de empleo da igual; para el logotipo de una marca, no.</li><li><b>Las condiciones del proveedor no crean derechos.</b> Muchos proveedores dicen en su contrato que el resultado «es tuyo». Eso significa que ellos no lo reclaman, no que la ley lo proteja ni que no infrinja derechos de un tercero.</li></ul></div></section>
+<section><h2>Riesgos al usar IA en una organización: licencias, código y marcas</h2><div class="prose"><p>Una organización que usa IA no entrena modelos, pero sí publica lo que generan. Los riesgos están en la salida:</p><ul><li><b>Parecido con una obra protegida.</b> Un modelo puede generar un texto, una canción o una imagen muy parecidos a una obra que vio muchas veces, sobre todo si se le pide «al estilo de» un autor concreto o se nombra a un personaje. El estilo en sí no está protegido, pero una copia sustancial sí.</li><li><b>Código con licencia.</b> Los asistentes de programación sugieren código aprendido de repositorios públicos. Si una sugerencia reproduce un fragmento con una <b>licencia de software libre recíproca</b> (<i>copyleft</i>), como la GPL, que obliga a publicar con la misma licencia el programa que la incluye, el producto de la empresa podría quedar obligado. Varios asistentes ofrecen un filtro que bloquea o señala las sugerencias que coinciden con código público.</li><li><b>Marcas y personas.</b> Una imagen generada puede incluir el logotipo de otra empresa o una marca de agua (como en el caso Getty), y una voz o una cara generadas pueden parecerse a las de una persona real, que tiene derecho sobre su imagen y su voz.</li><li><b>Material ajeno en la instrucción.</b> Si alguien pega en el asistente un informe de un cliente o un libro completo para «resumirlo», el problema empieza antes de la salida: esa copia también necesita permiso, y puede romper un contrato de confidencialidad.</li></ul><p>Algunos proveedores grandes ofrecen a sus clientes empresariales una <b>indemnización</b> (<i>indemnification</i>): se comprometen a defenderlos si un tercero los demanda por derechos de autor sobre lo generado. Tienen condiciones (usar los filtros del proveedor, no buscar la infracción a propósito) y suelen no cubrir las versiones gratuitas. Leer esas condiciones es parte de elegir proveedor, como verás en el capítulo 7.</p></div><div class="lab" id="04-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Caso por caso: ¿riesgo bajo, medio o alto?</h3></div><p class="hint">Diez usos de contenido generado con IA en la empresa ficticia. Elige el nivel de riesgo de cada uno y pulsa «Comparar». Cada tarjeta muestra el criterio del capítulo y los factores que pesan: quién lo verá, cuánto se parece a algo existente, cuánto aportó una persona y qué cubre el contrato. Mira qué factor explica la mayoría de tus diferencias.</p><style>
+[id="04-lab-1"] .c4l1-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:10px}
+[id="04-lab-1"] .c4l1-s{border:1px solid var(--line);border-left:6px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:8px;background:var(--card);font:500 .86rem/1.4 var(--f-display)}
+[id="04-lab-1"] .c4l1-s[data-c="b"]{border-left-color:var(--good)}
+[id="04-lab-1"] .c4l1-s[data-c="m"]{border-left-color:var(--c-fis)}
+[id="04-lab-1"] .c4l1-s[data-c="a"]{border-left-color:var(--warm)}
+[id="04-lab-1"] .c4l1-s .btns button{font-size:.76rem;padding:4px 10px}
+[id="04-lab-1"] .c4l1-s button[data-v="b"][aria-pressed="true"]{background:var(--good);border-color:var(--good);color:var(--card)}
+[id="04-lab-1"] .c4l1-s button[data-v="m"][aria-pressed="true"]{background:var(--c-fis);border-color:var(--c-fis);color:var(--card)}
+[id="04-lab-1"] .c4l1-s button[data-v="a"][aria-pressed="true"]{background:var(--warm);border-color:var(--warm);color:var(--card)}
+[id="04-lab-1"] .c4l1-f{display:flex;flex-wrap:wrap;gap:4px}
+[id="04-lab-1"] .c4l1-f span{font:600 .7rem/1 var(--f-mono);padding:4px 6px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+[id="04-lab-1"] .c4l1-f span.sube{border-color:var(--warm);color:var(--warm)}
+[id="04-lab-1"] .c4l1-f span.baja{border-color:var(--good);color:var(--good)}
+[id="04-lab-1"] .c4l1-s .regla{font:500 .8rem/1.4 var(--f-body);color:var(--muted);border-top:1px dashed var(--line);padding-top:6px}
+[id="04-lab-1"] .c4l1-s .regla b.ok{color:var(--good)} [id="04-lab-1"] .c4l1-s .regla b.mal{color:var(--warm)}
+[id="04-lab-1"] .c4l1-bar{display:flex;height:26px;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+[id="04-lab-1"] .c4l1-bar i{display:grid;place-items:center;height:100%;font:700 .75rem var(--f-mono);color:var(--card);transition:width .3s ease;overflow:hidden}
+@media (prefers-reduced-motion: reduce){[id="04-lab-1"] .c4l1-bar i{transition:none}}
+</style>
+<div class="btns">
+  <button type="button" class="primary" id="c4l1-rev">Comparar</button>
+  <button type="button" id="c4l1-reset">Borrar mis respuestas</button>
+</div>
+<div class="c4l1-grid" id="c4l1-grid" role="group" aria-label="Diez usos de contenido generado para clasificar"></div>
+<div class="c4l1-bar" id="c4l1-bar" aria-hidden="true"></div>
+<div class="legend"><span><i style="background:var(--good)"></i>riesgo bajo</span><span><i style="background:var(--c-fis)"></i>riesgo medio</span><span><i style="background:var(--warm)"></i>riesgo alto</span><span><i style="background:var(--muted)"></i>sin responder</span></div>
+<div class="readout texto" id="c4l1-out" aria-live="polite"></div></div></section>
+<section><h2>Buenas prácticas: fuentes con licencia, registro y revisión</h2><div class="prose"><p>Cinco hábitos bajan mucho el riesgo, y casi todos son de registro y de proceso:</p><ol class="steps"><li><span><b>Fuentes con licencia o propias.</b> Para entrenar o ajustar un modelo, usar datos propios, de dominio público o con licencias abiertas que lo permitan (como CC0 o CC BY, de la familia <b>Creative Commons</b>). Hoy existen conjuntos grandes armados solo con texto de licencia abierta, como Common Pile, de 8 TB.</span></li><li><span><b>Registro de procedencia</b> (<i>data provenance</i>). Una ficha por conjunto de datos: de dónde vino, con qué licencia, en qué fecha, qué se quitó. La <b>hoja de datos</b> del capítulo 3 es el formato natural para guardarlo.</span></li><li><span><b>Registro del aporte humano.</b> Para lo que se quiere proteger, guardar las versiones, las instrucciones y las modificaciones hechas a mano. Si algún día hay que demostrar autoría, es la prueba.</span></li><li><span><b>Revisión antes de publicar.</b> Todo lo que sale al público pasa por una persona que mira marcas, personajes, rostros y parecidos; para imágenes, una búsqueda inversa de imágenes; para código, una herramienta de <b>análisis de composición de software</b> (<i>software composition analysis</i>), que detecta fragmentos y licencias de terceros.</span></li><li><span><b>Contratos que respondan.</b> Pedir al proveedor el resumen de sus datos de entrenamiento, saber si indemniza y en qué condiciones, y anotarlo en el inventario de usos (capítulo 7).</span></li></ol></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Leer la licencia de un conjunto de entrenamiento</h3></div><p>Vas a comparar dos conjuntos públicos de texto en Hugging Face, el sitio donde se publican modelos y datos. No hace falta cuenta; las páginas están en inglés.</p><ol class="steps"><li><span>Abre la <a href="https://huggingface.co/datasets/allenai/c4" target="_blank" rel="noopener">ficha de C4</a>, un conjunto de texto limpiado a partir de Common Crawl. Busca a la derecha la licencia (<i>License</i>) y, en la ficha, la sección <i>License</i> o <i>Licensing Information</i>.</span></li><li><span>Lee qué dice sobre los términos de Common Crawl y anota el tamaño total.</span></li><li><span>Abre la <a href="https://huggingface.co/common-pile" target="_blank" rel="noopener">página de Common Pile</a> y lee cómo describe el origen de sus textos.</span></li><li><span>Responde: ¿la licencia de C4 te da permiso sobre cada página que contiene, o solo sobre la colección?</span></li></ol><p><b>Qué observar:</b> C4 se publica con una licencia ODC-BY sobre la colección, pero advierte que el contenido sigue los términos de Common Crawl: la licencia de un conjunto no limpia los derechos de cada página que trae dentro. Common Pile, en cambio, solo reúne texto de dominio público o con licencia abierta, y por eso es mucho más pequeño que un rastreo de la web. Esa diferencia de tamaño es el precio de saber de dónde viene cada dato.</p></div><figure class="fig fig-flujo" id="04-diagrama-4"><div class="lienzo"><svg viewBox="0 0 900 450" style="min-width:720px" role="img" aria-label="Diagrama de secuencia del camino de una pieza generada. Participantes: persona de Gestión Humana, asistente aprobado, revisora y registro. Uno, la persona pide la imagen de la campaña. Dos, el asistente la genera. Tres, la persona la ajusta a mano y guarda versiones. Cuatro, la revisora busca marcas, rostros y parecidos. Cinco, si encuentra algo, vuelve al paso tres. Seis, si no, la aprueba. Siete, el registro guarda herramienta, instrucciones, aporte humano y quién aprobó. Fases: generar, ajustar, revisar y registrar">
+  <defs>
+    <marker id="i4d4-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker>
+    <marker id="i4d4-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--warm)"/></marker>
+  </defs>
+  
+  <rect x="30" y="14" width="160" height="50" rx="10" class="d-casa"/>
+  <text x="110" y="35" class="t t-b" text-anchor="middle">Persona</text><text x="110" y="52" class="t t-s t-m" text-anchor="middle">Gestión Humana</text>
+  <rect x="220" y="14" width="160" height="50" rx="10" class="d-inet"/>
+  <text x="300" y="35" class="t t-b" text-anchor="middle">Asistente</text><text x="300" y="52" class="t t-s t-m" text-anchor="middle">herramienta aprobada</text>
+  <rect x="410" y="14" width="160" height="50" rx="10" class="caja"/>
+  <text x="490" y="35" class="t t-b" text-anchor="middle">Revisora</text><text x="490" y="52" class="t t-s t-m" text-anchor="middle">comunicaciones</text>
+  <rect x="600" y="14" width="160" height="50" rx="10" class="d-sis"/>
+  <text x="680" y="35" class="t t-b" text-anchor="middle">Registro</text><text x="680" y="52" class="t t-s t-m" text-anchor="middle">inventario de piezas</text>
+  <g class="vida"><path d="M110 64V430"/><path d="M300 64V430"/><path d="M490 64V430"/><path d="M680 64V430"/></g>
+  
+  <g class="t t-s">
+    <path d="M110 100H296" class="ln" marker-end="url(#i4d4-m)"/>
+    <text x="122" y="93"><tspan class="t-b">1</tspan> pide la imagen de la campaña</text>
+    <path d="M300 142H114" class="ln" style="stroke:var(--d-inet)" marker-end="url(#i4d4-m)"/>
+    <text x="126" y="135"><tspan class="t-b">2</tspan> imagen generada</text>
+    <path d="M110 172h40v26h-36" class="ln" marker-end="url(#i4d4-m)"/>
+    <text x="160" y="185"><tspan class="t-b">3</tspan> ajusta a mano y guarda versiones</text>
+    <path d="M110 236H486" class="ln" marker-end="url(#i4d4-m)"/>
+    <text x="122" y="229"><tspan class="t-b">4</tspan> pide revisión</text>
+    <path d="M490 248h40v26h-36" class="ln" marker-end="url(#i4d4-m)"/>
+    <text x="538" y="258">busca marcas, rostros y</text><text x="538" y="272">parecidos (búsqueda inversa)</text>
+    <path d="M490 304H114" class="ln ln-d" style="stroke:var(--warm)" marker-end="url(#i4d4-w)"/>
+    <text x="196" y="297" style="fill:var(--warm)"><tspan class="t-b">5</tspan> si encuentra algo: vuelve al paso 3</text>
+    <path d="M490 346H114" class="ln" style="stroke:var(--good)" marker-end="url(#i4d4-m)"/>
+    <text x="196" y="339"><tspan class="t-b">6</tspan> si no, la aprueba</text>
+    <path d="M110 392H676" class="ln" marker-end="url(#i4d4-m)"/>
+    <text x="122" y="385"><tspan class="t-b">7</tspan> guarda herramienta, instrucciones, aporte humano y quién aprobó</text>
+  </g>
+  
+  <g class="t t-xs t-b">
+    <rect x="790" y="84" width="96" height="66" rx="8" class="d-inet"/><text x="838" y="122" text-anchor="middle">GENERAR</text>
+    <rect x="790" y="160" width="96" height="50" rx="8" class="d-casa"/><text x="838" y="189" text-anchor="middle">AJUSTAR</text>
+    <rect x="790" y="220" width="96" height="136" rx="8" class="caja"/><text x="838" y="292" text-anchor="middle">REVISAR</text>
+    <rect x="790" y="366" width="96" height="44" rx="8" class="d-sis"/><text x="838" y="392" text-anchor="middle">REGISTRAR</text>
+  </g>
+</svg></div><figcaption><b>El camino de una pieza generada antes de publicarse.</b> Los participantes están arriba y el tiempo corre hacia abajo. ① Una persona del equipo de Patricia pide al asistente aprobado la imagen de la campaña; ② el asistente la genera; ③ la persona la ajusta a mano y guarda las versiones; ④ la revisora busca marcas, rostros y parecidos con una búsqueda inversa; ⑤ si encuentra algo, la pieza vuelve al paso 3; ⑥ si no, se aprueba y ⑦ el registro guarda la herramienta, las instrucciones, el aporte humano y quién aprobó. A la derecha, las fases: generar, ajustar, revisar y registrar.</figcaption></figure><div class="prose"><p>En el caso del curso, Inés convirtió esto en la pieza que el capítulo aporta a la evaluación de impacto del capítulo 8: un <b>registro de fuentes y licencias</b> del filtro, una fila por cada dato u obra que entra o sale, con su origen, su licencia y su estado. Tres filas quedaron abiertas, cada una con un pedido. Al proveedor: el resumen de los datos con que entrenó el modelo y el analizador, y si su contrato indemniza a la empresa. A Patricia: que el aviso de empleo y la imagen de la campaña pasen por el camino de la figura 4 antes de la convocatoria de enero, con el aporte humano registrado. Y otra vez al proveedor: la ficha de procedencia de las 2.000 evaluaciones de reclutadores de otras empresas con que entrenó el modelo. Esa última pregunta abre el capítulo siguiente, porque esas decisiones no son obras: son hojas de vida de personas reales, llenas de datos personales.</p></div></section>
+<section><h2>La idea clave</h2><div class="prose"><p>Un modelo es tan legítimo como los datos con que se hizo. Las leyes todavía no dan una respuesta única: Estados Unidos decide caso por caso con el uso justo, Europa permite minar salvo exclusión y exige transparencia, y América Latina discute sus proyectos. Mientras tanto, lo que una organización controla es saber de dónde viene cada dato y cada obra: fuentes con licencia, registro de procedencia, aporte humano documentado y revisión antes de publicar.</p></div></section>
+<section><h2>Pruébate</h2><div class="quiz"><h3>Pruébate</h3><details><summary>¿Por qué entrenar un modelo implica copiar, aunque el modelo no guarde las obras tal cual?</summary><p>Porque para entrenar, el texto o la imagen tiene que descargarse y guardarse en los discos de quien entrena; esa copia es la que el derecho de autor regula, además de lo que el modelo pueda memorizar o generar.</p></details><details><summary>¿Qué diferencia hay entre el uso justo de Estados Unidos y la excepción de minería de textos del artículo 4 de la directiva europea?</summary><p>El uso justo lo decide un juez caso por caso con cuatro factores; la excepción europea permite minar contenido de acceso legal salvo que el titular se haya reservado el derecho de forma legible por máquinas.</p></details><details><summary>Un periódico agrega hoy a su <code>robots.txt</code> una línea que bloquea a un rastreador de IA. ¿Qué cambia y qué no?</summary><p>Ese rastreador, si respeta el archivo, deja de descargar páginas desde hoy; lo que ya se copió o se usó para entrenar no se borra, y los rastreadores que no se nombran o no respetan el archivo siguen entrando.</p></details><details><summary>¿Por qué en el caso Bartz importó de dónde salieron los libros?</summary><p>Porque el juez consideró uso justo entrenar con libros comprados y escaneados, pero no descargar y guardar copias de sitios piratas; esa parte iba a juicio y llevó al acuerdo.</p></details><details><summary>Una persona escribe una instrucción y publica sin cambios la imagen que generó el modelo. Según la Oficina de Derechos de Autor de Estados Unidos, ¿quién es el autor?</summary><p>Nadie: la instrucción sola no basta, porque la forma la decidió el modelo. Solo se protegerían aportes humanos perceptibles, como modificaciones, selección u orden.</p></details><details><summary>¿Qué cubre, en general, la indemnización que ofrecen algunos proveedores y qué no?</summary><p>La defensa del cliente empresarial si un tercero lo demanda por derechos de autor sobre lo generado, con condiciones como usar los filtros del proveedor; no suele cubrir las versiones gratuitas ni el uso que busca infringir a propósito.</p></details></div></section>
+<section><h2>Para investigar</h2><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué pasó en el caso de Google Books (<i>Authors Guild contra Google</i>) y por qué las empresas de IA lo citan tanto?<small>Pista: busca «Authors Guild v. Google 2015 fair use».</small></li><li>¿Qué son las licencias Creative Commons y en qué se diferencian CC BY, CC BY-NC y CC0?</li><li>¿Qué es el Convenio de Berna y por qué, gracias a él, el derecho de autor nace sin registro en casi todos los países?<small>Pista: busca «Convenio de Berna OMPI».</small></li><li>¿Qué es el dominio público y cuántos años después de la muerte del autor entra una obra en él en tu país?<small>Pista: busca la ley de derecho de autor de tu país y el «plazo de protección».</small></li><li>¿Qué es la doctrina de la «idea y la expresión» y por qué un estilo artístico no se puede proteger?</li></ol></div></section>
+<section><h2>Para saber más</h2><div class="vids"><span>Para saber más</span><a class="vid" href="https://www.copyright.gov/ai/" target="_blank" rel="noopener">Copyright and Artificial Intelligence <small>los informes de la Oficina de Derechos de Autor de Estados Unidos, en inglés</small></a><a class="vid" href="https://eur-lex.europa.eu/eli/dir/2019/790/oj" target="_blank" rel="noopener">Directiva (UE) 2019/790 sobre derechos de autor en el mercado único digital <small>artículos 3 y 4 sobre minería de textos</small></a><a class="vid" href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers" target="_blank" rel="noopener">Obligaciones de los proveedores de modelos de propósito general <small>Comisión Europea, en inglés</small></a><a class="vid" href="https://datatracker.ietf.org/wg/aipref/about/" target="_blank" rel="noopener">Grupo de trabajo AIPREF del IETF <small>el estándar en preparación para expresar preferencias sobre el uso por IA, en inglés</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-responsable" target="_blank" rel="noopener">github.com/aaramirez/ia-responsable</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  // d: destino. v: visitas de lectores al mes que llegan gracias a ese destino (periódico ficticio, 100.000 visitas al mes)
+  const B=[
+    {ua:'Googlebot',q:'Buscador de Google',d:'bus',v:52000},
+    {ua:'Bingbot',q:'Buscador de Microsoft',d:'bus',v:6000},
+    {ua:'Google-Extended',q:'Señal: no usar en los modelos de Google (no es un rastreador aparte)',d:'ent',v:0},
+    {ua:'GPTBot',q:'OpenAI: entrenamiento',d:'ent',v:0},
+    {ua:'ClaudeBot',q:'Anthropic: entrenamiento',d:'ent',v:0},
+    {ua:'CCBot',q:'Common Crawl: copias públicas que usan muchos',d:'ent',v:0},
+    {ua:'OAI-SearchBot',q:'OpenAI: búsqueda dentro del asistente',d:'viv',v:2500},
+    {ua:'Claude-SearchBot',q:'Anthropic: búsqueda dentro del asistente',d:'viv',v:800},
+    {ua:'PerplexityBot',q:'Perplexity: respuestas con fuentes',d:'viv',v:1200}
+  ];
+  const DIRECTAS=37500,TOTAL=100000;
+  let ok=B.map(()=>true);
+  const caja=$('#c4l2-bots');
+  B.forEach((b,i)=>{const l=document.createElement('label');l.className='c4l2-bot';l.dataset.d=b.d;
+    l.innerHTML='<input type="checkbox" id="c4l2-b'+i+'" checked><code>'+b.ua+'</code><small>'+b.q+'</small>';caja.appendChild(l);
+    l.querySelector('input').addEventListener('change',e=>{ok[i]=e.target.checked;leer();});});
+  const PRE={abrir:()=>B.map(()=>true),ent:()=>B.map(b=>b.d!=='ent'),cerrar:()=>B.map(()=>false)};
+  document.querySelectorAll('[id="04-lab-2"] [data-p]').forEach(bt=>bt.addEventListener('click',()=>{ok=PRE[bt.dataset.p]();B.forEach((b,i)=>{$('#c4l2-b'+i).checked=ok[i];});leer(bt.dataset.p);}));
+  const fmt=n=>n.toLocaleString('es').replace(/ |\s/g,'.');
+  function barra(et,val,max,color,txt){return '<div><span>'+et+': '+txt+'</span><span class="c4l2-m"><i style="width:'+(100*val/max)+'%;background:'+color+'"></i></span></div>';}
+  function leer(p){
+    document.querySelectorAll('[id="04-lab-2"] [data-p]').forEach(bt=>bt.setAttribute('aria-pressed',bt.dataset.p===p?'true':'false'));
+    const cerr=B.filter((b,i)=>!ok[i]);
+    let txt='# robots.txt de www.ejemplo.com (periódico ficticio)\n';
+    if(!cerr.length)txt+='User-agent: *\nAllow: /\n';
+    else{cerr.forEach(b=>{txt+='\nUser-agent: '+b.ua+'\nDisallow: /\n';});txt+='\nUser-agent: *\nAllow: /\n';}
+    $('#c4l2-txt').textContent=txt;
+    const vis=DIRECTAS+B.reduce((s,b,i)=>s+(ok[i]?b.v:0),0);
+    const entTot=B.filter(b=>b.d==='ent').length,entAb=B.filter((b,i)=>b.d==='ent'&&ok[i]).length;
+    const vivTot=B.filter(b=>b.d==='viv').length,vivAb=B.filter((b,i)=>b.d==='viv'&&ok[i]).length;
+    const busAb=B.filter((b,i)=>b.d==='bus'&&ok[i]).length;
+    $('#c4l2-met').innerHTML=
+      barra('Visitas de lectores al mes',vis,TOTAL,'var(--accent)',fmt(vis)+' de '+fmt(TOTAL))+
+      barra('Entrenamiento futuro que sigue abierto',entAb,entTot,'var(--c-apl)',entAb+' de '+entTot+' señales')+
+      barra('Asistentes que pueden citarte en vivo',vivAb,vivTot,'var(--c-enl)',vivAb+' de '+vivTot);
+    let h='';
+    const perd=TOTAL-vis;
+    if(!cerr.length)h+='<span>Todo abierto: cualquier rastreador que respete el archivo puede copiar tus páginas, también para entrenar modelos.</span>';
+    if(entAb===0&&busAb===2&&vivAb===vivTot)h+='<span class="ok">Cerraste el entrenamiento y mantuviste el buscador y las citas en vivo: es la configuración que eligen muchos medios.</span>';
+    if(busAb<2)h+='<span class="warn">Bloquear un buscador te cuesta '+fmt(perd)+' visitas al mes en este ejemplo. Por eso Google ofrece Google-Extended aparte: cerrar el entrenamiento sin desaparecer del buscador.</span>';
+    if(vivAb<vivTot&&busAb===2)h+='<span>Cerrar los rastreadores de búsqueda de los asistentes evita que te usen para responder, pero también que te citen con un enlace.</span>';
+    h+='<span><b>Lo que no cambia, cierres lo que cierres:</b> las copias que ya se hicieron y los modelos ya entrenados; los rastreadores que no nombraste o que no respetan el archivo; y las copias que terceros publicaron de tus notas. El archivo solo mira hacia adelante.</span>';
+    $('#c4l2-out').innerHTML='<span>'+h.replace(/<\/span><span/g,'</span> <span')+'</span>';
+  }
+  leer();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const NOM={b:'bajo',m:'medio',a:'alto'};
+  // Factores: aud (quién lo ve), par (parecido con algo existente), hum (aporte humano), con (contrato o licencia)
+  const FN={aud:'quién lo ve',par:'el parecido con algo existente',hum:'el aporte humano',con:'el contrato o la licencia'};
+  const S=[
+    {t:'Patricia pide al asistente aprobado un borrador del aviso de empleo para agentes de atención, lo reescribe y lo publica en el portal de empleo.',c:'b',k:'hum',
+     f:{aud:['público',1],par:['texto genérico',0],hum:['reescrito',0],con:['herramienta aprobada',0]},
+     r:'Un aviso de empleo es texto funcional y genérico, y una persona lo reescribió. El riesgo de infringir es bajo; que no tenga protección propia no importa aquí.'},
+    {t:'Alguien pega completo un informe de mercado comprado a una consultora en un asistente gratuito para resumirlo al comité.',c:'m',k:'con',
+     f:{aud:['interno',0],par:['obra ajena completa',1],hum:['ninguno',0],con:['licencia del informe y versión gratuita',1]},
+     r:'El resumen queda interno, pero la copia del informe en una herramienta externa puede violar su licencia y su confidencialidad. Se usa la herramienta aprobada o se resume a mano.'},
+    {t:'La imagen de la campaña de contratación se genera «al estilo de» un ilustrador famoso y vivo, y se publica sin cambios en redes.',c:'a',k:'par',
+     f:{aud:['público',1],par:['estilo de un autor nombrado',1],hum:['ninguno',1],con:['sin revisión',1]},
+     r:'Pedir el estilo de un autor vivo empuja al modelo hacia sus obras; si sale una copia sustancial, la infracción es pública y además daña la reputación. Alto: no se publica así.'},
+    {t:'Una persona de comunicaciones traduce al inglés el manual interno de inducción con el asistente aprobado.',c:'b',k:'aud',
+     f:{aud:['interno',0],par:['obra propia',0],hum:['revisa la traducción',0],con:['herramienta aprobada',0]},
+     r:'Traducir una obra propia, para uso interno y con la herramienta aprobada: riesgo bajo.'},
+    {t:'Se genera con IA una mascota para la marca empleadora y se quiere registrar como logotipo.',c:'m',k:'hum',
+     f:{aud:['público',1],par:['revisar parecidos',0],hum:['bajo',1],con:['registro de marca',0]},
+     r:'El riesgo principal no es infringir sino no poder protegerla: sin aporte humano, la imagen puede no tener derecho de autor y otro podría usarla. Se rediseña a mano y se busca parecido antes de registrarla.'},
+    {t:'El asistente de programación sugiere 40 líneas idénticas a un repositorio con licencia GPL, y se integran al producto que la empresa vende.',c:'a',k:'con',
+     f:{aud:['producto vendido',1],par:['código idéntico',1],hum:['ninguno',1],con:['licencia recíproca',1]},
+     r:'Código idéntico con licencia recíproca en un producto comercial puede obligar a publicar el producto con la misma licencia. Se activa el filtro de coincidencias y se revisa con una herramienta de análisis de composición.'},
+    {t:'El video de bienvenida para nuevos empleados usa una voz sintética que imita a un actor muy conocido.',c:'a',k:'par',
+     f:{aud:['interno, pero difundible',1],par:['voz de una persona real',1],hum:['guion propio',0],con:['sin permiso del actor',1]},
+     r:'La voz de una persona real está protegida por su derecho a la propia imagen y voz, aunque el guion sea propio. Sin su permiso, alto.'},
+    {t:'Un post en redes lleva una imagen generada en la que, al mirarla de cerca, se ve la marca de agua borrosa de un banco de imágenes.',c:'a',k:'par',
+     f:{aud:['público',1],par:['marca de agua ajena',1],hum:['ninguno',0],con:['sin revisión',1]},
+     r:'Una marca de agua ajena es señal de que el modelo reprodujo material de un banco de imágenes, y usa su marca. Fue parte del caso Getty. Alto: no se publica.'},
+    {t:'El equipo de Patricia genera con IA una lista de preguntas para entrevistas y las revisa y ajusta en una reunión.',c:'b',k:'hum',
+     f:{aud:['interno',0],par:['genérico',0],hum:['revisadas en equipo',0],con:['herramienta aprobada',0]},
+     r:'Preguntas genéricas, revisadas por personas y de uso interno: riesgo de derecho de autor bajo (su sesgo es otro tema: capítulo 2).'},
+    {t:'El texto de la página «Trabaja con nosotros» se escribe con la versión gratuita de un asistente; una persona lo lee y lo publica con pocos cambios.',c:'m',k:'con',
+     f:{aud:['público',1],par:['texto genérico',0],hum:['pocos cambios',1],con:['versión gratuita, sin indemnización',1]},
+     r:'Texto genérico con revisión, pero publicado y con una versión sin indemnización ni compromisos de uso de datos. Medio: mejor la herramienta aprobada y más aporte propio.'}
+  ];
+  let R=S.map(()=>null),revisado=false;
+  const g=$('#c4l1-grid');
+  S.forEach((s,i)=>{const d=document.createElement('div');d.className='c4l1-s';d.id='c4l1-s'+i;
+    d.innerHTML='<div><b>'+(i+1)+'.</b> '+s.t+'</div><div class="btns" role="group" aria-label="Riesgo del uso '+(i+1)+'">'+
+      ['b','m','a'].map(c=>'<button type="button" data-i="'+i+'" data-v="'+c+'">'+NOM[c][0].toUpperCase()+NOM[c].slice(1)+'</button>').join('')+
+      '</div><div class="c4l1-f" hidden></div><div class="regla" hidden></div>';g.appendChild(d);});
+  function leer(){
+    S.forEach((s,i)=>{const d=$('#c4l1-s'+i);
+      d.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',R[i]===b.dataset.v?'true':'false'));
+      const rg=d.querySelector('.regla'),fc=d.querySelector('.c4l1-f');
+      if(revisado){d.dataset.c=s.c;rg.hidden=false;fc.hidden=false;
+        fc.innerHTML=Object.keys(FN).map(k=>'<span class="'+(s.f[k][1]?'sube':'baja')+'" title="'+FN[k]+'">'+s.f[k][0]+'</span>').join('');
+        const ok=R[i]===s.c;
+        rg.innerHTML=(R[i]?(ok?'<b class="ok">Igual que el criterio.</b> ':'<b class="mal">El criterio dice '+NOM[s.c]+'.</b> '):'<b class="mal">Sin responder: es '+NOM[s.c]+'.</b> ')+s.r;}
+      else{delete d.dataset.c;rg.hidden=true;fc.hidden=true;}
+    });
+    const n={b:0,m:0,a:0,x:0};R.forEach(r=>n[r||'x']++);
+    $('#c4l1-bar').innerHTML=[['b','var(--good)'],['m','var(--c-fis)'],['a','var(--warm)'],['x','var(--muted)']].map(([k,c])=>'<i style="width:'+(10*n[k])+'%;background:'+c+'">'+(n[k]?n[k]:'')+'</i>').join('');
+    let h='';
+    if(!revisado){h='<span class="big">Respondiste '+(10-n.x)+' de 10.</span><span>Tu reparto: '+n.b+' bajos, '+n.m+' medios y '+n.a+' altos. Cuando quieras, pulsa «Comparar».</span>';}
+    else{
+      const ord={b:0,m:1,a:2};
+      const bien=S.filter((s,i)=>R[i]===s.c).length,mal=S.map((s,i)=>i).filter(i=>R[i]!==S[i].c);
+      h='<span class="big">Coincides con el criterio en '+bien+' de 10.</span>';
+      const por={};mal.forEach(i=>{por[S[i].k]=(por[S[i].k]||0)+1;});
+      const top=Object.entries(por).sort((a,b)=>b[1]-a[1])[0];
+      if(top)h+='<span class="warn">La mayoría de tus diferencias están en casos donde pesa '+FN[top[0]]+' ('+top[1]+' de '+mal.length+').</span>';
+      const blando=mal.filter(i=>R[i]&&ord[R[i]]<ord[S[i].c]).length,duro=mal.filter(i=>R[i]&&ord[R[i]]>ord[S[i].c]).length;
+      if(blando)h+='<span>Subestimaste '+blando+' caso'+(blando>1?'s':'')+'. Fíjate en las etiquetas rojas: casi siempre aparece un parecido con algo existente o una licencia ajena.</span>';
+      if(duro)h+='<span>Fuiste más estricto que el criterio en '+duro+' caso'+(duro>1?'s':'')+'. Usar IA para textos genéricos, internos y revisados no es el problema.</span>';
+      if(bien===10)h+='<span class="ok">Todo igual. La herramienta casi nunca decide el riesgo: lo deciden el parecido, la licencia, el aporte humano y quién verá el resultado.</span>';
+      h+='<span>Etiquetas: <b style="color:var(--warm)">rojas</b> suben el riesgo, <b style="color:var(--good)">verdes</b> lo bajan. Es un criterio de ejemplo, no asesoría legal.</span>';
+    }
+    $('#c4l1-out').innerHTML='<span>'+h.replace(/<\/span><span/g,'</span> <span')+'</span>';
+  }
+  g.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;const i=+b.dataset.i;R[i]=R[i]===b.dataset.v?null:b.dataset.v;leer();});
+  $('#c4l1-rev').addEventListener('click',()=>{revisado=true;leer();});
+  $('#c4l1-reset').addEventListener('click',()=>{R=S.map(()=>null);revisado=false;leer();});
+  leer();
+})();
+</script>
+</body>
+</html>

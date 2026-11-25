@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Transparencia y explicabilidad · IA responsable · IA responsable</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sesgo, transparencia, derechos de autor, privacidad, regulación y gobierno de la IA: lo que toda organización que usa o construye IA necesita saber.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="transparencia">
+<header class="topbar"><a class="brand" href="index.html">IA <b>responsable</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 03 DE 8</span><h1>Transparencia y explicabilidad</h1><p class="lede">Camila preguntó dos cosas: por qué la rechazaron y si alguien leyó su hoja de vida. Este capítulo arma las dos respuestas: avisar cuándo hay IA, explicar una decisión de forma que la persona la entienda, documentar el modelo en una tarjeta y dar un camino real para pedir que lo revise una persona.</p></header>
+<section><div class="prose"><p>El capítulo 2 midió el sesgo del filtro desde afuera, comparando tasas por grupo. Pero la pregunta de Camila era otra, y más personal: «¿Por qué me rechazaron? ¿Alguien leyó mi hoja de vida?». Patricia no pudo contestarla porque el proveedor no explica cómo pesa cada variable. Un sistema que decide sobre personas y no puede decir por qué es como un juez que dicta sentencia sin fundamentos.</p><p>Este capítulo trata dos ideas que se confunden a menudo. La <b>transparencia</b> (<i>transparency</i>) es decir que hay IA, qué hace y con qué datos. La <b>explicabilidad</b> (<i>explainability</i>) es poder decir por qué el sistema produjo un resultado concreto. La primera es un aviso; la segunda, una respuesta. Las dos se necesitan.</p></div></section>
+<section><h2>Transparencia: avisar que hay IA y etiquetar el contenido generado</h2><div class="analogia"><b>Imagínalo así</b><p><b>Piensa en la etiqueta de un alimento.</b> No te dice cómo se cocinó, pero te dice qué tiene adentro, si trae algo a lo que eres alérgico y quién lo fabricó. Con esa información decides si lo comes. La transparencia de un sistema de IA cumple la misma función: no explica cada cálculo, pero te dice que hay un sistema, qué decide y a quién reclamar.</p></div><div class="prose"><p>Hay tres situaciones donde se espera un aviso:</p><ul><li><b>Cuando la IA decide o ayuda a decidir sobre ti.</b> Camila nunca supo que un sistema puntuaba su hoja de vida. En la ciudad de Nueva York, la <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page" target="_blank" rel="noopener">Ley Local 144</a> (capítulo 1) obliga a avisar a los candidatos al menos diez días hábiles antes de usar una herramienta automatizada de contratación. El reglamento europeo de protección de datos exige informar de la existencia de decisiones automatizadas y dar «información significativa sobre la lógica aplicada».</li><li><b>Cuando conversas con una IA.</b> Un asistente virtual debe decir que no es una persona. El <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">Reglamento europeo de IA</a> lo exige desde el 2 de agosto de 2026 en su artículo 50, salvo que sea evidente (situación a noviembre de 2026).</li><li><b>Cuando el contenido fue generado.</b> Las imágenes, audios, videos y textos sintéticos deben poder reconocerse como tales. El mismo artículo 50 pide a los proveedores marcarlos de forma legible por máquina, y a quien publica un <b>ultrafalso</b> (<i>deepfake</i>), decir que lo es. El capítulo 6 explica el calendario completo de esa ley.</li></ul><p>Avisar parece trivial y no lo es. Un aviso enterrado en el párrafo 14 de una política de privacidad cumple la letra y no sirve a nadie. El aviso útil llega en el momento de la decisión, con palabras simples, y dice qué hace el sistema, qué datos usa y cómo pedir una revisión.</p></div><div class="ml"><b>En la práctica</b><p><b>El aviso que Patricia escribió para la convocatoria de enero.</b> Va en el formulario de postulación, antes del botón «Enviar», y cabe en cinco líneas: «Usamos un sistema automatizado que ordena las postulaciones según tu experiencia, el resultado de la prueba escrita, tus estudios, la coincidencia con el aviso y los meses sin empleo de los últimos cinco años. No usa tu sexo ni tu edad. Ninguna postulación se rechaza sin que una persona de Gestión Humana la revise. Puedes pedir una explicación de tu resultado y una revisión escribiendo a seleccion@ejemplo.com. Más información en nuestra política de datos».</p></div></section>
+<section><h2>Explicabilidad global y de una decisión</h2><div class="prose"><p>Explicar un modelo puede querer decir dos cosas distintas. La <b>explicación global</b> (<i>global explanation</i>) describe cómo decide el modelo en general: qué variables pesan más y en qué dirección. La <b>explicación local</b> (<i>local explanation</i>) describe por qué el modelo dio este resultado a esta persona.</p></div><div class="analogia"><b>Imagínalo así</b><p><b>La receta y el pastel que se hundió.</b> La receta dice cómo se hace un pastel en general: tanta harina, tantos huevos, tantos minutos de horno. Pero si tu pastel se hundió, la receta no te dice por qué; necesitas saber qué pasó con el tuyo: abriste el horno antes de tiempo. La explicación global es la receta; la local, el diagnóstico de tu pastel.</p></div><div class="prose"><p>Algunos modelos se explican solos. Un modelo lineal, que suma cada variable multiplicada por un peso, o un árbol de decisión corto se pueden leer directamente: son modelos <b>interpretables</b> (<i>interpretable</i>). Otros, como una red neuronal o un conjunto de cientos de árboles, son una <b>caja negra</b> (<i>black box</i>): funcionan, pero nadie puede seguir el cálculo con la vista. Para esos se usan métodos que miran el modelo desde afuera:</p><ul><li><b>Importancia de variables</b> (<i>feature importance</i>): cuánto empeora el modelo si se desordena una variable. Es una explicación global.</li><li><b>Valores SHAP</b> (<i>SHapley Additive exPlanations</i>): reparten el resultado de una persona entre sus variables, como se reparte una cuenta entre quienes comieron. Cada variable recibe su <b>aporte</b> (<i>contribution</i>), positivo o negativo, frente al promedio. Es la explicación local más usada; cómo se calcula a fondo está en <a href="https://aaramirez.github.io/aprendizaje-estadistico/temario.html" target="_blank" rel="noopener">Aprendizaje automático</a>.</li><li><b>LIME</b> (<i>Local Interpretable Model-agnostic Explanations</i>): ajusta un modelo simple solo alrededor del caso que se quiere explicar.</li><li><b>Explicaciones contrafactuales</b> (<i>counterfactual explanations</i>): dicen qué tendría que cambiar para que el resultado fuera otro. «Si X hubiera sido Y, habrías pasado».</li><li><b>Modelo sustituto</b> (<i>surrogate model</i>): un modelo simple entrenado para imitar al complejo. Si lo imita bien, su explicación sirve para entender al otro.</li></ul><p>Rodrigo no tenía acceso al modelo del proveedor, pero sí a los 1.000 puntajes que el filtro calculó. Con ellos entrenó un modelo sustituto lineal y descubrió que imitaba al filtro casi a la perfección: el puntaje sube 0,55 por cada punto de la prueba, 2,6 por cada año de experiencia, 2 por cada nivel de estudios, 0,3 por cada punto de coincidencia con el aviso, y <b>baja 0,9 por cada mes sin empleo</b>.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Abre la caja negra con un modelo sustituto</h3></div><p>Vas a hacer lo que hizo Rodrigo: estimar los pesos del filtro solo con sus entradas y salidas, y repartir el puntaje de Camila entre sus variables. Necesitas Python 3 y el archivo <code>candidatos.csv</code> que genera la primera práctica del capítulo 2 (si no lo tienes, corre esa práctica primero). Guarda este código como <code>explica.py</code> en la misma carpeta:</p><div class="code-copia"><pre><code>import csv
+
+VARIABLES = ["prueba", "experiencia", "estudios", "coincidencia", "meses_sin_empleo"]
+filas = list(csv.DictReader(open("candidatos.csv", encoding="utf-8")))
+X = [[1.0] + [float(f[v]) for v in VARIABLES] for f in filas]
+y = [float(f["puntaje"]) for f in filas]
+
+# Mínimos cuadrados: resolver (X'X) b = X'y con eliminación de Gauss
+n = len(X[0])
+A = [[sum(x[i] * x[j] for x in X) for j in range(n)] + [sum(x[i] * yy for x, yy in zip(X, y))] for i in range(n)]
+for c in range(n):
+    p = max(range(c, n), key=lambda r: abs(A[r][c]))
+    A[c], A[p] = A[p], A[c]
+    for r in range(n):
+        if r != c:
+            k = A[r][c] / A[c][c]
+            A[r] = [a - k * b for a, b in zip(A[r], A[c])]
+b = [A[i][n] / A[i][i] for i in range(n)]
+
+pred = [sum(bi * xi for bi, xi in zip(b, x)) for x in X]
+media_y = sum(y) / len(y)
+r2 = 1 - sum((a - p) ** 2 for a, p in zip(y, pred)) / sum((a - media_y) ** 2 for a in y)
+print("Pesos estimados del filtro (modelo sustituto lineal):")
+for v, bi in zip(VARIABLES, b[1:]):
+    print(f"  {v:17s} {bi:+.2f} puntos por unidad")
+print(f"  R2 = {r2:.3f}  (1 = el sustituto imita al filtro a la perfeccion)")
+
+medias = {v: sum(float(f[v]) for f in filas) / len(filas) for v in VARIABLES}
+camila = next(f for f in filas if f["id"] == "C-0735")
+print(f"\nCamila (C-0735): puntaje {camila['puntaje']}; promedio de todos: {media_y:.1f}")
+for v, bi in zip(VARIABLES, b[1:]):
+    aporte = bi * (float(camila[v]) - medias[v])
+    print(f"  {v:17s} valor {camila[v]:&gt;5s}  promedio {medias[v]:6.1f}  aporte {aporte:+6.1f}")</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>Ejecútalo:</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><div class="cmd-l"><code>python explica.py</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>python3 explica.py</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Anota los cinco pesos y el valor de R2.</span></li><li><span>Mira los aportes de Camila: ¿cuál la sube más y cuál la baja más?</span></li><li><span>Cambia <code>"C-0735"</code> por <code>"C-0001"</code> y compara: tiene el mismo puntaje, 55, por razones muy distintas.</span></li></ol><p><b>Qué observar:</b> el sustituto recupera pesos muy cercanos a 0,55; 2,6; 2; 0,3 y −0,9, con un R2 de casi 1: el filtro se comporta como una suma de pesos, aunque el proveedor no lo diga. El puntaje de Camila queda cerca del promedio (55,6) porque su prueba le suma unos 10 puntos y sus 19 meses sin empleo le quitan unos 13,5. Para un modelo lineal, estos aportes frente al promedio son exactamente sus valores SHAP. Con un modelo más complejo, el sustituto imitaría peor y habría que usar SHAP o LIME directamente.</p></div><figure class="fig fig-comparacion" id="03-diagrama-1"><div class="lienzo"><svg viewBox="0 0 900 330" style="min-width:740px" role="img" aria-label="Dos explicaciones del filtro. A la izquierda, explicación global: cuánto mueve el puntaje cada variable en los 1.000 candidatos; prueba escrita 6,7 puntos, meses sin empleo 6,0, experiencia 5,1, coincidencia 4,6 y estudios 1,5. A la derecha, explicación local de Camila en cascada: parte del promedio 55,5; la prueba suma 10,4; la experiencia 3,6; los estudios 0,3; la coincidencia resta 1,7; los meses sin empleo restan 13,6; el puntaje final es 55, debajo del umbral de 60">
+  
+  <rect x="8" y="8" width="410" height="314" rx="12" class="caja"/>
+  <text x="24" y="34" class="t t-xs t-b t-m">GLOBAL · LA RECETA</text>
+  <text x="24" y="52" class="t t-s t-m">cuánto mueve el puntaje cada variable, en promedio</text>
+  <g class="t t-s">
+    <text x="24" y="92">Prueba escrita</text><rect x="150" y="80" width="241" height="16" rx="4" class="c-red"/><text x="146" y="92" text-anchor="end" class="t-b">6,7</text>
+    <text x="24" y="130">Meses sin empleo</text><rect x="150" y="118" width="216" height="16" rx="4" class="c-red"/><text x="146" y="130" text-anchor="end" class="t-b">6,0</text>
+    <text x="24" y="168">Experiencia</text><rect x="150" y="156" width="184" height="16" rx="4" class="c-red"/><text x="146" y="168" text-anchor="end" class="t-b">5,1</text>
+    <text x="24" y="206">Coincidencia</text><rect x="150" y="194" width="166" height="16" rx="4" class="c-red"/><text x="146" y="206" text-anchor="end" class="t-b">4,6</text>
+    <text x="24" y="244">Estudios</text><rect x="150" y="232" width="54" height="16" rx="4" class="c-red"/><text x="146" y="244" text-anchor="end" class="t-b">1,5</text>
+  </g>
+  <text x="24" y="282" class="t t-s t-m">Puntos de puntaje que mueve cada variable</text>
+  <text x="24" y="298" class="t t-s t-m">(peso por su variación entre candidatos)</text>
+  
+  <rect x="432" y="8" width="460" height="314" rx="12" class="caja"/>
+  <text x="448" y="34" class="t t-xs t-b t-m">LOCAL · EL PASTEL DE CAMILA</text>
+  <text x="448" y="52" class="t t-s t-m">aporte de cada variable frente al promedio</text>
+  <line x1="786.7" y1="64" x2="786.7" y2="284" class="ln ln-d" style="stroke:var(--ink)"/>
+  <text x="790" y="76" class="t t-s t-b">umbral 60</text>
+  <g class="t t-s">
+    <text x="448" y="104">Promedio</text><text x="592" y="104" text-anchor="end" class="t-b">55,5</text>
+    <rect x="600" y="92" width="144.7" height="16" rx="3" class="caja" style="fill:var(--grid)"/>
+    <text x="448" y="134">Prueba escrita</text><text x="592" y="134" text-anchor="end" class="t-b">+10,4</text>
+    <rect x="744.7" y="122" width="97" height="16" rx="3" class="c-red"/>
+    <text x="448" y="164">Experiencia</text><text x="592" y="164" text-anchor="end" class="t-b">+3,6</text>
+    <rect x="841.7" y="152" width="32.7" height="16" rx="3" class="c-red"/>
+    <text x="448" y="194">Estudios</text><text x="592" y="194" text-anchor="end" class="t-b">+0,3</text>
+    <rect x="874.4" y="182" width="3" height="16" rx="1" class="c-red"/>
+    <text x="448" y="224">Coincidencia</text><text x="592" y="224" text-anchor="end" class="t-b">−1,7</text>
+    <rect x="861.3" y="212" width="15.9" height="16" rx="3" class="caja s-warm" style="fill:var(--warm-soft)"/>
+    <text x="448" y="254" class="k-warm t-b">Meses sin empleo</text><text x="592" y="254" text-anchor="end" class="t-b k-warm">−13,6</text>
+    <rect x="735.3" y="242" width="126" height="16" rx="3" style="fill:var(--warm);stroke:var(--warm)"/>
+    <text x="448" y="284" class="t-b">Puntaje de Camila</text><text x="592" y="284" text-anchor="end" class="t-b k-warm">55</text>
+    <rect x="600" y="272" width="135.3" height="16" rx="3" class="caja s-warm" style="stroke-width:2"/>
+  </g>
+  <g class="ln" style="stroke:var(--line)"><path d="M744.7 108V122M841.7 138V152M874.4 168V182M877.4 198V212M861.3 228V242M735.3 258V272"/></g>
+  <g class="t t-xs t-m" text-anchor="middle">
+    <text x="600" y="310">40</text><text x="693.3" y="310">50</text><text x="786.7" y="310">60</text><text x="880" y="310">70</text>
+  </g>
+</svg></div><figcaption><b>La receta y el pastel: explicación global y local del filtro.</b> A la izquierda, la explicación global: cuánto mueve el puntaje cada variable en el conjunto de los 1.000 candidatos; la prueba escrita y los meses sin empleo son las que más pesan. A la derecha, la explicación local de Camila, en forma de cascada: parte del puntaje promedio (55,5), cada barra suma o resta el aporte de una variable y la última llega a su puntaje, 55, a cinco puntos del umbral de 60. La barra roja de los meses sin empleo es la que la deja afuera.</figcaption></figure></section>
+<section><h2>Explicaciones que sirven a la persona afectada</h2><div class="prose"><p>Ahora Patricia tiene una explicación técnica: «φ(prueba) = +10,4; φ(meses sin empleo) = −13,6; valor base 55,5; puntaje 55; umbral 60». Es exacta y no le sirve a Camila para nada. Una explicación es buena si la persona que la recibe la entiende y puede hacer algo con ella.</p><p>Las investigaciones sobre cómo explican las personas, como las del investigador Tim Miller, coinciden en cuatro rasgos de una buena explicación para alguien afectado:</p><ul><li><b>Contrastiva</b>: responde «¿por qué yo no, si otros sí?», no «¿cómo funciona todo?».</li><li><b>Selectiva</b>: da dos o tres razones, las que más pesaron, no la lista completa.</li><li><b>Accionable</b>: dice qué podría cambiar el resultado, si algo puede cambiarlo.</li><li><b>Honesta</b>: no esconde la razón incómoda ni la disfraza.</li></ul><p>La explicación contrafactual cumple casi todo eso en una frase. Para Camila, el laboratorio calcula los cambios mínimos: con 9 puntos más en la prueba, o con dos años más de experiencia, o con 13 meses sin empleo en lugar de 19, habría llegado a 60. Ahí aparece algo que ninguna tabla de métricas mostraba con tanta claridad: el cambio que la habría hecho pasar es <b>haber cuidado a su hijo seis meses menos</b>. Nadie puede cambiar su pasado. Una explicación honesta no solo informa a la persona; también deja a la vista la variable sustituta del capítulo 2. Por eso explicar es también una forma de auditar.</p></div><div class="lab" id="03-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Explica una decisión del filtro a la persona rechazada</h3></div><p class="hint">Elige una candidata o candidato con puntaje 55 y compara las dos explicaciones: la técnica, con sus aportes, y la que se le podría enviar. Mueve los controles para probar «¿y si…?» y mira cuánto cambia el puntaje. Fíjate en qué cambios son posibles para la persona y cuáles no.</p><style>
+[id="03-lab-1"] .c3l1-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;align-items:start}
+[id="03-lab-1"] .c3l1-cas{display:grid;gap:4px;font:500 .8rem var(--f-display)}
+[id="03-lab-1"] .c3l1-fila{display:grid;grid-template-columns:110px 1fr 52px;gap:6px;align-items:center}
+[id="03-lab-1"] .c3l1-fila .eje{position:relative;height:18px;background:var(--grid);border-radius:4px}
+[id="03-lab-1"] .c3l1-fila .eje i{position:absolute;top:0;height:100%;border-radius:4px;transition:all .25s ease}
+[id="03-lab-1"] .c3l1-fila .eje::after{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;border-left:1px dashed var(--muted)}
+[id="03-lab-1"] .c3l1-fila b{font:700 .8rem var(--f-mono);text-align:right}
+[id="03-lab-1"] .c3l1-tot{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:6px}
+[id="03-lab-1"] .c3l1-tot b{font:700 1.8rem var(--f-mono)}
+[id="03-lab-1"] .c3l1-tot .si{color:var(--good)} [id="03-lab-1"] .c3l1-tot .no{color:var(--warm)}
+[id="03-lab-1"] .c3l1-pan{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--card);display:grid;gap:6px}
+[id="03-lab-1"] .c3l1-pan h4{margin:0;font:700 .72rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+[id="03-lab-1"] .c3l1-pan.tec pre{margin:0;font:500 .76rem/1.5 var(--f-mono);white-space:pre-wrap}
+[id="03-lab-1"] .c3l1-pan.hum{border-left:5px solid var(--c-red)}
+[id="03-lab-1"] .c3l1-pan.hum p{margin:0;font:500 .9rem/1.5 var(--f-body)}
+[id="03-lab-1"] .c3l1-pan.hum ul{margin:0;padding-left:18px;font:500 .86rem/1.5 var(--f-body)}
+[id="03-lab-1"] .c3l1-pan.hum li.fijo{color:var(--warm)}
+@media (prefers-reduced-motion: reduce){[id="03-lab-1"] .c3l1-fila .eje i{transition:none}}
+</style>
+<div class="btns" role="group" aria-label="Candidato">
+  <button type="button" data-c="0" aria-pressed="true">Camila Ríos · C-0735</button>
+  <button type="button" data-c="1" aria-pressed="false">C-0001</button>
+  <button type="button" data-c="2" aria-pressed="false">C-0020</button>
+  <button type="button" id="c3l1-reset">Volver a los datos reales</button>
+</div>
+<div class="ctls">
+  <label class="ctl">Prueba escrita <output id="c3l1-p-o"></output><input id="c3l1-p" type="range" min="20" max="100" step="1"></label>
+  <label class="ctl">Años de experiencia <output id="c3l1-e-o"></output><input id="c3l1-e" type="range" min="0" max="10" step="0.5"></label>
+  <label class="ctl">Estudios <output id="c3l1-s-o"></output><input id="c3l1-s" type="range" min="0" max="2" step="1"></label>
+  <label class="ctl">Coincidencia con el aviso <output id="c3l1-a-o"></output><input id="c3l1-a" type="range" min="0" max="100" step="1"></label>
+  <label class="ctl">Meses sin empleo <output id="c3l1-b-o"></output><input id="c3l1-b" type="range" min="0" max="30" step="1"></label>
+</div>
+<div class="c3l1-wrap">
+  <div>
+    <div class="c3l1-cas" id="c3l1-cas" role="img" aria-label="Aporte de cada variable al puntaje frente al promedio"></div>
+    <div class="c3l1-tot" id="c3l1-tot"></div>
+  </div>
+  <div class="c3l1-pan tec"><h4>Explicación técnica</h4><pre id="c3l1-tec"></pre></div>
+</div>
+<div class="c3l1-pan hum"><h4>Explicación para la persona</h4><div id="c3l1-hum"></div></div>
+<div class="legend"><span><i style="background:var(--c-red)"></i>suma al puntaje</span><span><i style="background:var(--warm)"></i>resta al puntaje</span><span><i style="background:var(--muted)"></i>línea punteada: el promedio</span></div>
+<div class="readout texto" id="c3l1-out" aria-live="polite"></div></div><div class="caso"><b>Un caso real</b><p><b>Un puntaje que decide también es una decisión automatizada.</b> En diciembre de 2023, el Tribunal de Justicia de la Unión Europea resolvió el caso SCHUFA: una empresa calculaba un puntaje de solvencia y los bancos lo usaban para aprobar o negar créditos. La empresa decía que ella no decidía nada, solo daba un número. El tribunal respondió que, si ese número juega un papel determinante en la decisión, calcularlo ya es una decisión automatizada con todas sus protecciones. En febrero de 2025, en otro caso de puntaje de crédito, el mismo tribunal precisó que la persona tiene derecho a que le expliquen «el procedimiento y los principios realmente aplicados», de forma que entienda qué datos se usaron y cómo; el secreto comercial no anula ese derecho, aunque puede llevar a que una autoridad o un juez revise la información protegida. Con un puntaje y un umbral de 60, el filtro está exactamente en ese lugar.</p></div></section>
+<section><h2>Tarjetas de modelo y hojas de datos</h2><div class="prose"><p>Si cada usuario de un modelo tuviera que hacer su propio modelo sustituto para entenderlo, la transparencia sería un privilegio de quien sabe programar. La solución es que quien construye el modelo lo documente de forma estándar, como los fabricantes de medicamentos documentan sus productos en el prospecto.</p><p>En 2019, un grupo de investigadores de Google propuso las <b>tarjetas de modelo</b> (<i>model cards</i>): un documento corto que acompaña a cada modelo y responde siempre las mismas preguntas. Para qué sirve y para qué no; con qué datos se entrenó y se evaluó; qué métricas tiene, <b>separadas por grupo</b>; qué limitaciones y riesgos se conocen. Un año antes, otro grupo había propuesto las <b>hojas de datos para conjuntos de datos</b> (<i>datasheets for datasets</i>), el equivalente para los datos: por qué se crearon, qué contienen, cómo se recogieron, con qué permiso, qué se limpió, para qué no deberían usarse y quién los mantiene.</p></div><figure class="fig fig-esquema" id="03-diagrama-2"><div class="lienzo"><svg viewBox="0 0 900 486" style="min-width:720px" role="img" aria-label="Hoja de datos con siete secciones: motivación, composición, recolección, preprocesamiento, usos, distribución y mantenimiento. Tarjeta de modelo con nueve secciones: detalles, uso previsto, factores, métricas, datos de evaluación, datos de entrenamiento, análisis por grupo, consideraciones éticas y advertencias. La tarjeta cita la hoja en datos de entrenamiento. En verde, secciones de datos y derechos; en ámbar, secciones de sesgo. Las dos llegan a la evaluación de impacto del capítulo 8">
+  <defs><marker id="i3d2-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker></defs>
+  
+  <path d="M40 14H330L370 54V380H40Z" class="caja" style="stroke-width:1.6"/>
+  <path d="M330 14V54H370" class="ln"/>
+  <text x="58" y="42" class="t t-b">Hoja de datos</text><text x="58" y="60" class="t t-s t-m">datasheet for datasets · 2018</text>
+  <g class="t t-s">
+    <rect x="58" y="78" width="294" height="30" rx="6" class="caja"/><text x="70" y="98">1 · Motivación: por qué se creó</text>
+    <rect x="58" y="114" width="294" height="30" rx="6" class="c-enl"/><text x="70" y="134">2 · Composición: qué contiene, ¿datos personales?</text>
+    <rect x="58" y="150" width="294" height="30" rx="6" class="c-enl"/><text x="70" y="170">3 · Recolección: cómo y con qué permiso</text>
+    <rect x="58" y="186" width="294" height="30" rx="6" class="caja"/><text x="70" y="206">4 · Preprocesamiento: qué se limpió</text>
+    <rect x="58" y="222" width="294" height="30" rx="6" class="caja"/><text x="70" y="242">5 · Usos: para qué sí y para qué no</text>
+    <rect x="58" y="258" width="294" height="30" rx="6" class="c-enl"/><text x="70" y="278">6 · Distribución: licencia y acceso</text>
+    <rect x="58" y="294" width="294" height="30" rx="6" class="caja"/><text x="70" y="314">7 · Mantenimiento: quién la cuida</text>
+  </g>
+  
+  <path d="M520 14H820L860 54V380H520Z" class="caja" style="stroke-width:1.6"/>
+  <path d="M820 14V54H860" class="ln"/>
+  <text x="538" y="42" class="t t-b">Tarjeta de modelo</text><text x="538" y="60" class="t t-s t-m">model card · 2019</text>
+  <g class="t t-s">
+    <rect x="538" y="74" width="304" height="26" rx="6" class="caja"/><text x="550" y="92">1 · Detalles del modelo</text>
+    <rect x="538" y="104" width="304" height="26" rx="6" class="caja"/><text x="550" y="122">2 · Uso previsto y usos fuera de alcance</text>
+    <rect x="538" y="134" width="304" height="26" rx="6" class="c-fis"/><text x="550" y="152">3 · Factores: grupos relevantes</text>
+    <rect x="538" y="164" width="304" height="26" rx="6" class="c-fis"/><text x="550" y="182">4 · Métricas</text>
+    <rect x="538" y="194" width="304" height="26" rx="6" class="caja"/><text x="550" y="212">5 · Datos de evaluación</text>
+    <rect x="538" y="224" width="304" height="26" rx="6" class="c-enl"/><text x="550" y="242">6 · Datos de entrenamiento</text>
+    <rect x="538" y="254" width="304" height="26" rx="6" class="c-fis"/><text x="550" y="272">7 · Análisis cuantitativo por grupo</text>
+    <rect x="538" y="284" width="304" height="26" rx="6" class="caja"/><text x="550" y="302">8 · Consideraciones éticas</text>
+    <rect x="538" y="314" width="304" height="26" rx="6" class="caja"/><text x="550" y="332">9 · Advertencias y recomendaciones</text>
+  </g>
+  <path d="M370 170 C 450 170, 460 237, 534 237" class="ln" style="stroke-width:1.8" marker-end="url(#i3d2-m)"/>
+  <text x="452" y="196" class="t t-s t-m" text-anchor="middle">la tarjeta</text><text x="452" y="210" class="t t-s t-m" text-anchor="middle">cita la hoja</text>
+  
+  <g class="t t-s">
+    <rect x="40" y="464" width="16" height="14" rx="3" class="c-enl"/><text x="62" y="476">datos y derechos (caps. 4 y 5)</text>
+    <rect x="280" y="464" width="16" height="14" rx="3" class="c-fis"/><text x="302" y="476">sesgo y métricas por grupo (cap. 2)</text>
+  </g>
+  <path d="M205 380V430H330" class="ln" marker-end="url(#i3d2-m)"/>
+  <path d="M690 380V430H574" class="ln" marker-end="url(#i3d2-m)"/>
+  <rect x="334" y="414" width="236" height="40" rx="10" class="caja" style="stroke:var(--ink);stroke-width:1.6"/>
+  <text x="452" y="439" class="t t-b" text-anchor="middle">Evaluación de impacto · cap. 8</text>
+</svg></div><figcaption><b>Dos documentos que viajan con el modelo.</b> A la izquierda, la hoja de datos, con sus siete secciones; a la derecha, la tarjeta de modelo, con las suyas. La flecha del centro muestra que la tarjeta cita a la hoja en su sección de datos de entrenamiento. Debajo, en verde, las secciones que alimentan los capítulos de datos y derechos (procedencia, licencias, datos personales); en ámbar, las que alimentan el capítulo de sesgo (métricas por grupo). Abajo, las dos llegan a la evaluación de impacto del capítulo 8.</figcaption></figure><div class="prose"><p>Hoy son práctica común. Hugging Face, el sitio donde se publican modelos abiertos, pone una tarjeta en la página de cada modelo. Los grandes proveedores publican tarjetas de sistema de sus modelos principales. Y el Reglamento europeo de IA convirtió parte de esa idea en obligación: la <b>documentación técnica</b> y las <b>instrucciones de uso</b> de los sistemas de alto riesgo, y la documentación de los modelos de propósito general, piden casi las mismas secciones.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Lee la tarjeta de un modelo famoso</h3></div><p>Vas a leer la tarjeta de BERT, un modelo de lenguaje de 2018 que se usa todavía en miles de sistemas, también en clasificadores de texto. No necesitas cuenta; la página está en inglés.</p><ol class="steps"><li><span>Abre la <a href="https://huggingface.co/google-bert/bert-base-uncased" target="_blank" rel="noopener">tarjeta de BERT base en Hugging Face</a> y anota sus secciones.</span></li><li><span>Busca <i>Training data</i>: ¿con qué textos se entrenó?</span></li><li><span>Busca <i>Limitations and bias</i> y lee los ejemplos de «The man worked as a [MASK].» y «The woman worked as a [MASK].».</span></li><li><span>Compara con la lista de secciones de una tarjeta de modelo de este capítulo: ¿qué falta?</span></li></ol><p><b>Qué observar:</b> la tarjeta dice con qué libros y páginas de Wikipedia se entrenó y muestra, con ejemplos, que el modelo completa oficios distintos para hombres y mujeres (carpintero, mesero y mecánico frente a enfermera, mesera y empleada doméstica). Es una tarjeta honesta sobre el sesgo, pero no trae métricas separadas por grupo ni dice para qué usos no se recomienda en detalle. Si un clasificador de hojas de vida usara BERT por dentro, heredaría ese sesgo, y la tarjeta es el primer lugar donde se ve.</p></div><div class="prose"><p>Para el filtro, Inés pidió al proveedor su tarjeta de modelo. Recibió un folleto comercial de dos páginas. El laboratorio muestra qué tenía y qué faltaba.</p></div><div class="lab" id="03-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Completa la tarjeta de modelo del filtro</h3></div><p class="hint">Cada sección de la tarjeta muestra lo que dice el folleto del proveedor. Para cada una, elige: dejarla como está, completarla con lo que el equipo ya sabe por los capítulos 1 y 2, o pedírsela al proveedor. Mira cómo sube la tarjeta, qué secciones críticas siguen vacías y el texto final de la tarjeta, listo para el expediente.</p><style>
+[id="03-lab-2"] .c3l2-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:10px}
+[id="03-lab-2"] .c3l2-s{border:1px solid var(--line);border-left:6px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--card);display:grid;gap:6px;font:500 .84rem/1.4 var(--f-display)}
+[id="03-lab-2"] .c3l2-s[data-e="vago"]{border-left-color:var(--warm)}
+[id="03-lab-2"] .c3l2-s[data-e="ok"]{border-left-color:var(--good)}
+[id="03-lab-2"] .c3l2-s[data-e="pedido"]{border-left-color:var(--c-red)}
+[id="03-lab-2"] .c3l2-s h4{margin:0;font:700 .86rem var(--f-display);display:flex;justify-content:space-between;gap:6px}
+[id="03-lab-2"] .c3l2-s h4 small{font:700 .66rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--warm)}
+[id="03-lab-2"] .c3l2-s .fol{font:italic 500 .82rem/1.4 var(--f-body);color:var(--muted)}
+[id="03-lab-2"] .c3l2-s .txt{font:500 .82rem/1.4 var(--f-body)}
+[id="03-lab-2"] .c3l2-s .btns button{font-size:.72rem;padding:4px 8px}
+[id="03-lab-2"] .c3l2-bar{height:16px;border-radius:8px;background:var(--grid);overflow:hidden}
+[id="03-lab-2"] .c3l2-bar i{display:block;height:100%;background:var(--c-red);transition:width .3s ease}
+[id="03-lab-2"] pre.c3l2-md{margin:0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font:500 .74rem/1.45 var(--f-mono);white-space:pre-wrap;max-height:240px;overflow:auto}
+@media (prefers-reduced-motion: reduce){[id="03-lab-2"] .c3l2-bar i{transition:none}}
+</style>
+<div class="btns">
+  <button type="button" id="c3l2-todo">Completar todo lo que se pueda</button>
+  <button type="button" id="c3l2-reset">Volver al folleto</button>
+</div>
+<div class="c3l2-grid" id="c3l2-grid" role="group" aria-label="Secciones de la tarjeta de modelo"></div>
+<div class="c3l2-bar" aria-hidden="true"><i id="c3l2-bar"></i></div>
+<div class="legend"><span><i style="background:var(--warm)"></i>vacía o vaga</span><span><i style="background:var(--good)"></i>completa</span><span><i style="background:var(--c-red)"></i>pedida al proveedor</span></div>
+<pre class="c3l2-md" id="c3l2-md" aria-label="Texto de la tarjeta de modelo"></pre>
+<div class="readout texto" id="c3l2-out" aria-live="polite"></div></div></section>
+<section><h2>Marcas de agua y procedencia del contenido (C2PA)</h2><div class="prose"><p>La explicabilidad mira las decisiones. Con la IA generativa aparece otra pregunta de transparencia: ¿esta imagen, este audio o este texto los hizo una persona o una máquina? Hay tres tecnologías, y ninguna basta sola.</p><ul><li><b>Metadatos.</b> Un archivo puede llevar escrito en su interior que fue generado. La norma IPTC, que usan los medios para sus fotos, tiene un valor para eso. El problema es que se pierden con una captura de pantalla o al subir el archivo a muchas redes sociales.</li><li><b>Marcas de agua invisibles</b> (<i>invisible watermarks</i>): un patrón escondido en los píxeles, el sonido o la elección de palabras, que un detector reconoce. SynthID, de Google DeepMind, marca imágenes, audio, video y texto de sus modelos. Sobreviven mejor a los recortes y a la compresión, pero se pueden degradar o borrar con trabajo, y cada empresa tiene su propio detector.</li><li><b>Credenciales de contenido</b> (<i>Content Credentials</i>), el estándar <b>C2PA</b> (<i>Coalition for Content Provenance and Authenticity</i>, coalición por la procedencia y autenticidad del contenido). Es un <b>manifiesto</b> firmado criptográficamente que viaja con el archivo y registra quién lo creó, con qué herramienta, si intervino la IA y qué ediciones se hicieron. La firma permite comprobar que nadie lo alteró. Lo usan cámaras, programas de edición y varios generadores de imágenes.</li></ul></div><figure class="fig fig-flujo" id="03-diagrama-3"><div class="lienzo"><svg viewBox="0 0 900 420" style="min-width:740px" role="img" aria-label="Diagrama de secuencia de una credencial de contenido C2PA. Participantes: generador de imágenes, programa de edición, red social y persona que verifica. Uno, el generador crea la imagen con un manifiesto firmado que dice generada con IA y la huella del archivo. Dos, el editor recorta y agrega su entrada firmada. Tres, se publica. Cuatro, quien verifica sube el archivo y el verificador comprueba firmas y huella y muestra la historia. Cinco, con una captura de pantalla el manifiesto se pierde y no hay credenciales, aunque una marca de agua invisible podría seguir. Fases: crear, editar, publicar y verificar">
+  <defs>
+    <marker id="i3d3-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker>
+    <marker id="i3d3-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-red"/></marker>
+    <marker id="i3d3-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-warm"/></marker>
+  </defs>
+  <rect x="20" y="14" width="160" height="52" rx="10" class="d-inet"/>
+  <text x="100" y="36" class="t t-b" text-anchor="middle">Generador</text><text x="100" y="54" class="t t-s t-m" text-anchor="middle">de imágenes con IA</text>
+  <rect x="210" y="14" width="160" height="52" rx="10" class="caja"/>
+  <text x="290" y="36" class="t t-b" text-anchor="middle">Editor</text><text x="290" y="54" class="t t-s t-m" text-anchor="middle">programa de edición</text>
+  <rect x="400" y="14" width="160" height="52" rx="10" class="caja"/>
+  <text x="480" y="36" class="t t-b" text-anchor="middle">Red social</text><text x="480" y="54" class="t t-s t-m" text-anchor="middle">publicación</text>
+  <rect x="590" y="14" width="160" height="52" rx="10" class="c-red"/>
+  <text x="670" y="36" class="t t-b" text-anchor="middle">Verificador</text><text x="670" y="54" class="t t-s t-m" text-anchor="middle">quien comprueba</text>
+  <g class="vida"><path d="M100 66V400"/><path d="M290 66V400"/><path d="M480 66V400"/><path d="M670 66V400"/></g>
+  <g class="t t-s">
+    <path d="M100 88h40v26h-36" class="ln s-red" marker-end="url(#i3d3-r)"/>
+    <text x="148" y="98"><tspan class="t-b">1</tspan> crea la imagen y firma el manifiesto:</text>
+    <text x="148" y="112" class="t-mono">«generada con IA» + huella</text>
+    <path d="M100 150H286" class="ln" marker-end="url(#i3d3-m)"/>
+    <text x="112" y="143">imagen con manifiesto</text>
+    <path d="M290 170h40v26h-36" class="ln s-red" marker-end="url(#i3d3-r)"/>
+    <text x="338" y="180"><tspan class="t-b">2</tspan> recorta y agrega su entrada firmada</text>
+    <path d="M290 230H476" class="ln" marker-end="url(#i3d3-m)"/>
+    <text x="302" y="223"><tspan class="t-b">3</tspan> publica</text>
+    <path d="M480 270H666" class="ln" marker-end="url(#i3d3-m)"/>
+    <text x="492" y="263">la persona sube el archivo</text>
+    <path d="M670 284h40v26h-36" class="ln s-red" marker-end="url(#i3d3-r)"/>
+    <text x="604" y="332"><tspan class="t-b">4</tspan> firmas y huella válidas:</text>
+    <text x="604" y="346">muestra la historia completa</text>
+    <path d="M480 374H666" class="ln ln-d s-warm" marker-end="url(#i3d3-w)"/>
+    <text x="300" y="370" class="k-warm"><tspan class="t-b">5</tspan> captura de pantalla:</text>
+    <text x="300" y="384" class="k-warm">sin credenciales</text>
+    <text x="492" y="394" class="t-m">(una marca de agua invisible podría seguir)</text>
+  </g>
+  <g class="t t-xs t-b">
+    <rect x="780" y="80" width="106" height="80" rx="8" class="d-inet"/><text x="833" y="124" text-anchor="middle">CREAR</text>
+    <rect x="780" y="166" width="106" height="40" rx="8" class="caja"/><text x="833" y="190" text-anchor="middle">EDITAR</text>
+    <rect x="780" y="212" width="106" height="36" rx="8" class="caja"/><text x="833" y="234" text-anchor="middle">PUBLICAR</text>
+    <rect x="780" y="254" width="106" height="140" rx="8" class="c-red"/><text x="833" y="328" text-anchor="middle">VERIFICAR</text>
+  </g>
+</svg></div><figcaption><b>Cómo viaja una credencial de contenido C2PA.</b> Participantes arriba: el generador de imágenes, el programa de edición, la red social y la persona que verifica. ① El generador crea la imagen y le adjunta un manifiesto firmado que dice «generada con IA», con la huella del archivo; ② el editor recorta la imagen y agrega su propia entrada firmada; ③ la imagen se publica; ④ quien verifica la sube a un verificador, que comprueba las firmas y la huella y muestra la historia completa. ⑤ En la rama punteada, alguien toma una captura de pantalla: el manifiesto se pierde y el verificador ya no encuentra credenciales, aunque una marca de agua invisible podría seguir ahí. A la derecha, las fases: crear, editar, publicar y verificar.</figcaption></figure><div class="prose"><p>La lección de esta sección es de humildad. La ausencia de una marca no prueba que algo sea humano, y los <b>detectores de texto generado</b> que prometen adivinarlo sin marca fallan demasiado: OpenAI retiró el suyo en 2023 por su baja precisión, y varios estudios mostraron que marcan injustamente como «escritos por IA» los textos de personas que escriben en una segunda lengua. Por eso las reglas se apoyan en marcar desde el origen, no en adivinar después. Para un caso como el filtro, la consecuencia práctica es no rechazar una hoja de vida porque «parece escrita con IA».</p></div></section>
+<section><h2>El derecho a pedir revisión humana</h2><div class="prose"><p>La transparencia y la explicación sirven de poco si la persona no puede hacer nada con ellas. La pieza que cierra el capítulo es el derecho a que una persona revise la decisión.</p><p>El reglamento europeo de protección de datos da, desde 2018, el derecho a no quedar sujeto a una decisión basada <b>únicamente</b> en un tratamiento automatizado con efectos significativos, y cuando esa decisión se permite, el derecho a obtener intervención humana, expresar el propio punto de vista e impugnarla. La ley brasileña (LGPD) da el derecho a pedir la revisión de esas decisiones, y la nueva ley chilena (Ley 21.719) prevé la revisión por una persona. El Reglamento europeo de IA agrega dos piezas: los sistemas de alto riesgo deben diseñarse para la <b>supervisión humana</b> (<i>human oversight</i>), y la persona afectada por una decisión basada en uno de ellos tiene derecho a una explicación clara del papel que tuvo el sistema (artículo 86). Ninguna de estas reglas es asesoría legal para tu caso; cada país las aplica a su modo.</p></div><div class="analogia"><b>Imagínalo así</b><p><b>Revisar no es firmar.</b> Un supervisor que firma 200 informes en diez minutos no revisó nada: solo puso su nombre. Una revisión de verdad es la del médico que pide una segunda opinión: el segundo médico mira los estudios, examina al paciente y puede decir que el primero se equivocó.</p></div><div class="prose"><p>La <b>revisión humana significativa</b> (<i>meaningful human review</i>) tiene cuatro condiciones, y el sesgo de automatización del capítulo 1 explica por qué cada una importa:</p><ol class="steps"><li><span><b>Autoridad</b>: quien revisa puede cambiar la decisión sin pedirle permiso a nadie.</span></li><li><span><b>Información</b>: ve la hoja de vida completa y la explicación del puntaje, no solo el número.</span></li><li><span><b>Tiempo</b>: tiene minutos por caso, no segundos.</span></li><li><span><b>Registro</b>: se anota cuántas decisiones se cambian. Si la revisión nunca cambia nada, probablemente no está revisando.</span></li></ol></div><figure class="fig fig-flujo" id="03-diagrama-4"><div class="lienzo"><svg viewBox="0 0 900 430" style="min-width:740px" role="img" aria-label="Diagrama de secuencia de la revisión que pidió Camila. Participantes: Camila, el ATS, Patricia de Gestión Humana y el registro de revisiones. Uno, Camila pide revisión. Dos, el ATS abre el caso y lo asigna con plazo. Tres, Patricia recibe la hoja de vida completa y la explicación del puntaje. Cuatro, lee y ve que el puntaje cae por los meses sin empleo. Cinco, cambia la decisión: entrevista. Seis, el registro anota el cambio y su razón. Siete, Camila recibe la respuesta con la explicación. Fases: pedir, revisar, decidir y responder">
+  <defs>
+    <marker id="i3d4-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker>
+    <marker id="i3d4-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-warm"/></marker>
+    <marker id="i3d4-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-red"/></marker>
+  </defs>
+  <rect x="20" y="14" width="160" height="52" rx="10" class="caja s-warm" style="stroke-width:2"/>
+  <text x="100" y="36" class="t t-b k-warm" text-anchor="middle">Camila</text><text x="100" y="54" class="t t-s t-m" text-anchor="middle">persona afectada</text>
+  <rect x="210" y="14" width="160" height="52" rx="10" class="d-sis"/>
+  <text x="290" y="36" class="t t-b" text-anchor="middle">ATS</text><text x="290" y="54" class="t t-s t-m" text-anchor="middle">de la empresa</text>
+  <rect x="400" y="14" width="160" height="52" rx="10" class="d-casa"/>
+  <text x="480" y="36" class="t t-b" text-anchor="middle">Patricia</text><text x="480" y="54" class="t t-s t-m" text-anchor="middle">Gestión Humana</text>
+  <rect x="590" y="14" width="160" height="52" rx="10" class="caja"/>
+  <text x="670" y="36" class="t t-b" text-anchor="middle">Registro</text><text x="670" y="54" class="t t-s t-m" text-anchor="middle">de revisiones</text>
+  <g class="vida"><path d="M100 66V410"/><path d="M290 66V410"/><path d="M480 66V410"/><path d="M670 66V410"/></g>
+  <g class="t t-s">
+    <path d="M100 102H286" class="ln s-warm" marker-end="url(#i3d4-w)"/>
+    <text x="110" y="94"><tspan class="t-b">1</tspan> pide revisión</text>
+    <path d="M290 122h40v24h-36" class="ln" marker-end="url(#i3d4-m)"/>
+    <text x="338" y="138"><tspan class="t-b">2</tspan> abre el caso, plazo: 5 días</text>
+    <path d="M290 182H476" class="ln s-red" marker-end="url(#i3d4-r)"/>
+    <text x="300" y="174"><tspan class="t-b">3</tspan> hoja completa + explicación</text>
+    <path d="M480 204h40v26h-36" class="ln" marker-end="url(#i3d4-m)"/>
+    <text x="528" y="214"><tspan class="t-b">4</tspan> lee: 4,5 años, prueba 85;</text>
+    <text x="528" y="228">la baja: 19 meses sin empleo</text>
+    <path d="M480 268h40v26h-36" class="ln" style="stroke:var(--good)" marker-end="url(#i3d4-m)"/>
+    <text x="528" y="284" class="t-b" style="fill:var(--good)">5 cambia la decisión: entrevista</text>
+    <path d="M480 326H666" class="ln" marker-end="url(#i3d4-m)"/>
+    <text x="492" y="318"><tspan class="t-b">6</tspan> anota el cambio y su razón</text>
+    <path d="M480 376H104" class="ln s-red" marker-end="url(#i3d4-r)"/>
+    <text x="112" y="368"><tspan class="t-b">7</tspan> respuesta en palabras simples y la invitación</text>
+  </g>
+  <g class="t t-xs t-b">
+    <rect x="780" y="84" width="106" height="72" rx="8" class="caja s-warm"/><text x="833" y="124" text-anchor="middle">PEDIR</text>
+    <rect x="780" y="164" width="106" height="78" rx="8" class="caja"/><text x="833" y="207" text-anchor="middle">REVISAR</text>
+    <rect x="780" y="250" width="106" height="88" rx="8" class="d-casa"/><text x="833" y="298" text-anchor="middle">DECIDIR</text>
+    <rect x="780" y="346" width="106" height="44" rx="8" class="c-red"/><text x="833" y="372" text-anchor="middle">RESPONDER</text>
+  </g>
+</svg></div><figcaption><b>La revisión que pidió Camila.</b> Participantes arriba: Camila, el ATS, Gestión Humana (Patricia) y el registro de revisiones. ① Camila pide revisión con el enlace del aviso; ② el ATS abre el caso y lo asigna con un plazo; ③ Patricia recibe la hoja de vida completa y la explicación del puntaje; ④ lee la hoja y la explicación, y ve que el puntaje cae por los meses sin empleo; ⑤ cambia la decisión: Camila pasa a entrevista; ⑥ el registro anota el cambio y su razón; ⑦ Camila recibe la respuesta con la explicación en palabras simples. A la derecha, las fases: pedir, revisar, decidir y responder.</figcaption></figure><div class="prose"><p>Así terminó el caso de Camila. Con la revisión humana de la franja de 50 a 59 que el equipo decidió en el capítulo 2, Patricia leyó su hoja de vida completa, vio cuatro años y medio de experiencia y uno de los mejores resultados en la prueba escrita, y la invitó a una entrevista. Le escribió una respuesta de cinco líneas: qué variables usaba el filtro, cuál la había bajado, que una persona había revisado su caso y que estaba invitada a la entrevista. Fue la primera vez que alguien le contestó la pregunta que hizo un domingo a las tres de la mañana.</p><p>Para la evaluación de impacto del capítulo 8, este capítulo deja tres piezas: el aviso a los candidatos, la tarjeta de modelo con sus vacíos y el procedimiento de revisión con su registro de cambios.</p></div></section>
+<section><h2>La idea clave</h2><div class="prose"><p>La transparencia dice que hay IA y qué hace; la explicabilidad dice por qué decidió lo que decidió, en general y en cada caso; la tarjeta de modelo lo deja por escrito; y la revisión humana le da a la persona un camino para corregir el error. Una buena explicación también es una auditoría: la de Camila dejó a la vista que el filtro la castigaba por haber cuidado a su hijo. <b>Lo que no se puede explicar no debería decidir sobre personas.</b></p></div></section>
+<section><h2>Pruébate</h2><div class="quiz"><h3>Pruébate</h3><details><summary>¿Qué diferencia hay entre transparencia y explicabilidad?</summary><p>La transparencia es avisar que hay IA, qué hace y con qué datos; la explicabilidad es poder decir por qué el sistema dio un resultado concreto.</p></details><details><summary>¿Qué es una explicación local y en qué se diferencia de una global?</summary><p>La local explica el resultado de una persona (por qué Camila sacó 55); la global explica cómo decide el modelo en general (qué variables pesan más en todos los casos).</p></details><details><summary>Rodrigo no tenía acceso al modelo del proveedor. ¿Cómo estimó sus pesos?</summary><p>Con un modelo sustituto: entrenó un modelo lineal con las entradas y los 1.000 puntajes del filtro, y como lo imitaba casi a la perfección, sus pesos sirven para explicar al filtro.</p></details><details><summary>¿Qué reveló la explicación contrafactual del caso de Camila?</summary><p>Que con 13 meses sin empleo en vez de 19 habría pasado: el cambio que necesitaba era sobre su pasado, imposible de cambiar, y eso dejó a la vista que los meses sin empleo funcionan como variable sustituta del sexo.</p></details><details><summary>¿Qué secciones debe tener una tarjeta de modelo?</summary><p>Detalles del modelo, uso previsto y usos fuera de alcance, factores o grupos relevantes, métricas (separadas por grupo), datos de entrenamiento y de evaluación, limitaciones y consideraciones éticas.</p></details><details><summary>¿Por qué una credencial C2PA no prueba que una imagen sin credencial sea humana?</summary><p>Porque la credencial viaja en el archivo y se pierde, por ejemplo, con una captura de pantalla o al subirla a algunas redes; su ausencia no dice nada sobre el origen.</p></details></div></section>
+<section><h2>Para investigar</h2><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué es el valor de Shapley en la teoría de juegos cooperativos y quién lo propuso?<small>Pista: busca «valor de Shapley 1953».</small></li><li>¿Qué son las tarjetas de sistema (<i>system cards</i>) que publican los grandes proveedores de modelos de lenguaje y qué agregan a las tarjetas de modelo?</li><li>¿Cómo funciona una firma digital con clave pública y por qué permite comprobar que nadie alteró un manifiesto C2PA?<small>Pista: busca «firma digital clave pública explicada».</small></li><li>¿Qué es la interpretabilidad mecanicista (<i>mechanistic interpretability</i>) y qué intenta descubrir dentro de un modelo de lenguaje?</li><li>¿Por qué los juristas discuten si el reglamento europeo de protección de datos contiene un verdadero «derecho a la explicación»?<small>Pista: busca «Wachter Mittelstadt Floridi right to explanation 2017».</small></li></ol></div></section>
+<section><h2>Para saber más</h2><div class="vids"><span>Para saber más</span><a class="vid" href="https://arxiv.org/abs/1810.03993" target="_blank" rel="noopener">Model Cards for Model Reporting <small>el artículo de 2019 que propuso las tarjetas de modelo, en inglés</small></a><a class="vid" href="https://arxiv.org/abs/1803.09010" target="_blank" rel="noopener">Datasheets for Datasets <small>el artículo que propuso las hojas de datos, en inglés</small></a><a class="vid" href="https://shap.readthedocs.io/en/latest/" target="_blank" rel="noopener">Documentación de SHAP <small>la biblioteca de explicaciones locales, en inglés</small></a><a class="vid" href="https://c2pa.org/" target="_blank" rel="noopener">Coalition for Content Provenance and Authenticity (C2PA) <small>el estándar de credenciales de contenido, en inglés</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-responsable" target="_blank" rel="noopener">github.com/aaramirez/ia-responsable</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  // Pesos estimados por el modelo sustituto de Rodrigo y promedios de los 1.000 candidatos (semilla 2026).
+  const V=[
+    {k:'p',n:'Prueba escrita',w:0.55,m:66.13,u:'puntos',cambia:'se puede repetir la prueba'},
+    {k:'e',n:'Experiencia',w:2.6,m:3.12,u:'años',cap:8,cambia:'crece con el tiempo'},
+    {k:'s',n:'Estudios',w:2,m:0.853,u:'nivel',cambia:'se puede estudiar más'},
+    {k:'a',n:'Coincidencia',w:0.3,m:49.62,u:'puntos',cambia:'depende de cómo se redacte la hoja de vida'},
+    {k:'b',n:'Meses sin empleo',w:-0.9,m:3.935,u:'meses',fijo:true,cambia:'es el pasado: no se puede cambiar'}
+  ];
+  const BASE=55.53,UMBRAL=60;
+  const EST=['bachiller','técnico','universitario'];
+  const CAND=[
+    {id:'C-0735',nom:'Camila',p:85,e:4.5,s:1,a:44,b:19},
+    {id:'C-0001',nom:'la persona C-0001',p:73,e:1,s:0,a:47,b:0},
+    {id:'C-0020',nom:'la persona C-0020',p:63,e:4,s:1,a:33,b:0}
+  ];
+  let cual=0;
+  const num=x=>(Math.round(x*10)/10).toFixed(1).replace('.',',').replace('-','−');
+  const sig=x=>(x>=0?'+':'')+num(x);
+  const val=k=>+$('#c3l1-'+k).value;
+  const efectivo=(v,x)=>v.cap?Math.min(x,v.cap):x;
+  const crudo=x=>-2+V.reduce((s,v)=>s+v.w*efectivo(v,x[v.k]),0);
+  const punt=x=>Math.round(Math.min(100,Math.max(0,crudo(x))));
+  function cargar(i){cual=i;const c=CAND[i];V.forEach(v=>{$('#c3l1-'+v.k).value=c[v.k];});leer();}
+  function minimo(x,v){ // valor mínimo de una variable para llegar a 60, o null si no alcanza
+    const falta=59.5-crudo(x);if(falta<=0)return 'ya';
+    const d=falta/v.w,lim={p:[20,100],e:[0,8],s:[0,2],a:[0,100],b:[0,30]}[v.k];
+    let nuevo=efectivo(v,x[v.k])+d;
+    if(v.k==='e')nuevo=Math.ceil(nuevo*2-1e-9)/2;else if(v.k==='b')nuevo=Math.floor(nuevo+1e-9);else nuevo=Math.ceil(nuevo-1e-9);
+    const paso={e:0.5,b:-1}[v.k]||1;
+    for(let i=0;i<4&&nuevo>=lim[0]&&nuevo<=lim[1]&&punt(Object.assign({},x,{[v.k]:nuevo}))<UMBRAL;i++)nuevo+=paso;
+    if(nuevo<lim[0]||nuevo>lim[1])return null;return nuevo;
+  }
+  function leer(){
+    document.querySelectorAll('[id="03-lab-1"] [data-c]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.c===cual?'true':'false'));
+    const x={};V.forEach(v=>{x[v.k]=val(v.k);});
+    $('#c3l1-p-o').textContent=x.p;$('#c3l1-e-o').textContent=String(x.e).replace('.',',');$('#c3l1-s-o').textContent=EST[x.s];$('#c3l1-a-o').textContent=x.a;$('#c3l1-b-o').textContent=x.b;
+    const ap=V.map(v=>({v,a:v.w*(efectivo(v,x[v.k])-v.m)}));
+    const max=18;
+    $('#c3l1-cas').innerHTML=ap.map(({v,a})=>{const w=Math.min(50,Math.abs(a)/max*50);
+      return '<div class="c3l1-fila"><span>'+v.n+'</span><span class="eje"><i style="'+(a>=0?'left:50%':'left:'+(50-w)+'%')+';width:'+w+'%;background:'+(a>=0?'var(--c-red)':'var(--warm)')+'"></i></span><b>'+sig(a)+'</b></div>';}).join('');
+    const p=punt(x),pasa=p>=UMBRAL,c=CAND[cual];
+    const real=V.every(v=>x[v.k]===c[v.k]);
+    $('#c3l1-tot').innerHTML='<span>Puntaje</span><b class="'+(pasa?'si':'no')+'">'+p+'</b><span>umbral 60 · '+(pasa?'pasa a entrevista':'rechazo automático')+(real?'':' · <i>escenario «¿y si…?»</i>')+'</span>';
+    $('#c3l1-tec').textContent='modelo: sustituto lineal (R² = 0,999)\nvalor base E[f(x)] = '+num(BASE)+'\n'+ap.map(({v,a})=>'φ('+v.n.toLowerCase()+') = '+sig(a)).join('\n')+'\nf(x) = '+num(BASE+ap.reduce((s,o)=>s+o.a,0))+' → '+p+'\numbral = 60 → '+(pasa?'1 (entrevista)':'0 (rechazo)');
+    // explicación para la persona
+    const orden=[...ap].sort((u,w)=>u.a-w.a),peor=orden[0],mejor=orden[orden.length-1];
+    let h='';
+    if(pasa){h='<p>Con estos datos, '+c.nom+' pasa a entrevista. Lo que más sumó fue '+mejor.v.n.toLowerCase()+'.</p>';}
+    else{
+      h='<p>Un sistema automatizado ordena las postulaciones con cinco datos. Tu puntaje fue '+p+' y se necesitaba 60. Lo que más lo bajó: <b>'+peor.v.n.toLowerCase()+'</b>'+(peor.a<0?' (te restó '+num(-peor.a)+' puntos frente al promedio)':'')+'. Lo que más lo subió: <b>'+mejor.v.n.toLowerCase()+'</b>'+(mejor.a>0?' (+'+num(mejor.a)+')':'')+'.</p><p>Habrías pasado con uno solo de estos cambios:</p><ul>';
+      const opciones=V.map(v=>({v,m:minimo(x,v)})).filter(o=>o.m!==null&&o.m!=='ya');
+      h+=opciones.length?opciones.map(o=>{const t=o.v.k==='s'?EST[o.m]:String(o.m).replace('.',',')+' '+o.v.u;return '<li'+(o.v.fijo?' class="fijo"':'')+'>'+o.v.n+': '+t+' en lugar de '+(o.v.k==='s'?EST[x.s]:String(x[o.v.k]).replace('.',','))+' ('+o.v.cambia+').</li>';}).join(''):'<li>Ningún cambio en una sola variable alcanza.</li>';
+      h+='</ul><p>Una persona de Gestión Humana revisará tu postulación. Puedes pedir la revisión en seleccion@ejemplo.com.</p>';
+    }
+    $('#c3l1-hum').innerHTML=h;
+    let o='';
+    if(!pasa&&peor.v.fijo)o='La razón que más pesa es algo que '+c.nom+' no puede cambiar: los meses sin empleo. La explicación honesta deja a la vista la variable sustituta del capítulo 2; sin esa variable, este puntaje subiría '+num(0.9*x.b)+' puntos. ';
+    else if(!pasa)o='Las razones de '+c.nom+' son otras: con un puntaje parecido al de Camila, aquí lo que más resta es «'+peor.v.n.toLowerCase()+'»'+(x.b?'':', y no hay meses sin empleo')+'. Mismo número, historia distinta: por eso la explicación tiene que ser local. ';
+    else o='Con este escenario el umbral se cruza. Fíjate cuál fue el cambio mínimo y si la persona podía hacerlo de verdad. ';
+    o+='La explicación técnica es exacta, pero solo la explicación para la persona responde lo que preguntó la persona: por qué yo no y qué habría cambiado el resultado.';
+    $('#c3l1-out').innerHTML='<span>'+o+'</span>';
+  }
+  document.querySelectorAll('[id="03-lab-1"] [data-c]').forEach(b=>b.addEventListener('click',()=>cargar(+b.dataset.c)));
+  $('#c3l1-reset').addEventListener('click',()=>cargar(cual));
+  V.forEach(v=>$('#c3l1-'+v.k).addEventListener('input',leer));
+  cargar(0);
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  // f: folleto. c: lo que el equipo puede completar (null si solo el proveedor lo sabe). quien: quién debe darlo. crit: sección crítica.
+  const S=[
+    {n:'Detalles del modelo',f:'Módulo de filtrado inteligente, versión 3.',c:null,quien:'proveedor',q:'tipo de modelo, fecha de entrenamiento y responsable'},
+    {n:'Uso previsto',f:'Encuentra a los mejores talentos en segundos.',c:'Ordenar postulaciones a agente de atención para priorizar la lectura humana. Puntaje de 0 a 100, umbral 60.',quien:'empresa',crit:true},
+    {n:'Usos fuera de alcance',f:'(no dice nada)',c:'Rechazar sin revisión humana; usarlo para otros puestos sin volver a evaluarlo.',quien:'empresa'},
+    {n:'Factores y grupos',f:'No usa sexo ni edad.',c:'Grupos a vigilar: sexo, edad, personas que cuidan a otros (meses sin empleo).',quien:'empresa'},
+    {n:'Métricas',f:'95 % de precisión.',c:'Métrica principal: igualdad de oportunidades. Alarma: razón de impacto menor que 0,80.',quien:'empresa',crit:true},
+    {n:'Datos de entrenamiento',f:'Entrenado con miles de decisiones reales.',c:null,quien:'proveedor',crit:true,q:'origen de las 2.000 evaluaciones, fechas, licencias y permisos (caps. 4 y 5)'},
+    {n:'Datos de evaluación',f:'(no dice nada)',c:'Convocatoria piloto de septiembre de 2026: 1.000 hojas de vida, 488 mujeres y 512 hombres.',quien:'empresa'},
+    {n:'Análisis por grupo',f:'(no dice nada)',c:'Pasan 29,3 % de mujeres y 46,3 % de hombres (razón 0,63). Aptos que pasan: 54,7 % y 79,2 %.',quien:'empresa',crit:true},
+    {n:'Limitaciones y ética',f:'Sin sesgos, garantizado.',c:'Los meses sin empleo actúan como sustituta del sexo. Sin esa variable, Camila tendría 72 en lugar de 55.',quien:'empresa',crit:true},
+    {n:'Explicaciones',f:'Algoritmo propietario.',c:'Pesos estimados con un modelo sustituto (R² = 0,999). Falta la explicación oficial del proveedor.',quien:'ambos',q:'cómo calcula el puntaje y cómo explica cada caso'}
+  ];
+  let E=S.map(()=>'vago');
+  const g=$('#c3l2-grid');
+  S.forEach((s,i)=>{const d=document.createElement('div');d.className='c3l2-s';d.id='c3l2-s'+i;
+    d.innerHTML='<h4><span>'+(i+1)+'. '+s.n+'</span>'+(s.crit?'<small>crítica</small>':'')+'</h4><div class="fol">Folleto: «'+s.f+'»</div><div class="txt"></div><div class="btns" role="group" aria-label="Qué hacer con '+s.n+'">'+
+      '<button type="button" data-i="'+i+'" data-v="vago">Dejar</button>'+(s.c?'<button type="button" data-i="'+i+'" data-v="ok">Completar</button>':'')+(s.quien!=='empresa'?'<button type="button" data-i="'+i+'" data-v="pedido">Pedir al proveedor</button>':'')+'</div>';g.appendChild(d);});
+  function leer(){
+    let md='# Tarjeta de modelo: filtro de hojas de vida\n';
+    S.forEach((s,i)=>{const d=$('#c3l2-s'+i);d.dataset.e=E[i];
+      d.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===E[i]?'true':'false'));
+      const tx=d.querySelector('.txt');
+      tx.innerHTML=E[i]==='ok'?s.c:(E[i]==='pedido'?'<i>Pedido al proveedor: '+(s.q||'documentación')+'.</i>':'');
+      md+='\n## '+s.n+'\n'+(E[i]==='ok'?s.c:(E[i]==='pedido'?'PENDIENTE (proveedor): '+(s.q||'documentación'):'«'+s.f+'» (sin evidencia)'))+'\n';
+    });
+    $('#c3l2-md').textContent=md;
+    const ok=E.filter(e=>e==='ok').length,ped=E.filter(e=>e==='pedido').length;
+    $('#c3l2-bar').style.width=(10*ok+5*ped)+'%';
+    const critVagas=S.filter((s,i)=>s.crit&&E[i]==='vago').map(s=>s.n.toLowerCase());
+    const soloProv=S.filter((s,i)=>!s.c&&E[i]!=='pedido').map(s=>s.n.toLowerCase());
+    let h='Completas: '+ok+' de 10; pedidas al proveedor: '+ped+'. ';
+    if(critVagas.length)h+='<span class="warn">Secciones críticas todavía vacías o vagas: '+critVagas.join(', ')+'.</span> ';
+    if(soloProv.length)h+='Solo el proveedor puede llenar: '+soloProv.join(' y ')+'. ';
+    if(!critVagas.length&&!soloProv.length)h+='<span class="ok">La tarjeta ya sirve para decidir con evidencia: todo lo que la empresa sabe está escrito y lo que falta está pedido con nombre.</span> ';
+    h+='Fíjate que casi todo lo que el folleto prometía («95 % de precisión», «sin sesgos») se reemplazó por números por grupo que midió la propia empresa.';
+    $('#c3l2-out').innerHTML='<span>'+h+'</span>';
+  }
+  g.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;E[+b.dataset.i]=b.dataset.v;leer();});
+  $('#c3l2-todo').addEventListener('click',()=>{E=S.map(s=>s.c?'ok':'pedido');leer();});
+  $('#c3l2-reset').addEventListener('click',()=>{E=S.map(()=>'vago');leer();});
+  leer();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Evaluación de impacto · IA responsable · IA responsable</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sesgo, transparencia, derechos de autor, privacidad, regulación y gobierno de la IA: lo que toda organización que usa o construye IA necesita saber.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="evaluacion-de-impacto">
+<header class="topbar"><a class="brand" href="index.html">IA <b>responsable</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 08 DE 8</span><h1>Evaluación de impacto: el caso completo</h1><p class="lede">La convocatoria de enero de 2027 se hace con el filtro solo si pasa una evaluación. Este capítulo la hace completa: describe el sistema y a quiénes afecta, junta lo que midieron los capítulos 2 a 7, decide si el filtro sigue, cambia o se apaga, y deja un plan para vigilarlo después. Al final, la ruta del curso queda llena.</p></header>
+<section><div class="prose"><p>Es diciembre de 2026. La directora de operaciones tiene en la agenda del comité de IA un solo punto: «Filtro de hojas de vida: ¿se usa en la convocatoria de enero?». Para contestarlo pidió un documento que junte todo lo que el equipo aprendió desde el reclamo de Camila. Ese documento es una evaluación de impacto, y armarlo es el trabajo de este capítulo.</p><p>Nada aquí es nuevo: cada pieza salió de un capítulo anterior. Lo nuevo es ponerlas juntas, en orden, y obligarse a terminar con una decisión. Como en todo el curso, esto no es asesoría legal: es un método de trabajo que después revisa quien conozca la ley del país.</p></div></section>
+<section><h2>Qué es una evaluación de impacto algorítmico</h2><div class="prose"><p>Una <b>evaluación de impacto algorítmico</b> (<i>algorithmic impact assessment</i>, AIA) es un análisis escrito, hecho <b>antes</b> de usar un sistema, de cómo puede afectar a las personas, qué medidas reducen esos efectos y si vale la pena usarlo. Termina en una recomendación y se actualiza mientras el sistema vive.</p></div><div class="analogia"><b>Imagínalo así</b><p><b>Es el estudio de impacto ambiental de una represa.</b> Nadie discute que la represa dará energía. Lo que el estudio pregunta es qué pasa con el río abajo, con los pueblos que quedan bajo el agua y con los peces que ya no podrán subir. A veces la respuesta es construirla igual, con una escalera para peces y un plan para las familias; a veces es construirla en otro lugar; y a veces, no construirla. Lo importante es que la pregunta se hace antes de echar el concreto.</p></div><div class="prose"><p>La idea aparece con varios nombres, según quién la pide y qué mira:</p><ul><li>La <b>evaluación de impacto relativa a la protección de datos</b> (<i>data protection impact assessment</i>, DPIA), que exigen muchas leyes de datos personales cuando un tratamiento puede afectar mucho a las personas. Su detalle está en <a href="https://aaramirez.github.io/proteccion-de-datos/temario.html" target="_blank" rel="noopener">Protección de datos</a>.</li><li>La <b>evaluación de impacto en los derechos fundamentales</b> (FRIA) del artículo 27 de la Ley de IA europea, obligatoria para algunos responsables del despliegue de sistemas de alto riesgo, como viste en el capítulo 6.</li><li>La evaluación de impacto del reglamento peruano de IA: obligatoria para las entidades públicas antes de usar un sistema de riesgo alto y voluntaria para las privadas, que si la hacen deben guardar la documentación al menos tres años.</li><li>La <a href="https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592" target="_blank" rel="noopener">Directiva sobre la toma de decisiones automatizada</a> del gobierno de Canadá, que desde 2019 obliga a sus organismos a llenar un cuestionario público de evaluación antes de usar un sistema que decide sobre personas, y les asigna un nivel de impacto de I a IV con requisitos crecientes.</li><li>La norma <b>ISO/IEC 42005</b>, publicada en 2025, que da guías para evaluar el impacto de un sistema de IA dentro del sistema de gestión de la ISO/IEC 42001 del capítulo 7.</li></ul><p>Todas comparten la misma columna vertebral, que es la que sigue este capítulo.</p></div><figure class="fig fig-flujo" id="08-diagrama-1"><div class="lienzo"><svg viewBox="0 0 900 470" style="min-width:760px" role="img" aria-label="Diagrama de secuencia de la evaluación de impacto del filtro. Participantes: Patricia, dueña del caso; Rodrigo, datos; Inés, cumplimiento; la voz de los candidatos; y el comité de IA. 1 Patricia describe el sistema. 2 Rodrigo entrega las mediciones de sesgo y datos. 3 Inés revisa transparencia, derechos, privacidad y ley. 4 se consulta a candidatos anteriores y a los representantes de los trabajadores. 5 el equipo propone medidas y riesgo residual al comité. 6 el comité decide. 7 Patricia aplica las condiciones. 8 el tablero vuelve cada mes al comité. Fases: describir, revisar, consultar, decidir, vigilar.">
+  <defs>
+    <marker id="i8d1-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-apl"/></marker>
+    <marker id="i8d1-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-warm"/></marker>
+  </defs>
+  
+  <g class="t t-s" text-anchor="middle">
+    <rect x="20" y="14" width="120" height="46" rx="8" class="c-apl"/><text x="80" y="34" class="t-b">Patricia</text><text x="80" y="50">dueña del caso</text>
+    <rect x="165" y="14" width="120" height="46" rx="8" class="c-fis"/><text x="225" y="34" class="t-b">Rodrigo</text><text x="225" y="50">datos y sesgo</text>
+    <rect x="310" y="14" width="120" height="46" rx="8" class="c-tra"/><text x="370" y="34" class="t-b">Inés</text><text x="370" y="50">cumplimiento</text>
+    <rect x="455" y="14" width="120" height="46" rx="8" class="caja s-warm" style="stroke-width:2"/><text x="515" y="34" class="t-b">Candidatos</text><text x="515" y="50">y trabajadores</text>
+    <rect x="600" y="14" width="120" height="46" rx="8" class="caja"/><text x="660" y="34" class="t-b">Comité de IA</text><text x="660" y="50" class="t-m">decide</text>
+  </g>
+  <g><line x1="80" y1="60" x2="80" y2="450" class="vida"/><line x1="225" y1="60" x2="225" y2="450" class="vida"/><line x1="370" y1="60" x2="370" y2="450" class="vida"/><line x1="515" y1="60" x2="515" y2="450" class="vida"/><line x1="660" y1="60" x2="660" y2="450" class="vida"/></g>
+  <g class="t t-s">
+    <line x1="84" y1="96" x2="364" y2="96" class="ln s-apl" marker-end="url(#i8d1-m)"/><text x="224" y="88" text-anchor="middle">① descripción: qué hace, a quién, con qué datos</text>
+    <line x1="229" y1="136" x2="364" y2="136" class="ln s-apl" marker-end="url(#i8d1-m)"/><text x="296" y="128" text-anchor="middle">② métricas y datos</text>
+    <path d="M370 160 h44 v24 h-40" class="ln s-apl" marker-end="url(#i8d1-m)"/><text x="420" y="170">③ transparencia,</text><text x="420" y="184">derechos, ley</text>
+    <line x1="374" y1="220" x2="509" y2="220" class="ln s-warm" marker-end="url(#i8d1-w)"/><line x1="511" y1="244" x2="376" y2="244" class="ln s-warm" marker-end="url(#i8d1-w)"/>
+    <text x="442" y="212" text-anchor="middle">④ consulta</text><text x="442" y="262" text-anchor="middle">cómo se ve desde afuera</text>
+    <line x1="374" y1="292" x2="654" y2="292" class="ln s-apl" marker-end="url(#i8d1-m)"/><text x="514" y="284" text-anchor="middle">⑤ medidas y riesgo residual</text>
+    <path d="M660 314 h-44 v24 h40" class="ln s-apl" marker-end="url(#i8d1-m)"/><text x="608" y="324" text-anchor="end">⑥ seguir, cambiar</text><text x="608" y="338" text-anchor="end">o no hacerlo</text>
+    <line x1="656" y1="372" x2="84" y2="372" class="ln s-apl" marker-end="url(#i8d1-m)"/><text x="370" y="364" text-anchor="middle">⑦ acta con condiciones: Patricia las aplica</text>
+    <line x1="84" y1="420" x2="654" y2="420" class="ln ln-d s-apl" marker-end="url(#i8d1-m)"/><text x="370" y="412" text-anchor="middle">⑧ tablero mensual de vigilancia</text>
+  </g>
+  <g class="t t-xs t-b" text-anchor="middle">
+    <rect x="790" y="76" width="94" height="72" rx="8" class="c-apl"/><text x="837" y="116">DESCRIBIR</text>
+    <rect x="790" y="152" width="94" height="44" rx="8" class="c-apl"/><text x="837" y="178">REVISAR</text>
+    <rect x="790" y="200" width="94" height="72" rx="8" class="caja s-warm" style="stroke-width:2"/><text x="837" y="240" class="k-warm">CONSULTAR</text>
+    <rect x="790" y="276" width="94" height="110" rx="8" class="c-apl"/><text x="837" y="335">DECIDIR</text>
+    <rect x="790" y="390" width="94" height="50" rx="8" class="c-apl"/><text x="837" y="419">VIGILAR</text>
+  </g>
+</svg></div><figcaption><b>Cómo se hace la evaluación de impacto del filtro.</b> Los participantes están arriba: Patricia (dueña del caso), Rodrigo (datos), Inés (cumplimiento), la voz de los candidatos y el comité de IA. El tiempo corre hacia abajo. ① Patricia describe el sistema y su propósito; ② Rodrigo entrega las mediciones de sesgo y de datos; ③ Inés revisa transparencia, derechos, privacidad y ley; ④ se consulta a candidatos de convocatorias anteriores y a los representantes de los trabajadores; ⑤ el equipo propone medidas y el riesgo que queda; ⑥ el comité decide: seguir, cambiar o no hacerlo; ⑦ Patricia aplica las condiciones; ⑧ el tablero vuelve cada mes al comité. A la derecha, las fases: describir, revisar, consultar, decidir y vigilar.</figcaption></figure><div class="prose"><p>Fíjate en el paso ④. Una evaluación hecha solo por quienes quieren usar el sistema tiene un punto ciego: las personas afectadas. Consultarlas no significa pedirles permiso, sino escuchar cómo se ve el sistema desde el otro lado del correo de rechazo.</p></div></section>
+<section><h2>Describir el sistema, las personas afectadas y los datos</h2><div class="prose"><p>La primera parte de la evaluación no opina: describe. Si la descripción está mal, todo lo demás se apoya en arena. Patricia la escribió con la ficha del inventario del capítulo 7 en la mano:</p><div class="tbl"><table><thead><tr><th>Pregunta</th><th>Respuesta para el filtro</th></tr></thead><tbody><tr><td>¿Qué hace y para qué?</td><td>Ordena las hojas de vida de una convocatoria con un puntaje de 0 a 100, para que Gestión Humana entreviste primero a los más adecuados</td></tr><tr><td>¿Qué decisión toma o influye?</td><td>Quién pasa a entrevista. En el piloto, el rechazo era automático por debajo de 60</td></tr><tr><td>¿Quién lo construyó y quién lo usa?</td><td>Un proveedor de software de recursos humanos; lo usa la empresa ficticia en su ATS</td></tr><tr><td>¿Qué datos usa?</td><td>Cinco variables extraídas de la hoja de vida: experiencia, prueba escrita, estudios, coincidencia con el aviso y meses sin empleo</td></tr><tr><td>¿A quiénes afecta?</td><td>A los candidatos externos (1.000 en el piloto, 488 mujeres y 512 hombres), a los reclutadores y, de forma indirecta, a los clientes que atenderán los nuevos agentes</td></tr><tr><td>¿Qué pasa si se equivoca?</td><td>Una persona apta pierde la oportunidad de un empleo sin saber por qué; la empresa pierde buenos candidatos y se expone a reclamos</td></tr><tr><td>¿Qué alternativa hay?</td><td>Leer las hojas de vida a mano, como antes: unas tres semanas de trabajo de dos personas por convocatoria</td></tr></tbody></table></div><p>La última fila es la que más se olvida y la que más pesa. Una evaluación compara el sistema con su alternativa real, no con un mundo perfecto. Leer a mano también tiene sesgos (los de cada reclutador) y también se equivoca, solo que más despacio y sin dejar números para medirlo.</p><p>Las <b>personas afectadas</b> (<i>affected persons</i>) merecen una mirada aparte, porque no todas lo están igual. Las mujeres que interrumpieron su carrera para cuidar a alguien, como Camila, son el grupo que el capítulo 2 encontró perjudicado. Las personas mayores podrían estarlo por los años de experiencia, y quienes escriben su hoja de vida con un formato poco común, por el analizador. La evaluación nombra cada grupo y dice cómo se va a medir lo que le pasa.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Responde la evaluación de impacto algorítmico del gobierno de Canadá</h3></div><p>Canadá publica su cuestionario de evaluación como una herramienta web abierta, gratuita y sin registro, en inglés y en francés. Vas a responderlo pensando en el filtro, aunque esté hecho para el sector público.</p><ol class="steps"><li><span>Abre la <a href="https://canada-ca.github.io/aia-eia-js/" target="_blank" rel="noopener">herramienta de evaluación de impacto algorítmico</a> y elige el idioma.</span></li><li><span>Responde las preguntas de riesgo como si el filtro decidiera quién pasa a entrevista en un organismo público, con rechazo automático.</span></li><li><span>Al final, anota el nivel de impacto que te da y el puntaje de riesgo.</span></li><li><span>Vuelve a las preguntas de mitigación y responde como si ya tuvieras revisión humana de los casos dudosos, aviso a los candidatos y monitoreo. Mira si cambian el puntaje y el nivel.</span></li></ol><p><b>Qué observar:</b> el cuestionario pregunta casi lo mismo que este capítulo: qué decide el sistema, a quién afecta, si los efectos se pueden revertir, qué datos usa y quién revisa. El nivel de impacto depende sobre todo de lo que está en juego para las personas, y las medidas bajan el puntaje pero no siempre el nivel. La herramienta es de otro país y de otro sector: sirve para ver el método, no para saber qué exige la ley del tuyo.</p></div></section>
+<section><h2>Revisar sesgo, transparencia, derechos y privacidad</h2><div class="prose"><p>La segunda parte junta las piezas que dejó cada capítulo, las mismas que anunciaba la ruta del curso en el capítulo 1. Cada una llega con su evidencia, su estado y la medida propuesta:</p><div class="tbl"><table><thead><tr><th>Pieza</th><th>Qué se encontró</th><th>Estado</th><th>Medida</th></tr></thead><tbody><tr><td><b>Daños y responsables</b> (capítulo 1): daños posibles y quién responde</td><td>Un rechazo automático sin explicación ni a quién reclamar; nadie respondía por el filtro</td><td>Corregido en diseño</td><td>Dueña con nombre, camino de reclamo con plazo y decisión de la directora</td></tr><tr><td><b>Sesgo</b> (capítulo 2): métricas por grupo</td><td>Pasa el 29,3 % de las mujeres y el 46,3 % de los hombres: razón de impacto 0,63. Entre los aptos, 54,7 % frente a 79,2 %. Causa probable: los meses sin empleo, sustituta del sexo</td><td>Falla</td><td>Quitar los meses sin empleo; que el proveedor cambie la etiqueta; revisión humana de la franja de 50 a 59; medir de nuevo antes de lanzar</td></tr><tr><td><b>Transparencia</b> (capítulo 3): explicación y tarjeta de modelo</td><td>El proveedor no explica cómo pesa cada variable; su «tarjeta de modelo» era un folleto de dos páginas; la explicación contrafactual de Camila mostró que la bajaron los meses sin empleo</td><td>En curso</td><td>Aviso a los candidatos; tarjeta de modelo completa; procedimiento de revisión humana con registro de cambios</td></tr><tr><td><b>Derechos de autor</b> (capítulo 4): registro de fuentes y licencias</td><td>No hay resumen de los datos de entrenamiento del proveedor; los avisos generados con IA no tenían revisión</td><td>Pendiente</td><td>Pedir el resumen; revisar los avisos antes de publicarlos</td></tr><tr><td><b>Privacidad</b> (capítulo 5): mapa de datos personales</td><td>El ATS enviaba el PDF completo al proveedor, sin plazo de borrado</td><td>Corregido en diseño</td><td>Enviar solo las cinco variables con un código; acuerdo de tratamiento de datos sin entrenamiento y con retención máxima</td></tr><tr><td><b>Ley</b> (capítulo 6): nivel de riesgo y obligaciones</td><td>Alto riesgo en la Ley de IA europea (Anexo III, punto 4) y en el reglamento peruano (art. 24)</td><td>Conocido</td><td>Cumplir como si aplicara: supervisión humana, registros, información a candidatos y a los trabajadores</td></tr><tr><td><b>Gobierno</b> (capítulo 7): ficha del inventario</td><td>Sin ficha, sin dueña y sin evaluación cuando se activó. Riesgo inherente 16, residual estimado 8</td><td>En curso</td><td>Ficha en el inventario; dueña: Patricia; comité; auditoría externa; cláusulas con el proveedor</td></tr></tbody></table></div></div><figure class="fig fig-esquema" id="08-diagrama-2"><div class="lienzo"><svg viewBox="0 0 900 430" style="min-width:740px" role="img" aria-label="Árbol de decisión. Primera pregunta: hay un hallazgo que bloquea, como un uso prohibido, un sesgo que no se corrige o un sistema que nadie explica. Si sí, no hacerlo así. Si no, segunda pregunta: quedan hallazgos que se corrigen con condiciones. Si sí, cambiar: seguir con condiciones, cada una con dueño, fecha y prueba; es la rama del filtro. Si no, seguir con el plan de vigilancia. Las tres ramas vuelven al tablero mensual.">
+  <defs>
+    <marker id="i8d2-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl-muted"/></marker>
+  </defs>
+  <g class="t t-s" text-anchor="middle">
+    <rect x="300" y="14" width="300" height="40" rx="10" class="c-apl"/><text x="450" y="31" class="t-b">Piezas de los capítulos 1 a 7</text><text x="450" y="46">con evidencia y estado</text>
+    <path d="M450 80 L600 116 L450 152 L300 116 Z" class="caja" style="stroke-width:1.6"/>
+    <text x="450" y="112" class="t-b">¿Hay algún hallazgo</text><text x="450" y="127" class="t-b">que bloquea?</text>
+    <path d="M450 210 L600 246 L450 282 L300 246 Z" class="caja" style="stroke-width:1.6"/>
+    <text x="450" y="242" class="t-b">¿Quedan hallazgos que se</text><text x="450" y="257" class="t-b">corrigen con condiciones?</text>
+  </g>
+  <line x1="450" y1="54" x2="450" y2="78" class="ln" marker-end="url(#i8d2-m)"/>
+  <line x1="450" y1="152" x2="450" y2="208" class="ln" marker-end="url(#i8d2-m)"/><text x="458" y="184" class="t t-xs t-b t-m">NO</text>
+  <line x1="300" y1="116" x2="196" y2="116" class="ln s-warm" style="stroke-width:2" marker-end="url(#i8d2-m)"/><text x="254" y="108" class="t t-xs t-b k-warm">SÍ</text>
+  <line x1="450" y1="282" x2="450" y2="318" class="ln s-fis" style="stroke-width:2.5" marker-end="url(#i8d2-m)"/><text x="458" y="304" class="t t-xs t-b k-fis">SÍ</text>
+  <line x1="600" y1="246" x2="700" y2="246" class="ln s-enl" style="stroke-width:2" marker-end="url(#i8d2-m)"/><text x="640" y="238" class="t t-xs t-b k-enl">NO</text>
+  <g class="t t-s">
+    <rect x="16" y="78" width="180" height="104" rx="10" class="caja s-warm" style="stroke-width:2"/>
+    <text x="28" y="100" class="t-b k-warm">No hacerlo así</text>
+    <text x="28" y="120">Uso prohibido, sesgo que</text><text x="28" y="135">no se corrige o sistema</text><text x="28" y="150">que nadie explica. Se</text><text x="28" y="165">vuelve al proceso anterior</text>
+    <rect x="300" y="320" width="300" height="76" rx="10" class="c-fis" style="stroke-width:2.5"/>
+    <text x="314" y="342" class="t-b">Cambiar: seguir con condiciones</text>
+    <text x="314" y="360">cada una con dueño, fecha y una prueba;</text><text x="314" y="375">si una falla antes de lanzar, no se usa</text>
+    <rect x="460" y="402" width="140" height="20" rx="5" class="caja s-warm"/><text x="470" y="416" class="t-xs t-b k-warm">LA RAMA DEL FILTRO</text>
+    <rect x="704" y="210" width="180" height="76" rx="10" class="c-enl"/>
+    <text x="716" y="232" class="t-b">Seguir</text><text x="716" y="250">todo resuelto y verificado;</text><text x="716" y="265">se usa con el plan de</text><text x="716" y="280">vigilancia</text>
+  </g>
+  
+  <rect x="704" y="330" width="180" height="56" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="716" y="352" class="t t-s t-b">Tablero mensual</text><text x="716" y="370" class="t t-s">si cambia algo, se reevalúa</text>
+  <line x1="600" y1="358" x2="702" y2="358" class="ln ln-d" marker-end="url(#i8d2-m)"/>
+  <line x1="794" y1="286" x2="794" y2="328" class="ln ln-d" marker-end="url(#i8d2-m)"/>
+  <path d="M106 182 V410 H300" class="ln ln-d" style="fill:none"/>
+  <text x="114" y="404" class="t t-xs t-m">SE REEVALÚA SI CAMBIA EL SISTEMA</text>
+</svg></div><figcaption><b>Cómo se decide: seguir, cambiar o no hacerlo.</b> Un árbol que se lee de arriba hacia abajo. Primera pregunta: ¿hay algún hallazgo que bloquea, como un uso prohibido, un sesgo medido que no se puede corregir o un sistema que nadie puede explicar? Si lo hay, la rama roja termina en «no hacerlo así». Si no, segunda pregunta: ¿quedan hallazgos que se corrigen con condiciones? Si quedan, la rama ámbar termina en «cambiar: seguir con condiciones», cada una con dueño, fecha y una prueba que la verifica. Si no quedan, la rama verde termina en «seguir» con el plan de vigilancia. Las tres ramas vuelven al tablero mensual.</figcaption></figure><div class="prose"><p>Dos cosas saltan a la vista. La primera: casi todos los problemas del filtro tienen arreglo, pero ninguno se arregla solo; cada medida tiene un dueño y una fecha. La segunda: hay una medida que no depende de la empresa. Si el proveedor no cambia la etiqueta ni entrega la información para explicar el puntaje, la empresa no puede corregir el sesgo ni cumplir con la explicación. Esa dependencia es la que decide entre cambiar y no hacerlo.</p></div></section>
+<section><h2>Decidir: seguir, cambiar o no hacerlo</h2><div class="prose"><p>Una evaluación que no termina en una decisión es un informe. La recomendación tiene tres salidas posibles, y las tres son legítimas:</p><ul><li><b>Seguir</b>: el sistema se usa como está, con su plan de vigilancia. Es raro en un sistema de alto riesgo que se evalúa por primera vez.</li><li><b>Cambiar</b>: el sistema se usa con condiciones que se cumplen antes de lanzarlo y se verifican después. Es lo más frecuente.</li><li><b>No hacerlo</b>: el daño posible es mayor que el beneficio, o no hay forma de reducirlo a un nivel aceptable. Volver al proceso anterior también es una decisión responsable.</li></ul></div><div class="analogia"><b>Imagínalo así</b><p><b>Se parece al semáforo de un médico antes de una cirugía.</b> Si los exámenes salen bien, se opera. Si la presión está alta, se opera después de controlarla, y alguien verifica que bajó. Si el corazón no aguanta la anestesia, no se opera, y se busca otro tratamiento. Ningún médico serio opera «a ver qué pasa».</p></div><div class="prose"><p>Para el filtro, el equipo propuso <b>cambiar</b>, con siete condiciones. Ninguna es opcional y cada una tiene su prueba:</p><ol class="steps"><li><span><b>Sin meses sin empleo</b>: el proveedor entrega una versión sin esa variable y con una etiqueta revisada. Prueba: la ficha de cambios del proveedor.</span></li><li><span><b>Razón de impacto de 0,80 o más y brecha de igualdad de oportunidades de 5 puntos o menos</b>, medidas por un auditor externo con los datos del piloto. Prueba: el informe del auditor. Si no se cumple, el filtro no se usa en enero.</span></li><li><span><b>Sin rechazo automático</b>: una persona de Gestión Humana lee todas las hojas de vida con puntaje entre 50 y 59 y una muestra de las de menos de 50. Prueba: el registro de revisiones del ATS.</span></li><li><span><b>Aviso y explicación</b>: el formulario dice que se usa IA y para qué; quien no pasa recibe los factores que más pesaron y cómo pedir revisión humana. Prueba: el texto del aviso y del correo, aprobado por Inés.</span></li><li><span><b>Solo cinco variables al proveedor</b>, con un código en lugar del nombre, y un acuerdo de tratamiento de datos firmado. Prueba: la configuración de la integración y el contrato.</span></li><li><span><b>Contrato con las cláusulas del capítulo 7</b>: documentación, aviso de cambios, registros, auditoría e incidentes. Prueba: el contrato firmado.</span></li><li><span><b>Plan de vigilancia mensual</b> con umbrales y una regla de pausa. Prueba: el tablero funcionando antes del primer día de la convocatoria.</span></li></ol><p>Si el proveedor no acepta las condiciones 1 y 6, la recomendación cambia a <b>no hacerlo</b>: la convocatoria de enero se hace leyendo a mano, con una guía de evaluación común para los reclutadores.</p></div><div class="lab" id="08-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Completa la evaluación de impacto del caso paso a paso</h3></div><p class="hint">Seis pasos, con una a tres preguntas cada uno. Junto a cada pregunta está la evidencia que dejó el capítulo correspondiente. Elige la respuesta que corresponde al estado del filtro, o prueba otras, y mira cómo cambia la recomendación final: seguir, cambiar con condiciones o no hacerlo. El botón «Estado del caso en diciembre» llena las respuestas del equipo.</p><style>
+[id="08-lab-1"] .readout.texto>span>span{display:block;margin:2px 0}
+[id="08-lab-1"] .c8l1-pasos{display:grid;gap:10px}
+[id="08-lab-1"] fieldset{border:1.5px solid var(--line);border-radius:10px;padding:8px 12px 10px;margin:0;display:grid;gap:8px;min-width:0}
+[id="08-lab-1"] fieldset[data-hecho="1"]{border-color:var(--c-apl)}
+[id="08-lab-1"] legend{font:700 .9rem var(--f-display);padding:0 6px}
+[id="08-lab-1"] .c8l1-q{display:grid;gap:4px}
+[id="08-lab-1"] .c8l1-q>b{font:600 .84rem/1.3 var(--f-display)}
+[id="08-lab-1"] .c8l1-ev{font:500 .78rem/1.35 var(--f-body);color:var(--muted)}
+[id="08-lab-1"] .c8l1-q .btns button{font-size:.76rem;padding:4px 9px;text-align:left}
+[id="08-lab-1"] .c8l1-q button[data-t="b"][aria-pressed="true"]{background:var(--warm);border-color:var(--warm)}
+[id="08-lab-1"] .c8l1-q button[data-t="c"][aria-pressed="true"]{background:var(--c-fis);border-color:var(--c-fis)}
+[id="08-lab-1"] .c8l1-q button[data-t="o"][aria-pressed="true"]{background:var(--good);border-color:var(--good)}
+[id="08-lab-1"] .c8l1-bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--paper);border:1px solid var(--line)}
+[id="08-lab-1"] .c8l1-bar i{display:block;height:100%;background:var(--c-apl);transition:width .3s}
+[id="08-lab-1"] .c8l1-res{font:700 1.05rem var(--f-display)}
+[id="08-lab-1"] .c8l1-out ul{margin:2px 0 0 1.1em;padding:0}
+@media (prefers-reduced-motion: reduce){[id="08-lab-1"] .c8l1-bar i{transition:none}}
+</style>
+<div class="btns">
+  <button type="button" class="primary" id="c8l1-caso">Estado del caso en diciembre</button>
+  <button type="button" id="c8l1-reset">Borrar respuestas</button>
+</div>
+<div class="c8l1-bar" aria-hidden="true"><i id="c8l1-prog"></i></div>
+<div class="c8l1-pasos" id="c8l1-pasos"></div>
+<div class="legend"><span><i style="background:var(--good)"></i>sin problema</span><span><i style="background:var(--c-fis)"></i>se corrige con una condición</span><span><i style="background:var(--warm)"></i>bloquea</span></div>
+<div class="readout texto c8l1-out" id="c8l1-out" aria-live="polite"></div></div><div class="prose"><p>En el comité de diciembre, la directora aprobó la recomendación con una línea en el acta: «Se usa en enero solo si llegan el informe del auditor y el contrato firmado antes del 10 de enero; si no, se lee a mano». Patricia quedó a cargo de las condiciones 3, 4 y 7; Rodrigo, de la 1, la 2 y la 5; Inés, de la 6.</p></div><div class="caso"><b>Un caso real</b><p><b>Evaluaciones que se publican.</b> La directiva canadiense no solo obliga a hacer la evaluación: exige publicar sus resultados. En el portal de datos abiertos del gobierno de Canadá hay decenas de evaluaciones de sistemas reales, con su nivel de impacto y sus medidas, desde la clasificación de solicitudes de inmigración hasta herramientas de apoyo a funcionarios. Publicar cambia la calidad de lo que se escribe: una evaluación que cualquiera puede leer no puede decir «riesgo bajo» sin explicar por qué.</p></div></section>
+<section><h2>Vigilar después del lanzamiento</h2><div class="prose"><p>Aprobar no es terminar. Un modelo que pasa la prueba en diciembre puede fallarla en junio: cambian los candidatos, cambia el mercado laboral o el proveedor reentrena el modelo. A ese desgaste se le llama <b>deriva</b> (<i>drift</i>), y la única forma de verla es medir siempre lo mismo, cada mes, y tener escrito qué se hace cuando el número cruza una línea. Cómo se monitorea un modelo en producción desde el punto de vista técnico está en <a href="https://aaramirez.github.io/mlops/temario.html" target="_blank" rel="noopener">IA en producción (MLOps)</a>.</p><p>El plan de vigilancia del filtro tiene cinco indicadores, cada uno con su umbral y su acción:</p><div class="tbl"><table><thead><tr><th>Indicador</th><th>Umbral</th><th>Acción si se cruza</th></tr></thead><tbody><tr><td>Razón de impacto por sexo, cada mes</td><td>Menor que 0,80</td><td>Pausa del rechazo por debajo de 50 y revisión del caso en el comité</td></tr><tr><td>Brecha de igualdad de oportunidades, cada trimestre</td><td>Mayor que 5 puntos</td><td>Revisión con el proveedor</td></tr><tr><td>Proporción de puntajes que la revisión humana cambia</td><td>Mayor que 20 %</td><td>Revisar si el modelo sigue siendo útil</td></tr><tr><td>Reclamos y pedidos de revisión</td><td>Más de 10 por convocatoria</td><td>Leerlos todos y buscar el patrón</td></tr><tr><td>Cambios de modelo del proveedor</td><td>Cualquiera</td><td>Medir antes de aceptar la versión nueva</td></tr></tbody></table></div></div><div class="lab" id="08-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>El tablero de vigilancia del filtro en 2027</h3></div><p class="hint">Doce convocatorias mensuales simuladas con el filtro ya corregido. Mueve el umbral de alarma y mira en qué mes se enciende. Fíjate primero en agosto: sin que nada cambie, la razón baja por puro azar. Después activa «El proveedor cambia el modelo en junio», luego «Cláusula de aviso de cambios», y apaga el tablero: compara cuántas candidatas quedan afectadas antes de que alguien lo note.</p><style>
+[id="08-lab-2"] .readout.texto>span>span{display:block;margin:2px 0}
+[id="08-lab-2"] .c8l2-chk{display:grid;gap:5px;font:500 .86rem var(--f-display)}
+[id="08-lab-2"] .c8l2-chk label{display:flex;gap:8px;align-items:flex-start}
+</style>
+<div class="ctls">
+  <label class="ctl">Umbral de alarma de la razón de impacto <output id="c8l2-u-o"></output>
+    <input id="c8l2-u" type="range" min="60" max="95" step="5" value="80"></label>
+</div>
+<div class="c8l2-chk" role="group" aria-label="Escenario">
+  <label><input type="checkbox" id="c8l2-cambio"> El proveedor cambia el modelo en junio</label>
+  <label><input type="checkbox" id="c8l2-clau"> Cláusula de aviso de cambios: la versión nueva se mide antes de aceptarla</label>
+  <label><input type="checkbox" id="c8l2-tab" checked> Tablero mensual activo (si lo apagas, solo hay revisión anual en diciembre)</label>
+</div>
+<canvas id="c8l2-c" role="img" aria-label="Barras de la razón de impacto por mes en 2027, con la línea del umbral de alarma"></canvas>
+<div class="legend"><span><i style="background:var(--c-fis)"></i>razón de impacto del mes</span><span><i style="background:var(--warm)"></i>bajo el umbral</span><span><i style="background:var(--muted)"></i>umbral</span><span><i style="background:var(--d-inet)"></i>cambio del proveedor</span></div>
+<div class="readout texto" id="c8l2-out" aria-live="polite"></div>
+<p class="hint">Datos simulados con semilla 2027: unas 290 hojas de vida por mes, con el filtro ya corregido (pasa cerca del 37 % de las mujeres y del 39 % de los hombres).</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Calcula la alarma mensual con Python</h3></div><p>Vas a hacer, con un script corto y datos ficticios, el cálculo que haría el tablero cada mes. Necesitas Python 3; no usa bibliotecas externas. Guarda el código en un archivo llamado <code>vigilar.py</code> con cualquier editor de texto.</p><div class="code-copia"><pre><code># Convocatorias mensuales ficticias: (mes, mujeres, pasan, hombres, pasan)
+meses = [
+    ("ene", 140, 52, 150, 60), ("feb", 120, 45, 130, 51),
+    ("mar", 160, 58, 150, 59), ("abr", 130, 47, 140, 54),
+    ("may", 150, 55, 145, 57), ("jun", 145, 38, 150, 60),
+    ("jul", 155, 39, 160, 64),
+]
+UMBRAL = 0.80
+for mes, m, pm, h, ph in meses:
+    tm, th = pm / m, ph / h
+    razon = min(tm, th) / max(tm, th)
+    estado = "ALARMA: pausar y revisar" if razon &lt; UMBRAL else "ok"
+    print(f"{mes}: mujeres {tm:.1%}  hombres {th:.1%}  razon {razon:.2f}  {estado}")</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><div class="cmds"><div class="cmd-panel" data-so="win mac linux"><div class="cmd-l"><code>python vigilar.py</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Ejecuta el script y busca el primer mes con alarma.</span></li><li><span>Cambia <code>UMBRAL</code> a <code>0.70</code> y vuelve a ejecutarlo. Luego a <code>0.90</code>.</span></li></ol><p><b>Qué observar:</b> de enero a mayo la razón queda entre 0,92 y 0,96; en junio cae a 0,66 y salta la alarma, igual que en julio. Con un umbral de 0,70 la alarma también salta, porque la caída es grande; con 0,90 saltaría ante caídas más chicas, y también con más falsas alarmas. Elegir el umbral es una decisión del comité, no de quien programa. En una empresa real estos números salen del ATS cada mes y llegan a un tablero; la cuenta es la misma.</p></div></section>
+<section><h2>Llevarlo a otros casos de la organización</h2><div class="prose"><p>La evaluación del filtro costó dos meses porque se hizo por primera vez y con el sistema ya funcionando. La segunda cuesta mucho menos, porque queda una plantilla: las mismas seis partes, las mismas preguntas y la misma forma de decidir. Inés la convirtió en el documento estándar para todo uso de nivel alto del inventario.</p><p>El siguiente en la fila es la <b>predicción de atrasos en el pago</b>, que el inventario del capítulo 7 marcó como alto: decide a qué clientes se les suspende antes el servicio. Las preguntas son las mismas con otras palabras. ¿Qué grupos podrían quedar perjudicados, por ejemplo por barrio o por edad? ¿Puede el cliente saber por qué y pedir que lo revise una persona? ¿Qué datos usa y quién los ve? ¿Qué pasa si se equivoca, y cuál es la alternativa? La diferencia es que esta vez se pregunta antes de encenderlo.</p></div><figure class="fig fig-mapa" id="08-diagrama-3"><div class="lienzo"><svg viewBox="0 0 900 650" style="min-width:740px" role="img" aria-label="La ruta del curso completa. 1 qué es la IA responsable: rechazo automático sin a quién reclamar; ahora hay dueña y camino de reclamo. 2 sesgo: razón de impacto 0,63 y 54,7 frente a 79,2 por ciento de aptos que pasan; sin meses sin empleo y medir de nuevo. 3 transparencia: la explicación de Camila mostró la variable sustituta; aviso, tarjeta y revisión humana. 4 derechos de autor: falta el resumen de datos de entrenamiento. 5 privacidad: solo cinco variables con código y acuerdo de datos. 6 regulación: alto riesgo en la Ley de IA europea y en Perú. 7 gobierno: ficha en el inventario, riesgo residual 8. 8 evaluación de impacto: cambiar, con siete condiciones. Camila: una persona leyó su hoja de vida y la invitó a entrevista.">
+<defs><marker id="i8d3-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="k-warm"/></marker></defs>
+<g class="ln s-warm">
+<line x1="848" y1="91" x2="866" y2="91"/><line x1="848" y1="149" x2="866" y2="149"/><line x1="848" y1="207" x2="866" y2="207"/>
+<line x1="848" y1="291" x2="866" y2="291"/><line x1="848" y1="349" x2="866" y2="349"/><line x1="848" y1="433" x2="866" y2="433"/><line x1="848" y1="491" x2="866" y2="491"/>
+</g>
+<line x1="866" y1="91" x2="866" y2="531" class="ln s-warm" style="stroke-width:2" marker-end="url(#i8d3-m)"/>
+<text x="24" y="28" class="t t-xs t-b t-m">CAPÍTULO</text>
+<text x="264" y="28" class="t t-xs t-b t-m">LO QUE SE ENCONTRÓ Y SE DECIDIÓ</text>
+<text x="652" y="28" class="t t-xs t-b t-m">PIEZA Y ESTADO</text>
+<text x="24" y="58" class="t t-xs t-b">PARTE 1 · PRINCIPIOS Y RIESGOS</text>
+<g class="t" style="font-size:12px">
+<rect x="16" y="66" width="618" height="50" rx="10" class="caja" style="stroke-width:2;stroke-dasharray:5 4"/>
+<text x="30" y="97" class="t-b" style="font-size:20px">1</text><text x="58" y="96" class="t-b" style="font-size:13px">Qué es la IA responsable</text>
+<text x="264" y="87">Rechazo automático sin a quién reclamar;</text><text x="264" y="104">ahora hay dueña y camino de reclamo</text>
+<rect x="16" y="124" width="618" height="50" rx="10" class="c-fis"/>
+<text x="30" y="155" class="t-b k-fis" style="font-size:20px">2</text><text x="58" y="154" class="t-b" style="font-size:13px">Sesgo y equidad</text>
+<text x="264" y="145">Razón 0,63; aptos que pasan 54,7 % frente a</text><text x="264" y="162">79,2 %. Fuera los meses sin empleo</text>
+<rect x="16" y="182" width="618" height="50" rx="10" class="c-red"/>
+<text x="30" y="213" class="t-b k-red" style="font-size:20px">3</text><text x="58" y="212" class="t-b" style="font-size:13px">Transparencia</text>
+<text x="264" y="203">La explicación de Camila destapó la sustituta;</text><text x="264" y="220">aviso, tarjeta y revisión humana</text>
+<rect x="16" y="266" width="618" height="50" rx="10" class="c-enl"/>
+<text x="30" y="297" class="t-b k-enl" style="font-size:20px">4</text><text x="58" y="296" class="t-b" style="font-size:13px">Derechos de autor</text>
+<text x="264" y="287">Falta el resumen de datos de entrenamiento;</text><text x="264" y="304">los avisos generados se revisan</text>
+<rect x="16" y="324" width="618" height="50" rx="10" class="c-enl"/>
+<text x="30" y="355" class="t-b k-enl" style="font-size:20px">5</text><text x="58" y="354" class="t-b" style="font-size:13px">Privacidad</text>
+<text x="264" y="345">Solo cinco variables con código al</text><text x="264" y="362">proveedor; acuerdo de datos</text>
+<rect x="16" y="408" width="618" height="50" rx="10" class="c-tra"/>
+<text x="30" y="439" class="t-b k-tra" style="font-size:20px">6</text><text x="58" y="438" class="t-b" style="font-size:13px">Regulación</text>
+<text x="264" y="429">Alto riesgo en la Ley de IA europea</text><text x="264" y="446">(dic. 2027) y en el reglamento peruano</text>
+<rect x="16" y="466" width="618" height="50" rx="10" class="c-apl"/>
+<text x="30" y="497" class="t-b k-apl" style="font-size:20px">7</text><text x="58" y="496" class="t-b" style="font-size:13px">Gobierno de la IA</text>
+<text x="264" y="487">Ficha con dueña; riesgo inherente 16,</text><text x="264" y="504">residual 8; cláusulas al proveedor</text>
+<rect x="16" y="524" width="618" height="50" rx="10" class="caja s-warm" style="stroke-width:2"/>
+<text x="30" y="555" class="t-b k-warm" style="font-size:20px">8</text><text x="58" y="554" class="t-b" style="font-size:13px">Evaluación de impacto</text>
+<text x="264" y="545">Recomendación: cambiar, con siete</text><text x="264" y="562">condiciones verificables antes de enero</text>
+</g>
+<text x="24" y="258" class="t t-xs t-b">PARTE 2 · DATOS Y DERECHOS</text>
+<text x="24" y="400" class="t t-xs t-b">PARTE 3 · REGLAS Y GOBIERNO</text>
+<g class="t t-s" text-anchor="middle">
+<rect x="648" y="75" width="200" height="32" rx="7" class="caja"/><text x="748" y="89">Daños y quién responde</text><text x="748" y="102" class="t-b k-enl">resuelto en diseño</text>
+<rect x="648" y="133" width="200" height="32" rx="7" class="caja"/><text x="748" y="147">Métricas por grupo</text><text x="748" y="160" class="t-b k-warm">falla: medir de nuevo</text>
+<rect x="648" y="191" width="200" height="32" rx="7" class="caja"/><text x="748" y="205">Explicación y tarjeta</text><text x="748" y="218" class="t-b k-fis">en curso</text>
+<rect x="648" y="275" width="200" height="32" rx="7" class="caja"/><text x="748" y="289">Fuentes y licencias</text><text x="748" y="302" class="t-b k-fis">pendiente</text>
+<rect x="648" y="333" width="200" height="32" rx="7" class="caja"/><text x="748" y="347">Mapa de datos personales</text><text x="748" y="360" class="t-b k-enl">corregido en diseño</text>
+<rect x="648" y="417" width="200" height="32" rx="7" class="caja"/><text x="748" y="431">Nivel y obligaciones</text><text x="748" y="444" class="t-b k-enl">conocido</text>
+<rect x="648" y="475" width="200" height="32" rx="7" class="caja"/><text x="748" y="489">Ficha del inventario</text><text x="748" y="502" class="t-b k-fis">en curso</text>
+<rect x="648" y="533" width="200" height="32" rx="7" class="caja s-warm" style="stroke-width:2"/><text x="748" y="547" class="t-b k-warm">La evaluación completa</text><text x="748" y="560" class="k-warm">cambiar, con 7 condiciones</text>
+</g>
+<rect x="16" y="586" width="868" height="52" rx="10" class="caja s-warm" style="stroke-dasharray:5 4"/>
+<text x="30" y="608" class="t t-b k-warm">Camila:</text>
+<text x="96" y="608" class="t" style="font-size:12px">una persona leyó su hoja de vida (su 55 está en la franja de 50 a 59) y la invitó a entrevista.</text>
+<text x="96" y="626" class="t" style="font-size:12px">Con las condiciones, nadie más queda rechazado sin que una persona pueda revisar y explicar.</text>
+</svg></div><figcaption><b>La ruta del curso, completa.</b> Es la misma figura del capítulo 1, ahora llena. Cada fila es un capítulo, con el color de su tema; la columna del centro dice lo que se encontró en el filtro y la de la derecha, la pieza que aportó a la evaluación con su estado. Todas las líneas llegan al capítulo 8, que termina en la recomendación: cambiar, con siete condiciones. Abajo, Camila: una persona leyó su hoja de vida, porque su 55 está en la franja de 50 a 59, y la invitó a entrevista con una explicación de cinco líneas; con las condiciones, eso le pasa a cualquier candidato de la franja.</figcaption></figure></section>
+<section><h2>La idea clave</h2><div class="prose"><p>Una evaluación de impacto junta, antes de lanzar un sistema, todo lo que puede salir mal para las personas y lo que se va a hacer al respecto, y termina en una decisión: seguir, cambiar o no hacerlo. Para el filtro, la respuesta fue cambiar, con siete condiciones verificables y una salida escrita si el proveedor no las acepta. Después del lanzamiento, el tablero mensual vigila que lo prometido se cumpla. Camila preguntó si alguien había leído su hoja de vida; con este proceso, la respuesta es sí, para ella y para quienes vengan después. <b>Evaluar antes de lanzar, y vigilar después.</b></p></div></section>
+<section><h2>Pruébate</h2><div class="quiz"><h3>Pruébate</h3><details><summary>¿En qué se diferencia una evaluación de impacto algorítmico de una auditoría de sesgo?</summary><p>La auditoría mide una sola cosa (el trato por grupo) en un momento; la evaluación de impacto se hace antes de usar el sistema, revisa todos los riesgos para las personas (sesgo, transparencia, derechos, privacidad, ley y gobierno) y termina en una decisión con medidas y un plan de vigilancia.</p></details><details><summary>¿Por qué la evaluación debe describir la alternativa al sistema?</summary><p>Porque la decisión compara el sistema con lo que se haría sin él, no con un mundo perfecto. Leer a mano también tiene sesgos y errores, pero distintos, y cuesta más tiempo.</p></details><details><summary>¿Qué recomendó el equipo para el filtro y qué haría cambiar esa recomendación a «no hacerlo»?</summary><p>Cambiar: usarlo con siete condiciones verificables. Pasaría a no hacerlo si el proveedor no acepta quitar los meses sin empleo y cambiar la etiqueta, o no firma las cláusulas del contrato, o si el auditor no confirma una razón de impacto de 0,80 o más.</p></details><details><summary>¿Qué es la deriva y por qué obliga a vigilar después del lanzamiento?</summary><p>Es el cambio del comportamiento de un modelo con el tiempo, porque cambian los datos de entrada o el proveedor lo reentrena. Un sistema que pasó la evaluación puede fallarla meses después; solo se ve midiendo lo mismo cada mes con umbrales y acciones escritas.</p></details><details><summary>¿Qué cambia para los candidatos como Camila con las condiciones aprobadas?</summary><p>No hay rechazo automático: quien saca entre 50 y 59, como el 55 de Camila, pasa por una persona que lee su hoja de vida; todos reciben aviso de que hay IA, pueden pedir explicación y revisión humana, y la variable que la perjudicaba ya no se usa. A Camila esa revisión la llevó a entrevista.</p></details></div></section>
+<section><h2>Para investigar</h2><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué es una prueba de hipótesis y cómo se sabe si una caída de la razón de impacto en un mes es real o fruto del azar con pocos candidatos?<small>Pista: busca «prueba exacta de Fisher» y «significancia estadística tamaño de muestra».</small></li><li>¿Qué es la evaluación de impacto en los derechos humanos y los algoritmos (IAMA) que usa el gobierno de los Países Bajos?<small>Pista: busca «IAMA impact assessment mensenrechten algoritmes».</small></li><li>¿Qué dicen los Principios Rectores de las Naciones Unidas sobre las empresas y los derechos humanos acerca de la debida diligencia?<small>Pista: busca «Principios Rectores ONU empresas derechos humanos debida diligencia».</small></li><li>¿Qué es la validez predictiva de una prueba de selección de personal y cómo se mide?<small>Pista: busca «validez predictiva selección de personal».</small></li><li>¿Qué es un comité de ética de investigación y en qué se parece y se diferencia de un comité de IA?</li></ol></div></section>
+<section><h2>Para saber más</h2><div class="vids"><span>Para saber más</span><a class="vid" href="https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592" target="_blank" rel="noopener">Directiva sobre la toma de decisiones automatizada de Canadá <small>texto oficial, en inglés</small></a><a class="vid" href="https://canada-ca.github.io/aia-eia-js/" target="_blank" rel="noopener">Herramienta de evaluación de impacto algorítmico de Canadá <small>cuestionario abierto, en inglés y francés</small></a><a class="vid" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">Marco de gestión de riesgos de la IA del NIST <small>funciones mapear, medir y gestionar, en inglés</small></a><a class="vid" href="https://aaramirez.github.io/proteccion-de-datos/temario.html" target="_blank" rel="noopener">Protección de datos <small>la evaluación de impacto de datos personales a fondo, curso del sitio</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-responsable" target="_blank" rel="noopener">github.com/aaramirez/ia-responsable</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  // t: o = sin problema, c = condición, b = bloquea. caso: índice de la respuesta del equipo en diciembre
+  const P=[
+    {n:'1. Describir el sistema',q:[
+      {k:'dueno',t:'¿El uso tiene propósito escrito y una dueña con nombre?',ev:'Capítulo 7: ficha en el inventario, dueña Patricia.',o:[['Sí, con ficha y dueña','o'],['No hay dueño','b','Nadie responde por el sistema: sin dueño no se aprueba.']],caso:0},
+      {k:'alt',t:'¿Se comparó con la alternativa (leer a mano)?',ev:'Tres semanas de dos personas por convocatoria.',o:[['Sí, con costo y riesgos','o'],['No se comparó','c','Comparar con leer a mano antes del comité.']],caso:0}]},
+    {n:'2. Sesgo',q:[
+      {k:'proxy',t:'¿El modelo sigue usando la variable sustituta?',ev:'Capítulo 2: los meses sin empleo llevan escondido el sexo.',o:[['No: versión sin meses sin empleo entregada','o'],['Sí; el proveedor prometió una versión nueva','c','El proveedor entrega una versión sin meses sin empleo y con la etiqueta revisada; si no, no se usa.'],['Sí, y el proveedor se niega a cambiarla','b','La causa del sesgo no se puede corregir.']],caso:1},
+      {k:'razon',t:'Razón de impacto con el modelo corregido',ev:'Capítulo 2: 0,63 en el piloto; el proveedor debe entregar una versión sin meses sin empleo.',o:[['Medida, 0,80 o más','o'],['Pendiente de medir tras el cambio','c','Un auditor externo mide una razón de 0,80 o más antes de lanzar; si no, no se usa.'],['Medida, menos de 0,80','b','Sesgo medido que no se corrigió.']],caso:1},
+      {k:'opor',t:'Brecha de igualdad de oportunidades (la métrica principal)',ev:'Capítulo 2: 54,7 % frente a 79,2 % de aptos que pasan.',o:[['5 puntos o menos','o'],['Mayor: se mantiene la revisión de la franja de 50 a 59','c','Revisión humana de todos los puntajes de 50 a 59 y de una muestra de los menores.'],['Mayor y sin revisión humana','b','Personas aptas rechazadas sin que nadie lo vea.']],caso:1}]},
+    {n:'3. Transparencia',q:[
+      {k:'aviso',t:'¿Los candidatos saben que hay IA y para qué?',ev:'Capítulo 3: Camila nunca supo que un sistema la puntuaba.',o:[['Sí, aviso en el formulario','o'],['Aún no','c','Aviso en el formulario y correo con los factores que más pesaron y cómo pedir revisión humana, aprobados por Inés.']],caso:1},
+      {k:'expl',t:'¿Se puede explicar una decisión a quien la pida?',ev:'Capítulo 3: la explicación contrafactual de Camila; el proveedor entregó un folleto.',o:[['Sí, en palabras simples','o'],['Solo con lo que el equipo reconstruyó','c','Contrato firmado con las cláusulas del capítulo 7 (documentación, tarjeta de modelo, aviso de cambios, registros, auditoría, incidentes); si el proveedor no las acepta, no se usa.'],['No, el proveedor no da información','b','Lo que no se puede explicar no debería decidir sobre personas.']],caso:0}]},
+    {n:'4. Derechos y privacidad',q:[
+      {k:'datos',t:'¿Qué datos viajan al proveedor?',ev:'Capítulo 5: el ATS enviaba el PDF completo.',o:[['Solo las cinco variables con un código','o'],['El PDF completo','c','Solo cinco variables con código y acuerdo de tratamiento de datos firmado, con retención máxima y sin entrenamiento.']],caso:0},
+      {k:'dpa',t:'¿El contrato limita el uso de los datos?',ev:'Capítulo 5: sin plazo de borrado ni acuerdo de tratamiento.',o:[['Sí, acuerdo firmado sin entrenamiento','o'],['En negociación','c','Solo cinco variables con código y acuerdo de tratamiento de datos firmado, con retención máxima y sin entrenamiento.']],caso:1},
+      {k:'fuentes',t:'¿Se conoce con qué datos se entrenó el modelo?',ev:'Capítulo 4: se pidió el resumen de datos de entrenamiento.',o:[['Sí, hay resumen y hoja de datos','o'],['Pedido, sin respuesta','c','Contrato firmado con las cláusulas del capítulo 7 (documentación, tarjeta de modelo, aviso de cambios, registros, auditoría, incidentes); si el proveedor no las acepta, no se usa.']],caso:1}]},
+    {n:'5. Ley y gobierno',q:[
+      {k:'nivel',t:'¿El uso está clasificado y aprobado por quien corresponde?',ev:'Capítulos 6 y 7: alto riesgo; va al comité.',o:[['Clasificado como alto, en el comité','o'],['Sin clasificar','b','Un uso de alto riesgo sin clasificar no se aprueba.']],caso:0},
+      {k:'auto',t:'¿Hay rechazo automático sin intervención humana?',ev:'Capítulo 1: el correo de rechazo salía a las tres de la mañana.',o:[['No: una persona revisa los casos dudosos','o'],['Sí, como en el piloto','b','Supervisión humana: nadie es rechazado sin que una persona pueda intervenir.']],caso:0},
+      {k:'contr',t:'¿El contrato trae las cláusulas de riesgo?',ev:'Capítulo 7: documentación, aviso de cambios, registros, auditoría, incidentes.',o:[['Sí, firmadas','o'],['En negociación','c','Contrato firmado con las cláusulas del capítulo 7 (documentación, tarjeta de modelo, aviso de cambios, registros, auditoría, incidentes); si el proveedor no las acepta, no se usa.']],caso:1}]},
+    {n:'6. Vigilar después',q:[
+      {k:'mon',t:'¿Hay plan de vigilancia con umbrales y regla de pausa?',ev:'Este capítulo: cinco indicadores con umbral y acción.',o:[['Sí, mensual con alarma','o'],['Diseñado, no funciona todavía','c','Tablero mensual funcionando antes del primer día de la convocatoria.'],['Ninguno','b','Sin vigilancia nadie verá la deriva.']],caso:1}]}
+  ];
+  const Q=[];P.forEach(p=>p.q.forEach(q=>Q.push(q)));
+  let R={};
+  const cont=$('#c8l1-pasos');
+  P.forEach((p,pi)=>{const f=document.createElement('fieldset');f.id='c8l1-f'+pi;
+    f.innerHTML='<legend>'+p.n+'</legend>'+p.q.map(q=>'<div class="c8l1-q"><b>'+q.t+'</b><span class="c8l1-ev">Evidencia: '+q.ev+'</span><span class="btns" role="group" aria-label="'+q.t+'">'+
+      q.o.map((o,j)=>'<button type="button" data-k="'+q.k+'" data-j="'+j+'" data-t="'+o[1]+'">'+o[0]+'</button>').join('')+'</span></div>').join('');
+    cont.appendChild(f);});
+  function leer(){
+    cont.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',R[b.dataset.k]===+b.dataset.j?'true':'false'));
+    P.forEach((p,pi)=>$('#c8l1-f'+pi).dataset.hecho=p.q.every(q=>R[q.k]!==undefined)?'1':'0');
+    const n=Q.filter(q=>R[q.k]!==undefined).length;
+    $('#c8l1-prog').style.width=(100*n/Q.length)+'%';
+    const bl=[],co=[];
+    Q.forEach(q=>{if(R[q.k]===undefined)return;const o=q.o[R[q.k]];if(o[1]==='b'&&bl.indexOf(o[2])<0)bl.push(o[2]);if(o[1]==='c'&&co.indexOf(o[2])<0)co.push(o[2]);});
+    let h='<span>Respondiste '+n+' de '+Q.length+' preguntas.</span>';
+    if(n<Q.length&&!bl.length){h+='<span>La recomendación aparece al responder todo. Si te apuras, prueba «Estado del caso en diciembre».</span>';}
+    else if(bl.length){h+='<span class="c8l1-res warn">Recomendación: no hacerlo así.</span><span>'+bl.length+(bl.length===1?' hallazgo bloquea':' hallazgos bloquean')+' el uso, aunque se cumplan las condiciones:</span><ul>'+bl.map(x=>'<li>'+x+'</li>').join('')+'</ul><span>La convocatoria se hace leyendo a mano hasta resolverlos.</span>';}
+    else if(co.length){h+='<span class="c8l1-res" style="color:var(--c-fis)">Recomendación: cambiar, seguir con '+co.length+(co.length===1?' condición':' condiciones')+'.</span><span>Cada condición tiene dueño, fecha y una prueba; si alguna no se cumple antes de lanzar, la recomendación pasa a «no hacerlo»:</span><ul>'+co.map(x=>'<li>'+x+'</li>').join('')+'</ul>';}
+    else h+='<span class="c8l1-res ok">Recomendación: seguir.</span><span>Todo está resuelto y verificado. El filtro se usa con el plan de vigilancia mensual; la evaluación se actualiza si cambia el modelo o el uso.</span>';
+    $('#c8l1-out').innerHTML='<span>'+h+'</span>';
+  }
+  cont.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;R[b.dataset.k]=+b.dataset.j;leer();});
+  $('#c8l1-caso').addEventListener('click',()=>{R={};Q.forEach(q=>R[q.k]=q.caso);leer();});
+  $('#c8l1-reset').addEventListener('click',()=>{R={};leer();});
+  leer();
+})();
+</script>
+<script>
+(function(){
+  const {$,tok,canvasWidget}=window.Lab;
+  const MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+  // datos base fijos por semilla: tamaños y un azar por persona para decidir si pasa
+  const r=rng(2027),BASE=[];
+  for(let k=0;k<12;k++){const nm=120+Math.floor(r()*40),nh=130+Math.floor(r()*35);
+    BASE.push({nm,nh,um:Array.from({length:nm},r),uh:Array.from({length:nh},r)});}
+  let serie=[];
+  function simular(){
+    const U=+$('#c8l2-u').value/100,cambio=$('#c8l2-cambio').checked,clau=$('#c8l2-clau').checked,tab=$('#c8l2-tab').checked;
+    let malo=cambio&&!clau,alarma=-1,perdidas=0;serie=[];
+    BASE.forEach((b,k)=>{
+      const activo=malo&&k>=5&&(alarma<0||k<=alarma);
+      const pm=activo?0.24:0.37,ph=0.39;
+      const sm=b.um.filter(x=>x<pm).length,sh=b.uh.filter(x=>x<ph).length;
+      const tm=sm/b.nm,th=sh/b.nh,ra=Math.min(tm,th)/Math.max(tm,th);
+      if(activo)perdidas+=b.um.filter(x=>x<0.37).length-sm;
+      const bajo=ra<U;
+      if(bajo&&alarma<0&&(tab||k===11))alarma=k;
+      serie.push({k,tm,th,ra,bajo,activo});
+    });
+    return {U,cambio,clau,tab,alarma,perdidas};
+  }
+  let est=null;
+  const dibujar=canvasWidget($('#c8l2-c'),w=>w<480?0.62:0.42,(ctx,w,h)=>{
+    if(!est)return;
+    const L=34,R=8,T=12,B=24,pw=w-L-R,ph=h-T-B,y=v=>T+ph*(1-(v-0.4)/0.7);
+    ctx.clearRect(0,0,w,h);ctx.font='11px '+tok('--f-mono');ctx.textBaseline='middle';
+    [0.4,0.6,0.8,1.0].forEach(v=>{ctx.strokeStyle=tok('--grid');ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(L,y(v));ctx.lineTo(w-R,y(v));ctx.stroke();
+      ctx.fillStyle=tok('--muted');ctx.textAlign='right';ctx.fillText(v.toFixed(1).replace('.',','),L-5,y(v));});
+    const bw=pw/12;
+    serie.forEach(s=>{const x=L+s.k*bw+bw*0.18,wd=bw*0.64,top=y(Math.max(0.4,s.ra));
+      ctx.fillStyle=s.bajo?tok('--warm'):tok('--c-fis');ctx.fillRect(x,top,wd,y(0.4)-top);
+      ctx.fillStyle=tok('--muted');ctx.textAlign='center';ctx.fillText(bw<34?MES[s.k][0].toUpperCase():MES[s.k],x+wd/2,h-B/2+2);});
+    if(est.cambio){const x=L+5*bw;ctx.strokeStyle=tok('--d-inet');ctx.lineWidth=2;ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(x,T);ctx.lineTo(x,y(0.4));ctx.stroke();ctx.setLineDash([]);}
+    ctx.strokeStyle=tok('--muted');ctx.lineWidth=1.5;ctx.setLineDash([6,4]);ctx.beginPath();ctx.moveTo(L,y(est.U));ctx.lineTo(w-R,y(est.U));ctx.stroke();ctx.setLineDash([]);
+  });
+  function leer(){
+    est=simular();$('#c8l2-u-o').textContent=est.U.toFixed(2).replace('.',',');
+    const pct=v=>(100*v).toFixed(1).replace('.',',')+' %',f2=v=>v.toFixed(2).replace('.',',');
+    const min=serie.reduce((a,s)=>s.ra<a.ra?s:a);
+    let h='<span class="big">Razón de impacto más baja del año: '+f2(min.ra)+' en '+MES[min.k]+'.</span>';
+    if(est.alarma>=0){const s=serie[est.alarma];
+      h+='<span class="warn">La alarma se enciende en '+MES[est.alarma]+': pasan el '+pct(s.tm)+' de las mujeres y el '+pct(s.th)+' de los hombres (razón '+f2(s.ra)+').</span>';
+      if(est.cambio&&!est.clau)h+='<span>Se pausa el rechazo por debajo de 50 y se vuelve a la versión anterior desde el mes siguiente. '+(est.tab?'':'Sin tablero, nadie lo vio hasta la revisión anual. ')+'Mientras tanto, unas '+est.perdidas+' candidatas que habrían pasado a entrevista quedaron fuera.</span>';
+      else h+='<span>Ese mes la caída es azar de una muestra chica: el comité la revisa y no encuentra causa. Con un umbral más alto, las falsas alarmas son más frecuentes.</span>';
+    } else {
+      const bajos=serie.filter(s=>s.bajo).map(s=>MES[s.k]);
+      if(bajos.length)h+='<span class="warn">Sin tablero, nadie miró: '+bajos.join(', ')+' quedó bajo el umbral de '+f2(est.U)+' y nadie lo revisó.</span>';
+      else h+='<span class="ok">Ningún mes cruza el umbral de '+f2(est.U)+'.</span>';
+      if(est.cambio&&est.clau)h+='<span>El proveedor avisó el cambio de junio; el equipo midió la versión nueva antes de aceptarla, vio que bajaba la razón y la rechazó. Ninguna candidata quedó afectada.</span>';
+      else if(est.cambio&&est.perdidas)h+='<span class="warn">El cambio de junio bajó la razón, pero el umbral es tan bajo que no la detectó: unas '+est.perdidas+' candidatas quedaron fuera sin que nadie lo notara.</span>';
+    }
+    $('#c8l2-out').innerHTML='<span>'+h+'</span>';
+    dibujar();
+  }
+  ['#c8l2-cambio','#c8l2-clau','#c8l2-tab'].forEach(s=>$(s).addEventListener('change',leer));
+  $('#c8l2-u').addEventListener('input',leer);
+  leer();
+})();
+</script>
+</body>
+</html>
